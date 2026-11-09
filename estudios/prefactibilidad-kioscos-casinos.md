@@ -1,7 +1,7 @@
 # Estudio de prefactibilidad: red neutral de kioscos de depósito en efectivo (cash-in multibanco) para casinos en México
 
-**Versión:** 4.5 · **Fecha de investigación y consulta de fuentes:** 9 de noviembre de 2026
-**Cambios de la versión 4.0:** nueva sección V4 (precios reales de Mercado Pago por cadena según la app; tapi, PayCash y PESPay a detalle; revisión de los padrones del SPEI de Banxico; requisitos legales por tipo de empresa; seis diagramas del flujo del kiosco en `estudios/diagramas/`). **Versión 4.5:** perfil B2B o usuario final de cada operador (V5.4.2). **Versión 4.4:** comparativa producto por producto (V5.4.1) y programas de partners con liga de inscripción (V5.4.2). **Versión 4.3:** detalle de Banlink con sus documentos (V5.2.1). **Versión 4.2:** nueva sección V5 (ser partner de procesadores de pago: Klu, Mercado Pago, Cobre, 88 Pay, Banlink, Tonder y otros; tabla comparativa de productos; análisis de las tablas de precio por volumen). **Versión 4.1:** lista legal completa de arranque (sección V4.6: constitución, fiscal, laboral, marca, datos, equipo, licencias por casino y municipio, seguros y ruta crítica). **Cambios de la versión 3.0:** nueva sección 0 (comisión por depósito y precios de referencia de las cadenas; cómo operan tapi, PayCash y redes similares; flujo de efectivo con cuenta propia frente a patrocinador; KYC completo en kiosco y acceso "como cajero") y modelo financiero con comisión cobrada a las entidades. **Cambio de la versión 2.0 respecto a la 1.0:** el modelo ya no es "kiosco que emite una tarjeta de un emisor". Ahora es el que definió Lucho: **un kiosco neutral donde el usuario elige el banco, la IFPE o el procesador al que quiere abonar su efectivo, o abre una cuenta nueva**, igual que los comercios que hoy reciben depósitos "en nombre de" Mercado Pago u otras entidades. La empresa es intermediaria entre las entidades financieras y el cliente, y no queda amarrada a un solo banco o procesador. La versión 1.0 queda en el historial del repositorio.
+**Versión:** 5.0 · **Fecha de investigación y consulta de fuentes:** 9 de noviembre de 2026
+**Cambios de la versión 4.0:** nueva sección V4 (precios reales de Mercado Pago por cadena según la app; tapi, PayCash y PESPay a detalle; revisión de los padrones del SPEI de Banxico; requisitos legales por tipo de empresa; seis diagramas del flujo del kiosco en `estudios/diagramas/`). **Versión 5.0:** nueva sección V6: universo completo de bancos, fintechs y exchanges en México, y kioscos que también transaccionen cripto (regulación, cuatro modalidades, socios, requisitos y diagramas 7 y 8). **Versión 4.5:** perfil B2B o usuario final de cada operador (V5.4.2). **Versión 4.5:** perfil B2B o usuario final de cada operador (V5.4.2). **Versión 4.5:** perfil B2B o usuario final de cada operador (V5.4.2). **Versión 4.4:** comparativa producto por producto (V5.4.1) y programas de partners con liga de inscripción (V5.4.2). **Versión 4.3:** detalle de Banlink con sus documentos (V5.2.1). **Versión 4.2:** nueva sección V5 (ser partner de procesadores de pago: Klu, Mercado Pago, Cobre, 88 Pay, Banlink, Tonder y otros; tabla comparativa de productos; análisis de las tablas de precio por volumen). **Versión 4.1:** lista legal completa de arranque (sección V4.6: constitución, fiscal, laboral, marca, datos, equipo, licencias por casino y municipio, seguros y ruta crítica). **Cambios de la versión 3.0:** nueva sección 0 (comisión por depósito y precios de referencia de las cadenas; cómo operan tapi, PayCash y redes similares; flujo de efectivo con cuenta propia frente a patrocinador; KYC completo en kiosco y acceso "como cajero") y modelo financiero con comisión cobrada a las entidades. **Cambio de la versión 2.0 respecto a la 1.0:** el modelo ya no es "kiosco que emite una tarjeta de un emisor". Ahora es el que definió Lucho: **un kiosco neutral donde el usuario elige el banco, la IFPE o el procesador al que quiere abonar su efectivo, o abre una cuenta nueva**, igual que los comercios que hoy reciben depósitos "en nombre de" Mercado Pago u otras entidades. La empresa es intermediaria entre las entidades financieras y el cliente, y no queda amarrada a un solo banco o procesador. La versión 1.0 queda en el historial del repositorio.
 **Alcance:** México, salas de juego con permiso de SEGOB como ubicación inicial; el mismo kiosco puede operar fuera de casinos.
 **Naturaleza:** prefactibilidad para decidir. No sustituye un dictamen jurídico, fiscal ni de cumplimiento.
 
@@ -15,6 +15,8 @@
 
 ---
 
+> **Universo de entidades y cripto:** la tabla de todos los bancos, fintechs, SOFIPO, IFPE, crédito, BNPL, exchanges y cajeros cripto en México, y el análisis para que el kiosco también transaccione cripto, están en la sección **"V6"** (V6.2 universo, V6.3 regulación cripto, V6.4 socios cripto, V6.5 modalidades, V6.6 requisitos, V6.7 recomendación). En la página interactiva son las pestañas "Universo México" y "Cripto".
+>
 > **Tabla comparativa de procesadores de pago (Mercado Pago, Klu, Cobre, 88 Pay, Banlink, Tonder y 13 más):** está en la sección **"V5. Ser partner de procesadores de pago"**, subsección **V5.4** (productos a detalle en V5.4.1, perfil B2B o usuario final en V5.4.2 y programas de partners con liga de inscripción en V5.4.3). También como página interactiva en `estudios/tabla-procesadores-mexico.html`.
 
 ## Resumen ejecutivo
@@ -54,6 +56,210 @@
 5. **¿Cuánto capital hay disponible y en qué horizonte?**
 
 Mientras no haya respuesta, el estudio supone: solo depósitos (cash-in) y apertura de cuentas; catálogo de entidades conectadas desde el inicio y riel SPEI como segunda etapa; casinos como ubicación con reparto de ingresos.
+
+---
+
+## V6. Universo completo de bancos, fintechs y exchanges, y kioscos que también transaccionen cripto (versión 5.0)
+
+> **Qué agrega esta versión.** Lucho pidió dos cosas: (1) considerar **todas** las entidades que existen en México y no solo procesadores de pago: banca tradicional, banca digital, SOFIPO, IFPE, crédito y BNPL, gasto corporativo, inversión, exchanges cripto y cajeros cripto; y (2) que **los kioscos también puedan servir para transaccionar criptomonedas**, repitiendo para cripto los pasos que se hicieron para el modelo de depósito: modelo, regulación, requisitos legales, socios, diagramas y recomendación. La tabla interactiva tiene dos pestañas nuevas: **"Universo México"** y **"Cripto"** (`estudios/tabla-procesadores-mexico.html`).
+
+### V6.1 Respuesta corta
+
+1. **Sí se puede agregar cripto, pero no de cualquier forma.** En México los bancos y las fintech reguladas (IFPE, SOFIPO) **no pueden ofrecer cripto a sus clientes** (Circular 4/2019 de Banxico; la CNBV lo ratificó en mayo de 2026) [H]. Los exchanges operan fuera de esa supervisión, registrados ante el SAT como **actividad vulnerable** de activos virtuales (LFPIORPI art. 17, fracción XVI) [H]. Si nuestra empresa vende o compra cripto en el kiosco, **se convierte en un sujeto obligado de esa misma actividad vulnerable**.
+2. **Hay cuatro formas de hacerlo** (diagrama 7). Recomendamos empezar por las dos que no exigen que la empresa intercambie cripto: **(A)** depositar pesos en la cuenta del usuario en una plataforma que ya vende cripto (Mercado Pago, Bitso, Binance), y **(D)** alojar en el casino el cajero de un operador existente (CoinFlip tiene casi 50 en México) [H].
+3. **La compra de cripto en el kiosco (B)** es viable como fase 2, con **una empresa separada** de la que es comisionista de bancos. Así un problema de cumplimiento en cripto no pone en riesgo los convenios bancarios, que es el negocio base.
+4. **La venta de cripto con entrega de efectivo (C)** no se recomienda al inicio: suma el riesgo de dispensar efectivo dentro de una sala de juego a todo el riesgo de lavado de la cripto.
+5. **El universo de entidades** quedó en una tabla de más de 50 filas. **Sí hay cuentas para menores en México, pero en bancos, no en procesadores**: BBVA (Cuenta para Chavos, 12 a 17 años), Hey Banco (menores de 18), Santander (Cuenta Junior) y Banco Azteca (Guardadito Kids); Revolut anunció Kids & Teens para después [H/S]. Esto corrige la lectura de V5.4.2, que solo aplicaba a los 11 procesadores.
+
+### V6.2 Universo de entidades financieras en México
+
+**Cómo leer la tabla.** Cada fila es una entidad (o un grupo de entidades menores). ✓ = confirmado con fuente consultada el 9-nov-2026; (✓) = conocido públicamente, pero no se verificó hoy; ? = sin información pública encontrada; — = no lo ofrece o no está permitido. Los 19 procesadores de pago siguen en V5.4 y no se repiten aquí, salvo Mercado Pago.
+
+**Sobre "Alpaka":** no encontramos una empresa con ese nombre en México. Lo más cercano es **Alpaca**, un bróker de EE. UU. que da infraestructura a apps mexicanas de inversión como Rivium y RUUT [H]. Hay que confirmar con Lucho si se refería a otra empresa.
+
+| Entidad | Tipo | Figura en México | Modelo | Cuenta persona | Cuenta empresa | Cuentas para menores | Tarjeta de débito | Tarjeta de crédito | Préstamos personales | Crédito para negocio | Rendimientos o inversión | Seguros | Pago de servicios | Remesas | Cripto | Depósito en efectivo | Rol para el kiosco |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| BBVA México | Banca tradicional | (✓) Banco múltiple | (✓) B2C y B2B | (✓) Sí | (✓) Sí | ✓ Cuenta para Chavos, 12 a 17 años, con tarjeta (mar-2025) | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí | — Banco: no puede ofrecer cripto (Circular 4/2019; CNBV, may-2026) | (✓) Sucursales, cajeros y corresponsales | (✓) Destino de depósito como comisionista; posible banco patrocinador SPEI |
+| Santander | Banca tradicional | (✓) Banco múltiple | (✓) B2C y B2B | (✓) Sí | (✓) Sí | (✓) Cuenta Junior (menores de 18), con débito | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí | — Banco: no puede ofrecer cripto (Circular 4/2019; CNBV, may-2026) | (✓) Sucursales, cajeros y corresponsales | (✓) Destino de depósito como comisionista; posible banco patrocinador SPEI |
+| Banorte | Banca tradicional | (✓) Banco múltiple | (✓) B2C y B2B | (✓) Sí | (✓) Sí | ? | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí | — Banco: no puede ofrecer cripto (Circular 4/2019; CNBV, may-2026) | (✓) Sucursales, cajeros y corresponsales | (✓) Destino de depósito como comisionista; posible banco patrocinador SPEI |
+| Banamex | Banca tradicional | (✓) Banco múltiple | (✓) B2C y B2B | (✓) Sí | (✓) Sí | ? | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí | — Banco: no puede ofrecer cripto (Circular 4/2019; CNBV, may-2026) | (✓) Sucursales, cajeros y corresponsales | (✓) Destino de depósito como comisionista; posible banco patrocinador SPEI |
+| HSBC | Banca tradicional | (✓) Banco múltiple | (✓) B2C y B2B | (✓) Sí | (✓) Sí | ? | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí | — Banco: no puede ofrecer cripto (Circular 4/2019; CNBV, may-2026) | (✓) Sucursales, cajeros y corresponsales | (✓) Destino de depósito como comisionista; posible banco patrocinador SPEI |
+| Scotiabank | Banca tradicional | (✓) Banco múltiple | (✓) B2C y B2B | (✓) Sí | (✓) Sí | ? | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí | — Banco: no puede ofrecer cripto (Circular 4/2019; CNBV, may-2026) | (✓) Sucursales, cajeros y corresponsales | (✓) Destino de depósito como comisionista; posible banco patrocinador SPEI |
+| Inbursa | Banca tradicional | (✓) Banco múltiple | (✓) B2C y B2B | (✓) Sí | (✓) Sí | ? | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí | — Banco: no puede ofrecer cripto (Circular 4/2019; CNBV, may-2026) | (✓) Sucursales, cajeros y corresponsales | (✓) Destino de depósito como comisionista; posible banco patrocinador SPEI |
+| Banco Azteca | Banca tradicional | (✓) Banco múltiple | (✓) B2C y B2B | (✓) Sí | (✓) Sí | (✓) Guardadito Kids, con débito Mastercard | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí | — Banco: no puede ofrecer cripto (Circular 4/2019; CNBV, may-2026) | (✓) Sucursales, cajeros y corresponsales | (✓) Destino de depósito; red propia en tiendas Elektra |
+| BanCoppel | Banca tradicional | (✓) Banco múltiple | (✓) B2C y B2B | (✓) Sí | (✓) Sí | ? | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí | — Banco: no puede ofrecer cripto (Circular 4/2019; CNBV, may-2026) | (✓) Sucursales, cajeros y corresponsales | (✓) Destino de depósito; red propia en tiendas Coppel |
+| Banregio | Banca tradicional | (✓) Banco múltiple | (✓) B2C y B2B | (✓) Sí | (✓) Sí | ? | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí | — Banco: no puede ofrecer cripto (Circular 4/2019; CNBV, may-2026) | (✓) Sucursales, cajeros y corresponsales | (✓) Destino de depósito como comisionista; posible banco patrocinador SPEI |
+| BanBajío | Banca tradicional | (✓) Banco múltiple | (✓) B2C y B2B | (✓) Sí | (✓) Sí | ? | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí | — Banco: no puede ofrecer cripto (Circular 4/2019; CNBV, may-2026) | (✓) Sucursales, cajeros y corresponsales | (✓) Destino de depósito como comisionista; posible banco patrocinador SPEI |
+| Afirme | Banca tradicional | (✓) Banco múltiple | (✓) B2C y B2B | (✓) Sí | (✓) Sí | ? | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí | — Banco: no puede ofrecer cripto (Circular 4/2019; CNBV, may-2026) | (✓) Sucursales, cajeros y corresponsales | (✓) Destino de depósito como comisionista; posible banco patrocinador SPEI |
+| Compartamos Banco | Banca tradicional | (✓) Banco múltiple (microcrédito) | (✓) B2C y B2B | (✓) Sí | (✓) Sí | ? | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí | — Banco: no puede ofrecer cripto (Circular 4/2019; CNBV, may-2026) | (✓) Sucursales, cajeros y corresponsales | (✓) Destino de depósito como comisionista; posible banco patrocinador SPEI |
+| Banco del Bienestar | Banca tradicional | (✓) Banca de desarrollo | (✓) B2C (programas sociales) | (✓) Sí | ? | ? | (✓) Sí | ? | ? | ? | (✓) Ahorro | ? | ? | (✓) Sí | — Banco: no puede ofrecer cripto (Circular 4/2019; CNBV, may-2026) | (✓) Sucursales propias | (✓) Destino de depósito de beneficiarios |
+| Nu México | Banca digital | ✓ Banco; opera como banco desde 10-jul-2026 | ✓ B2C (más de 15 millones de clientes) | ✓ Cuenta Nu de Débito | ? | ? | ✓ Sí | ✓ Sí, y tarjeta garantizada | ✓ Sí | ? | (✓) Cajitas con rendimiento | ? | (✓) Sí | ? | — Banco: no puede ofrecer cripto (Circular 4/2019; CNBV, may-2026) | (✓) Depósitos en OXXO | (✓) Destino de depósito de alto volumen |
+| Revolut | Banca digital | ✓ Banco; opera desde ene-2026 | ✓ B2C | ✓ Cuenta multimoneda | ? | (✓) Kids & Teens, 6 a 17 años (anunciado para después) | ✓ Planes Premium y Metal | (✓) Tarjeta de crédito anunciada | ? | ? | ✓ Hasta 15% anual en los primeros $25,000 | ? | ✓ Sí | ✓ Transferencias internacionales | — Banco: no puede ofrecer cripto (Circular 4/2019; CNBV, may-2026) | ? | (✓) Destino de depósito |
+| Openbank (Santander) | Banca digital | (✓) Banco (Grupo Santander) | (✓) B2C | (✓) Sí | ? | ? | (✓) Sí | (✓) Sí | ? | ? | (✓) Ahorro e inversión | ? | ? | ? | — Banco: no puede ofrecer cripto (Circular 4/2019; CNBV, may-2026) | ? | (✓) Destino de depósito |
+| Hey Banco (Banregio) | Banca digital | (✓) Banco (brazo digital de Banregio) | (✓) B2C y B2B | (✓) Sí | (✓) Sí | ✓ Ahorro para menores de 18, sin costo | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Rendimientos | ? | (✓) Sí | ? | — Banco: no puede ofrecer cripto (Circular 4/2019; CNBV, may-2026) | ? | (✓) Destino de depósito |
+| Plata | Banca digital | ✓ Banco; autorizado en 2026 | ✓ B2C | (✓) Por lanzar (feb-2026) | ? | ? | ? | ✓ Tarjeta de crédito, su producto principal | ? | ? | ? | ? | ? | ? | — Banco: no puede ofrecer cripto (Circular 4/2019; CNBV, may-2026) | ? | (✓) Destino de pagos de tarjeta |
+| Klar | Banca digital | (✓) SOFIPO; compra de bineo (banco) anunciada | (✓) B2C y pymes | (✓) Cuenta de débito | (✓) Klar Empresarial | ? | (✓) Sí | (✓) Sí, incluso garantizada | ? | (✓) Crédito para pymes | (✓) Inversiones con rendimiento | ? | ? | ? | — ITF: no puede ofrecer cripto a clientes (Circular 4/2019) | ? | (✓) Destino de depósito |
+| bineo (Banorte, vendido a Klar) | Banca digital | (✓) Banco | (✓) B2C | (✓) Sí | ? | ? | (✓) Sí | ? | ? | ? | (✓) Rendimientos | ? | ? | ? | — Banco: no puede ofrecer cripto (Circular 4/2019; CNBV, may-2026) | ? | (✓) Se integra a Klar |
+| Ualá | Banca digital | (✓) Banco, vía ABC Capital | (✓) B2C | (✓) Sí | ? | ? | (✓) Sí | (✓) Sí | (✓) Sí | ? | (✓) Rendimientos | ? | (✓) Sí | ? | — Banco: no puede ofrecer cripto (Circular 4/2019; CNBV, may-2026) | ? | (✓) Destino de depósito |
+| Kapital | Banca digital | (✓) Banco, ex Banco Autofin | (✓) B2B y B2C | (✓) Sí | (✓) Sí | ? | ? | ? | ? | (✓) Sí | ? | ? | ? | ? | — Banco: no puede ofrecer cripto (Circular 4/2019; CNBV, may-2026) | ? | (✓) Posible banco patrocinador |
+| Mercado Pago | IFPE y cartera digital | ✓ IFPE; licencia bancaria a la mitad del proceso (sep-2026) | ✓ B2C y B2B | ✓ Cuenta (IFPE) | ✓ Cuenta Negocio | — No en México | ✓ Debit Mastercard | ✓ Sí | ✓ Sí | ✓ Mercado Crédito | ✓ Rendimientos con fondo de GBM | ✓ Vida y accidentes | ✓ Sí | ✓ Sí | (✓) Bitcoin y ethereum vía Paxos (lanzado oct-2022; vigencia 2026 no verificada) | ✓ Red de corresponsales; usuario paga $10 a $15 en cadenas | ✓ Destino de depósito y partner |
+| Stori | SOFIPO y neobanco | ✓ SOFIPO (compró Mascaja) | (✓) B2C | ✓ Cuenta con rendimientos y apartados | ? | ? | ? | (✓) Tarjeta de crédito sin historial | ? | ? | ✓ Rendimientos | ? | ? | ✓ Recepción desde EE. UU. (oct-2025) | — ITF: no puede ofrecer cripto a clientes (Circular 4/2019) | ? | (✓) Destino de depósito |
+| Spin by OXXO | IFPE y cartera digital | ? | (✓) B2C | (✓) Cuenta digital | ? | ? | (✓) Sí | ? | ? | ? | ? | ? | (✓) Sí | ? | ? | (✓) En tiendas OXXO | (✓) Competidor directo en depósitos en efectivo |
+| Albo | IFPE y cartera digital | (✓) IFPE | (✓) B2C | (✓) Sí | ? | ? | (✓) Mastercard | ? | (✓) Créditos | ? | ? | ? | ? | ? | — ITF: no puede ofrecer cripto a clientes (Circular 4/2019) | ? | (✓) Destino de depósito |
+| Fondeadora | IFPE y cartera digital | ? | (✓) B2C y B2B | (✓) Cuenta digital | (✓) Sí | ? | (✓) Sí | ? | ? | ? | ? | ? | ? | ? | ? | ? | (✓) Destino de depósito |
+| Cuenca | IFPE y cartera digital | (✓) IFPE | (✓) B2C | (✓) Sí | ? | ? | (✓) Sí | ? | ? | ? | ? | ? | ? | ? | — ITF: no puede ofrecer cripto a clientes (Circular 4/2019) | ? | (✓) Destino de depósito |
+| Finsus | SOFIPO y neobanco | (✓) SOFIPO; busca licencia bancaria | (✓) B2C | (✓) Sí | ? | ? | ? | ? | (✓) Sí | ? | (✓) Inversiones a plazo | ? | ? | ? | — ITF: no puede ofrecer cripto a clientes (Circular 4/2019) | ? | (✓) Destino de depósito |
+| DiDi Finanzas | Crédito y cartera digital | (✓) SOFOM | (✓) B2C | (✓) Cuenta DiDi | ? | ? | ? | (✓) DiDi Card | (✓) Préstamos DiDi | ? | ? | ? | ? | ? | ? | ? | (✓) Destino de depósito y pago de préstamos |
+| Cashi (Walmart) | IFPE y cartera digital | ? | (✓) B2C | (✓) Monedero | ? | ? | ? | ? | ? | ? | ? | ? | ? | ? | ? | (✓) En tiendas Walmart y Bodega Aurrera | (✓) Competidor en depósitos en efectivo |
+| Vexi | Crédito y cartera digital | ? | (✓) B2C | ? | ? | ? | ? | (✓) Tarjeta con cashback | ? | ? | ? | ? | (✓) Pago de servicios con tapi (alianza) | ? | ? | ? | (✓) Destino de pagos de tarjeta |
+| Otros neobancos del mapa 2026: Billú Bank, Bankaya, Now Invex, Covalto, Techreo, Fincomún, Va App, PagaTodo, Miio | SOFIPO y neobanco | (✓) Varias figuras | ? | ? | ? | ? | ? | ? | ? | ? | ? | ? | ? | ? | ? | ? | (✓) Destinos potenciales; revisar uno por uno |
+| Kueski | Crédito y BNPL | ✓ SOFOM ENR | ✓ B2C (mayores de 18) | — | — | — Solo mayores de 18 | — | — | ✓ Kueski Préstamos | — | — | ? | — | — | ? | ✓ Pagos en OXXO y ventanilla BBVA | (✓) Punto de pago de créditos (cobranza en efectivo) |
+| Aplazo | Crédito y BNPL | ? | (✓) B2C y comercios | — | — | — | — | — | (✓) Compra a plazos (BNPL) | ? | — | ? | — | — | ? | ? | (✓) Punto de pago de cuotas |
+| Otros de crédito: Atrato, Baubap, Tala | Crédito y BNPL | (✓) SOFOM u otras | (✓) B2C | — | — | — | — | — | (✓) Sí | — | — | ? | — | — | ? | ? | (✓) Punto de pago de créditos |
+| Konfío | Gasto corporativo y crédito pyme | ✓ SOFOM; busca licencia bancaria (2026) | ✓ B2B (pymes) | — | (✓) Sí | — | — | (✓) Tarjeta empresarial | — | ✓ Capital de trabajo para pymes | — | ? | — | — | ? | ? | (✓) Fuera del modelo; posible crédito para la empresa |
+| Clara | Gasto corporativo y crédito pyme | ? | (✓) B2B | — | (✓) Sí | — | — | (✓) Tarjetas corporativas, incluso respaldadas por stablecoins con Bitso Business | — | (✓) Sí | — | ? | — | — | (✓) Solo para empresas, con Bitso Business | — | (✓) Fuera del modelo; tarjetas para gastos de la empresa |
+| Mendel | Gasto corporativo y crédito pyme | ? | ✓ B2B (clientes como Mercado Libre y AB InBev) | — | ✓ Software de gastos | — | — | ✓ Tarjetas de crédito corporativas | — | ✓ Línea de crédito empresarial | — | ? | — | — | — | — | (✓) Fuera del modelo; gastos de la empresa |
+| GBM | Inversión | (✓) Casa de bolsa | (✓) B2C | (✓) Cuenta de inversión | ? | ? | — | — | — | — | ✓ Opera el fondo de rendimientos de Mercado Pago | — | — | — | — Casa de bolsa: no puede ofrecer cripto | — | (✓) Fuera del modelo |
+| Cetesdirecto | Inversión | (✓) Gobierno federal | (✓) B2C | (✓) Sí | ? | (✓) Cetes Directo Niños | — | — | — | — | (✓) Valores gubernamentales | — | — | — | — | ? | (✓) Fuera del modelo |
+| Alpaca (posible "Alpaka") | Inversión | ✓ Bróker de EE. UU.; da infraestructura a apps mexicanas como Rivium y RUUT | ✓ B2B2C | — | — | — | — | — | — | — | ✓ Acciones de EE. UU. vía apps socias | — | — | — | ? | — | (✓) Fuera del modelo; confirmar con Lucho si se refería a otra empresa |
+| Bitso | Exchange cripto | ✓ Pesos vía Nvio Pagos México (IFPE autorizada por la CNBV); la cripto no la supervisa la CNBV | ✓ B2C y B2B (Bitso Business) | ✓ Sí | ✓ Bitso Business | — Solo mayores de 18 | (✓) Tarjeta Bitso | — | — | — | (✓) Rendimientos en cripto | ? | ? | (✓) Remesas EE. UU.–México | ✓ Compra, venta y custodia | ? | ✓ Destino de depósito en pesos y proveedor de liquidez (API) |
+| Binance | Exchange cripto | ✓ Bmex Techfin, registro ante el SAT como actividad vulnerable; pesos vía Programas de Relacionamiento Medá (IFPE) | ✓ B2C | ✓ Sí | (✓) Binance Pay para comercios | — Solo mayores de 18 | (✓) Tarjeta (según país) | — | — | — | (✓) Earn | ? | ? | ? | ✓ Compra, venta, P2P | ? | (✓) Destino de depósito en pesos |
+| Bitget | Exchange cripto | ✓ Registro ante el SAT (actividad vulnerable) y la UIF, may-2026 | ✓ B2C | ✓ Sí | ? | — Solo mayores de 18 | ? | — | — | — | (✓) Earn | ? | ? | ? | ✓ Compra y venta | ? | (✓) Destino de depósito en pesos (SPEI) |
+| OKX | Exchange cripto | ? | (✓) B2C | (✓) Sí | ? | — Solo mayores de 18 | (✓) Tarjeta OKX | — | — | — | (✓) Earn | ? | ? | ? | (✓) Compra directa con SPEI | ? | (✓) Destino de depósito en pesos |
+| Kraken | Exchange cripto | ? | (✓) B2C | ✓ Sí | ? | — Solo mayores de 18 | ? | — | — | — | ? | ? | ? | ? | ✓ Compra y venta | — Solo SPEI desde una CLABE a nombre del usuario; mínimo $150; convierte a USD | — Un depósito desde el kiosco sería de un tercero y se rechazaría |
+| Coinbase | Exchange cripto | ? | (✓) B2C | (✓) Acceso desde México | ? | — Solo mayores de 18 | ? | — | — | — | ? | ? | ? | (✓) Retiros a México para remesas | ✓ Compra y venta | — Sin depósito en pesos según comparador (jun-2026) | — Sin depósito en pesos |
+| Otros exchanges: Bybit, Crypto.com, KuCoin, BingX | Exchange cripto | (✓) Licencias extranjeras | (✓) B2C | (✓) Sí | ? | — Solo mayores de 18 | ? | — | — | — | ? | ? | ? | ? | ✓ Compra y venta | (✓) P2P o SPEI (BingX) | (✓) Destinos secundarios |
+| Tauros, Volabit, Airtm, RedotPay | Exchange cripto | ? | (✓) B2C | (✓) Sí | ? | ? | (✓) Tarjetas cripto (RedotPay) | — | — | — | ? | ? | ? | (✓) Sí (Airtm, RedotPay) | (✓) Sí | ? | (✓) Destinos secundarios |
+| CoinFlip | Cajero cripto | ? | ✓ B2C con cajeros físicos | — | — | — | — | — | — | — | — | — | — | — | ✓ Compra y venta en casi 50 cajeros en México (26 en CDMX) y un Crypto Center | ✓ Recibe efectivo | ✓ Socio para alojar su cajero (paga renta mensual al anfitrión) o competidor |
+| Bitlem | Cajero cripto | ? | ✓ B2C | — | — | — | — | — | — | — | — | — | — | — | ✓ Cajeros y casa de cambio física en CDMX | ✓ Recibe efectivo | (✓) Socio o competidor |
+
+**Lectura por tipo de entidad:**
+
+- **Banca tradicional (14 bancos principales).** Todos ofrecen cuentas, crédito y servicios; ninguno puede ofrecer cripto. Son los candidatos naturales para **comisionista** y **banco patrocinador SPEI** (V4). Azteca y BanCoppel tienen redes propias de depósito en sus tiendas, así que son a la vez socios y competidores.
+- **Banca digital con licencia (Nu, Revolut, Openbank, Hey Banco, Plata, Klar/bineo, Ualá, Kapital).** Ya hay **al menos ocho neobancos con licencia bancaria, propia o adquirida**. Nu opera como banco desde el 10 de julio de 2026 con más de 15 millones de clientes [H], y es el destino de depósito con más usuarios potenciales en un casino. Como bancos, tampoco pueden ofrecer cripto.
+- **IFPE y carteras (Mercado Pago, Spin by OXXO, Albo, Fondeadora, Cuenca, Cashi).** Son los destinos clásicos del modelo de depósito. **Spin by OXXO y Cashi (Walmart) son competencia directa** porque ya reciben efectivo en sus propias tiendas.
+- **SOFIPO (Stori, Klar, Finsus).** Pueden captar depósitos y ser destino. Stori ya recibe remesas desde EE. UU. [H].
+- **Crédito y BNPL (Kueski, Aplazo, DiDi, Atrato, Baubap, Tala).** No captan depósitos, pero **cobran cuotas**. El kiosco puede ser **punto de pago de créditos** en efectivo; Kueski ya acepta pagos en OXXO [H]. Es una línea de ingreso adicional parecida al pago de servicios.
+- **Gasto corporativo y crédito pyme (Konfío, Clara, Mendel).** Son **B2B puros**: no atienden personas, así que no sirven como destino de depósito del usuario del casino. Sirven para la operación de nuestra empresa (tarjetas para gastos, crédito de capital de trabajo).
+- **Exchanges cripto (Bitso, Binance, Bitget, OKX, Kraken, Coinbase y otros).** Ver V6.4.
+- **Cajeros cripto (CoinFlip, Bitlem).** Ver V6.4.
+
+### V6.3 Regulación de cripto aplicable al kiosco
+
+| Tema | Qué dice | Qué significa para el kiosco | Fuente |
+|---|---|---|---|
+| Bancos e ITF | La Circular 4/2019 de Banxico (DOF 8-mar-2019) solo permite a las instituciones operaciones **internas** con activos virtuales, con autorización previa, y les prohíbe trasladar el riesgo a sus clientes o darles servicios de intercambio, transmisión o custodia [H]. | Ningún banco, IFPE ni SOFIPO socio del kiosco puede vender cripto. Un banco patrocinador puede ver con recelo que su comisionista haga cripto en el mismo kiosco [S]. | Banxico, Circular 4/2019 |
+| Postura vigente | En mayo de 2026 la CNBV ratificó que ningún banco ni casa de bolsa tiene autorización para comprar, vender o custodiar cripto [H]. | Confirma que el riel cripto debe ir por fuera del sistema bancario. | iProUP, 12-may-2026 |
+| Exchanges | Operan registrados ante el SAT como actividad vulnerable de activos virtuales. Ejemplos: Binance (Bmex Techfin) [H], Bitget (SAT y UIF, mayo de 2026) [H]. Los pesos los mueve una IFPE aparte: Nvio Pagos México para Bitso y Medá para Binance [H]. | Si la empresa intercambia cripto, entra en la misma figura. | Finantres (sep-oct 2026), DPL News (15-may-2026) |
+| Actividad vulnerable (LFPIORPI art. 17 fr. XVI) | Registro en el SPPLD del SAT; **identificación de todos los clientes**; aviso cuando una operación llega a **210 UMA ($24,635.10 en 2026)** o la comisión llega a 4 UMA ($469.24); aviso a más tardar el día 17 del mes siguiente; expediente por **10 años** [H]. La reforma del 16-jul-2025 bajó el umbral desde 645 UMA e incluye operaciones con mexicanos desde otra jurisdicción [H]. | KYC completo en **cada** compra, sin importar el monto. Sistema de avisos mensuales. | Expansión (18-mar-2026 y 15-oct-2026), EY (2025), KYC Systems |
+| Volumen de avisos | Entre enero y septiembre de 2026 hubo 1.2 millones de avisos de activos virtuales, 52% más que el año anterior; ya es la tercera de 16 actividades vulnerables [H]. | La UIF revisa activamente este sector. | Expansión, 15-oct-2026 |
+| Efectivo en juegos | LFPIORPI art. 32 fr. IV restringe el pago en efectivo de boletos y premios de juegos con apuesta desde 3,210 UMA [H]. El art. 32 no incluye activos virtuales [H]. | La compra de cripto con efectivo no tiene tope del art. 32, pero el casino sí tiene tope para premios. No se debe usar el kiosco para convertir premios en cripto sin control. | KYC Systems |
+| Juegos y sorteos | La Ley Federal de Juegos y Sorteos (1947) no menciona cripto; desde 2026 el IEPS a juegos con apuesta subió de 30% a 50%; hay iniciativa para una nueva ley [H]. | No hay permiso explícito para que el casino acepte cripto como apuesta. El kiosco **no debe** acreditar saldo de juego con cripto [S]. | Vanguardia (20-ago-2026) |
+| Advertencias | Banxico, SHCP y CNBV han advertido sobre los riesgos de los activos virtuales (2014, 2017, 2019, 2021) [H]. | La pantalla del kiosco debe mostrar un aviso de riesgo antes de comprar. | IDC Online, 29-jun-2021 |
+
+**Puntos abiertos [P]:** tratamiento de IVA e ISR de la comisión por intercambio; si la Regla Viaje del GAFI (datos de origen y destino en transferencias de cripto) es exigible en México; si el permisionario de SEGOB debe autorizar un servicio cripto dentro de la sala; si Nvio o Medá aceptan comisionistas que reciban efectivo para cuentas de Bitso o Binance.
+
+### V6.4 Socios posibles para cripto
+
+| Operador | Figura y registro en México | Depósito en pesos | Comisiones públicas | Producto para empresas o API | Programa de partners o afiliados | Utilidad para el kiosco |
+|---|---|---|---|---|---|---|
+| Bitso | ✓ Pesos vía Nvio Pagos México (IFPE, autorizada ene-2020) | ✓ SPEI (guía oct-2026); un comparador también menciona OXXO, no confirmado | (✓) 0.5% maker / 0.75% taker (comparador, jun-2026) | ✓ Bitso Business: API única, rampas de entrada y salida fiat, pagos en stablecoins, FX; atiende "industrias de alto riesgo" | ✓ Formulario en bitso.com/business/about-us | ✓ Mejor candidato como proveedor de liquidez para un kiosco que venda cripto |
+| Binance | ✓ Bmex Techfin (SAT, actividad vulnerable); pesos vía Medá (IFPE) | ✓ P2P, muchas veces pagado por SPEI | (✓) 0.1% (comparador) | (✓) Binance Pay | (✓) Programa de afiliados; condiciones no revisadas hoy | (✓) Destino de depósito si Medá acepta comisionistas [P] |
+| Bitget | ✓ SAT y UIF, may-2026 | (✓) SPEI | (✓) 0.1% (comparador) | ? | (✓) Programa de afiliados; no revisado hoy | (✓) Destino de depósito |
+| OKX | ? | (✓) Compra directa con SPEI | (✓) 0.08% (comparador) | ? | (✓) Programa de afiliados; no revisado hoy | (✓) Destino de depósito |
+| Kraken | ? | ✓ Solo SPEI desde CLABE a nombre del usuario; mínimo $150; sin comisión; convierte a USD | (✓) 0.16% (comparador) | ? | (✓) Programa de afiliados; no revisado hoy | — No sirve para depósito desde el kiosco (sería un tercero) |
+| Coinbase | ? | — Sin depósito en pesos (comparador) | (✓) Aprox. 1.49% (comparador) | ? | (✓) Programa de afiliados; no revisado hoy | — No aplica |
+| Mercado Pago | ✓ IFPE; cripto vía Paxos | ✓ El usuario ya puede depositar efectivo en su cuenta en la red de corresponsales | ? | — | ✓ Mercado Pago Partners (integradores) | ✓ Ruta más simple: el kiosco deposita pesos en Mercado Pago y el usuario compra cripto en su app |
+| CoinFlip | ? | ✓ Efectivo en cajero | (✓) Cajeros en México: 6% por operación más $50 (Expansión, dic-2024; no específico de CoinFlip) | — | ✓ Programa para anfitriones: CoinFlip instala, da soporte y recoge el efectivo; paga renta mensual; espacio de 1.5 pies cuadrados y un contacto | ✓ Piloto rápido: alojar su cajero en el casino sin ser el operador |
+| Bitlem | ? | ✓ Efectivo | ? | — | ? | (✓) Alternativa de socio para cajero |
+
+**Lectura:** **Mercado Pago** es la ruta más simple porque el depósito en efectivo ya funciona y el usuario compra bitcoin o ethereum en su app (lanzado en octubre de 2022 con Paxos; la vigencia en 2026 no se verificó) [H/P]. **Bitso Business** es el mejor candidato como **proveedor de liquidez** si la empresa vende cripto en el kiosco: tiene una sola API con rampas fiat, stablecoins y FX, y dice atender industrias de alto riesgo [H]. **Kraken no sirve para depósitos desde el kiosco**, porque solo acepta SPEI desde una CLABE a nombre del usuario [H]. **CoinFlip** permite un piloto inmediato: instala, da soporte, recoge el efectivo y paga renta mensual al anfitrión [H].
+
+### V6.5 Las cuatro modalidades del kiosco cripto
+
+**Diagrama 7. Cuatro formas de que el kiosco transaccione cripto** (imagen: `diagramas/d7-cripto-modalidades.png`).
+
+```mermaid
+flowchart TB
+  U(["Usuario en el casino<br/>con efectivo"])
+  U --> K["Kiosco de la empresa"]
+  K --> A["A. Depósito en pesos a su cuenta<br/>(Mercado Pago, Bitso, Binance...)<br/>el usuario compra cripto en su app"]
+  K --> B["B. Compra de cripto en el kiosco<br/>entrega a la wallet del usuario"]
+  K --> C["C. Venta de cripto en el kiosco<br/>el kiosco entrega efectivo"]
+  K --> D["D. Cajero de un tercero en el casino<br/>(CoinFlip, Bitlem)"]
+  A --> A1["La empresa no toca cripto.<br/>Sigue siendo comisionista o agregador.<br/>Sin registro adicional"]
+  B --> B1["La empresa intercambia activos virtuales:<br/>actividad vulnerable (LFPIORPI art. 17 fr. XVI).<br/>Alta en el SPPLD, KYC siempre, avisos desde 210 UMA"]
+  C --> C1["Igual que B, más dispensar efectivo:<br/>reciclador, riesgo de lavado y de juego<br/>con dinero de cripto"]
+  D --> D1["El tercero es el operador y el sujeto obligado.<br/>El anfitrión cobra renta mensual"]
+  A1 --> R1["Fase 1"]
+  D1 --> R1
+  B1 --> R2["Fase 2, con empresa separada"]
+  C1 --> R3["No recomendado al inicio"]
+  classDef ok fill:#e3f3ea,stroke:#1f7a4d,color:#1f1d1a
+  classDef mid fill:#f6f0d9,stroke:#7a6a1f,color:#1f1d1a
+  classDef no fill:#f7e1de,stroke:#a33a2a,color:#1f1d1a
+  class A,A1,D,D1,R1 ok
+  class B,B1,R2 mid
+  class C,C1,R3 no
+```
+
+| Modalidad | Qué hace el kiosco | Figura de la empresa | Ingreso | Riesgo | Recomendación |
+|---|---|---|---|---|---|
+| **A. Depósito en pesos a una plataforma cripto** | Recibe efectivo y lo abona en la cuenta del usuario en Mercado Pago, Bitso, Binance, etc. El usuario compra cripto en su app. | La misma del modelo base: comisionista o punto de agregador [H]. Para Bitso o Binance hace falta un convenio con su IFPE (Nvio, Medá) [P]. | Comisión por depósito, igual que el modelo base. | Bajo; la cripto la vende la plataforma. | **Fase 1** |
+| **B. Compra de cripto en el kiosco** | Recibe efectivo, compra la cripto a un proveedor de liquidez y la envía a la wallet del usuario. | Actividad vulnerable fr. XVI: alta en el SPPLD, KYC siempre, avisos, expediente 10 años [H]. | Comisión más diferencial de precio. Referencia de mercado: 6% más $50 por operación en cajeros en México [H, Expansión dic-2024]. | Medio-alto: lavado, wallets riesgosas, volatilidad entre el cobro y la compra. | **Fase 2, empresa separada** |
+| **C. Venta de cripto en el kiosco** | El usuario envía cripto y el kiosco le entrega efectivo. | Igual que B, más manejo de efectivo para dispensar. | Comisión y diferencial. | Alto: efectivo para apostar con origen cripto. | **No al inicio** |
+| **D. Cajero de un tercero** | El casino aloja un cajero de CoinFlip o Bitlem. | Ninguna nueva; el operador es el sujeto obligado [S]. | Renta mensual del operador (monto no público) [H]. | Bajo para la empresa. | **Fase 1, piloto** |
+
+**Diagrama 8. Flujo de una compra de cripto en el kiosco (modalidad B)** (imagen: `diagramas/d8-cripto-compra.png`).
+
+```mermaid
+sequenceDiagram
+  autonumber
+  actor U as Usuario
+  participant K as Kiosco
+  participant P as Plataforma cripto de la empresa
+  participant L as Proveedor de liquidez (p. ej. Bitso Business)
+  participant BC as Blockchain
+  participant SAT as SAT / UIF (SPPLD)
+  U->>K: Elige "Comprar cripto" y la moneda
+  K->>U: Pide INE, selfie con prueba de vida y datos (identificación siempre)
+  K->>P: Envía expediente y wallet destino
+  P->>P: Revisa listas, monto acumulado y riesgo de la wallet (análisis de blockchain)
+  P-->>K: Aprobado, con cotización y comisión
+  U->>K: Inserta billetes
+  K->>P: Confirma monto recibido
+  P->>L: Compra la cripto al precio cotizado
+  L->>BC: Envía la cripto a la wallet del usuario
+  BC-->>P: Confirmación de la transacción
+  P-->>K: Comprobante con hash de la transacción
+  K-->>U: Imprime comprobante
+  Note over P,SAT: Si la operación o el acumulado llega a 210 UMA ($24,635.10 en 2026), aviso a más tardar el día 17 del mes siguiente. Expediente se guarda 10 años
+  P->>SAT: Aviso mensual (o informe en ceros)
+```
+
+### V6.6 Requisitos legales adicionales para la modalidad B
+
+Se suman a la lista de arranque de V4.6.
+
+1. **Empresa separada (S.A. de C.V. o S.A.P.I.)** con objeto social que incluya intercambio de activos virtuales, distinta de la que es comisionista de bancos [S].
+2. **Alta en el SPPLD del SAT** como actividad vulnerable de operaciones con activos virtuales, antes de la primera operación [H].
+3. **Representante encargado de cumplimiento** ante el SAT y **manual de políticas de identificación y PLD** [S].
+4. **Identificación completa en cada operación:** INE, selfie con prueba de vida, actividad económica; para empresas, la persona física responsable [H].
+5. **Avisos mensuales** cuando la operación o la comisión superen los umbrales (210 UMA y 4 UMA), a más tardar el día 17 del mes siguiente [H]; informe en ceros los meses sin avisos [S].
+6. **Conservación de expedientes por 10 años** [H].
+7. **Análisis de blockchain** para revisar el riesgo de cada wallet destino (proveedores como Chainalysis o Elliptic) [S].
+8. **Contrato con un proveedor de liquidez** (por ejemplo, Bitso Business) que fije precio, tiempos y límites [S].
+9. **Política de no custodia:** enviar siempre a la wallet del usuario y no guardar cripto de clientes, para no convertirse en custodio [S].
+10. **Aviso de riesgo y términos y condiciones** en pantalla, con lo que exige la Profeco para servicios al consumidor [S].
+11. **Acuerdo con el casino** que deje claro que el kiosco no acredita saldo de juego con cripto, y revisión de si el permiso de SEGOB lo permite [P].
+12. **Dictamen fiscal** sobre ISR e IVA de la comisión y del diferencial [P].
+
+### V6.7 Recomendación
+
+- **Fase 1 (con el lanzamiento):** incluir en el menú del kiosco la opción "Depositar para comprar cripto" con Mercado Pago (ya disponible) y negociar con Bitso (Nvio) y Binance (Medá) si aceptan depósitos en efectivo vía comisionista. En paralelo, **piloto con CoinFlip** en uno o dos casinos para medir la demanda real sin carga regulatoria.
+- **Fase 2 (si el piloto muestra demanda):** crear la empresa cripto separada, registrarla en el SPPLD, contratar a Bitso Business como proveedor de liquidez y habilitar la compra en el kiosco (modalidad B).
+- **No hacer por ahora:** venta de cripto con entrega de efectivo (C) ni acreditar saldo de juego con cripto.
+- **Preguntas nuevas para Lucho:** (1) ¿qué cripto quiere ofrecer (bitcoin, stablecoins como USDT y USDC, otras)?; (2) ¿solo compra o también venta?; (3) ¿los casinos aliados ya tienen interés o restricciones sobre cripto?; (4) ¿"Alpaka" es Alpaca u otra empresa?
 
 ---
 
@@ -221,11 +427,12 @@ Quién es el cliente de cada uno, qué sectores atiende y qué ofrece a personas
 | Pago de servicios | ✓ Sí | ? | — | ? | — | — | — | — | ✓ Sí | — | — |
 | Recargas de tiempo aire | ✓ Sí | ? | — | ? | — | — | — | — | ✓ Sí | — | — |
 | Remesas | ✓ Sí | (✓) Klu Sin Fronteras (anunciado, marca blanca) | ✓ Cross Border | ? | — | — | — | — | (✓) Pagos internacionales (próxima fase) | — | — |
+| Cripto | (✓) Bitcoin y ethereum vía Paxos (lanzado oct-2022; vigencia 2026 no verificada) | — IFPE: no puede ofrecer cripto | — | ? | — | — | — | — | — IFPE: no puede ofrecer cripto | — | (✓) Stablecoins en otros países |
 | Depósito de efectivo en tiendas | ✓ Red de corresponsales | ? | — | ? | — | — | — | — | ? | — | — |
 | Figura en México | ✓ IFPE; licencia bancaria en trámite | ✓ IFPE; Sofipo en trámite | ✓ Transmisor de dinero (Tesored) | ? | ✓ Revendedor sobre Getnet | ? No publicada | ✓ Adquirente no bancario directo | (✓) Grupo BBVA | ✓ IFPE | (✓) Adquirente | (✓) Opera con socios locales |
 | Rol para nuestro kiosco | ✓ Destino de depósitos y partner | (✓) Destino (monederos) y partner de cobro | (✓) Riel SPEI | (✓) Tarjeta del kiosco | ✓ Reventa de cobro a casinos | ✓ Reventa de cobro a casinos | (✓) Reventa (modelo Mark Up) | (✓) Reventa | (✓) Destino (Mi Clip) y terminales | ✓ Reventa de cobro a casinos | — Restringe juego |
 
-**Lectura:** solo **Mercado Pago** y **Clip** (con Mi Clip, desde jun-2026) atienden directamente a personas; los demás venden a empresas. Para el kiosco, los que tienen usuario final son **destinos de depósito** y los B2B son **socios para revender cobro**. Ninguno ofrece cuentas para menores en México según lo consultado (Mercado Pago sí en Argentina). Fuentes: Bancario.com.mx (productos de Mercado Pago para personas), Expansión (seguro de vida de Mercado Pago, 28-feb-2023), comunicado de Clip sobre Mi Clip (9-jun-2026) y los sitios de cada procesador.
+**Lectura:** solo **Mercado Pago** y **Clip** (con Mi Clip, desde jun-2026) atienden directamente a personas; los demás venden a empresas. Para el kiosco, los que tienen usuario final son **destinos de depósito** y los B2B son **socios para revender cobro**. Ninguno de estos 11 procesadores ofrece cuentas para menores en México (Mercado Pago sí en Argentina); los bancos sí las ofrecen (ver V6.2). Fuentes: Bancario.com.mx (productos de Mercado Pago para personas), Expansión (seguro de vida de Mercado Pago, 28-feb-2023), comunicado de Clip sobre Mi Clip (9-jun-2026) y los sitios de cada procesador.
 
 #### V5.4.3 Programas de partners: cómo inscribirse
 
@@ -1571,6 +1778,39 @@ Presupuesto de los 90 días: **$1.2 a $2.0 M MXN** [E].
 - Banlink Payment Solutions, "Propuesta Ejecutiva de Pagos" y "Requisitos para el registro de casinos en línea (MCC 7995)": documentos confidenciales compartidos por Lucho (9-nov-2026); no públicos.
 - 88 Pay (enlaces de Lucho, no legibles desde este entorno): https://developers.88pay.io/en/getting-started/introduction · https://developers.88pay.io/en/countries/mexico
 
+**Fuentes agregadas en la versión 5.0 (consultadas el 9-nov-2026)**
+
+- Banco de México, Circular 4/2019 (DOF 8-mar-2019): https://www.banxico.org.mx/marco-normativo/normativa-emitida-por-el-banco-de-mexico/circular-4-2019/{8D7769AF-03F6-701A-68AA-EF25A73AD035}.pdf
+- iProUP, "Bitcoin y bancos mexicanos: sigue prohibido" (12-may-2026): https://www.iproup.com/economia-digital/67728-bitcoin-bancos-mexicanos-sigue-prohibido-acceder-legalmente-mayo-2026
+- Expansión, obligaciones de activos virtuales ante el SAT (18-mar-2026): https://expansion.mx/finanzas-personales/2026/03/18/sat-criptomonedas-actividad-vulnerable
+- Expansión, avisos antilavado por cripto (15-oct-2026): https://expansion.mx/economia/2026/10/15/las-criptomonedas-disparan-52-los-avisos-antilavado-ante-la-uif
+- EY, reforma a la Ley Antilavado (DOF 16-jul-2025): https://www.ey.com/content/dam/ey-unified-site/ey-com/es-mx/technical/tax/documents/ey-tax-flash-reforma-ley-antilavado-2025.pdf
+- KYC Systems, umbrales LFPIORPI 2026 (UMA $117.31): https://kyc-systems.com/blog/umbrales-lfpiorpi-2026 y restricción de efectivo (art. 32): https://kyc-systems.com/blog/restriccion-pago-en-efectivo
+- Finantres, figura de Bitso (Nvio Pagos México, IFPE; act. 14-oct-2026): https://finantres.mx/bitso-esta-regulado/ ; depósitos en Bitso (act. 21-oct-2026): https://finantres.mx/bitso-oxxo/ ; Binance en México (Bmex Techfin y Medá; 24-sep-2026): https://finantres.mx/binance-latinoamerica/
+- CriptoNoticias, filial de Bitso autorizada como IFPE (22-ene-2020): https://www.criptonoticias.com/regulacion/filial-bitso-primera-empresa-operar-ley-fintech-mexico
+- DPL News, Bitget con registro ante el SAT y la UIF (15-may-2026): https://dplnews.com/bitget-registro-sat-uif-mexico/
+- Kraken, cómo depositar pesos mexicanos: https://support.kraken.com/mx/articles/how-to-deposit-mxn
+- ComparaLatam, comparativa de exchanges en México (jun-2026): https://comparalatam.com/mx/crypto/
+- Bitso Business: https://bitso.com/business/about-us
+- CoinFlip, casi 50 cajeros en México y Crypto Center (Business Wire, 17-dic-2025): https://www.businesswire.com/news/home/20251217632435/es ; programa para anfitriones: https://coinflip.tech/news/how-to-host-a-bitcoin-atm
+- Expansión, cajeros de criptomonedas en México (30-dic-2024): https://expansion.mx/finanzas-personales/2024/12/30/cajeros-de-criptomonedas-en-mexico-compra-venta
+- Xataka, Mercado Pago permite comprar cripto en México con Paxos (29-oct-2022): https://www.xataka.com.mx/criptomonedas/mercado-pago-permite-comprar-criptomonedas-mexico-asi-se-pueden-adquirir-bitcoin-ethereum-su-app
+- Vanguardia, cambios a la regulación de casinos y apuestas en 2026 (20-ago-2026): https://www.vanguardia.com/mundo/2026/08/20/asi-cambio-la-regulacion-de-apuestas-y-casinos-en-mexico-en-2026/
+- Latam Fintech, Mapa de neobancos en México 2026 (23-jul-2026): https://www.latamfintech.co/listings/mapa-de-neobancos-en-mexico---2026
+- Expansión, Plata es el quinto neobanco con licencia (19-feb-2026): https://expansion.mx/economia/2026/02/19/plata-es-quinto-neobanco-en-mexico
+- Mobile Time, Nu inicia operaciones como banco (7-ago-2026): https://mobiletime.la/noticias/07/08/2026/nu-mexico-banco/
+- Descubre, licencia bancaria de Mercado Pago (10-sep-2026): https://www.descubre.vc/noticia/mercado-pago-avanza-hacia-licencia-bancaria-en-m-xico-y-apunta-al-mercado-de-n-mina-2026-09-10
+- Xataka, Revolut en México (28-ene-2026): https://www.xataka.com.mx/banca-digital/revolut-nuevo-banco-que-llega-a-mexico-puedes-crear-tu-cuenta-para-tener-15-rendimiento
+- Expansión, Stori recibe remesas (18-oct-2025): https://expansion.mx/economia/2025/10/18/stori-permitira-recepcion-de-remesas-y-aumentara-captacion
+- Financera, neobancos en México (18-nov-2025): https://financera.mx/prestamos/articulos/neobancos ; Kueski (act. 5-sep-2026): https://financera.mx/review/kueski-mexico/
+- El Financiero, nuevos bancos en México (28-nov-2025): https://www.elfinanciero.com.mx/economia/2025/11/28/nuevos-bancos-en-mexico-cuales-pelearan-por-atraer-a-la-clase-media/
+- Publimetro, Cuenta para Chavos de BBVA (19-mar-2025): https://www.publimetro.com.mx/noticias/2025/03/20/cuenta-para-chavos-de-bbva-mexico-requisitos-caracteristicas-y-beneficios-que-brinda/
+- El Universal, cuentas para niños (Hey Banco): https://www.eluniversal.com.mx/cartera/buscas-regalo-para-el-30-de-abril-bancos-quieren-que-ninos-ahorren-en-cuentas-digitales/
+- Kardmatch, cuentas de ahorro para niños 2026: https://blog.kardmatch.com.mx/cuentas-de-ahorro-para-ninos
+- Forbes México, Mendel (22-feb-2023): https://www.forbes.com.mx/mendel-devolverle-agilidad-a-los-negocios-a-traves-de-una-mejor-gestion-de-procesos/
+- iProUP, Konfío busca ser banco: https://www.iproup.com/economia-digital/67589-konfio-acelera-su-plan-para-transformarse-en-banco-y-reforzar-el-credito-a-pymes-en-mexico
+- Alpaca, apps mexicanas Rivium y RUUT: https://alpaca.markets/blog/sylon-launches-rivium-with-alpaca-to-make-investing-more-accessible-for-mexican-investors/
+
 ## Anexo B. Pendientes de validación
 
 1. Lista de sectores de la SHCP (art. 13 de la Ley de Economía Digital) y texto oficial del DOF.
@@ -1597,3 +1837,11 @@ Presupuesto de los 90 días: **$1.2 a $2.0 M MXN** [E].
 22. Documentación de 88 Pay (productos, licencia, programa de partners) y esquema de partner de Banlink (tarifa, cuota fija, contracargos).
 23. De qué procesador son las tablas de precio por volumen, quién se queda con la cuota fija y si aceptan el giro de juego.
 24. Si revender procesamiento de tarjetas exige registro como agregador ante Banxico o como agente ante Visa y Mastercard.
+25. Si Nvio Pagos México (Bitso) y Medá (Binance) aceptan comisionistas o agregadores que reciban efectivo para cuentas de sus clientes.
+26. Si Mercado Pago sigue ofreciendo bitcoin y ethereum en México en 2026 y con qué socio.
+27. Tratamiento de ISR e IVA de la comisión y del diferencial por intercambio de activos virtuales.
+28. Si la Regla Viaje del GAFI para transferencias de activos virtuales es exigible en México y cómo cumplirla.
+29. Si el permiso de SEGOB del casino permite un servicio cripto dentro de la sala.
+30. Monto de la renta que CoinFlip paga a los anfitriones en México y condiciones del contrato.
+31. Si un banco patrocinador o un comisionista bancario puede compartir kiosco con un servicio cripto de otra empresa del grupo.
+32. Qué empresa quiso decir Lucho con "Alpaka".

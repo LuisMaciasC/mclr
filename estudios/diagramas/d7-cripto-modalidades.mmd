@@ -1,0 +1,21 @@
+flowchart TB
+  U(["Usuario en el casino<br/>con efectivo"])
+  U --> K["Kiosco de la empresa"]
+  K --> A["A. Depósito en pesos a su cuenta<br/>(Mercado Pago, Bitso, Binance...)<br/>el usuario compra cripto en su app"]
+  K --> B["B. Compra de cripto en el kiosco<br/>entrega a la wallet del usuario"]
+  K --> C["C. Venta de cripto en el kiosco<br/>el kiosco entrega efectivo"]
+  K --> D["D. Cajero de un tercero en el casino<br/>(CoinFlip, Bitlem)"]
+  A --> A1["La empresa no toca cripto.<br/>Sigue siendo comisionista o agregador.<br/>Sin registro adicional"]
+  B --> B1["La empresa intercambia activos virtuales:<br/>actividad vulnerable (LFPIORPI art. 17 fr. XVI).<br/>Alta en el SPPLD, KYC siempre, avisos desde 210 UMA"]
+  C --> C1["Igual que B, más dispensar efectivo:<br/>reciclador, riesgo de lavado y de juego<br/>con dinero de cripto"]
+  D --> D1["El tercero es el operador y el sujeto obligado.<br/>El anfitrión cobra renta mensual"]
+  A1 --> R1["Fase 1"]
+  D1 --> R1
+  B1 --> R2["Fase 2, con empresa separada"]
+  C1 --> R3["No recomendado al inicio"]
+  classDef ok fill:#e3f3ea,stroke:#1f7a4d,color:#1f1d1a
+  classDef mid fill:#f6f0d9,stroke:#7a6a1f,color:#1f1d1a
+  classDef no fill:#f7e1de,stroke:#a33a2a,color:#1f1d1a
+  class A,A1,D,D1,R1 ok
+  class B,B1,R2 mid
+  class C,C1,R3 no
