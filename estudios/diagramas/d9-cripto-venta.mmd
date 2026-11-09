@@ -1,0 +1,17 @@
+sequenceDiagram
+  autonumber
+  actor U as Usuario sin celular
+  participant K as Kiosco (comisionista)
+  participant X as Exchange (p. ej. Bitso)
+  participant I as IFPE del exchange (p. ej. Nvio)
+  U->>K: Elige "Vender cripto y retirar efectivo"
+  K->>U: Pide INE y rostro con prueba de vida
+  K->>X: Autenticación facial contra el expediente del exchange
+  X-->>K: Usuario confirmado, saldo y límites
+  U->>K: Indica cuánto vender
+  K->>X: Orden de venta en la cuenta del usuario (sujeto a dictamen)
+  X->>I: Pesos de la venta al saldo del usuario
+  I-->>K: Autoriza el retiro en efectivo
+  K->>K: Reciclador entrega billetes (o vale para la caja del casino)
+  K-->>U: Efectivo y comprobante
+  Note over K,I: La empresa entrega pesos por cuenta de la IFPE. La venta la ejecutó el exchange

@@ -1,22 +1,21 @@
 sequenceDiagram
   autonumber
   actor U as Usuario
-  participant K as Kiosco
-  participant P as Plataforma cripto de la empresa
-  participant L as Proveedor de liquidez (p. ej. Bitso Business)
-  participant BC as Blockchain
-  participant SAT as SAT / UIF (SPPLD)
-  U->>K: Elige "Comprar cripto" y la moneda
-  K->>U: Pide INE, selfie con prueba de vida y datos (identificación siempre)
-  K->>P: Envía expediente y wallet destino
-  P->>P: Revisa listas, monto acumulado y riesgo de la wallet (análisis de blockchain)
-  P-->>K: Aprobado, con cotización y comisión
+  participant K as Kiosco (comisionista)
+  participant I as IFPE del exchange (p. ej. Nvio)
+  participant X as Exchange (p. ej. Bitso)
+  U->>K: Elige "Comprar cripto" y su exchange
+  K->>U: Pide identificador de su cuenta (o INE y rostro si no recuerda los datos)
+  K->>I: Valida la cuenta del usuario y el monto permitido
+  I-->>K: Cuenta válida, límite disponible
   U->>K: Inserta billetes
-  K->>P: Confirma monto recibido
-  P->>L: Compra la cripto al precio cotizado
-  L->>BC: Envía la cripto a la wallet del usuario
-  BC-->>P: Confirmación de la transacción
-  P-->>K: Comprobante con hash de la transacción
-  K-->>U: Imprime comprobante
-  Note over P,SAT: Si la operación o el acumulado llega a 210 UMA ($24,635.10 en 2026), aviso a más tardar el día 17 del mes siguiente. Expediente se guarda 10 años
-  P->>SAT: Aviso mensual (o informe en ceros)
+  K->>I: Notifica el depósito en pesos a nombre de la IFPE
+  I->>X: Saldo en pesos disponible en la cuenta del usuario
+  alt Con celular
+    U->>X: Compra la cripto en su app
+  else Sin celular (fase 2, sujeto a dictamen)
+    K->>X: Orden de compra en la cuenta del usuario, autenticada por el exchange
+  end
+  X-->>U: Cripto en su cuenta del exchange
+  K-->>U: Comprobante del depósito
+  Note over K,I: La empresa solo recibió pesos por cuenta de la IFPE. La compra la ejecutó el exchange

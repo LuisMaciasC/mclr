@@ -1,7 +1,7 @@
 # Estudio de prefactibilidad: red neutral de kioscos de depósito en efectivo (cash-in multibanco) para casinos en México
 
-**Versión:** 5.0 · **Fecha de investigación y consulta de fuentes:** 9 de noviembre de 2026
-**Cambios de la versión 4.0:** nueva sección V4 (precios reales de Mercado Pago por cadena según la app; tapi, PayCash y PESPay a detalle; revisión de los padrones del SPEI de Banxico; requisitos legales por tipo de empresa; seis diagramas del flujo del kiosco en `estudios/diagramas/`). **Versión 5.0:** nueva sección V6: universo completo de bancos, fintechs y exchanges en México, y kioscos que también transaccionen cripto (regulación, cuatro modalidades, socios, requisitos y diagramas 7 y 8). **Versión 4.5:** perfil B2B o usuario final de cada operador (V5.4.2). **Versión 4.5:** perfil B2B o usuario final de cada operador (V5.4.2). **Versión 4.5:** perfil B2B o usuario final de cada operador (V5.4.2). **Versión 4.4:** comparativa producto por producto (V5.4.1) y programas de partners con liga de inscripción (V5.4.2). **Versión 4.3:** detalle de Banlink con sus documentos (V5.2.1). **Versión 4.2:** nueva sección V5 (ser partner de procesadores de pago: Klu, Mercado Pago, Cobre, 88 Pay, Banlink, Tonder y otros; tabla comparativa de productos; análisis de las tablas de precio por volumen). **Versión 4.1:** lista legal completa de arranque (sección V4.6: constitución, fiscal, laboral, marca, datos, equipo, licencias por casino y municipio, seguros y ruta crítica). **Cambios de la versión 3.0:** nueva sección 0 (comisión por depósito y precios de referencia de las cadenas; cómo operan tapi, PayCash y redes similares; flujo de efectivo con cuenta propia frente a patrocinador; KYC completo en kiosco y acceso "como cajero") y modelo financiero con comisión cobrada a las entidades. **Cambio de la versión 2.0 respecto a la 1.0:** el modelo ya no es "kiosco que emite una tarjeta de un emisor". Ahora es el que definió Lucho: **un kiosco neutral donde el usuario elige el banco, la IFPE o el procesador al que quiere abonar su efectivo, o abre una cuenta nueva**, igual que los comercios que hoy reciben depósitos "en nombre de" Mercado Pago u otras entidades. La empresa es intermediaria entre las entidades financieras y el cliente, y no queda amarrada a un solo banco o procesador. La versión 1.0 queda en el historial del repositorio.
+**Versión:** 5.1 · **Fecha de investigación y consulta de fuentes:** 9 de noviembre de 2026
+**Cambios de la versión 4.0:** nueva sección V4 (precios reales de Mercado Pago por cadena según la app; tapi, PayCash y PESPay a detalle; revisión de los padrones del SPEI de Banxico; requisitos legales por tipo de empresa; seis diagramas del flujo del kiosco en `estudios/diagramas/`). **Versión 5.1:** las 72 entidades en todas las comparativas (V6.2.2 a V6.2.4) y cripto como intermediario: compra y venta sin ser operador, operaciones de sucursal del kiosco y diagrama 9. **Versión 5.0:** nueva sección V6: universo completo de bancos, fintechs y exchanges en México, y kioscos que también transaccionen cripto (regulación, cuatro modalidades, socios, requisitos y diagramas 7 y 8). **Versión 4.5:** perfil B2B o usuario final de cada operador (V5.4.2). **Versión 4.5:** perfil B2B o usuario final de cada operador (V5.4.2). **Versión 4.5:** perfil B2B o usuario final de cada operador (V5.4.2). **Versión 4.5:** perfil B2B o usuario final de cada operador (V5.4.2). **Versión 4.5:** perfil B2B o usuario final de cada operador (V5.4.2). **Versión 4.5:** perfil B2B o usuario final de cada operador (V5.4.2). **Versión 4.4:** comparativa producto por producto (V5.4.1) y programas de partners con liga de inscripción (V5.4.2). **Versión 4.3:** detalle de Banlink con sus documentos (V5.2.1). **Versión 4.2:** nueva sección V5 (ser partner de procesadores de pago: Klu, Mercado Pago, Cobre, 88 Pay, Banlink, Tonder y otros; tabla comparativa de productos; análisis de las tablas de precio por volumen). **Versión 4.1:** lista legal completa de arranque (sección V4.6: constitución, fiscal, laboral, marca, datos, equipo, licencias por casino y municipio, seguros y ruta crítica). **Cambios de la versión 3.0:** nueva sección 0 (comisión por depósito y precios de referencia de las cadenas; cómo operan tapi, PayCash y redes similares; flujo de efectivo con cuenta propia frente a patrocinador; KYC completo en kiosco y acceso "como cajero") y modelo financiero con comisión cobrada a las entidades. **Cambio de la versión 2.0 respecto a la 1.0:** el modelo ya no es "kiosco que emite una tarjeta de un emisor". Ahora es el que definió Lucho: **un kiosco neutral donde el usuario elige el banco, la IFPE o el procesador al que quiere abonar su efectivo, o abre una cuenta nueva**, igual que los comercios que hoy reciben depósitos "en nombre de" Mercado Pago u otras entidades. La empresa es intermediaria entre las entidades financieras y el cliente, y no queda amarrada a un solo banco o procesador. La versión 1.0 queda en el historial del repositorio.
 **Alcance:** México, salas de juego con permiso de SEGOB como ubicación inicial; el mismo kiosco puede operar fuera de casinos.
 **Naturaleza:** prefactibilidad para decidir. No sustituye un dictamen jurídico, fiscal ni de cumplimiento.
 
@@ -59,23 +59,28 @@ Mientras no haya respuesta, el estudio supone: solo depósitos (cash-in) y apert
 
 ---
 
-## V6. Universo completo de bancos, fintechs y exchanges, y kioscos que también transaccionen cripto (versión 5.0)
+## V6. Universo completo de bancos, fintechs y exchanges, y kioscos que también compren y vendan cripto como intermediarios (versión 5.1)
 
-> **Qué agrega esta versión.** Lucho pidió dos cosas: (1) considerar **todas** las entidades que existen en México y no solo procesadores de pago: banca tradicional, banca digital, SOFIPO, IFPE, crédito y BNPL, gasto corporativo, inversión, exchanges cripto y cajeros cripto; y (2) que **los kioscos también puedan servir para transaccionar criptomonedas**, repitiendo para cripto los pasos que se hicieron para el modelo de depósito: modelo, regulación, requisitos legales, socios, diagramas y recomendación. La tabla interactiva tiene dos pestañas nuevas: **"Universo México"** y **"Cripto"** (`estudios/tabla-procesadores-mexico.html`).
+> **Qué agrega esta sección.** Lucho pidió tres cosas: (1) considerar **todas** las entidades que existen en México, no solo procesadores de pago; (2) que esas entidades aparezcan en **todas** las comparativas (productos, B2B o usuario final, partners y resumen); y (3) que el kiosco sirva para **comprar y vender cripto, siempre como intermediario**. El objetivo de fondo, en palabras de Lucho, es **reemplazar la sucursal bancaria física**: que la gente haga sus operaciones con bancos, fintechs y exchanges cuando no tiene el celular a la mano o cuando tiene efectivo que quiere meter a una cuenta o a un activo.
+>
+> En la página interactiva (`estudios/tabla-procesadores-mexico.html`) las **72 entidades** (20 procesadores de pago y 52 bancos, fintechs, exchanges y cajeros) están en todas las pestañas, con un filtro "Tipo de entidad" que aplica a todas.
 
 ### V6.1 Respuesta corta
 
-1. **Sí se puede agregar cripto, pero no de cualquier forma.** En México los bancos y las fintech reguladas (IFPE, SOFIPO) **no pueden ofrecer cripto a sus clientes** (Circular 4/2019 de Banxico; la CNBV lo ratificó en mayo de 2026) [H]. Los exchanges operan fuera de esa supervisión, registrados ante el SAT como **actividad vulnerable** de activos virtuales (LFPIORPI art. 17, fracción XVI) [H]. Si nuestra empresa vende o compra cripto en el kiosco, **se convierte en un sujeto obligado de esa misma actividad vulnerable**.
-2. **Hay cuatro formas de hacerlo** (diagrama 7). Recomendamos empezar por las dos que no exigen que la empresa intercambie cripto: **(A)** depositar pesos en la cuenta del usuario en una plataforma que ya vende cripto (Mercado Pago, Bitso, Binance), y **(D)** alojar en el casino el cajero de un operador existente (CoinFlip tiene casi 50 en México) [H].
-3. **La compra de cripto en el kiosco (B)** es viable como fase 2, con **una empresa separada** de la que es comisionista de bancos. Así un problema de cumplimiento en cripto no pone en riesgo los convenios bancarios, que es el negocio base.
-4. **La venta de cripto con entrega de efectivo (C)** no se recomienda al inicio: suma el riesgo de dispensar efectivo dentro de una sala de juego a todo el riesgo de lavado de la cripto.
-5. **El universo de entidades** quedó en una tabla de más de 50 filas. **Sí hay cuentas para menores en México, pero en bancos, no en procesadores**: BBVA (Cuenta para Chavos, 12 a 17 años), Hey Banco (menores de 18), Santander (Cuenta Junior) y Banco Azteca (Guardadito Kids); Revolut anunció Kids & Teens para después [H/S]. Esto corrige la lectura de V5.4.2, que solo aplicaba a los 11 procesadores.
+1. **Comprar y vender cripto como intermediario sí es posible, si el kiosco solo maneja pesos.** El modelo es el mismo del depósito: la empresa es **comisionista de la IFPE que mueve los pesos de cada exchange** (Nvio Pagos México para Bitso; Medá para Binance) [H]. Para **comprar**, el kiosco recibe efectivo y lo abona como pesos en la cuenta del usuario en el exchange; para **vender**, el usuario vende en su cuenta y el kiosco le **entrega efectivo como retiro** de esa IFPE. La cripto nunca pasa por la empresa: la compra y la venta las ejecuta el exchange en la cuenta del usuario.
+2. **Así la empresa no se vuelve operador de cripto.** Bancos e ITF no pueden ofrecer cripto (Circular 4/2019) [H] y quien intercambia cripto es actividad vulnerable ante el SAT [H]. Si el kiosco solo mueve pesos por cuenta de la IFPE, la empresa sigue siendo comisionista; si el kiosco **comprara o vendiera la cripto por cuenta propia**, se volvería sujeto obligado de activos virtuales. Dónde queda exactamente la frontera cuando el kiosco envía la orden de compra al exchange por cuenta del usuario debe confirmarlo el dictamen [P].
+3. **"Sin celular a la mano" exige que la entidad autentique al usuario en el kiosco.** Para depositar basta con la CLABE o el número de cuenta; para **retirar o vender**, la entidad debe confirmar que es su cliente sin el teléfono: reconocimiento facial contra el expediente que la entidad ya tiene, tarjeta de débito con NIP, o un código de retiro generado antes. Cada entidad decide qué acepta [P].
+4. **El kiosco puede hacer casi todo lo que hace una sucursal**, siempre por cuenta de la entidad (V6.5): depósitos, retiros, pago de tarjetas y créditos, pago de servicios, apertura de cuentas básicas, consulta de saldo y, con exchanges, compra y venta de cripto. Los límites los fija cada entidad y la regulación de comisionistas [H/P].
+5. **Para la venta y los retiros hace falta dispensar efectivo.** Eso pide reciclador de billetes en el kiosco o que la caja del casino entregue el efectivo, lo que ya estaba previsto para la etapa 2 (sección 5) [S].
+6. **Sí hay cuentas para menores, pero en bancos, no en procesadores**: BBVA (Cuenta para Chavos, 12 a 17 años), Hey Banco (menores de 18), Santander (Cuenta Junior) y Banco Azteca (Guardadito Kids); Revolut anunció Kids & Teens [H/S].
 
 ### V6.2 Universo de entidades financieras en México
 
-**Cómo leer la tabla.** Cada fila es una entidad (o un grupo de entidades menores). ✓ = confirmado con fuente consultada el 9-nov-2026; (✓) = conocido públicamente, pero no se verificó hoy; ? = sin información pública encontrada; — = no lo ofrece o no está permitido. Los 19 procesadores de pago siguen en V5.4 y no se repiten aquí, salvo Mercado Pago.
+**Cómo leer las tablas.** ✓ = confirmado con fuente consultada el 9-nov-2026; (✓) = conocido públicamente, pero no se verificó hoy; ? = sin información pública encontrada; — = no lo ofrece o no está permitido. Muchas celdas de bancos y neobancos son (✓) o ?: no se revisó producto por producto el sitio de cada uno, porque el catálogo de comparación (Checkout, terminal, links de pago, etc.) está pensado para procesadores de cobro y en muchos casos no aplica. Por eso quedan marcadas, no omitidas.
 
-**Sobre "Alpaka":** no encontramos una empresa con ese nombre en México. Lo más cercano es **Alpaca**, un bróker de EE. UU. que da infraestructura a apps mexicanas de inversión como Rivium y RUUT [H]. Hay que confirmar con Lucho si se refería a otra empresa.
+**Sobre "Alpaka":** no encontramos una empresa con ese nombre en México. Lo más cercano es **Alpaca**, un bróker de EE. UU. que da infraestructura a apps mexicanas de inversión como Rivium y RUUT [H].
+
+**V6.2.1 Vista rápida de las 52 entidades no procesadoras**
 
 | Entidad | Tipo | Figura en México | Modelo | Cuenta persona | Cuenta empresa | Cuentas para menores | Tarjeta de débito | Tarjeta de crédito | Préstamos personales | Crédito para negocio | Rendimientos o inversión | Seguros | Pago de servicios | Remesas | Cripto | Depósito en efectivo | Rol para el kiosco |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
@@ -144,6 +149,1046 @@ Mientras no haya respuesta, el estudio supone: solo depósitos (cash-in) y apert
 - **Exchanges cripto (Bitso, Binance, Bitget, OKX, Kraken, Coinbase y otros).** Ver V6.4.
 - **Cajeros cripto (CoinFlip, Bitlem).** Ver V6.4.
 
+**V6.2.2 Productos, perfil y partners de las 72 entidades, por tipo**
+
+Mismas filas que las pestañas "Productos a detalle" y "B2B o usuario final" de la página. Las columnas se parten en bloques de hasta 10 entidades para que se puedan leer.
+
+**Procesador de pago** (20)
+
+| Producto | Mercado Pago | Klu | Cobre | 88 Pay | Banlink | Tonder | Conekta | Openpay | Clip | Kushki |
+|---|---|---|---|---|---|---|---|---|---|---|
+| **Pagos en línea** | | | | | | | | | | |
+| Checkout alojado o con redirección | ✓ Checkout Pro | (✓) Pagos en Línea | (✓) Checkout (no indica país) | ? | ✓ Get Checkout | ✓ Hosted Checkout | ✓ Checkout | ✓ Pasarela de pago | ✓ Checkout de Clip | ✓ Kajita de pagos |
+| Checkout por API (transparente) | ✓ Checkout API (Orders API) | ? | (✓) APIs de Cobre (payins) | (✓) API 88 Suite | ? | ✓ API directa | ✓ API directa | (✓) API | (✓) APIs de pago | ✓ API |
+| Componentes de pago embebidos | ✓ Checkout Bricks (Payment, Card, Wallet, Status) | ? | ? | ? | ? | ✓ SDK web, iOS y Android | ✓ Checkout Component | ? | ? | ✓ Librería JS |
+| Links de pago | ✓ Link de pago | ✓ Links de Pago | (✓) Links de pago (no indica país) | ? | ✓ Get Link and Pay | ? | ✓ Links de pago | ✓ Link de Pago | ✓ Link de pago | ✓ Smartlink |
+| Suscripciones y cobro recurrente | ✓ Suscripciones y planes | ? | (✓) Débito a cuenta | ? | ✓ Cobro recurrente | (✓) Tarjetas guardadas | ✓ Suscripciones | ? | ? | ? |
+| Botón de pago con monedero propio | ✓ Wallet Brick | ? | ? | ? | — | — | — | — | ? | (✓) Botón de pagos |
+| Plugins de comercio electrónico | ✓ Plugins | ? | ? | ? | ✓ Shopify, WooCommerce, VTEX, Magento | ✓ Plugins | ✓ Plugins | (✓) Plugins (Tiendanube, OpenCart) | ✓ Plugins | ✓ Plugins e-commerce |
+| Marketplace y pagos divididos | ✓ Checkout en marketplace | ? | (✓) Connect | ? | ? | ? | ? | ? | ? | ? |
+| **Métodos de pago aceptados** | | | | | | | | | | |
+| Tarjetas de crédito y débito | ✓ Visa, Mastercard, Amex | ✓ Adquirente propio | — | ? | ✓ Visa, Mastercard, Amex (Getnet) | ✓ Visa, Mastercard, Amex | ✓ Visa, Mastercard, Amex | ✓ Tarjetas | (✓) Tarjetas | ✓ Tarjetas |
+| Meses sin intereses | ✓ Hasta 24 meses | ? | — | ? | ✓ MSI | ? | ? | ✓ MSI | (✓) MSI | ? |
+| Apple Pay y Google Pay | ✓ Apple, Google y Samsung Pay | ? | — | ? | ? | ✓ Apple Pay | ✓ Apple Pay y Google Pay | ? | ? | ? |
+| Efectivo con referencia en tiendas | (✓) Efectivo en tiendas | ? | — | ? | — | ✓ OXXO Pay y vales en cadenas | ✓ Conekta Efectivo | ✓ 32,000 puntos | ? | (✓) Efectivo |
+| Transferencia SPEI (cobro) | ? | ? | ✓ SPEI | ? | ? | ✓ SPEI | ✓ SPEI | ✓ Transferencias | ? | ? |
+| Compra ahora, paga después | (✓) Mercado Crédito | ? | — | ? | ? | ? | ✓ Aplazo, Creditea, Coppel Pay | ? | ? | ? |
+| Otros medios | ✓ Vales (Toka, Edenred, Pluxee, Sí Vale), PayPal | ? | (✓) Stablecoins | ? | ✓ PayPal | ✓ Mercado Pago | ✓ Pago Directo BBVA | ? | ? | ? |
+| **Pagos presenciales** | | | | | | | | | | |
+| Terminal física | ✓ Point (Smart 2, Mini) | ✓ Terminales Punto de Venta | — | ? | ✓ Terminales Getnet | — | ✓ Pagos en persona | ? | ✓ Total 3, Plus 2, Ultra, Pin Pad | ✓ Pagos presenciales |
+| Celular como terminal (Tap to Pay) | ✓ Point Tap y Tap to Pay en iPhone | ? | — | ? | ✓ Tap to Phone | — | ? | ? | ✓ Tap to Pay | ? |
+| Cobro con código QR | ✓ Código QR | ? | — | ? | ✓ Botón y QR | — | ? | ? | ✓ Pagos con Código QR | ? |
+| Sistema punto de venta | ✓ Sistema de punto de venta | ? | — | ? | ? | — | ? | ? | ✓ Wansoft, Inventario Digital | ? |
+| **Dinero, cuentas y otros servicios** | | | | | | | | | | |
+| Pagos a terceros (dispersión o payouts) | ? | ? | ✓ Payouts, Fast Pay | ? | — | (✓) Payouts (anunciados en Chile) | ? | ? | ? | ✓ Payouts |
+| Cuenta empresarial | ✓ Cuenta Negocio | ✓ Cuenta Empresarial | (✓) Virtual Accounts, Portal Cobre | ? | — Liquida a cualquier CLABE | — | ✓ Cuentas Conekta | ? | ✓ Clip Cuenta Digital, Clip Empresas | ? |
+| Cuenta para personas o monedero | ✓ Cuenta Digital | ✓ Cuenta Persona Física | — | ? | — | — | — | — | (✓) Mi Clip | — |
+| Tarjeta propia | (✓) Tarjeta Mercado Pago | ✓ Tarjeta Corporativa | ? | ? | — | — | — | — | ? | — |
+| Emisión de tarjetas como servicio | — | ? | ? | ✓ Cards México | — | — | — | — | — | — |
+| Créditos para negocios | ✓ Créditos (Mercado Crédito) | ✓ Crédito productivo | — | ? | — | — | ? | ? | ✓ Préstamo Clip | — |
+| Depósito de efectivo en tiendas a la cuenta | ✓ Red de corresponsales | ? | — | ? | — | — | — | — | ? | — |
+| Pagos internacionales y cambio de divisas | ? | ✓ Plataforma cambiaria | ✓ Cross Border, Rate Lock | ? | ? | ? | ? | ? | ? | ? |
+| Pago de servicios y recargas | ✓ Pago de servicios y recargas | ? | — | ? | — | — | — | — | ✓ Pago de servicios, Recargas | — |
+| Antifraude | ✓ Antifraude y 3DS 2.0 | ? | ? | ? | ✓ Monitoreo de fraude, tokenización | ✓ Guardian AI, 3DS adaptativo | ? | ? | ? | ? |
+| Herramientas de IA para integrar | ✓ MCP Server, CLI | ? | ? | ? | ? | ✓ Plugin MCP | ✓ Conekta AI | ? | ? | ? |
+| Acepta juego y casinos | ? | ? | ? | ? | ✓ Casinos en línea, MCC 7995 | ✓ Socios iGaming (Soft2Bet, SoftSwiss) | ? | ? | ? | ✓ Industria Gaming & Gambling |
+| **Cripto** | | | | | | | | | | |
+| Compra y venta de cripto para el usuario | (✓) Bitcoin y ethereum vía Paxos (oct-2022; vigencia no verificada) | — IFPE: no permitido | ? | ? | ? | ? | ? | ? | — IFPE: no permitido | ? |
+| Custodia o wallet | (✓) Vía Paxos | — IFPE: no permitido | ? | ? | ? | ? | ? | ? | — IFPE: no permitido | ? |
+| Rampa pesos–cripto por API para empresas | — | — IFPE: no permitido | ? | ? | ? | ? | ? | ? | — IFPE: no permitido | ? |
+| Pagos con cripto para comercios | — | — IFPE: no permitido | ? | ? | ? | ? | ? | ? | — IFPE: no permitido | ? |
+| Cajero cripto físico | — | — | ? | ? | ? | ? | ? | ? | — | ? |
+
+| Perfil | Mercado Pago | Klu | Cobre | 88 Pay | Banlink | Tonder | Conekta | Openpay | Clip | Kushki |
+|---|---|---|---|---|---|---|---|---|---|---|
+| Modelo | ✓ B2B y B2C | ✓ B2B (pymes) | ✓ B2B | ? Probable B2B (API) | ✓ B2B | ✓ B2B | ✓ B2B | ✓ B2B | ✓ B2B y B2C (Mi Clip, jun-2026) | ✓ B2B |
+| A quién atiende | ✓ Personas, comercios de todos los tamaños, desarrolladores | ✓ Pymes y empresas en expansión (más de 4,000) | ✓ Empresas y fintechs (más de 300 en la región) | ? | ✓ Comercios físicos y en línea | ✓ Startups, operadores de alto riesgo, plataformas grandes | ✓ Comercios en línea (más de 8,000) | ✓ Comercios (grupo BBVA) | ✓ Pymes y comercios; consumidores con Mi Clip | ✓ Empresas y PSP |
+| Sectores destacados | ✓ Comercio, comercio electrónico, servicios | ✓ Pymes, comercio exterior | ✓ Pagos B2B, tesorería, transfronterizos | ? | ✓ Por giro; casinos en línea MCC 7995 | ✓ iGaming, forex, comercio electrónico | ✓ Comercio electrónico | (✓) Comercio electrónico | ✓ Comercio minorista, restaurantes (Wansoft) | ✓ Retail, educación, PSP, Gaming & Gambling |
+| App para usuario final | ✓ App Mercado Pago | — | — | ? | — | — | — | — | ✓ App Mi Clip | — |
+| Cuenta para persona (usuario final) | ✓ Cuenta Wallet (IFPE) | (✓) Cuenta Persona Física (para personas con actividad) | — | ? | — | — | — | — | ✓ Cuenta digital Mi Clip | — |
+| Cuenta empresarial | ✓ Cuenta Negocio | ✓ Cuenta Empresarial | (✓) Virtual Accounts | ? | — | — | ✓ Cuentas Conekta | — | ✓ Clip Cuenta Digital | — |
+| Cuentas para menores de edad | — No en México (sí en Argentina, desde 10 y 13 años) | — | — | ? | — | — | — | — | ? | — |
+| Tarjeta de débito | ✓ Debit Mastercard | ✓ Tarjeta Corporativa | ? | ✓ Cards México (emisión) | — | — | — | — | (✓) Pagos con tarjeta Mastercard (Mi Clip) | — |
+| Tarjeta de crédito | ✓ Por Mercado Lending | ? | — | ? | — | — | — | — | ? | — |
+| Préstamos personales | ✓ Por Mercado Lending; Meses sin Tarjeta | — | — | ? | — | — | — | — | ✓ Crédito para consumidores (Mi Clip) | — |
+| Créditos para negocio | ✓ Mercado Crédito | ✓ Crédito productivo | — | ? | — | — | (✓) Creditea (aliado) | — | ✓ Préstamo Clip | — |
+| Rendimientos o inversión | ✓ Rendimientos con fondo de GBM | ? | — | ? | — | — | — | — | (✓) Ahorro (Mi Clip) | — |
+| Seguros | ✓ Seguro de vida y accidentes (desde feb-2023) | ? | — | ? | — | — | — | — | ? | — |
+| Pago de servicios | ✓ Sí | ? | — | ? | — | — | — | — | ✓ Sí | — |
+| Recargas de tiempo aire | ✓ Sí | ? | — | ? | — | — | — | — | ✓ Sí | — |
+| Remesas | ✓ Sí | (✓) Klu Sin Fronteras (anunciado, marca blanca) | ✓ Cross Border | ? | — | — | — | — | (✓) Pagos internacionales (próxima fase) | — |
+| Cripto | (✓) Bitcoin y ethereum vía Paxos (lanzado oct-2022; vigencia 2026 no verificada) | — IFPE: no puede ofrecer cripto | — | ? | — | — | — | — | — IFPE: no puede ofrecer cripto | — |
+| Depósito de efectivo en tiendas | ✓ Red de corresponsales | ? | — | ? | — | — | — | — | ? | — |
+| Figura en México | ✓ IFPE; licencia bancaria en trámite | ✓ IFPE; Sofipo en trámite | ✓ Transmisor de dinero (Tesored) | ? | ✓ Revendedor sobre Getnet | ? No publicada | ✓ Adquirente no bancario directo | (✓) Grupo BBVA | ✓ IFPE | (✓) Adquirente |
+| Rol para nuestro kiosco | ✓ Destino de depósitos y partner | (✓) Destino (monederos) y partner de cobro | (✓) Riel SPEI | (✓) Tarjeta del kiosco | ✓ Reventa de cobro a casinos | ✓ Reventa de cobro a casinos | (✓) Reventa (modelo Mark Up) | (✓) Reventa | (✓) Destino (Mi Clip) y terminales | ✓ Reventa de cobro a casinos |
+
+| Producto | Stripe | OKTO | Paysafecash | dLocal / EBANX / Nuvei | Monato (Finco Pay) | STP | Fintoc | tapi / PESPay | PayCash | Pomelo |
+|---|---|---|---|---|---|---|---|---|---|---|
+| **Pagos en línea** | | | | | | | | | | |
+| Checkout alojado o con redirección | ✓ Checkout | ? | ? | ? | ? | ? | ? | ? | ? | ? |
+| Checkout por API (transparente) | (✓) Payment Intents API | ? | ? | ? | ? | ? | ? | ? | ? | ? |
+| Componentes de pago embebidos | ✓ Payment Element | ? | ? | ? | ? | ? | ? | ? | ? | ? |
+| Links de pago | ✓ Payment Links | ? | ? | ? | ? | ? | ? | ? | ? | ? |
+| Suscripciones y cobro recurrente | (✓) Billing | ? | ? | ? | ? | ? | ? | ? | ? | ? |
+| Botón de pago con monedero propio | ✓ Link | ? | ? | ? | ? | ? | ? | ? | ? | ? |
+| Plugins de comercio electrónico | ✓ Plugins | ? | ? | ? | ? | ? | ? | ? | ? | ? |
+| Marketplace y pagos divididos | (✓) Connect | ? | ? | ? | ? | ? | ? | ? | ? | ? |
+| **Métodos de pago aceptados** | | | | | | | | | | |
+| Tarjetas de crédito y débito | ✓ Visa, Mastercard, Amex | ✓ | — | (✓) | — | — | — | — | — | — |
+| Meses sin intereses | ✓ Meses sin intereses | ? | ? | ? | ? | ? | ? | ? | ? | ? |
+| Apple Pay y Google Pay | ✓ Apple Pay y Google Pay | ? | ? | ? | ? | ? | ? | ? | ? | ? |
+| Efectivo con referencia en tiendas | ✓ OXXO | ? | ✓ | (✓) | ✓ red de efectivo | — | — | ✓ | ✓ | — |
+| Transferencia SPEI (cobro) | ✓ Mexico bank transfer | ✓ | — | (✓) | ✓ | (✓) | ✓ | — | ✓ A2A | — |
+| Compra ahora, paga después | — No disponible en México | ? | ? | ? | ? | ? | ? | ? | ? | ? |
+| Otros medios | ✓ Stablecoins | ? | ? | ? | ? | ? | ? | ? | ? | ? |
+| **Pagos presenciales** | | | | | | | | | | |
+| Terminal física | ? | — | — | — | — | — | — | — | — | — |
+| Celular como terminal (Tap to Pay) | ? | ? | ? | ? | ? | ? | ? | ? | ? | ? |
+| Cobro con código QR | ? | ? | ? | ? | ? | ? | ? | ? | ? | ? |
+| Sistema punto de venta | ? | ? | ? | ? | ? | ? | ? | ? | ? | ? |
+| **Dinero, cuentas y otros servicios** | | | | | | | | | | |
+| Pagos a terceros (dispersión o payouts) | (✓) Connect | ✓ | — | (✓) | ✓ | (✓) | ? | — | — | — |
+| Cuenta empresarial | ? | ? | ? | ? | ? | ? | ? | ? | ? | ? |
+| Cuenta para personas o monedero | — | — | — | — | (✓) Próximamente | (✓) | — | — | — | (✓) |
+| Tarjeta propia | ? | ? | ? | ? | ? | ? | ? | ? | ? | ? |
+| Emisión de tarjetas como servicio | ? | — | — | — | — | — | — | — | — | (✓) |
+| Créditos para negocios | ? | ? | ? | ? | ? | ? | ? | ? | ? | ? |
+| Depósito de efectivo en tiendas a la cuenta | — | — | — | — | ? | — | — | ✓ | — | — |
+| Pagos internacionales y cambio de divisas | (✓) Multimoneda | ? | ? | ? | ? | ? | ? | ? | ? | ? |
+| Pago de servicios y recargas | — | ? | ? | ? | ? | ? | ? | ? | ? | ? |
+| Antifraude | (✓) Radar | ? | ? | ? | ? | ? | ? | ? | ? | ? |
+| Herramientas de IA para integrar | ✓ Agent skills, CLI | ? | ? | ? | ? | ? | ? | ? | ? | ? |
+| Acepta juego y casinos | (✓) Restringido | ✓ | ✓ | (✓) | ? | ? | ? | ? | ✓ | ? |
+| **Cripto** | | | | | | | | | | |
+| Compra y venta de cripto para el usuario | ? | ? | ? | ? | — IFPE: no permitido | — IFPE: no permitido | ? | ? | ? | — IFPE: no permitido |
+| Custodia o wallet | ? | ? | ? | ? | — IFPE: no permitido | — IFPE: no permitido | ? | ? | ? | — IFPE: no permitido |
+| Rampa pesos–cripto por API para empresas | (✓) Crypto onramp (otros países) | ? | ? | ? | — IFPE: no permitido | — IFPE: no permitido | ? | ? | ? | — IFPE: no permitido |
+| Pagos con cripto para comercios | (✓) Pagos con stablecoins (otros países) | ? | ? | ? | — IFPE: no permitido | — IFPE: no permitido | ? | ? | ? | — IFPE: no permitido |
+| Cajero cripto físico | ? | ? | ? | ? | — | — | ? | ? | ? | — |
+
+| Perfil | Stripe | OKTO | Paysafecash | dLocal / EBANX / Nuvei | Monato (Finco Pay) | STP | Fintoc | tapi / PESPay | PayCash | Pomelo |
+|---|---|---|---|---|---|---|---|---|---|---|
+| Modelo | ✓ B2B | ✓ B2B | ✓ B2B | ✓ B2B | ✓ B2B | ✓ B2B | ✓ B2B | ✓ B2B | ✓ B2B | ✓ B2B |
+| A quién atiende | ✓ Negocios en internet y plataformas | (✓) Empresas | (✓) Empresas | (✓) Empresas | (✓) Empresas | (✓) Empresas | (✓) Empresas | (✓) Empresas | (✓) Empresas | (✓) Empresas |
+| Sectores destacados | (✓) SaaS, plataformas, comercio electrónico | (✓) Juego en línea | (✓) Juego en línea | ? | ? | ? | ? | ? | (✓) Juego en línea | ? |
+| App para usuario final | — | — | — | — | — | — | — | — | — | — |
+| Cuenta para persona (usuario final) | — | — | — | — | (✓) Próximamente | (✓) | — | — | — | (✓) |
+| Cuenta empresarial | — | ? | ? | ? | ? | ? | ? | ? | ? | ? |
+| Cuentas para menores de edad | — | — | — | — | — | — | — | — | — | — |
+| Tarjeta de débito | — | ? | ? | ? | ? | ? | ? | ? | ? | ? |
+| Tarjeta de crédito | — | — | — | — | — | — | — | — | — | — |
+| Préstamos personales | — | — | — | — | — | — | — | — | — | — |
+| Créditos para negocio | (✓) Capital (otros países) | ? | ? | ? | ? | ? | ? | ? | ? | ? |
+| Rendimientos o inversión | — | ? | ? | ? | ? | ? | ? | ? | ? | ? |
+| Seguros | — | — | — | — | — | — | — | — | — | — |
+| Pago de servicios | — | ? | ? | ? | ? | ? | ? | ? | ? | ? |
+| Recargas de tiempo aire | — | ? | ? | ? | ? | ? | ? | ? | ? | ? |
+| Remesas | — | ? | ? | ? | ? | ? | ? | ? | ? | ? |
+| Cripto | (✓) Stablecoins en otros países | ? | ? | ? | ? | ? | ? | ? | ? | ? |
+| Depósito de efectivo en tiendas | — | — | — | — | ? | — | — | ✓ | — | — |
+| Figura en México | (✓) Opera con socios locales | ? | ? | (✓) Vía socios locales | (✓) IFPE | (✓) IFPE | (✓) Transmisor | (✓) PESPay: [P] | (✓) [P] | (✓) IFPE |
+| Rol para nuestro kiosco | — Restringe juego | (✓) Pagos para juego en línea | (✓) Efectivo con referencia para juego en línea | (✓) Cobro transfronterizo | (✓) Red de efectivo y SPEI | (✓) Riel SPEI | (✓) Cobro por transferencia | (✓) Agregador de depósitos (clave para el kiosco) | (✓) Agregador de efectivo | (✓) Emisión de tarjetas |
+
+**Banca tradicional** (14)
+
+| Producto | BBVA México | Santander | Banorte | Banamex | HSBC | Scotiabank | Inbursa | Banco Azteca | BanCoppel | Banregio |
+|---|---|---|---|---|---|---|---|---|---|---|
+| **Pagos en línea** | | | | | | | | | | |
+| Checkout alojado o con redirección | (✓) Pasarela de comercio electrónico del banco | (✓) Pasarela de comercio electrónico del banco | (✓) Pasarela de comercio electrónico del banco | (✓) Pasarela de comercio electrónico del banco | (✓) Pasarela de comercio electrónico del banco | (✓) Pasarela de comercio electrónico del banco | (✓) Pasarela de comercio electrónico del banco | (✓) Pasarela de comercio electrónico del banco | (✓) Pasarela de comercio electrónico del banco | (✓) Pasarela de comercio electrónico del banco |
+| Checkout por API (transparente) | ? | ? | ? | ? | ? | ? | ? | ? | ? | ? |
+| Componentes de pago embebidos | ? | ? | ? | ? | ? | ? | ? | ? | ? | ? |
+| Links de pago | ? | ? | ? | ? | ? | ? | ? | ? | ? | ? |
+| Suscripciones y cobro recurrente | (✓) Domiciliación | (✓) Domiciliación | (✓) Domiciliación | (✓) Domiciliación | (✓) Domiciliación | (✓) Domiciliación | (✓) Domiciliación | (✓) Domiciliación | (✓) Domiciliación | (✓) Domiciliación |
+| Botón de pago con monedero propio | — | — | — | — | — | — | — | — | — | — |
+| Plugins de comercio electrónico | ? | ? | ? | ? | ? | ? | ? | ? | ? | ? |
+| Marketplace y pagos divididos | ? | ? | ? | ? | ? | ? | ? | ? | ? | ? |
+| **Métodos de pago aceptados** | | | | | | | | | | |
+| Tarjetas de crédito y débito | (✓) Adquirencia propia | (✓) Adquirencia propia | (✓) Adquirencia propia | (✓) Adquirencia propia | (✓) Adquirencia propia | (✓) Adquirencia propia | (✓) Adquirencia propia | (✓) Adquirencia propia | (✓) Adquirencia propia | (✓) Adquirencia propia |
+| Meses sin intereses | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí |
+| Apple Pay y Google Pay | ? | ? | ? | ? | ? | ? | ? | ? | ? | ? |
+| Efectivo con referencia en tiendas | (✓) Pago referenciado en sucursal y corresponsales | (✓) Pago referenciado en sucursal y corresponsales | (✓) Pago referenciado en sucursal y corresponsales | (✓) Pago referenciado en sucursal y corresponsales | (✓) Pago referenciado en sucursal y corresponsales | (✓) Pago referenciado en sucursal y corresponsales | (✓) Pago referenciado en sucursal y corresponsales | (✓) Pago referenciado en sucursal y corresponsales | (✓) Pago referenciado en sucursal y corresponsales | (✓) Pago referenciado en sucursal y corresponsales |
+| Transferencia SPEI (cobro) | (✓) CLABE y referencias | (✓) CLABE y referencias | (✓) CLABE y referencias | (✓) CLABE y referencias | (✓) CLABE y referencias | (✓) CLABE y referencias | (✓) CLABE y referencias | (✓) CLABE y referencias | (✓) CLABE y referencias | (✓) CLABE y referencias |
+| Compra ahora, paga después | — | — | — | — | — | — | — | — | — | — |
+| Otros medios | ? | ? | ? | ? | ? | ? | ? | ? | ? | ? |
+| **Pagos presenciales** | | | | | | | | | | |
+| Terminal física | (✓) Terminal punto de venta bancaria | (✓) Terminal punto de venta bancaria | (✓) Terminal punto de venta bancaria | (✓) Terminal punto de venta bancaria | (✓) Terminal punto de venta bancaria | (✓) Terminal punto de venta bancaria | (✓) Terminal punto de venta bancaria | (✓) Terminal punto de venta bancaria | (✓) Terminal punto de venta bancaria | (✓) Terminal punto de venta bancaria |
+| Celular como terminal (Tap to Pay) | ? | ? | ? | ? | ? | ? | ? | ? | ? | ? |
+| Cobro con código QR | (✓) CoDi / DiMo | (✓) CoDi / DiMo | (✓) CoDi / DiMo | (✓) CoDi / DiMo | (✓) CoDi / DiMo | (✓) CoDi / DiMo | (✓) CoDi / DiMo | (✓) CoDi / DiMo | (✓) CoDi / DiMo | (✓) CoDi / DiMo |
+| Sistema punto de venta | — | — | — | — | — | — | — | — | — | — |
+| **Dinero, cuentas y otros servicios** | | | | | | | | | | |
+| Pagos a terceros (dispersión o payouts) | (✓) Dispersión por SPEI | (✓) Dispersión por SPEI | (✓) Dispersión por SPEI | (✓) Dispersión por SPEI | (✓) Dispersión por SPEI | (✓) Dispersión por SPEI | (✓) Dispersión por SPEI | (✓) Dispersión por SPEI | (✓) Dispersión por SPEI | (✓) Dispersión por SPEI |
+| Cuenta empresarial | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí |
+| Cuenta para personas o monedero | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí |
+| Tarjeta propia | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí |
+| Emisión de tarjetas como servicio | ? | ? | ? | ? | ? | ? | ? | ? | ? | ? |
+| Créditos para negocios | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí |
+| Depósito de efectivo en tiendas a la cuenta | (✓) Sucursales, cajeros y corresponsales | (✓) Sucursales, cajeros y corresponsales | (✓) Sucursales, cajeros y corresponsales | (✓) Sucursales, cajeros y corresponsales | (✓) Sucursales, cajeros y corresponsales | (✓) Sucursales, cajeros y corresponsales | (✓) Sucursales, cajeros y corresponsales | (✓) Sucursales, cajeros y corresponsales | (✓) Sucursales, cajeros y corresponsales | (✓) Sucursales, cajeros y corresponsales |
+| Pagos internacionales y cambio de divisas | (✓) Divisas y transferencias internacionales | (✓) Divisas y transferencias internacionales | (✓) Divisas y transferencias internacionales | (✓) Divisas y transferencias internacionales | (✓) Divisas y transferencias internacionales | (✓) Divisas y transferencias internacionales | (✓) Divisas y transferencias internacionales | (✓) Divisas y transferencias internacionales | (✓) Divisas y transferencias internacionales | (✓) Divisas y transferencias internacionales |
+| Pago de servicios y recargas | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí |
+| Antifraude | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí |
+| Herramientas de IA para integrar | ? | ? | ? | ? | ? | ? | ? | ? | ? | ? |
+| Acepta juego y casinos | (✓) Caso por caso (los bancos atienden a casinos como clientes) | (✓) Caso por caso (los bancos atienden a casinos como clientes) | (✓) Caso por caso (los bancos atienden a casinos como clientes) | (✓) Caso por caso (los bancos atienden a casinos como clientes) | (✓) Caso por caso (los bancos atienden a casinos como clientes) | (✓) Caso por caso (los bancos atienden a casinos como clientes) | (✓) Caso por caso (los bancos atienden a casinos como clientes) | (✓) Caso por caso (los bancos atienden a casinos como clientes) | (✓) Caso por caso (los bancos atienden a casinos como clientes) | (✓) Caso por caso (los bancos atienden a casinos como clientes) |
+| **Cripto** | | | | | | | | | | |
+| Compra y venta de cripto para el usuario | — Banco: no permitido | — Banco: no permitido | — Banco: no permitido | — Banco: no permitido | — Banco: no permitido | — Banco: no permitido | — Banco: no permitido | — Banco: no permitido | — Banco: no permitido | — Banco: no permitido |
+| Custodia o wallet | — Banco: no permitido | — Banco: no permitido | — Banco: no permitido | — Banco: no permitido | — Banco: no permitido | — Banco: no permitido | — Banco: no permitido | — Banco: no permitido | — Banco: no permitido | — Banco: no permitido |
+| Rampa pesos–cripto por API para empresas | — Banco: no permitido | — Banco: no permitido | — Banco: no permitido | — Banco: no permitido | — Banco: no permitido | — Banco: no permitido | — Banco: no permitido | — Banco: no permitido | — Banco: no permitido | — Banco: no permitido |
+| Pagos con cripto para comercios | — Banco: no permitido | — Banco: no permitido | — Banco: no permitido | — Banco: no permitido | — Banco: no permitido | — Banco: no permitido | — Banco: no permitido | — Banco: no permitido | — Banco: no permitido | — Banco: no permitido |
+| Cajero cripto físico | — | — | — | — | — | — | — | — | — | — |
+
+| Perfil | BBVA México | Santander | Banorte | Banamex | HSBC | Scotiabank | Inbursa | Banco Azteca | BanCoppel | Banregio |
+|---|---|---|---|---|---|---|---|---|---|---|
+| Modelo | (✓) B2C y B2B | (✓) B2C y B2B | (✓) B2C y B2B | (✓) B2C y B2B | (✓) B2C y B2B | (✓) B2C y B2B | (✓) B2C y B2B | (✓) B2C y B2B | (✓) B2C y B2B | (✓) B2C y B2B |
+| A quién atiende | (✓) B2C y B2B | (✓) B2C y B2B | (✓) B2C y B2B | (✓) B2C y B2B | (✓) B2C y B2B | (✓) B2C y B2B | (✓) B2C y B2B | (✓) B2C y B2B | (✓) B2C y B2B | (✓) B2C y B2B |
+| Sectores destacados | (✓) Personas, empresas y gobierno | (✓) Personas, empresas y gobierno | (✓) Personas, empresas y gobierno | (✓) Personas, empresas y gobierno | (✓) Personas, empresas y gobierno | (✓) Personas, empresas y gobierno | (✓) Personas, empresas y gobierno | (✓) Personas, empresas y gobierno | (✓) Personas, empresas y gobierno | (✓) Personas, empresas y gobierno |
+| App para usuario final | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí |
+| Cuenta para persona (usuario final) | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí |
+| Cuenta empresarial | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí |
+| Cuentas para menores de edad | ✓ Cuenta para Chavos, 12 a 17 años, con tarjeta (mar-2025) | (✓) Cuenta Junior (menores de 18), con débito | ? | ? | ? | ? | ? | (✓) Guardadito Kids, con débito Mastercard | ? | ? |
+| Tarjeta de débito | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí |
+| Tarjeta de crédito | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí |
+| Préstamos personales | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí |
+| Créditos para negocio | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí |
+| Rendimientos o inversión | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí |
+| Seguros | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí |
+| Pago de servicios | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí |
+| Recargas de tiempo aire | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí |
+| Remesas | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí |
+| Cripto | — Banco: no puede ofrecer cripto (Circular 4/2019; CNBV, may-2026) | — Banco: no puede ofrecer cripto (Circular 4/2019; CNBV, may-2026) | — Banco: no puede ofrecer cripto (Circular 4/2019; CNBV, may-2026) | — Banco: no puede ofrecer cripto (Circular 4/2019; CNBV, may-2026) | — Banco: no puede ofrecer cripto (Circular 4/2019; CNBV, may-2026) | — Banco: no puede ofrecer cripto (Circular 4/2019; CNBV, may-2026) | — Banco: no puede ofrecer cripto (Circular 4/2019; CNBV, may-2026) | — Banco: no puede ofrecer cripto (Circular 4/2019; CNBV, may-2026) | — Banco: no puede ofrecer cripto (Circular 4/2019; CNBV, may-2026) | — Banco: no puede ofrecer cripto (Circular 4/2019; CNBV, may-2026) |
+| Depósito de efectivo en tiendas | (✓) Sucursales, cajeros y corresponsales | (✓) Sucursales, cajeros y corresponsales | (✓) Sucursales, cajeros y corresponsales | (✓) Sucursales, cajeros y corresponsales | (✓) Sucursales, cajeros y corresponsales | (✓) Sucursales, cajeros y corresponsales | (✓) Sucursales, cajeros y corresponsales | (✓) Sucursales, cajeros y corresponsales | (✓) Sucursales, cajeros y corresponsales | (✓) Sucursales, cajeros y corresponsales |
+| Figura en México | (✓) Banco múltiple | (✓) Banco múltiple | (✓) Banco múltiple | (✓) Banco múltiple | (✓) Banco múltiple | (✓) Banco múltiple | (✓) Banco múltiple | (✓) Banco múltiple | (✓) Banco múltiple | (✓) Banco múltiple |
+| Rol para nuestro kiosco | (✓) Destino de depósito como comisionista; posible banco patrocinador SPEI | (✓) Destino de depósito como comisionista; posible banco patrocinador SPEI | (✓) Destino de depósito como comisionista; posible banco patrocinador SPEI | (✓) Destino de depósito como comisionista; posible banco patrocinador SPEI | (✓) Destino de depósito como comisionista; posible banco patrocinador SPEI | (✓) Destino de depósito como comisionista; posible banco patrocinador SPEI | (✓) Destino de depósito como comisionista; posible banco patrocinador SPEI | (✓) Destino de depósito; red propia en tiendas Elektra | (✓) Destino de depósito; red propia en tiendas Coppel | (✓) Destino de depósito como comisionista; posible banco patrocinador SPEI |
+
+| Producto | BanBajío | Afirme | Compartamos Banco | Banco del Bienestar |
+|---|---|---|---|---|
+| **Pagos en línea** | | | | |
+| Checkout alojado o con redirección | (✓) Pasarela de comercio electrónico del banco | (✓) Pasarela de comercio electrónico del banco | ? | ? |
+| Checkout por API (transparente) | ? | ? | ? | ? |
+| Componentes de pago embebidos | ? | ? | ? | ? |
+| Links de pago | ? | ? | ? | ? |
+| Suscripciones y cobro recurrente | (✓) Domiciliación | (✓) Domiciliación | ? | ? |
+| Botón de pago con monedero propio | — | — | — | — |
+| Plugins de comercio electrónico | ? | ? | ? | ? |
+| Marketplace y pagos divididos | ? | ? | ? | ? |
+| **Métodos de pago aceptados** | | | | |
+| Tarjetas de crédito y débito | (✓) Adquirencia propia | (✓) Adquirencia propia | ? | ? |
+| Meses sin intereses | (✓) Sí | (✓) Sí | ? | ? |
+| Apple Pay y Google Pay | ? | ? | ? | ? |
+| Efectivo con referencia en tiendas | (✓) Pago referenciado en sucursal y corresponsales | (✓) Pago referenciado en sucursal y corresponsales | ? | ? |
+| Transferencia SPEI (cobro) | (✓) CLABE y referencias | (✓) CLABE y referencias | (✓) CLABE y referencias | (✓) CLABE y referencias |
+| Compra ahora, paga después | — | — | — | — |
+| Otros medios | ? | ? | ? | ? |
+| **Pagos presenciales** | | | | |
+| Terminal física | (✓) Terminal punto de venta bancaria | (✓) Terminal punto de venta bancaria | ? | ? |
+| Celular como terminal (Tap to Pay) | ? | ? | ? | ? |
+| Cobro con código QR | (✓) CoDi / DiMo | (✓) CoDi / DiMo | ? | ? |
+| Sistema punto de venta | — | — | — | — |
+| **Dinero, cuentas y otros servicios** | | | | |
+| Pagos a terceros (dispersión o payouts) | (✓) Dispersión por SPEI | (✓) Dispersión por SPEI | (✓) Dispersión por SPEI | (✓) Dispersión por SPEI |
+| Cuenta empresarial | (✓) Sí | (✓) Sí | (✓) Sí | ? |
+| Cuenta para personas o monedero | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí |
+| Tarjeta propia | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí |
+| Emisión de tarjetas como servicio | ? | ? | ? | ? |
+| Créditos para negocios | (✓) Sí | (✓) Sí | (✓) Sí | ? |
+| Depósito de efectivo en tiendas a la cuenta | (✓) Sucursales, cajeros y corresponsales | (✓) Sucursales, cajeros y corresponsales | (✓) Sucursales, cajeros y corresponsales | (✓) Sucursales propias |
+| Pagos internacionales y cambio de divisas | (✓) Divisas y transferencias internacionales | (✓) Divisas y transferencias internacionales | ? | ? |
+| Pago de servicios y recargas | (✓) Sí | (✓) Sí | (✓) Sí | ? |
+| Antifraude | (✓) Sí | (✓) Sí | ? | ? |
+| Herramientas de IA para integrar | ? | ? | ? | ? |
+| Acepta juego y casinos | (✓) Caso por caso (los bancos atienden a casinos como clientes) | (✓) Caso por caso (los bancos atienden a casinos como clientes) | ? | ? |
+| **Cripto** | | | | |
+| Compra y venta de cripto para el usuario | — Banco: no permitido | — Banco: no permitido | — Banco: no permitido | — Banco: no permitido |
+| Custodia o wallet | — Banco: no permitido | — Banco: no permitido | — Banco: no permitido | — Banco: no permitido |
+| Rampa pesos–cripto por API para empresas | — Banco: no permitido | — Banco: no permitido | — Banco: no permitido | — Banco: no permitido |
+| Pagos con cripto para comercios | — Banco: no permitido | — Banco: no permitido | — Banco: no permitido | — Banco: no permitido |
+| Cajero cripto físico | — | — | — | — |
+
+| Perfil | BanBajío | Afirme | Compartamos Banco | Banco del Bienestar |
+|---|---|---|---|---|
+| Modelo | (✓) B2C y B2B | (✓) B2C y B2B | (✓) B2C y B2B | (✓) B2C (programas sociales) |
+| A quién atiende | (✓) B2C y B2B | (✓) B2C y B2B | (✓) B2C y B2B | (✓) B2C (programas sociales) |
+| Sectores destacados | (✓) Personas, empresas y gobierno | (✓) Personas, empresas y gobierno | (✓) Personas, empresas y gobierno | (✓) Personas, empresas y gobierno |
+| App para usuario final | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí |
+| Cuenta para persona (usuario final) | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí |
+| Cuenta empresarial | (✓) Sí | (✓) Sí | (✓) Sí | ? |
+| Cuentas para menores de edad | ? | ? | ? | ? |
+| Tarjeta de débito | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí |
+| Tarjeta de crédito | (✓) Sí | (✓) Sí | (✓) Sí | ? |
+| Préstamos personales | (✓) Sí | (✓) Sí | (✓) Sí | ? |
+| Créditos para negocio | (✓) Sí | (✓) Sí | (✓) Sí | ? |
+| Rendimientos o inversión | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Ahorro |
+| Seguros | (✓) Sí | (✓) Sí | (✓) Sí | ? |
+| Pago de servicios | (✓) Sí | (✓) Sí | (✓) Sí | ? |
+| Recargas de tiempo aire | (✓) Sí | (✓) Sí | (✓) Sí | ? |
+| Remesas | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí |
+| Cripto | — Banco: no puede ofrecer cripto (Circular 4/2019; CNBV, may-2026) | — Banco: no puede ofrecer cripto (Circular 4/2019; CNBV, may-2026) | — Banco: no puede ofrecer cripto (Circular 4/2019; CNBV, may-2026) | — Banco: no puede ofrecer cripto (Circular 4/2019; CNBV, may-2026) |
+| Depósito de efectivo en tiendas | (✓) Sucursales, cajeros y corresponsales | (✓) Sucursales, cajeros y corresponsales | (✓) Sucursales, cajeros y corresponsales | (✓) Sucursales propias |
+| Figura en México | (✓) Banco múltiple | (✓) Banco múltiple | (✓) Banco múltiple (microcrédito) | (✓) Banca de desarrollo |
+| Rol para nuestro kiosco | (✓) Destino de depósito como comisionista; posible banco patrocinador SPEI | (✓) Destino de depósito como comisionista; posible banco patrocinador SPEI | (✓) Destino de depósito como comisionista; posible banco patrocinador SPEI | (✓) Destino de depósito de beneficiarios |
+
+**Banca digital** (9)
+
+| Producto | Nu México | Revolut | Openbank (Santander) | Hey Banco (Banregio) | Plata | Klar | bineo (Banorte, vendido a Klar) | Ualá | Kapital |
+|---|---|---|---|---|---|---|---|---|---|
+| **Pagos en línea** | | | | | | | | | |
+| Checkout alojado o con redirección | ? | ? | ? | ? | ? | ? | ? | ? | ? |
+| Checkout por API (transparente) | ? | ? | ? | ? | ? | ? | ? | ? | ? |
+| Componentes de pago embebidos | ? | ? | ? | ? | ? | ? | ? | ? | ? |
+| Links de pago | ? | ? | ? | ? | ? | ? | ? | ? | ? |
+| Suscripciones y cobro recurrente | ? | ? | ? | ? | ? | ? | ? | ? | ? |
+| Botón de pago con monedero propio | ? | ? | ? | ? | ? | ? | ? | ? | ? |
+| Plugins de comercio electrónico | ? | ? | ? | ? | ? | ? | ? | ? | ? |
+| Marketplace y pagos divididos | ? | ? | ? | ? | ? | ? | ? | ? | ? |
+| **Métodos de pago aceptados** | | | | | | | | | |
+| Tarjetas de crédito y débito | ? | ? | ? | ? | ? | ? | ? | ? | ? |
+| Meses sin intereses | ? | ? | ? | ? | ? | ? | ? | ? | ? |
+| Apple Pay y Google Pay | ? | ? | ? | ? | ? | ? | ? | ? | ? |
+| Efectivo con referencia en tiendas | ? | ? | ? | ? | ? | ? | ? | ? | ? |
+| Transferencia SPEI (cobro) | (✓) CLABE propia para recibir | (✓) CLABE propia para recibir | (✓) CLABE propia para recibir | (✓) CLABE propia para recibir | (✓) CLABE propia para recibir | (✓) CLABE propia para recibir | (✓) CLABE propia para recibir | (✓) CLABE propia para recibir | (✓) CLABE propia para recibir |
+| Compra ahora, paga después | ? | ? | ? | ? | ? | ? | ? | ? | ? |
+| Otros medios | ? | ? | ? | ? | ? | ? | ? | ? | ? |
+| **Pagos presenciales** | | | | | | | | | |
+| Terminal física | ? | ? | ? | ? | ? | ? | ? | ? | ? |
+| Celular como terminal (Tap to Pay) | ? | ? | ? | ? | ? | ? | ? | ? | ? |
+| Cobro con código QR | ? | ? | ? | ? | ? | ? | ? | ? | ? |
+| Sistema punto de venta | — | — | — | — | — | — | — | — | — |
+| **Dinero, cuentas y otros servicios** | | | | | | | | | |
+| Pagos a terceros (dispersión o payouts) | ? | ? | ? | ? | ? | ? | ? | ? | ? |
+| Cuenta empresarial | ? | ? | ? | (✓) Sí | ? | (✓) Klar Empresarial | ? | ? | (✓) Sí |
+| Cuenta para personas o monedero | ✓ Cuenta Nu de Débito | ✓ Cuenta multimoneda | (✓) Sí | (✓) Sí | (✓) Por lanzar (feb-2026) | (✓) Cuenta de débito | (✓) Sí | (✓) Sí | (✓) Sí |
+| Tarjeta propia | ✓ Sí | ✓ Planes Premium y Metal | (✓) Sí | (✓) Sí | ✓ Tarjeta de crédito, su producto principal | (✓) Sí | (✓) Sí | (✓) Sí | ? |
+| Emisión de tarjetas como servicio | — Solo tarjeta propia | — Solo tarjeta propia | — Solo tarjeta propia | — Solo tarjeta propia | ? | — Solo tarjeta propia | — Solo tarjeta propia | — Solo tarjeta propia | ? |
+| Créditos para negocios | ? | ? | ? | (✓) Sí | ? | (✓) Crédito para pymes | ? | ? | (✓) Sí |
+| Depósito de efectivo en tiendas a la cuenta | (✓) Depósitos en OXXO | ? | ? | ? | ? | ? | ? | ? | ? |
+| Pagos internacionales y cambio de divisas | ? | ✓ Transferencias internacionales | ? | ? | ? | ? | ? | ? | ? |
+| Pago de servicios y recargas | (✓) Sí | ✓ Sí | ? | (✓) Sí | ? | ? | ? | (✓) Sí | ? |
+| Antifraude | ? | ? | ? | ? | ? | ? | ? | ? | ? |
+| Herramientas de IA para integrar | ? | ? | ? | ? | ? | ? | ? | ? | ? |
+| Acepta juego y casinos | ? | ? | ? | ? | ? | ? | ? | ? | ? |
+| **Cripto** | | | | | | | | | |
+| Compra y venta de cripto para el usuario | — Banco: no permitido | — Banco: no permitido | — Banco: no permitido | — Banco: no permitido | — Banco: no permitido | — Banco: no permitido | — Banco: no permitido | — Banco: no permitido | — Banco: no permitido |
+| Custodia o wallet | — Banco: no permitido | — Banco: no permitido | — Banco: no permitido | — Banco: no permitido | — Banco: no permitido | — Banco: no permitido | — Banco: no permitido | — Banco: no permitido | — Banco: no permitido |
+| Rampa pesos–cripto por API para empresas | — Banco: no permitido | — Banco: no permitido | — Banco: no permitido | — Banco: no permitido | — Banco: no permitido | — Banco: no permitido | — Banco: no permitido | — Banco: no permitido | — Banco: no permitido |
+| Pagos con cripto para comercios | — Banco: no permitido | — Banco: no permitido | — Banco: no permitido | — Banco: no permitido | — Banco: no permitido | — Banco: no permitido | — Banco: no permitido | — Banco: no permitido | — Banco: no permitido |
+| Cajero cripto físico | — | — | — | — | — | — | — | — | — |
+
+| Perfil | Nu México | Revolut | Openbank (Santander) | Hey Banco (Banregio) | Plata | Klar | bineo (Banorte, vendido a Klar) | Ualá | Kapital |
+|---|---|---|---|---|---|---|---|---|---|
+| Modelo | ✓ B2C (más de 15 millones de clientes) | ✓ B2C | (✓) B2C | (✓) B2C y B2B | ✓ B2C | (✓) B2C y pymes | (✓) B2C | (✓) B2C | (✓) B2B y B2C |
+| A quién atiende | ✓ B2C (más de 15 millones de clientes) | ✓ B2C | (✓) B2C | (✓) B2C y B2B | ✓ B2C | (✓) B2C y pymes | (✓) B2C | (✓) B2C | (✓) B2B y B2C |
+| Sectores destacados | (✓) Personas | (✓) Personas | (✓) Personas | (✓) Personas | (✓) Personas | (✓) Personas | (✓) Personas | (✓) Personas | (✓) Personas |
+| App para usuario final | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí |
+| Cuenta para persona (usuario final) | ✓ Cuenta Nu de Débito | ✓ Cuenta multimoneda | (✓) Sí | (✓) Sí | (✓) Por lanzar (feb-2026) | (✓) Cuenta de débito | (✓) Sí | (✓) Sí | (✓) Sí |
+| Cuenta empresarial | ? | ? | ? | (✓) Sí | ? | (✓) Klar Empresarial | ? | ? | (✓) Sí |
+| Cuentas para menores de edad | ? | (✓) Kids & Teens, 6 a 17 años (anunciado para después) | ? | ✓ Ahorro para menores de 18, sin costo | ? | ? | ? | ? | ? |
+| Tarjeta de débito | ✓ Sí | ✓ Planes Premium y Metal | (✓) Sí | (✓) Sí | ? | (✓) Sí | (✓) Sí | (✓) Sí | ? |
+| Tarjeta de crédito | ✓ Sí, y tarjeta garantizada | (✓) Tarjeta de crédito anunciada | (✓) Sí | (✓) Sí | ✓ Tarjeta de crédito, su producto principal | (✓) Sí, incluso garantizada | ? | (✓) Sí | ? |
+| Préstamos personales | ✓ Sí | ? | ? | (✓) Sí | ? | ? | ? | (✓) Sí | ? |
+| Créditos para negocio | ? | ? | ? | (✓) Sí | ? | (✓) Crédito para pymes | ? | ? | (✓) Sí |
+| Rendimientos o inversión | (✓) Cajitas con rendimiento | ✓ Hasta 15% anual en los primeros $25,000 | (✓) Ahorro e inversión | (✓) Rendimientos | ? | (✓) Inversiones con rendimiento | (✓) Rendimientos | (✓) Rendimientos | ? |
+| Seguros | ? | ? | ? | ? | ? | ? | ? | ? | ? |
+| Pago de servicios | (✓) Sí | ✓ Sí | ? | (✓) Sí | ? | ? | ? | (✓) Sí | ? |
+| Recargas de tiempo aire | ? | ? | ? | ? | ? | ? | ? | ? | ? |
+| Remesas | ? | ✓ Transferencias internacionales | ? | ? | ? | ? | ? | ? | ? |
+| Cripto | — Banco: no puede ofrecer cripto (Circular 4/2019; CNBV, may-2026) | — Banco: no puede ofrecer cripto (Circular 4/2019; CNBV, may-2026) | — Banco: no puede ofrecer cripto (Circular 4/2019; CNBV, may-2026) | — Banco: no puede ofrecer cripto (Circular 4/2019; CNBV, may-2026) | — Banco: no puede ofrecer cripto (Circular 4/2019; CNBV, may-2026) | — ITF: no puede ofrecer cripto a clientes (Circular 4/2019) | — Banco: no puede ofrecer cripto (Circular 4/2019; CNBV, may-2026) | — Banco: no puede ofrecer cripto (Circular 4/2019; CNBV, may-2026) | — Banco: no puede ofrecer cripto (Circular 4/2019; CNBV, may-2026) |
+| Depósito de efectivo en tiendas | (✓) Depósitos en OXXO | ? | ? | ? | ? | ? | ? | ? | ? |
+| Figura en México | ✓ Banco; opera como banco desde 10-jul-2026 | ✓ Banco; opera desde ene-2026 | (✓) Banco (Grupo Santander) | (✓) Banco (brazo digital de Banregio) | ✓ Banco; autorizado en 2026 | (✓) SOFIPO; compra de bineo (banco) anunciada | (✓) Banco | (✓) Banco, vía ABC Capital | (✓) Banco, ex Banco Autofin |
+| Rol para nuestro kiosco | (✓) Destino de depósito de alto volumen | (✓) Destino de depósito | (✓) Destino de depósito | (✓) Destino de depósito | (✓) Destino de pagos de tarjeta | (✓) Destino de depósito | (✓) Se integra a Klar | (✓) Destino de depósito | (✓) Posible banco patrocinador |
+
+**SOFIPO y neobanco** (3)
+
+| Producto | Stori | Finsus | Otros neobancos del mapa 2026: Billú Bank, Bankaya, Now Invex, Covalto, Techreo, Fincomún, Va App, PagaTodo, Miio |
+|---|---|---|---|
+| **Pagos en línea** | | | |
+| Checkout alojado o con redirección | ? | ? | ? |
+| Checkout por API (transparente) | ? | ? | ? |
+| Componentes de pago embebidos | ? | ? | ? |
+| Links de pago | ? | ? | ? |
+| Suscripciones y cobro recurrente | ? | ? | ? |
+| Botón de pago con monedero propio | ? | ? | ? |
+| Plugins de comercio electrónico | ? | ? | ? |
+| Marketplace y pagos divididos | ? | ? | ? |
+| **Métodos de pago aceptados** | | | |
+| Tarjetas de crédito y débito | ? | ? | ? |
+| Meses sin intereses | ? | ? | ? |
+| Apple Pay y Google Pay | ? | ? | ? |
+| Efectivo con referencia en tiendas | ? | ? | ? |
+| Transferencia SPEI (cobro) | (✓) CLABE propia para recibir | (✓) CLABE propia para recibir | ? |
+| Compra ahora, paga después | ? | ? | ? |
+| Otros medios | ? | ? | ? |
+| **Pagos presenciales** | | | |
+| Terminal física | ? | ? | ? |
+| Celular como terminal (Tap to Pay) | ? | ? | ? |
+| Cobro con código QR | ? | ? | ? |
+| Sistema punto de venta | — | — | — |
+| **Dinero, cuentas y otros servicios** | | | |
+| Pagos a terceros (dispersión o payouts) | ? | ? | ? |
+| Cuenta empresarial | ? | ? | ? |
+| Cuenta para personas o monedero | ✓ Cuenta con rendimientos y apartados | (✓) Sí | ? |
+| Tarjeta propia | (✓) Tarjeta de crédito sin historial | ? | ? |
+| Emisión de tarjetas como servicio | ? | ? | ? |
+| Créditos para negocios | ? | ? | ? |
+| Depósito de efectivo en tiendas a la cuenta | ? | ? | ? |
+| Pagos internacionales y cambio de divisas | ✓ Recepción desde EE. UU. (oct-2025) | ? | ? |
+| Pago de servicios y recargas | ? | ? | ? |
+| Antifraude | ? | ? | ? |
+| Herramientas de IA para integrar | ? | ? | ? |
+| Acepta juego y casinos | ? | ? | ? |
+| **Cripto** | | | |
+| Compra y venta de cripto para el usuario | — ITF: no permitido | — ITF: no permitido | — ITF: no permitido |
+| Custodia o wallet | — ITF: no permitido | — ITF: no permitido | — ITF: no permitido |
+| Rampa pesos–cripto por API para empresas | — ITF: no permitido | — ITF: no permitido | — ITF: no permitido |
+| Pagos con cripto para comercios | — ITF: no permitido | — ITF: no permitido | — ITF: no permitido |
+| Cajero cripto físico | — | — | — |
+
+| Perfil | Stori | Finsus | Otros neobancos del mapa 2026: Billú Bank, Bankaya, Now Invex, Covalto, Techreo, Fincomún, Va App, PagaTodo, Miio |
+|---|---|---|---|
+| Modelo | (✓) B2C | (✓) B2C | ? |
+| A quién atiende | (✓) B2C | (✓) B2C | ? |
+| Sectores destacados | (✓) Ahorro e inclusión financiera | (✓) Ahorro e inclusión financiera | (✓) Ahorro e inclusión financiera |
+| App para usuario final | (✓) Sí | (✓) Sí | ? |
+| Cuenta para persona (usuario final) | ✓ Cuenta con rendimientos y apartados | (✓) Sí | ? |
+| Cuenta empresarial | ? | ? | ? |
+| Cuentas para menores de edad | ? | ? | ? |
+| Tarjeta de débito | ? | ? | ? |
+| Tarjeta de crédito | (✓) Tarjeta de crédito sin historial | ? | ? |
+| Préstamos personales | ? | (✓) Sí | ? |
+| Créditos para negocio | ? | ? | ? |
+| Rendimientos o inversión | ✓ Rendimientos | (✓) Inversiones a plazo | ? |
+| Seguros | ? | ? | ? |
+| Pago de servicios | ? | ? | ? |
+| Recargas de tiempo aire | ? | ? | ? |
+| Remesas | ✓ Recepción desde EE. UU. (oct-2025) | ? | ? |
+| Cripto | — ITF: no puede ofrecer cripto a clientes (Circular 4/2019) | — ITF: no puede ofrecer cripto a clientes (Circular 4/2019) | ? |
+| Depósito de efectivo en tiendas | ? | ? | ? |
+| Figura en México | ✓ SOFIPO (compró Mascaja) | (✓) SOFIPO; busca licencia bancaria | (✓) Varias figuras |
+| Rol para nuestro kiosco | (✓) Destino de depósito | (✓) Destino de depósito | (✓) Destinos potenciales; revisar uno por uno |
+
+**IFPE y cartera digital** (5)
+
+| Producto | Spin by OXXO | Albo | Fondeadora | Cuenca | Cashi (Walmart) |
+|---|---|---|---|---|---|
+| **Pagos en línea** | | | | | |
+| Checkout alojado o con redirección | ? | ? | ? | ? | ? |
+| Checkout por API (transparente) | ? | ? | ? | ? | ? |
+| Componentes de pago embebidos | ? | ? | ? | ? | ? |
+| Links de pago | ? | ? | ? | ? | ? |
+| Suscripciones y cobro recurrente | ? | ? | ? | ? | ? |
+| Botón de pago con monedero propio | ? | ? | ? | ? | ? |
+| Plugins de comercio electrónico | ? | ? | ? | ? | ? |
+| Marketplace y pagos divididos | ? | ? | ? | ? | ? |
+| **Métodos de pago aceptados** | | | | | |
+| Tarjetas de crédito y débito | ? | ? | ? | ? | ? |
+| Meses sin intereses | ? | ? | ? | ? | ? |
+| Apple Pay y Google Pay | ? | ? | ? | ? | ? |
+| Efectivo con referencia en tiendas | ? | ? | ? | ? | ? |
+| Transferencia SPEI (cobro) | (✓) CLABE propia para recibir | (✓) CLABE propia para recibir | (✓) CLABE propia para recibir | (✓) CLABE propia para recibir | (✓) CLABE propia para recibir |
+| Compra ahora, paga después | ? | ? | ? | ? | ? |
+| Otros medios | ? | ? | ? | ? | ? |
+| **Pagos presenciales** | | | | | |
+| Terminal física | ? | ? | ? | ? | ? |
+| Celular como terminal (Tap to Pay) | ? | ? | ? | ? | ? |
+| Cobro con código QR | ? | ? | ? | ? | ? |
+| Sistema punto de venta | — | — | — | — | — |
+| **Dinero, cuentas y otros servicios** | | | | | |
+| Pagos a terceros (dispersión o payouts) | ? | ? | ? | ? | ? |
+| Cuenta empresarial | ? | ? | (✓) Sí | ? | ? |
+| Cuenta para personas o monedero | (✓) Cuenta digital | (✓) Sí | (✓) Cuenta digital | (✓) Sí | (✓) Monedero |
+| Tarjeta propia | (✓) Sí | (✓) Mastercard | (✓) Sí | (✓) Sí | ? |
+| Emisión de tarjetas como servicio | — Solo tarjeta propia | — Solo tarjeta propia | — Solo tarjeta propia | — Solo tarjeta propia | ? |
+| Créditos para negocios | ? | ? | ? | ? | ? |
+| Depósito de efectivo en tiendas a la cuenta | (✓) En tiendas OXXO | ? | ? | ? | (✓) En tiendas Walmart y Bodega Aurrera |
+| Pagos internacionales y cambio de divisas | ? | ? | ? | ? | ? |
+| Pago de servicios y recargas | (✓) Sí | ? | ? | ? | ? |
+| Antifraude | ? | ? | ? | ? | ? |
+| Herramientas de IA para integrar | ? | ? | ? | ? | ? |
+| Acepta juego y casinos | ? | ? | ? | ? | ? |
+| **Cripto** | | | | | |
+| Compra y venta de cripto para el usuario | — ITF: no permitido | — ITF: no permitido | — ITF: no permitido | — ITF: no permitido | — ITF: no permitido |
+| Custodia o wallet | — ITF: no permitido | — ITF: no permitido | — ITF: no permitido | — ITF: no permitido | — ITF: no permitido |
+| Rampa pesos–cripto por API para empresas | — ITF: no permitido | — ITF: no permitido | — ITF: no permitido | — ITF: no permitido | — ITF: no permitido |
+| Pagos con cripto para comercios | — ITF: no permitido | — ITF: no permitido | — ITF: no permitido | — ITF: no permitido | — ITF: no permitido |
+| Cajero cripto físico | — | — | — | — | — |
+
+| Perfil | Spin by OXXO | Albo | Fondeadora | Cuenca | Cashi (Walmart) |
+|---|---|---|---|---|---|
+| Modelo | (✓) B2C | (✓) B2C | (✓) B2C y B2B | (✓) B2C | (✓) B2C |
+| A quién atiende | (✓) B2C | (✓) B2C | (✓) B2C y B2B | (✓) B2C | (✓) B2C |
+| Sectores destacados | (✓) Personas y comercios | (✓) Personas y comercios | (✓) Personas y comercios | (✓) Personas y comercios | (✓) Personas y comercios |
+| App para usuario final | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí |
+| Cuenta para persona (usuario final) | (✓) Cuenta digital | (✓) Sí | (✓) Cuenta digital | (✓) Sí | (✓) Monedero |
+| Cuenta empresarial | ? | ? | (✓) Sí | ? | ? |
+| Cuentas para menores de edad | ? | ? | ? | ? | ? |
+| Tarjeta de débito | (✓) Sí | (✓) Mastercard | (✓) Sí | (✓) Sí | ? |
+| Tarjeta de crédito | ? | ? | ? | ? | ? |
+| Préstamos personales | ? | (✓) Créditos | ? | ? | ? |
+| Créditos para negocio | ? | ? | ? | ? | ? |
+| Rendimientos o inversión | ? | ? | ? | ? | ? |
+| Seguros | ? | ? | ? | ? | ? |
+| Pago de servicios | (✓) Sí | ? | ? | ? | ? |
+| Recargas de tiempo aire | ? | ? | ? | ? | ? |
+| Remesas | ? | ? | ? | ? | ? |
+| Cripto | ? | — ITF: no puede ofrecer cripto a clientes (Circular 4/2019) | ? | — ITF: no puede ofrecer cripto a clientes (Circular 4/2019) | ? |
+| Depósito de efectivo en tiendas | (✓) En tiendas OXXO | ? | ? | ? | (✓) En tiendas Walmart y Bodega Aurrera |
+| Figura en México | ? | (✓) IFPE | ? | (✓) IFPE | ? |
+| Rol para nuestro kiosco | (✓) Competidor directo en depósitos en efectivo | (✓) Destino de depósito | (✓) Destino de depósito | (✓) Destino de depósito | (✓) Competidor en depósitos en efectivo |
+
+**Crédito y cartera digital** (2)
+
+| Producto | DiDi Finanzas | Vexi |
+|---|---|---|
+| **Pagos en línea** | | |
+| Checkout alojado o con redirección | ? | ? |
+| Checkout por API (transparente) | ? | ? |
+| Componentes de pago embebidos | ? | ? |
+| Links de pago | ? | ? |
+| Suscripciones y cobro recurrente | ? | ? |
+| Botón de pago con monedero propio | ? | ? |
+| Plugins de comercio electrónico | ? | ? |
+| Marketplace y pagos divididos | ? | ? |
+| **Métodos de pago aceptados** | | |
+| Tarjetas de crédito y débito | ? | ? |
+| Meses sin intereses | ? | ? |
+| Apple Pay y Google Pay | ? | ? |
+| Efectivo con referencia en tiendas | ? | ? |
+| Transferencia SPEI (cobro) | (✓) CLABE propia para recibir | ? |
+| Compra ahora, paga después | ? | ? |
+| Otros medios | ? | ? |
+| **Pagos presenciales** | | |
+| Terminal física | ? | ? |
+| Celular como terminal (Tap to Pay) | ? | ? |
+| Cobro con código QR | ? | ? |
+| Sistema punto de venta | — | — |
+| **Dinero, cuentas y otros servicios** | | |
+| Pagos a terceros (dispersión o payouts) | ? | ? |
+| Cuenta empresarial | ? | ? |
+| Cuenta para personas o monedero | (✓) Cuenta DiDi | ? |
+| Tarjeta propia | (✓) DiDi Card | (✓) Tarjeta con cashback |
+| Emisión de tarjetas como servicio | ? | ? |
+| Créditos para negocios | ? | ? |
+| Depósito de efectivo en tiendas a la cuenta | ? | ? |
+| Pagos internacionales y cambio de divisas | ? | ? |
+| Pago de servicios y recargas | ? | (✓) Pago de servicios con tapi (alianza) |
+| Antifraude | ? | ? |
+| Herramientas de IA para integrar | ? | ? |
+| Acepta juego y casinos | ? | ? |
+| **Cripto** | | |
+| Compra y venta de cripto para el usuario | ? | ? |
+| Custodia o wallet | ? | ? |
+| Rampa pesos–cripto por API para empresas | ? | ? |
+| Pagos con cripto para comercios | ? | ? |
+| Cajero cripto físico | — | — |
+
+| Perfil | DiDi Finanzas | Vexi |
+|---|---|---|
+| Modelo | (✓) B2C | (✓) B2C |
+| A quién atiende | (✓) B2C | (✓) B2C |
+| Sectores destacados | (✓) Crédito al consumo | (✓) Crédito al consumo |
+| App para usuario final | (✓) Sí | (✓) Sí |
+| Cuenta para persona (usuario final) | (✓) Cuenta DiDi | ? |
+| Cuenta empresarial | ? | ? |
+| Cuentas para menores de edad | ? | ? |
+| Tarjeta de débito | ? | ? |
+| Tarjeta de crédito | (✓) DiDi Card | (✓) Tarjeta con cashback |
+| Préstamos personales | (✓) Préstamos DiDi | ? |
+| Créditos para negocio | ? | ? |
+| Rendimientos o inversión | ? | ? |
+| Seguros | ? | ? |
+| Pago de servicios | ? | (✓) Pago de servicios con tapi (alianza) |
+| Recargas de tiempo aire | ? | ? |
+| Remesas | ? | ? |
+| Cripto | ? | ? |
+| Depósito de efectivo en tiendas | ? | ? |
+| Figura en México | (✓) SOFOM | ? |
+| Rol para nuestro kiosco | (✓) Destino de depósito y pago de préstamos | (✓) Destino de pagos de tarjeta |
+
+**Crédito y BNPL** (3)
+
+| Producto | Kueski | Aplazo | Otros de crédito: Atrato, Baubap, Tala |
+|---|---|---|---|
+| **Pagos en línea** | | | |
+| Checkout alojado o con redirección | (✓) Checkout del BNPL | (✓) Checkout del BNPL | — |
+| Checkout por API (transparente) | ? | ? | ? |
+| Componentes de pago embebidos | ? | ? | ? |
+| Links de pago | ? | ? | ? |
+| Suscripciones y cobro recurrente | ? | ? | ? |
+| Botón de pago con monedero propio | — | — | — |
+| Plugins de comercio electrónico | (✓) Plugins para tiendas en línea | (✓) Plugins para tiendas en línea | — |
+| Marketplace y pagos divididos | ? | ? | ? |
+| **Métodos de pago aceptados** | | | |
+| Tarjetas de crédito y débito | ? | ? | ? |
+| Meses sin intereses | ? | ? | ? |
+| Apple Pay y Google Pay | ? | ? | ? |
+| Efectivo con referencia en tiendas | ✓ Pago de cuotas en OXXO | ? | ? |
+| Transferencia SPEI (cobro) | ? | ? | ? |
+| Compra ahora, paga después | ✓ Kueski Pay | (✓) Compra a plazos en el checkout | ? |
+| Otros medios | ? | ? | ? |
+| **Pagos presenciales** | | | |
+| Terminal física | ? | ? | ? |
+| Celular como terminal (Tap to Pay) | ? | ? | ? |
+| Cobro con código QR | ? | ? | ? |
+| Sistema punto de venta | — | — | — |
+| **Dinero, cuentas y otros servicios** | | | |
+| Pagos a terceros (dispersión o payouts) | ? | ? | ? |
+| Cuenta empresarial | — | — | — |
+| Cuenta para personas o monedero | — | — | — |
+| Tarjeta propia | — | — | — |
+| Emisión de tarjetas como servicio | — | — | — |
+| Créditos para negocios | ? | ? | ? |
+| Depósito de efectivo en tiendas a la cuenta | — Recibe pagos de cuotas, no depósitos | — Recibe pagos de cuotas, no depósitos | — Recibe pagos de cuotas, no depósitos |
+| Pagos internacionales y cambio de divisas | ? | ? | ? |
+| Pago de servicios y recargas | — | — | — |
+| Antifraude | ? | ? | ? |
+| Herramientas de IA para integrar | ? | ? | ? |
+| Acepta juego y casinos | — | — | — |
+| **Cripto** | | | |
+| Compra y venta de cripto para el usuario | ? | ? | ? |
+| Custodia o wallet | ? | ? | ? |
+| Rampa pesos–cripto por API para empresas | ? | ? | ? |
+| Pagos con cripto para comercios | ? | ? | ? |
+| Cajero cripto físico | — | — | — |
+
+| Perfil | Kueski | Aplazo | Otros de crédito: Atrato, Baubap, Tala |
+|---|---|---|---|
+| Modelo | ✓ B2C (mayores de 18) | (✓) B2C y comercios | (✓) B2C |
+| A quién atiende | ✓ B2C (mayores de 18) | (✓) B2C y comercios | (✓) B2C |
+| Sectores destacados | (✓) Crédito al consumo y comercio electrónico | (✓) Crédito al consumo y comercio electrónico | (✓) Crédito al consumo y comercio electrónico |
+| App para usuario final | (✓) Sí | (✓) Sí | (✓) Sí |
+| Cuenta para persona (usuario final) | — | — | — |
+| Cuenta empresarial | — | — | — |
+| Cuentas para menores de edad | — Solo mayores de 18 | — | — |
+| Tarjeta de débito | — | — | — |
+| Tarjeta de crédito | — | — | — |
+| Préstamos personales | ✓ Kueski Préstamos | (✓) Compra a plazos (BNPL) | (✓) Sí |
+| Créditos para negocio | — | ? | — |
+| Rendimientos o inversión | — | — | — |
+| Seguros | ? | ? | ? |
+| Pago de servicios | — | — | — |
+| Recargas de tiempo aire | ? | ? | ? |
+| Remesas | — | — | — |
+| Cripto | ? | ? | ? |
+| Depósito de efectivo en tiendas | ✓ Pagos en OXXO y ventanilla BBVA | ? | ? |
+| Figura en México | ✓ SOFOM ENR | ? | (✓) SOFOM u otras |
+| Rol para nuestro kiosco | (✓) Punto de pago de créditos (cobranza en efectivo) | (✓) Punto de pago de cuotas | (✓) Punto de pago de créditos |
+
+**Gasto corporativo y crédito pyme** (3)
+
+| Producto | Konfío | Clara | Mendel |
+|---|---|---|---|
+| **Pagos en línea** | | | |
+| Checkout alojado o con redirección | — | — | — |
+| Checkout por API (transparente) | — | — | — |
+| Componentes de pago embebidos | — | — | — |
+| Links de pago | — | — | — |
+| Suscripciones y cobro recurrente | — | — | — |
+| Botón de pago con monedero propio | — | — | — |
+| Plugins de comercio electrónico | — | — | — |
+| Marketplace y pagos divididos | — | — | — |
+| **Métodos de pago aceptados** | | | |
+| Tarjetas de crédito y débito | — | — | — |
+| Meses sin intereses | — | — | — |
+| Apple Pay y Google Pay | — | — | — |
+| Efectivo con referencia en tiendas | — | — | — |
+| Transferencia SPEI (cobro) | — | — | — |
+| Compra ahora, paga después | — | — | — |
+| Otros medios | — | — | — |
+| **Pagos presenciales** | | | |
+| Terminal física | — | — | — |
+| Celular como terminal (Tap to Pay) | — | — | — |
+| Cobro con código QR | — | — | — |
+| Sistema punto de venta | — | — | — |
+| **Dinero, cuentas y otros servicios** | | | |
+| Pagos a terceros (dispersión o payouts) | ? | (✓) Pagos a proveedores | (✓) Pagos a proveedores |
+| Cuenta empresarial | (✓) Sí | (✓) Sí | ✓ Software de gastos |
+| Cuenta para personas o monedero | — | — | — |
+| Tarjeta propia | (✓) Tarjeta empresarial | (✓) Tarjetas corporativas, incluso respaldadas por stablecoins con Bitso Business | ✓ Tarjetas de crédito corporativas |
+| Emisión de tarjetas como servicio | ? | ? | ? |
+| Créditos para negocios | ✓ Capital de trabajo para pymes | (✓) Sí | ✓ Línea de crédito empresarial |
+| Depósito de efectivo en tiendas a la cuenta | — | — | — |
+| Pagos internacionales y cambio de divisas | — | — | — |
+| Pago de servicios y recargas | — | — | — |
+| Antifraude | — | — | — |
+| Herramientas de IA para integrar | — | — | — |
+| Acepta juego y casinos | — | — | — |
+| **Cripto** | | | |
+| Compra y venta de cripto para el usuario | ? | — | ? |
+| Custodia o wallet | ? | — | ? |
+| Rampa pesos–cripto por API para empresas | ? | — | ? |
+| Pagos con cripto para comercios | ? | (✓) Tarjetas respaldadas por stablecoins con Bitso Business | ? |
+| Cajero cripto físico | — | — | — |
+
+| Perfil | Konfío | Clara | Mendel |
+|---|---|---|---|
+| Modelo | ✓ B2B (pymes) | (✓) B2B | ✓ B2B (clientes como Mercado Libre y AB InBev) |
+| A quién atiende | ✓ B2B (pymes) | (✓) B2B | ✓ B2B (clientes como Mercado Libre y AB InBev) |
+| Sectores destacados | (✓) Pymes y corporativos | (✓) Pymes y corporativos | (✓) Pymes y corporativos |
+| App para usuario final | — | — | — |
+| Cuenta para persona (usuario final) | — | — | — |
+| Cuenta empresarial | (✓) Sí | (✓) Sí | ✓ Software de gastos |
+| Cuentas para menores de edad | — | — | — |
+| Tarjeta de débito | — | — | — |
+| Tarjeta de crédito | (✓) Tarjeta empresarial | (✓) Tarjetas corporativas, incluso respaldadas por stablecoins con Bitso Business | ✓ Tarjetas de crédito corporativas |
+| Préstamos personales | — | — | — |
+| Créditos para negocio | ✓ Capital de trabajo para pymes | (✓) Sí | ✓ Línea de crédito empresarial |
+| Rendimientos o inversión | — | — | — |
+| Seguros | ? | ? | ? |
+| Pago de servicios | — | — | — |
+| Recargas de tiempo aire | ? | ? | ? |
+| Remesas | — | — | — |
+| Cripto | ? | (✓) Solo para empresas, con Bitso Business | — |
+| Depósito de efectivo en tiendas | ? | — | — |
+| Figura en México | ✓ SOFOM; busca licencia bancaria (2026) | ? | ? |
+| Rol para nuestro kiosco | (✓) Fuera del modelo; posible crédito para la empresa | (✓) Fuera del modelo; tarjetas para gastos de la empresa | (✓) Fuera del modelo; gastos de la empresa |
+
+**Inversión** (3)
+
+| Producto | GBM | Cetesdirecto | Alpaca (posible "Alpaka") |
+|---|---|---|---|
+| **Pagos en línea** | | | |
+| Checkout alojado o con redirección | — | — | — |
+| Checkout por API (transparente) | — | — | — |
+| Componentes de pago embebidos | — | — | — |
+| Links de pago | — | — | — |
+| Suscripciones y cobro recurrente | — | — | — |
+| Botón de pago con monedero propio | — | — | — |
+| Plugins de comercio electrónico | — | — | — |
+| Marketplace y pagos divididos | — | — | — |
+| **Métodos de pago aceptados** | | | |
+| Tarjetas de crédito y débito | — | — | — |
+| Meses sin intereses | — | — | — |
+| Apple Pay y Google Pay | — | — | — |
+| Efectivo con referencia en tiendas | — | — | — |
+| Transferencia SPEI (cobro) | — | — | — |
+| Compra ahora, paga después | — | — | — |
+| Otros medios | — | — | — |
+| **Pagos presenciales** | | | |
+| Terminal física | — | — | — |
+| Celular como terminal (Tap to Pay) | — | — | — |
+| Cobro con código QR | — | — | — |
+| Sistema punto de venta | — | — | — |
+| **Dinero, cuentas y otros servicios** | | | |
+| Pagos a terceros (dispersión o payouts) | — | — | — |
+| Cuenta empresarial | — | — | — |
+| Cuenta para personas o monedero | (✓) Cuenta de inversión | (✓) Sí | — |
+| Tarjeta propia | — | — | — |
+| Emisión de tarjetas como servicio | — | — | — |
+| Créditos para negocios | — | — | — |
+| Depósito de efectivo en tiendas a la cuenta | — | — | — |
+| Pagos internacionales y cambio de divisas | — | — | — |
+| Pago de servicios y recargas | — | — | — |
+| Antifraude | — | — | — |
+| Herramientas de IA para integrar | — | — | — |
+| Acepta juego y casinos | — | — | — |
+| **Cripto** | | | |
+| Compra y venta de cripto para el usuario | ? | ? | ? |
+| Custodia o wallet | ? | ? | ? |
+| Rampa pesos–cripto por API para empresas | ? | ? | ? |
+| Pagos con cripto para comercios | ? | ? | ? |
+| Cajero cripto físico | — | — | — |
+
+| Perfil | GBM | Cetesdirecto | Alpaca (posible "Alpaka") |
+|---|---|---|---|
+| Modelo | (✓) B2C | (✓) B2C | ✓ B2B2C |
+| A quién atiende | (✓) B2C | (✓) B2C | ✓ B2B2C |
+| Sectores destacados | (✓) Inversionistas | (✓) Inversionistas | (✓) Inversionistas |
+| App para usuario final | (✓) Sí | (✓) Sí | (✓) Sí |
+| Cuenta para persona (usuario final) | (✓) Cuenta de inversión | (✓) Sí | — |
+| Cuenta empresarial | ? | ? | — |
+| Cuentas para menores de edad | ? | (✓) Cetes Directo Niños | — |
+| Tarjeta de débito | — | — | — |
+| Tarjeta de crédito | — | — | — |
+| Préstamos personales | — | — | — |
+| Créditos para negocio | — | — | — |
+| Rendimientos o inversión | ✓ Opera el fondo de rendimientos de Mercado Pago | (✓) Valores gubernamentales | ✓ Acciones de EE. UU. vía apps socias |
+| Seguros | — | — | — |
+| Pago de servicios | — | — | — |
+| Recargas de tiempo aire | ? | ? | ? |
+| Remesas | — | — | — |
+| Cripto | — Casa de bolsa: no puede ofrecer cripto | — | ? |
+| Depósito de efectivo en tiendas | — | ? | — |
+| Figura en México | (✓) Casa de bolsa | (✓) Gobierno federal | ✓ Bróker de EE. UU.; da infraestructura a apps mexicanas como Rivium y RUUT |
+| Rol para nuestro kiosco | (✓) Fuera del modelo | (✓) Fuera del modelo | (✓) Fuera del modelo; confirmar con Lucho si se refería a otra empresa |
+
+**Exchange cripto** (8)
+
+| Producto | Bitso | Binance | Bitget | OKX | Kraken | Coinbase | Otros exchanges: Bybit, Crypto.com, KuCoin, BingX | Tauros, Volabit, Airtm, RedotPay |
+|---|---|---|---|---|---|---|---|---|
+| **Pagos en línea** | | | | | | | | |
+| Checkout alojado o con redirección | ? | ? | ? | ? | ? | ? | ? | ? |
+| Checkout por API (transparente) | ? | ? | ? | ? | ? | ? | ? | ? |
+| Componentes de pago embebidos | ? | ? | ? | ? | ? | ? | ? | ? |
+| Links de pago | ? | ? | ? | ? | ? | ? | ? | ? |
+| Suscripciones y cobro recurrente | ? | ? | ? | ? | ? | ? | ? | ? |
+| Botón de pago con monedero propio | ? | (✓) Binance Pay | ? | ? | ? | ? | ? | ? |
+| Plugins de comercio electrónico | ? | ? | ? | ? | ? | ? | ? | ? |
+| Marketplace y pagos divididos | ? | ? | ? | ? | ? | ? | ? | ? |
+| **Métodos de pago aceptados** | | | | | | | | |
+| Tarjetas de crédito y débito | ? | ? | ? | ? | ? | ? | ? | ? |
+| Meses sin intereses | — | — | — | — | — | — | — | — |
+| Apple Pay y Google Pay | ? | ? | ? | ? | ? | ? | ? | ? |
+| Efectivo con referencia en tiendas | ? | ? | ? | ? | ? | ? | ? | ? |
+| Transferencia SPEI (cobro) | (✓) Depósito por SPEI | (✓) Depósito por SPEI | (✓) Depósito por SPEI | (✓) Depósito por SPEI | (✓) Depósito por SPEI | ? | ? | ? |
+| Compra ahora, paga después | — | — | — | — | — | — | — | — |
+| Otros medios | ? | ? | ? | ? | ? | ? | ? | ? |
+| **Pagos presenciales** | | | | | | | | |
+| Terminal física | — | — | — | — | — | — | — | — |
+| Celular como terminal (Tap to Pay) | ? | ? | ? | ? | ? | ? | ? | ? |
+| Cobro con código QR | ? | ? | ? | ? | ? | ? | ? | ? |
+| Sistema punto de venta | — | — | — | — | — | — | — | — |
+| **Dinero, cuentas y otros servicios** | | | | | | | | |
+| Pagos a terceros (dispersión o payouts) | ✓ Payouts por API (Bitso Business) | ? | ? | ? | ? | ? | ? | ? |
+| Cuenta empresarial | ✓ Bitso Business | (✓) Binance Pay para comercios | ? | ? | ? | ? | ? | ? |
+| Cuenta para personas o monedero | ✓ Sí | ✓ Sí | ✓ Sí | (✓) Sí | ✓ Sí | (✓) Acceso desde México | (✓) Sí | (✓) Sí |
+| Tarjeta propia | (✓) Tarjeta Bitso | (✓) Tarjeta (según país) | ? | (✓) Tarjeta OKX | ? | ? | ? | (✓) Tarjetas cripto (RedotPay) |
+| Emisión de tarjetas como servicio | ? | ? | ? | ? | ? | ? | ? | ? |
+| Créditos para negocios | — | — | — | — | — | — | — | — |
+| Depósito de efectivo en tiendas a la cuenta | ? | ? | ? | ? | — Solo SPEI desde una CLABE a nombre del usuario; mínimo $150; convierte a USD | — Sin depósito en pesos según comparador (jun-2026) | ? | ? |
+| Pagos internacionales y cambio de divisas | ✓ FX y stablecoins (Bitso Business) | (✓) Con stablecoins | (✓) Con stablecoins | (✓) Con stablecoins | (✓) Con stablecoins | (✓) Con stablecoins | (✓) Con stablecoins | (✓) Con stablecoins |
+| Pago de servicios y recargas | ? | ? | ? | ? | ? | ? | ? | ? |
+| Antifraude | ? | ? | ? | ? | ? | ? | ? | ? |
+| Herramientas de IA para integrar | ? | ? | ? | ? | ? | ? | ? | ? |
+| Acepta juego y casinos | ✓ Atiende "industrias de alto riesgo" | ? | ? | ? | ? | ? | ? | ? |
+| **Cripto** | | | | | | | | |
+| Compra y venta de cripto para el usuario | ✓ Sí | ✓ Sí | ✓ Sí | ✓ Sí | ✓ Sí | ✓ Sí | ✓ Sí | ✓ Sí |
+| Custodia o wallet | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí |
+| Rampa pesos–cripto por API para empresas | ✓ Bitso Business: rampas fiat por API | ? | ? | ? | ? | ? | ? | ? |
+| Pagos con cripto para comercios | ✓ Pagos en stablecoins | (✓) Binance Pay | ? | ? | ? | ? | ? | ? |
+| Cajero cripto físico | — | — | — | — | — | — | — | — |
+
+| Perfil | Bitso | Binance | Bitget | OKX | Kraken | Coinbase | Otros exchanges: Bybit, Crypto.com, KuCoin, BingX | Tauros, Volabit, Airtm, RedotPay |
+|---|---|---|---|---|---|---|---|---|
+| Modelo | ✓ B2C y B2B (Bitso Business) | ✓ B2C | ✓ B2C | (✓) B2C | (✓) B2C | (✓) B2C | (✓) B2C | (✓) B2C |
+| A quién atiende | ✓ B2C y B2B (Bitso Business) | ✓ B2C | ✓ B2C | (✓) B2C | (✓) B2C | (✓) B2C | (✓) B2C | (✓) B2C |
+| Sectores destacados | (✓) Cripto, remesas, pagos transfronterizos | (✓) Cripto, remesas, pagos transfronterizos | (✓) Cripto, remesas, pagos transfronterizos | (✓) Cripto, remesas, pagos transfronterizos | (✓) Cripto, remesas, pagos transfronterizos | (✓) Cripto, remesas, pagos transfronterizos | (✓) Cripto, remesas, pagos transfronterizos | (✓) Cripto, remesas, pagos transfronterizos |
+| App para usuario final | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí | (✓) Sí |
+| Cuenta para persona (usuario final) | ✓ Sí | ✓ Sí | ✓ Sí | (✓) Sí | ✓ Sí | (✓) Acceso desde México | (✓) Sí | (✓) Sí |
+| Cuenta empresarial | ✓ Bitso Business | (✓) Binance Pay para comercios | ? | ? | ? | ? | ? | ? |
+| Cuentas para menores de edad | — Solo mayores de 18 | — Solo mayores de 18 | — Solo mayores de 18 | — Solo mayores de 18 | — Solo mayores de 18 | — Solo mayores de 18 | — Solo mayores de 18 | ? |
+| Tarjeta de débito | (✓) Tarjeta Bitso | (✓) Tarjeta (según país) | ? | (✓) Tarjeta OKX | ? | ? | ? | (✓) Tarjetas cripto (RedotPay) |
+| Tarjeta de crédito | — | — | — | — | — | — | — | — |
+| Préstamos personales | — | — | — | — | — | — | — | — |
+| Créditos para negocio | — | — | — | — | — | — | — | — |
+| Rendimientos o inversión | (✓) Rendimientos en cripto | (✓) Earn | (✓) Earn | (✓) Earn | ? | ? | ? | ? |
+| Seguros | ? | ? | ? | ? | ? | ? | ? | ? |
+| Pago de servicios | ? | ? | ? | ? | ? | ? | ? | ? |
+| Recargas de tiempo aire | ? | ? | ? | ? | ? | ? | ? | ? |
+| Remesas | (✓) Remesas EE. UU.–México | ? | ? | ? | ? | (✓) Retiros a México para remesas | ? | (✓) Sí (Airtm, RedotPay) |
+| Cripto | ✓ Compra, venta y custodia | ✓ Compra, venta, P2P | ✓ Compra y venta | (✓) Compra directa con SPEI | ✓ Compra y venta | ✓ Compra y venta | ✓ Compra y venta | (✓) Sí |
+| Depósito de efectivo en tiendas | ? | ? | ? | ? | — Solo SPEI desde una CLABE a nombre del usuario; mínimo $150; convierte a USD | — Sin depósito en pesos según comparador (jun-2026) | (✓) P2P o SPEI (BingX) | ? |
+| Figura en México | ✓ Pesos vía Nvio Pagos México (IFPE autorizada por la CNBV); la cripto no la supervisa la CNBV | ✓ Bmex Techfin, registro ante el SAT como actividad vulnerable; pesos vía Programas de Relacionamiento Medá (IFPE) | ✓ Registro ante el SAT (actividad vulnerable) y la UIF, may-2026 | ? | ? | ? | (✓) Licencias extranjeras | ? |
+| Rol para nuestro kiosco | ✓ Destino de depósito en pesos y proveedor de liquidez (API) | (✓) Destino de depósito en pesos | (✓) Destino de depósito en pesos (SPEI) | (✓) Destino de depósito en pesos | — Un depósito desde el kiosco sería de un tercero y se rechazaría | — Sin depósito en pesos | (✓) Destinos secundarios | (✓) Destinos secundarios |
+
+**Cajero cripto** (2)
+
+| Producto | CoinFlip | Bitlem |
+|---|---|---|
+| **Pagos en línea** | | |
+| Checkout alojado o con redirección | — | — |
+| Checkout por API (transparente) | — | — |
+| Componentes de pago embebidos | — | — |
+| Links de pago | — | — |
+| Suscripciones y cobro recurrente | — | — |
+| Botón de pago con monedero propio | — | — |
+| Plugins de comercio electrónico | — | — |
+| Marketplace y pagos divididos | — | — |
+| **Métodos de pago aceptados** | | |
+| Tarjetas de crédito y débito | — | — |
+| Meses sin intereses | — | — |
+| Apple Pay y Google Pay | — | — |
+| Efectivo con referencia en tiendas | — | — |
+| Transferencia SPEI (cobro) | — | — |
+| Compra ahora, paga después | — | — |
+| Otros medios | — | — |
+| **Pagos presenciales** | | |
+| Terminal física | — | — |
+| Celular como terminal (Tap to Pay) | — | — |
+| Cobro con código QR | — | — |
+| Sistema punto de venta | — | — |
+| **Dinero, cuentas y otros servicios** | | |
+| Pagos a terceros (dispersión o payouts) | — | — |
+| Cuenta empresarial | — | — |
+| Cuenta para personas o monedero | — | — |
+| Tarjeta propia | — | — |
+| Emisión de tarjetas como servicio | — | — |
+| Créditos para negocios | — | — |
+| Depósito de efectivo en tiendas a la cuenta | — | — |
+| Pagos internacionales y cambio de divisas | — | — |
+| Pago de servicios y recargas | — | — |
+| Antifraude | — | — |
+| Herramientas de IA para integrar | — | — |
+| Acepta juego y casinos | — | — |
+| **Cripto** | | |
+| Compra y venta de cripto para el usuario | ✓ En sus cajeros | ✓ En sus cajeros |
+| Custodia o wallet | — | — |
+| Rampa pesos–cripto por API para empresas | — | — |
+| Pagos con cripto para comercios | — | — |
+| Cajero cripto físico | ✓ Compra y venta | ✓ Cajeros y casa de cambio en CDMX |
+
+| Perfil | CoinFlip | Bitlem |
+|---|---|---|
+| Modelo | ✓ B2C con cajeros físicos | ✓ B2C |
+| A quién atiende | ✓ B2C con cajeros físicos | ✓ B2C |
+| Sectores destacados | (✓) Cripto con efectivo | (✓) Cripto con efectivo |
+| App para usuario final | (✓) Sí | (✓) Sí |
+| Cuenta para persona (usuario final) | — | — |
+| Cuenta empresarial | — | — |
+| Cuentas para menores de edad | — | — |
+| Tarjeta de débito | — | — |
+| Tarjeta de crédito | — | — |
+| Préstamos personales | — | — |
+| Créditos para negocio | — | — |
+| Rendimientos o inversión | — | — |
+| Seguros | — | — |
+| Pago de servicios | — | — |
+| Recargas de tiempo aire | ? | ? |
+| Remesas | — | — |
+| Cripto | ✓ Compra y venta en casi 50 cajeros en México (26 en CDMX) y un Crypto Center | ✓ Cajeros y casa de cambio física en CDMX |
+| Depósito de efectivo en tiendas | ✓ Recibe efectivo | ✓ Recibe efectivo |
+| Figura en México | ? | ? |
+| Rol para nuestro kiosco | ✓ Socio para alojar su cajero (paga renta mensual al anfitrión) o competidor | (✓) Socio o competidor |
+
+**V6.2.3 Programas de partners de las entidades nuevas**
+
+| Entidad | Tipo | ¿Tiene programa? | Cómo funciona | Cómo inscribirse | Liga |
+|---|---|---|---|---|---|
+| OKTO | Procesador de pago | ? | Sin programa público encontrado | Contacto comercial con el área de alianzas | — |
+| Paysafecash | Procesador de pago | ? | Sin programa público encontrado | Contacto comercial con el área de alianzas | — |
+| dLocal / EBANX / Nuvei | Procesador de pago | Sí | Programas de socios (no revisados hoy) | Contacto comercial con el área de alianzas | — |
+| Monato (Finco Pay) | Procesador de pago | ? | Contacto comercial | Contacto comercial con el área de alianzas | — |
+| STP | Procesador de pago | ? | Contacto comercial; participante SPEI | Contacto comercial con el área de alianzas | — |
+| Fintoc | Procesador de pago | ? | Contacto comercial | Contacto comercial con el área de alianzas | — |
+| tapi / PESPay | Procesador de pago | Sí (B2B) | Red de puntos de depósito: el kiosco sería un punto más | Contacto comercial con el área de alianzas | — |
+| PayCash | Procesador de pago | Sí (B2B) | Red de puntos de efectivo | Contacto comercial con el área de alianzas | — |
+| Pomelo | Procesador de pago | Sí | Programa para clientes que emiten tarjetas (no revisado hoy) | Contacto comercial con el área de alianzas | — |
+| BBVA México | Banca tradicional | Sí: corresponsales bancarios | Programa de comisionistas (corresponsales): el comercio recibe depósitos, pagos y retiros a nombre del banco y cobra comisión por operación. Es exactamente lo que haría el kiosco. | Solicitud al área de corresponsales o banca de canales; el banco evalúa y registra al comisionista ante la CNBV | — |
+| Santander | Banca tradicional | Sí: corresponsales bancarios | Programa de comisionistas (corresponsales): el comercio recibe depósitos, pagos y retiros a nombre del banco y cobra comisión por operación. Es exactamente lo que haría el kiosco. | Solicitud al área de corresponsales o banca de canales; el banco evalúa y registra al comisionista ante la CNBV | — |
+| Banorte | Banca tradicional | Sí: corresponsales bancarios | Programa de comisionistas (corresponsales): el comercio recibe depósitos, pagos y retiros a nombre del banco y cobra comisión por operación. Es exactamente lo que haría el kiosco. | Solicitud al área de corresponsales o banca de canales; el banco evalúa y registra al comisionista ante la CNBV | — |
+| Banamex | Banca tradicional | Sí: corresponsales bancarios | Programa de comisionistas (corresponsales): el comercio recibe depósitos, pagos y retiros a nombre del banco y cobra comisión por operación. Es exactamente lo que haría el kiosco. | Solicitud al área de corresponsales o banca de canales; el banco evalúa y registra al comisionista ante la CNBV | — |
+| HSBC | Banca tradicional | Sí: corresponsales bancarios | Programa de comisionistas (corresponsales): el comercio recibe depósitos, pagos y retiros a nombre del banco y cobra comisión por operación. Es exactamente lo que haría el kiosco. | Solicitud al área de corresponsales o banca de canales; el banco evalúa y registra al comisionista ante la CNBV | — |
+| Scotiabank | Banca tradicional | Sí: corresponsales bancarios | Programa de comisionistas (corresponsales): el comercio recibe depósitos, pagos y retiros a nombre del banco y cobra comisión por operación. Es exactamente lo que haría el kiosco. | Solicitud al área de corresponsales o banca de canales; el banco evalúa y registra al comisionista ante la CNBV | — |
+| Inbursa | Banca tradicional | Sí: corresponsales bancarios | Programa de comisionistas (corresponsales): el comercio recibe depósitos, pagos y retiros a nombre del banco y cobra comisión por operación. Es exactamente lo que haría el kiosco. | Solicitud al área de corresponsales o banca de canales; el banco evalúa y registra al comisionista ante la CNBV | — |
+| Banco Azteca | Banca tradicional | Sí: corresponsales bancarios | Programa de comisionistas (corresponsales): el comercio recibe depósitos, pagos y retiros a nombre del banco y cobra comisión por operación. Es exactamente lo que haría el kiosco. | Solicitud al área de corresponsales o banca de canales; el banco evalúa y registra al comisionista ante la CNBV | — |
+| BanCoppel | Banca tradicional | Sí: corresponsales bancarios | Programa de comisionistas (corresponsales): el comercio recibe depósitos, pagos y retiros a nombre del banco y cobra comisión por operación. Es exactamente lo que haría el kiosco. | Solicitud al área de corresponsales o banca de canales; el banco evalúa y registra al comisionista ante la CNBV | — |
+| Banregio | Banca tradicional | Sí: corresponsales bancarios | Programa de comisionistas (corresponsales): el comercio recibe depósitos, pagos y retiros a nombre del banco y cobra comisión por operación. Es exactamente lo que haría el kiosco. | Solicitud al área de corresponsales o banca de canales; el banco evalúa y registra al comisionista ante la CNBV | — |
+| BanBajío | Banca tradicional | Sí: corresponsales bancarios | Programa de comisionistas (corresponsales): el comercio recibe depósitos, pagos y retiros a nombre del banco y cobra comisión por operación. Es exactamente lo que haría el kiosco. | Solicitud al área de corresponsales o banca de canales; el banco evalúa y registra al comisionista ante la CNBV | — |
+| Afirme | Banca tradicional | Sí: corresponsales bancarios | Programa de comisionistas (corresponsales): el comercio recibe depósitos, pagos y retiros a nombre del banco y cobra comisión por operación. Es exactamente lo que haría el kiosco. | Solicitud al área de corresponsales o banca de canales; el banco evalúa y registra al comisionista ante la CNBV | — |
+| Compartamos Banco | Banca tradicional | Sí: corresponsales bancarios | Programa de comisionistas (corresponsales): el comercio recibe depósitos, pagos y retiros a nombre del banco y cobra comisión por operación. Es exactamente lo que haría el kiosco. | Solicitud al área de corresponsales o banca de canales; el banco evalúa y registra al comisionista ante la CNBV | — |
+| Banco del Bienestar | Banca tradicional | Sí: corresponsales bancarios | Programa de comisionistas (corresponsales): el comercio recibe depósitos, pagos y retiros a nombre del banco y cobra comisión por operación. Es exactamente lo que haría el kiosco. | Solicitud al área de corresponsales o banca de canales; el banco evalúa y registra al comisionista ante la CNBV | — |
+| Nu México | Banca digital | Sin programa público | No publica un programa de socios. Para el kiosco sería un convenio de comisionista o la integración vía un agregador (tapi, PayCash). | Contacto comercial o de alianzas; o llegar por un agregador que ya la tenga integrada | — |
+| Revolut | Banca digital | Sin programa público | No publica un programa de socios. Para el kiosco sería un convenio de comisionista o la integración vía un agregador (tapi, PayCash). | Contacto comercial o de alianzas; o llegar por un agregador que ya la tenga integrada | — |
+| Openbank (Santander) | Banca digital | Sin programa público | No publica un programa de socios. Para el kiosco sería un convenio de comisionista o la integración vía un agregador (tapi, PayCash). | Contacto comercial o de alianzas; o llegar por un agregador que ya la tenga integrada | — |
+| Hey Banco (Banregio) | Banca digital | Sin programa público | No publica un programa de socios. Para el kiosco sería un convenio de comisionista o la integración vía un agregador (tapi, PayCash). | Contacto comercial o de alianzas; o llegar por un agregador que ya la tenga integrada | — |
+| Plata | Banca digital | Sin programa público | No publica un programa de socios. Para el kiosco sería un convenio de comisionista o la integración vía un agregador (tapi, PayCash). | Contacto comercial o de alianzas; o llegar por un agregador que ya la tenga integrada | — |
+| Klar | Banca digital | Sin programa público | No publica un programa de socios. Para el kiosco sería un convenio de comisionista o la integración vía un agregador (tapi, PayCash). | Contacto comercial o de alianzas; o llegar por un agregador que ya la tenga integrada | — |
+| bineo (Banorte, vendido a Klar) | Banca digital | Sin programa público | No publica un programa de socios. Para el kiosco sería un convenio de comisionista o la integración vía un agregador (tapi, PayCash). | Contacto comercial o de alianzas; o llegar por un agregador que ya la tenga integrada | — |
+| Ualá | Banca digital | Sin programa público | No publica un programa de socios. Para el kiosco sería un convenio de comisionista o la integración vía un agregador (tapi, PayCash). | Contacto comercial o de alianzas; o llegar por un agregador que ya la tenga integrada | — |
+| Kapital | Banca digital | Sin programa público | No publica un programa de socios. Para el kiosco sería un convenio de comisionista o la integración vía un agregador (tapi, PayCash). | Contacto comercial o de alianzas; o llegar por un agregador que ya la tenga integrada | — |
+| Stori | SOFIPO y neobanco | Sin programa público | No publica un programa de socios. Para el kiosco sería un convenio de comisionista o la integración vía un agregador (tapi, PayCash). | Contacto comercial o de alianzas; o llegar por un agregador que ya la tenga integrada | — |
+| Spin by OXXO | IFPE y cartera digital | Sin programa público | No publica un programa de socios. Para el kiosco sería un convenio de comisionista o la integración vía un agregador (tapi, PayCash). | Contacto comercial o de alianzas; o llegar por un agregador que ya la tenga integrada | — |
+| Albo | IFPE y cartera digital | Sin programa público | No publica un programa de socios. Para el kiosco sería un convenio de comisionista o la integración vía un agregador (tapi, PayCash). | Contacto comercial o de alianzas; o llegar por un agregador que ya la tenga integrada | — |
+| Fondeadora | IFPE y cartera digital | Sin programa público | No publica un programa de socios. Para el kiosco sería un convenio de comisionista o la integración vía un agregador (tapi, PayCash). | Contacto comercial o de alianzas; o llegar por un agregador que ya la tenga integrada | — |
+| Cuenca | IFPE y cartera digital | Sin programa público | No publica un programa de socios. Para el kiosco sería un convenio de comisionista o la integración vía un agregador (tapi, PayCash). | Contacto comercial o de alianzas; o llegar por un agregador que ya la tenga integrada | — |
+| Finsus | SOFIPO y neobanco | Sin programa público | No publica un programa de socios. Para el kiosco sería un convenio de comisionista o la integración vía un agregador (tapi, PayCash). | Contacto comercial o de alianzas; o llegar por un agregador que ya la tenga integrada | — |
+| DiDi Finanzas | Crédito y cartera digital | Sin programa público | No publica un programa de socios. Para el kiosco sería un convenio de comisionista o la integración vía un agregador (tapi, PayCash). | Contacto comercial o de alianzas; o llegar por un agregador que ya la tenga integrada | — |
+| Cashi (Walmart) | IFPE y cartera digital | Sin programa público | No publica un programa de socios. Para el kiosco sería un convenio de comisionista o la integración vía un agregador (tapi, PayCash). | Contacto comercial o de alianzas; o llegar por un agregador que ya la tenga integrada | — |
+| Vexi | Crédito y cartera digital | Sin programa público | No publica un programa de socios. Para el kiosco sería un convenio de comisionista o la integración vía un agregador (tapi, PayCash). | Contacto comercial o de alianzas; o llegar por un agregador que ya la tenga integrada | — |
+| Otros neobancos del mapa 2026: Billú Bank, Bankaya, Now Invex, Covalto, Techreo, Fincomún, Va App, PagaTodo, Miio | SOFIPO y neobanco | Sin programa público | No publica un programa de socios. Para el kiosco sería un convenio de comisionista o la integración vía un agregador (tapi, PayCash). | Contacto comercial o de alianzas; o llegar por un agregador que ya la tenga integrada | — |
+| Kueski | Crédito y BNPL | Red de puntos de pago | Acepta pagos de cuotas en tiendas (Kueski en OXXO). El kiosco podría ser punto de pago de créditos. | Contacto comercial o vía agregador de pagos de servicios | — |
+| Aplazo | Crédito y BNPL | Red de puntos de pago | Acepta pagos de cuotas en tiendas (Kueski en OXXO). El kiosco podría ser punto de pago de créditos. | Contacto comercial o vía agregador de pagos de servicios | — |
+| Otros de crédito: Atrato, Baubap, Tala | Crédito y BNPL | Red de puntos de pago | Acepta pagos de cuotas en tiendas (Kueski en OXXO). El kiosco podría ser punto de pago de créditos. | Contacto comercial o vía agregador de pagos de servicios | — |
+| Konfío | Gasto corporativo y crédito pyme | No aplica | Producto B2B para la operación de la empresa, no para los usuarios del kiosco. | No aplica | — |
+| Clara | Gasto corporativo y crédito pyme | No aplica | Producto B2B para la operación de la empresa, no para los usuarios del kiosco. | No aplica | — |
+| Mendel | Gasto corporativo y crédito pyme | No aplica | Producto B2B para la operación de la empresa, no para los usuarios del kiosco. | No aplica | — |
+| GBM | Inversión | No aplica | Fuera del modelo del kiosco. | — | — |
+| Cetesdirecto | Inversión | No aplica | Fuera del modelo del kiosco. | — | — |
+| Alpaca (posible "Alpaka") | Inversión | Sí (B2B) | Alpaca da infraestructura a apps de terceros. | — | — |
+| Bitso | Exchange cripto | Sí: Bitso Business | API única con rampas pesos–cripto, payouts SPEI, stablecoins y FX; atiende industrias de alto riesgo. | Formulario de contacto de Bitso Business | https://bitso.com/business/about-us |
+| Binance | Exchange cripto | Afiliados (no revisado hoy) | Programa de referidos o afiliados que paga por usuarios nuevos; condiciones no revisadas hoy. | Buscar "afiliados" o "affiliate" en su sitio | — |
+| Bitget | Exchange cripto | Afiliados (no revisado hoy) | Programa de referidos o afiliados que paga por usuarios nuevos; condiciones no revisadas hoy. | Buscar "afiliados" o "affiliate" en su sitio | — |
+| OKX | Exchange cripto | Afiliados (no revisado hoy) | Programa de referidos o afiliados que paga por usuarios nuevos; condiciones no revisadas hoy. | Buscar "afiliados" o "affiliate" en su sitio | — |
+| Kraken | Exchange cripto | Afiliados (no revisado hoy) | Programa de referidos o afiliados que paga por usuarios nuevos; condiciones no revisadas hoy. | Buscar "afiliados" o "affiliate" en su sitio | — |
+| Coinbase | Exchange cripto | Afiliados (no revisado hoy) | Programa de referidos o afiliados que paga por usuarios nuevos; condiciones no revisadas hoy. | Buscar "afiliados" o "affiliate" en su sitio | — |
+| Otros exchanges: Bybit, Crypto.com, KuCoin, BingX | Exchange cripto | Afiliados (no revisado hoy) | Programa de referidos o afiliados que paga por usuarios nuevos; condiciones no revisadas hoy. | Buscar "afiliados" o "affiliate" en su sitio | — |
+| Tauros, Volabit, Airtm, RedotPay | Exchange cripto | Afiliados (no revisado hoy) | Programa de referidos o afiliados que paga por usuarios nuevos; condiciones no revisadas hoy. | Buscar "afiliados" o "affiliate" en su sitio | — |
+| CoinFlip | Cajero cripto | Sí: anfitriones | CoinFlip instala, da soporte y recoge el efectivo; paga renta mensual al comercio anfitrión. | Formulario para anfitriones; un gerente de cuenta contacta | https://coinflip.tech/news/how-to-host-a-bitcoin-atm |
+| Bitlem | Cajero cripto | Sin programa público | — | Contacto directo | — |
+
+**V6.2.4 Resumen de las 72 entidades**
+
+| Entidad | Tipo | Tarjetas (cobro) | SPEI (cobro) | Efectivo con referencia | Depósito a cuenta en tiendas | Pagos a terceros (SPEI) | Emisión de tarjetas | Cuentas o monedero | Terminal física | Juego y casinos | Programa de partners | Licencia en México |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| Mercado Pago | Procesador de pago | ✓ | (✓) | (✓) | ✓ | (✓) | Solo tarjeta propia | ✓ | ✓ | ? | ✓ | IFPE (banco en trámite) |
+| Klu | Procesador de pago | ✓ | (✓) | ? | ? | (✓) | ? | ✓ | ? | ? | ✓ (B2B) | IFPE |
+| Cobre | Procesador de pago | — | ✓ | — | — | ✓ | ? | ? | — | ? | ✓ (B2B) | Transmisor (Tesored) |
+| 88 Pay | Procesador de pago | ? | ? | ? | ? | ? | ✓ | ? | ? | ? | ? | ? |
+| Banlink | Procesador de pago | ✓ (Getnet) | ? | — | — | — | — | — | ✓ (terminal y Tap to Phone) | ✓ (casinos en línea, MCC 7995) | (✓) revendedor | Sobre Getnet (Santander) |
+| Tonder | Procesador de pago | ✓ | ✓ | ✓ | — | ? | — | — | — | ✓ (indicios) | ? (menú "Partners") | No publicada |
+| Conekta | Procesador de pago | ✓ | (✓) | (✓) | — | ? | — | — | ? | ? | (✓) | Adquirente directo |
+| Openpay | Procesador de pago | (✓) | (✓) | (✓) | — | (✓) | — | — | (✓) | ? | (✓) | Grupo BBVA |
+| Clip | Procesador de pago | (✓) | (✓) | ? | — | ? | (✓) | (✓) | ✓ | ? | ? | IFPE |
+| Kushki | Procesador de pago | (✓) | (✓) | (✓) | — | ? | — | — | ? | ? | ✓ | (✓) Adquirente |
+| Stripe | Procesador de pago | ✓ Visa, Mastercard, Amex | ✓ Mexico bank transfer | ✓ OXXO | — | (✓) Connect | ? | — | ? | (✓) Restringido | Sí: Stripe Partner Program | Opera con socios locales |
+| OKTO | Procesador de pago | ✓ | ✓ | ? | — | ✓ | — | — | — | ✓ | ? | ? |
+| Paysafecash | Procesador de pago | — | — | ✓ | — | — | — | — | — | ✓ | ? | ? |
+| dLocal / EBANX / Nuvei | Procesador de pago | (✓) | (✓) | (✓) | — | (✓) | — | — | — | (✓) | (✓) | Vía socios locales |
+| Monato (Finco Pay) | Procesador de pago | — | ✓ | ✓ (red de efectivo) | ? | ✓ | — | Próximamente | — | ? | ? | IFPE |
+| STP | Procesador de pago | — | (✓) | — | — | (✓) | — | (✓) | — | ? | ? | IFPE |
+| Fintoc | Procesador de pago | — | ✓ | — | — | ? | — | — | — | ? | ? | Transmisor |
+| tapi / PESPay | Procesador de pago | — | — | ✓ | ✓ | — | — | — | — | ? | ✓ (B2B) | PESPay: [P] |
+| PayCash | Procesador de pago | — | ✓ (A2A) | ✓ | — | — | — | — | — | ✓ | ✓ (B2B) | [P] |
+| Pomelo | Procesador de pago | — | — | — | — | — | (✓) | (✓) | — | ? | (✓) | IFPE |
+| BBVA México | Banca tradicional | (✓) Adquirencia propia | (✓) CLABE y referencias | (✓) | (✓) Sucursales, cajeros y corresponsales | (✓) Dispersión por SPEI | ? | (✓) Sí | (✓) Terminal punto de venta bancaria | (✓) | Sí: corresponsales bancarios | Banco múltiple |
+| Santander | Banca tradicional | (✓) Adquirencia propia | (✓) CLABE y referencias | (✓) | (✓) Sucursales, cajeros y corresponsales | (✓) Dispersión por SPEI | ? | (✓) Sí | (✓) Terminal punto de venta bancaria | (✓) | Sí: corresponsales bancarios | Banco múltiple |
+| Banorte | Banca tradicional | (✓) Adquirencia propia | (✓) CLABE y referencias | (✓) | (✓) Sucursales, cajeros y corresponsales | (✓) Dispersión por SPEI | ? | (✓) Sí | (✓) Terminal punto de venta bancaria | (✓) | Sí: corresponsales bancarios | Banco múltiple |
+| Banamex | Banca tradicional | (✓) Adquirencia propia | (✓) CLABE y referencias | (✓) | (✓) Sucursales, cajeros y corresponsales | (✓) Dispersión por SPEI | ? | (✓) Sí | (✓) Terminal punto de venta bancaria | (✓) | Sí: corresponsales bancarios | Banco múltiple |
+| HSBC | Banca tradicional | (✓) Adquirencia propia | (✓) CLABE y referencias | (✓) | (✓) Sucursales, cajeros y corresponsales | (✓) Dispersión por SPEI | ? | (✓) Sí | (✓) Terminal punto de venta bancaria | (✓) | Sí: corresponsales bancarios | Banco múltiple |
+| Scotiabank | Banca tradicional | (✓) Adquirencia propia | (✓) CLABE y referencias | (✓) | (✓) Sucursales, cajeros y corresponsales | (✓) Dispersión por SPEI | ? | (✓) Sí | (✓) Terminal punto de venta bancaria | (✓) | Sí: corresponsales bancarios | Banco múltiple |
+| Inbursa | Banca tradicional | (✓) Adquirencia propia | (✓) CLABE y referencias | (✓) | (✓) Sucursales, cajeros y corresponsales | (✓) Dispersión por SPEI | ? | (✓) Sí | (✓) Terminal punto de venta bancaria | (✓) | Sí: corresponsales bancarios | Banco múltiple |
+| Banco Azteca | Banca tradicional | (✓) Adquirencia propia | (✓) CLABE y referencias | (✓) | (✓) Sucursales, cajeros y corresponsales | (✓) Dispersión por SPEI | ? | (✓) Sí | (✓) Terminal punto de venta bancaria | (✓) | Sí: corresponsales bancarios | Banco múltiple |
+| BanCoppel | Banca tradicional | (✓) Adquirencia propia | (✓) CLABE y referencias | (✓) | (✓) Sucursales, cajeros y corresponsales | (✓) Dispersión por SPEI | ? | (✓) Sí | (✓) Terminal punto de venta bancaria | (✓) | Sí: corresponsales bancarios | Banco múltiple |
+| Banregio | Banca tradicional | (✓) Adquirencia propia | (✓) CLABE y referencias | (✓) | (✓) Sucursales, cajeros y corresponsales | (✓) Dispersión por SPEI | ? | (✓) Sí | (✓) Terminal punto de venta bancaria | (✓) | Sí: corresponsales bancarios | Banco múltiple |
+| BanBajío | Banca tradicional | (✓) Adquirencia propia | (✓) CLABE y referencias | (✓) | (✓) Sucursales, cajeros y corresponsales | (✓) Dispersión por SPEI | ? | (✓) Sí | (✓) Terminal punto de venta bancaria | (✓) | Sí: corresponsales bancarios | Banco múltiple |
+| Afirme | Banca tradicional | (✓) Adquirencia propia | (✓) CLABE y referencias | (✓) | (✓) Sucursales, cajeros y corresponsales | (✓) Dispersión por SPEI | ? | (✓) Sí | (✓) Terminal punto de venta bancaria | (✓) | Sí: corresponsales bancarios | Banco múltiple |
+| Compartamos Banco | Banca tradicional | ? | (✓) CLABE y referencias | ? | (✓) Sucursales, cajeros y corresponsales | (✓) Dispersión por SPEI | ? | (✓) Sí | ? | ? | Sí: corresponsales bancarios | Banco múltiple (microcrédito) |
+| Banco del Bienestar | Banca tradicional | ? | (✓) CLABE y referencias | ? | (✓) Sucursales propias | (✓) Dispersión por SPEI | ? | (✓) Sí | ? | ? | Sí: corresponsales bancarios | Banca de desarrollo |
+| Nu México | Banca digital | ? | (✓) CLABE propia para recibir | ? | (✓) Depósitos en OXXO | ? | — | ✓ Cuenta Nu de Débito | ? | ? | Sin programa público | Banco; opera como banco desde 10-jul-2026 |
+| Revolut | Banca digital | ? | (✓) CLABE propia para recibir | ? | ? | ? | — | ✓ Cuenta multimoneda | ? | ? | Sin programa público | Banco; opera desde ene-2026 |
+| Openbank (Santander) | Banca digital | ? | (✓) CLABE propia para recibir | ? | ? | ? | — | (✓) Sí | ? | ? | Sin programa público | Banco (Grupo Santander) |
+| Hey Banco (Banregio) | Banca digital | ? | (✓) CLABE propia para recibir | ? | ? | ? | — | (✓) Sí | ? | ? | Sin programa público | Banco (brazo digital de Banregio) |
+| Plata | Banca digital | ? | (✓) CLABE propia para recibir | ? | ? | ? | ? | (✓) Por lanzar (feb-2026) | ? | ? | Sin programa público | Banco; autorizado en 2026 |
+| Klar | Banca digital | ? | (✓) CLABE propia para recibir | ? | ? | ? | — | (✓) Cuenta de débito | ? | ? | Sin programa público | SOFIPO; compra de bineo (banco) anunciada |
+| bineo (Banorte, vendido a Klar) | Banca digital | ? | (✓) CLABE propia para recibir | ? | ? | ? | — | (✓) Sí | ? | ? | Sin programa público | Banco |
+| Ualá | Banca digital | ? | (✓) CLABE propia para recibir | ? | ? | ? | — | (✓) Sí | ? | ? | Sin programa público | Banco, vía ABC Capital |
+| Kapital | Banca digital | ? | (✓) CLABE propia para recibir | ? | ? | ? | ? | (✓) Sí | ? | ? | Sin programa público | Banco, ex Banco Autofin |
+| Stori | SOFIPO y neobanco | ? | (✓) CLABE propia para recibir | ? | ? | ? | ? | ✓ Cuenta con rendimientos y apartados | ? | ? | Sin programa público | SOFIPO (compró Mascaja) |
+| Spin by OXXO | IFPE y cartera digital | ? | (✓) CLABE propia para recibir | ? | (✓) En tiendas OXXO | ? | — | (✓) Cuenta digital | ? | ? | Sin programa público | ? |
+| Albo | IFPE y cartera digital | ? | (✓) CLABE propia para recibir | ? | ? | ? | — | (✓) Sí | ? | ? | Sin programa público | IFPE |
+| Fondeadora | IFPE y cartera digital | ? | (✓) CLABE propia para recibir | ? | ? | ? | — | (✓) Cuenta digital | ? | ? | Sin programa público | ? |
+| Cuenca | IFPE y cartera digital | ? | (✓) CLABE propia para recibir | ? | ? | ? | — | (✓) Sí | ? | ? | Sin programa público | IFPE |
+| Finsus | SOFIPO y neobanco | ? | (✓) CLABE propia para recibir | ? | ? | ? | ? | (✓) Sí | ? | ? | Sin programa público | SOFIPO; busca licencia bancaria |
+| DiDi Finanzas | Crédito y cartera digital | ? | (✓) CLABE propia para recibir | ? | ? | ? | ? | (✓) Cuenta DiDi | ? | ? | Sin programa público | SOFOM |
+| Cashi (Walmart) | IFPE y cartera digital | ? | (✓) CLABE propia para recibir | ? | (✓) En tiendas Walmart y Bodega Aurrera | ? | ? | (✓) Monedero | ? | ? | Sin programa público | ? |
+| Vexi | Crédito y cartera digital | ? | ? | ? | ? | ? | ? | ? | ? | ? | Sin programa público | ? |
+| Otros neobancos del mapa 2026: Billú Bank, Bankaya, Now Invex, Covalto, Techreo, Fincomún, Va App, PagaTodo, Miio | SOFIPO y neobanco | ? | ? | ? | ? | ? | ? | ? | ? | ? | Sin programa público | Varias figuras |
+| Kueski | Crédito y BNPL | ? | ? | ✓ Pago de cuotas en OXXO | — | ? | — | — | ? | — | Red de puntos de pago | SOFOM ENR |
+| Aplazo | Crédito y BNPL | ? | ? | ? | — | ? | — | — | ? | — | Red de puntos de pago | ? |
+| Otros de crédito: Atrato, Baubap, Tala | Crédito y BNPL | ? | ? | ? | — | ? | — | — | ? | — | Red de puntos de pago | SOFOM u otras |
+| Konfío | Gasto corporativo y crédito pyme | — | — | — | — | ? | ? | — | — | — | No aplica | SOFOM; busca licencia bancaria (2026) |
+| Clara | Gasto corporativo y crédito pyme | — | — | — | — | (✓) Pagos a proveedores | ? | — | — | — | No aplica | ? |
+| Mendel | Gasto corporativo y crédito pyme | — | — | — | — | (✓) Pagos a proveedores | ? | — | — | — | No aplica | ? |
+| GBM | Inversión | — | — | — | — | — | — | (✓) Cuenta de inversión | — | — | No aplica | Casa de bolsa |
+| Cetesdirecto | Inversión | — | — | — | — | — | — | (✓) Sí | — | — | No aplica | Gobierno federal |
+| Alpaca (posible "Alpaka") | Inversión | — | — | — | — | — | — | — | — | — | Sí (B2B) | Bróker de EE. UU.; da infraestructura a apps mexicanas como Rivium y RUUT |
+| Bitso | Exchange cripto | ? | (✓) Depósito por SPEI | ? | ? | ✓ Payouts por API (Bitso Business) | ? | ✓ Sí | — | ✓ Atiende "industrias de alto riesgo" | Sí: Bitso Business | Pesos vía Nvio Pagos México (IFPE autorizada por la CNBV); la cripto no la supervisa la CNBV |
+| Binance | Exchange cripto | ? | (✓) Depósito por SPEI | ? | ? | ? | ? | ✓ Sí | — | ? | Afiliados (no revisado hoy) | Bmex Techfin, registro ante el SAT como actividad vulnerable; pesos vía Programas de Relacionamiento Medá (IFPE) |
+| Bitget | Exchange cripto | ? | (✓) Depósito por SPEI | ? | ? | ? | ? | ✓ Sí | — | ? | Afiliados (no revisado hoy) | Registro ante el SAT (actividad vulnerable) y la UIF, may-2026 |
+| OKX | Exchange cripto | ? | (✓) Depósito por SPEI | ? | ? | ? | ? | (✓) Sí | — | ? | Afiliados (no revisado hoy) | ? |
+| Kraken | Exchange cripto | ? | (✓) Depósito por SPEI | ? | — | ? | ? | ✓ Sí | — | ? | Afiliados (no revisado hoy) | ? |
+| Coinbase | Exchange cripto | ? | ? | ? | — | ? | ? | (✓) Acceso desde México | — | ? | Afiliados (no revisado hoy) | ? |
+| Otros exchanges: Bybit, Crypto.com, KuCoin, BingX | Exchange cripto | ? | ? | ? | ? | ? | ? | (✓) Sí | — | ? | Afiliados (no revisado hoy) | Licencias extranjeras |
+| Tauros, Volabit, Airtm, RedotPay | Exchange cripto | ? | ? | ? | ? | ? | ? | (✓) Sí | — | ? | Afiliados (no revisado hoy) | ? |
+| CoinFlip | Cajero cripto | — | — | — | — | — | — | — | — | — | Sí: anfitriones | ? |
+| Bitlem | Cajero cripto | — | — | — | — | — | — | — | — | — | Sin programa público | ? |
+
 ### V6.3 Regulación de cripto aplicable al kiosco
 
 | Tema | Qué dice | Qué significa para el kiosco | Fuente |
@@ -175,91 +1220,124 @@ Mientras no haya respuesta, el estudio supone: solo depósitos (cash-in) y apert
 
 **Lectura:** **Mercado Pago** es la ruta más simple porque el depósito en efectivo ya funciona y el usuario compra bitcoin o ethereum en su app (lanzado en octubre de 2022 con Paxos; la vigencia en 2026 no se verificó) [H/P]. **Bitso Business** es el mejor candidato como **proveedor de liquidez** si la empresa vende cripto en el kiosco: tiene una sola API con rampas fiat, stablecoins y FX, y dice atender industrias de alto riesgo [H]. **Kraken no sirve para depósitos desde el kiosco**, porque solo acepta SPEI desde una CLABE a nombre del usuario [H]. **CoinFlip** permite un piloto inmediato: instala, da soporte, recoge el efectivo y paga renta mensual al anfitrión [H].
 
-### V6.5 Las cuatro modalidades del kiosco cripto
+### V6.5 Qué operaciones de sucursal puede hacer el kiosco, y con quién
 
-**Diagrama 7. Cuatro formas de que el kiosco transaccione cripto** (imagen: `diagramas/d7-cripto-modalidades.png`).
+| Operación | Cómo la hace el kiosco | Con qué tipo de entidad | Requisito clave |
+|---|---|---|---|
+| Depósito a cuenta | Recibe efectivo y la entidad acredita | Bancos, neobancos, IFPE, SOFIPO | Contrato de comisionista o agregador [H] |
+| Retiro de efectivo | La entidad autoriza y el kiosco entrega efectivo | Bancos, neobancos, IFPE, SOFIPO | Autenticación del usuario sin celular y efectivo para dispensar [P] |
+| Pago de tarjeta de crédito o préstamo | Recibe efectivo y la entidad abona al crédito | Bancos, Nu, Plata, Klar, Stori, Kueski, Aplazo, DiDi | Convenio de cobranza o agregador de pagos [S] |
+| Pago de servicios y recargas | Recibe efectivo y paga al emisor | Agregadores (tapi y otros) | Contrato con agregador [H] |
+| Apertura de cuenta básica | Captura INE y prueba de vida; la entidad decide | Bancos, neobancos, IFPE | Cada entidad define el nivel de cuenta y si lo acepta [P] |
+| Consulta de saldo | La entidad responde tras autenticar | Todas las que integren su API | Autenticación sin celular [P] |
+| Transferencia SPEI a terceros | El banco patrocinador envía el SPEI | Banco patrocinador | Límites para no clientes [P] |
+| **Compra de cripto** | Depósito en pesos a la cuenta del exchange; la compra la ejecuta el exchange | Bitso (Nvio), Binance (Medá), Mercado Pago (Paxos) | Convenio con la IFPE del exchange [P] |
+| **Venta de cripto** | El usuario vende en su cuenta; el kiosco entrega el efectivo como retiro de la IFPE | Bitso (Nvio), Binance (Medá) | Igual que retiro, más autenticación del exchange [P] |
+
+### V6.6 Modalidades del kiosco cripto
+
+**Diagrama 7. Formas de que el kiosco compre y venda cripto** (imagen: `diagramas/d7-cripto-modalidades.png`).
 
 ```mermaid
 flowchart TB
-  U(["Usuario en el casino<br/>con efectivo"])
+  U(["Usuario en el casino<br/>con efectivo o con cripto"])
   U --> K["Kiosco de la empresa"]
-  K --> A["A. Depósito en pesos a su cuenta<br/>(Mercado Pago, Bitso, Binance...)<br/>el usuario compra cripto en su app"]
-  K --> B["B. Compra de cripto en el kiosco<br/>entrega a la wallet del usuario"]
-  K --> C["C. Venta de cripto en el kiosco<br/>el kiosco entrega efectivo"]
+  K --> A1["A1. Compra como intermediario<br/>efectivo → pesos en su cuenta del exchange<br/>el exchange ejecuta la compra"]
+  K --> A2["A2. Venta como intermediario<br/>vende en su cuenta del exchange<br/>el kiosco entrega los pesos en efectivo"]
   K --> D["D. Cajero de un tercero en el casino<br/>(CoinFlip, Bitlem)"]
-  A --> A1["La empresa no toca cripto.<br/>Sigue siendo comisionista o agregador.<br/>Sin registro adicional"]
-  B --> B1["La empresa intercambia activos virtuales:<br/>actividad vulnerable (LFPIORPI art. 17 fr. XVI).<br/>Alta en el SPPLD, KYC siempre, avisos desde 210 UMA"]
-  C --> C1["Igual que B, más dispensar efectivo:<br/>reciclador, riesgo de lavado y de juego<br/>con dinero de cripto"]
-  D --> D1["El tercero es el operador y el sujeto obligado.<br/>El anfitrión cobra renta mensual"]
-  A1 --> R1["Fase 1"]
-  D1 --> R1
-  B1 --> R2["Fase 2, con empresa separada"]
-  C1 --> R3["No recomendado al inicio"]
+  K -.-> B["B. Compra por cuenta propia<br/>la empresa compra y envía la cripto"]
+  K -.-> C["C. Venta por cuenta propia<br/>la empresa recibe cripto y paga efectivo"]
+  A1 --> F1["La empresa solo mueve pesos<br/>como comisionista de la IFPE del exchange<br/>(Nvio para Bitso, Medá para Binance)"]
+  A2 --> F1
+  D --> F2["El tercero es el operador.<br/>El anfitrión cobra renta"]
+  B --> F3["La empresa se vuelve operador:<br/>actividad vulnerable fr. XVI"]
+  C --> F3
+  F1 --> R1["Recomendado: fase 1"]
+  F2 --> R2["Piloto opcional"]
+  F3 --> R3["Solo plan B"]
   classDef ok fill:#e3f3ea,stroke:#1f7a4d,color:#1f1d1a
   classDef mid fill:#f6f0d9,stroke:#7a6a1f,color:#1f1d1a
   classDef no fill:#f7e1de,stroke:#a33a2a,color:#1f1d1a
-  class A,A1,D,D1,R1 ok
-  class B,B1,R2 mid
-  class C,C1,R3 no
+  class A1,A2,F1,R1 ok
+  class D,F2,R2 mid
+  class B,C,F3,R3 no
 ```
 
-| Modalidad | Qué hace el kiosco | Figura de la empresa | Ingreso | Riesgo | Recomendación |
-|---|---|---|---|---|---|
-| **A. Depósito en pesos a una plataforma cripto** | Recibe efectivo y lo abona en la cuenta del usuario en Mercado Pago, Bitso, Binance, etc. El usuario compra cripto en su app. | La misma del modelo base: comisionista o punto de agregador [H]. Para Bitso o Binance hace falta un convenio con su IFPE (Nvio, Medá) [P]. | Comisión por depósito, igual que el modelo base. | Bajo; la cripto la vende la plataforma. | **Fase 1** |
-| **B. Compra de cripto en el kiosco** | Recibe efectivo, compra la cripto a un proveedor de liquidez y la envía a la wallet del usuario. | Actividad vulnerable fr. XVI: alta en el SPPLD, KYC siempre, avisos, expediente 10 años [H]. | Comisión más diferencial de precio. Referencia de mercado: 6% más $50 por operación en cajeros en México [H, Expansión dic-2024]. | Medio-alto: lavado, wallets riesgosas, volatilidad entre el cobro y la compra. | **Fase 2, empresa separada** |
-| **C. Venta de cripto en el kiosco** | El usuario envía cripto y el kiosco le entrega efectivo. | Igual que B, más manejo de efectivo para dispensar. | Comisión y diferencial. | Alto: efectivo para apostar con origen cripto. | **No al inicio** |
-| **D. Cajero de un tercero** | El casino aloja un cajero de CoinFlip o Bitlem. | Ninguna nueva; el operador es el sujeto obligado [S]. | Renta mensual del operador (monto no público) [H]. | Bajo para la empresa. | **Fase 1, piloto** |
+| Modalidad | Qué hace el kiosco | Figura de la empresa | Encaja con "solo intermediarios" | Recomendación |
+|---|---|---|---|---|
+| **A1. Compra como intermediario** | Recibe efectivo y acredita pesos en la cuenta del usuario en el exchange; la compra la ejecuta el exchange | Comisionista de la IFPE del exchange [P] | Sí | **Fase 1** |
+| **A2. Venta como intermediario** | El usuario vende en el exchange; el kiosco le entrega los pesos en efectivo como retiro | Comisionista de la IFPE del exchange [P] | Sí | **Fase 1 con reciclador o con la caja del casino** |
+| **B. Compra por cuenta propia** | La empresa compra la cripto y la envía a la wallet del usuario | Actividad vulnerable fr. XVI [H] | No: la empresa es operador | Solo si A1 no se puede pactar |
+| **C. Venta por cuenta propia** | La empresa recibe la cripto y paga efectivo | Actividad vulnerable fr. XVI [H] | No | No recomendado |
+| **D. Cajero de un tercero** | El casino aloja un cajero de CoinFlip o Bitlem | Ninguna nueva; el operador es el sujeto obligado [S] | Sí, pero el cliente es del tercero | Piloto para medir demanda |
 
-**Diagrama 8. Flujo de una compra de cripto en el kiosco (modalidad B)** (imagen: `diagramas/d8-cripto-compra.png`).
+**Diagrama 8. Compra de cripto como intermediario (A1)** (imagen: `diagramas/d8-cripto-compra.png`).
 
 ```mermaid
 sequenceDiagram
   autonumber
   actor U as Usuario
-  participant K as Kiosco
-  participant P as Plataforma cripto de la empresa
-  participant L as Proveedor de liquidez (p. ej. Bitso Business)
-  participant BC as Blockchain
-  participant SAT as SAT / UIF (SPPLD)
-  U->>K: Elige "Comprar cripto" y la moneda
-  K->>U: Pide INE, selfie con prueba de vida y datos (identificación siempre)
-  K->>P: Envía expediente y wallet destino
-  P->>P: Revisa listas, monto acumulado y riesgo de la wallet (análisis de blockchain)
-  P-->>K: Aprobado, con cotización y comisión
+  participant K as Kiosco (comisionista)
+  participant I as IFPE del exchange (p. ej. Nvio)
+  participant X as Exchange (p. ej. Bitso)
+  U->>K: Elige "Comprar cripto" y su exchange
+  K->>U: Pide identificador de su cuenta (o INE y rostro si no recuerda los datos)
+  K->>I: Valida la cuenta del usuario y el monto permitido
+  I-->>K: Cuenta válida, límite disponible
   U->>K: Inserta billetes
-  K->>P: Confirma monto recibido
-  P->>L: Compra la cripto al precio cotizado
-  L->>BC: Envía la cripto a la wallet del usuario
-  BC-->>P: Confirmación de la transacción
-  P-->>K: Comprobante con hash de la transacción
-  K-->>U: Imprime comprobante
-  Note over P,SAT: Si la operación o el acumulado llega a 210 UMA ($24,635.10 en 2026), aviso a más tardar el día 17 del mes siguiente. Expediente se guarda 10 años
-  P->>SAT: Aviso mensual (o informe en ceros)
+  K->>I: Notifica el depósito en pesos a nombre de la IFPE
+  I->>X: Saldo en pesos disponible en la cuenta del usuario
+  alt Con celular
+    U->>X: Compra la cripto en su app
+  else Sin celular (fase 2, sujeto a dictamen)
+    K->>X: Orden de compra en la cuenta del usuario, autenticada por el exchange
+  end
+  X-->>U: Cripto en su cuenta del exchange
+  K-->>U: Comprobante del depósito
+  Note over K,I: La empresa solo recibió pesos por cuenta de la IFPE. La compra la ejecutó el exchange
 ```
 
-### V6.6 Requisitos legales adicionales para la modalidad B
+**Diagrama 9. Venta de cripto como intermediario (A2), sin celular** (imagen: `diagramas/d9-cripto-venta.png`).
+
+```mermaid
+sequenceDiagram
+  autonumber
+  actor U as Usuario sin celular
+  participant K as Kiosco (comisionista)
+  participant X as Exchange (p. ej. Bitso)
+  participant I as IFPE del exchange (p. ej. Nvio)
+  U->>K: Elige "Vender cripto y retirar efectivo"
+  K->>U: Pide INE y rostro con prueba de vida
+  K->>X: Autenticación facial contra el expediente del exchange
+  X-->>K: Usuario confirmado, saldo y límites
+  U->>K: Indica cuánto vender
+  K->>X: Orden de venta en la cuenta del usuario (sujeto a dictamen)
+  X->>I: Pesos de la venta al saldo del usuario
+  I-->>K: Autoriza el retiro en efectivo
+  K->>K: Reciclador entrega billetes (o vale para la caja del casino)
+  K-->>U: Efectivo y comprobante
+  Note over K,I: La empresa entrega pesos por cuenta de la IFPE. La venta la ejecutó el exchange
+```
+
+### V6.7 Requisitos legales adicionales para cripto como intermediario
 
 Se suman a la lista de arranque de V4.6.
 
-1. **Empresa separada (S.A. de C.V. o S.A.P.I.)** con objeto social que incluya intercambio de activos virtuales, distinta de la que es comisionista de bancos [S].
-2. **Alta en el SPPLD del SAT** como actividad vulnerable de operaciones con activos virtuales, antes de la primera operación [H].
-3. **Representante encargado de cumplimiento** ante el SAT y **manual de políticas de identificación y PLD** [S].
-4. **Identificación completa en cada operación:** INE, selfie con prueba de vida, actividad económica; para empresas, la persona física responsable [H].
-5. **Avisos mensuales** cuando la operación o la comisión superen los umbrales (210 UMA y 4 UMA), a más tardar el día 17 del mes siguiente [H]; informe en ceros los meses sin avisos [S].
-6. **Conservación de expedientes por 10 años** [H].
-7. **Análisis de blockchain** para revisar el riesgo de cada wallet destino (proveedores como Chainalysis o Elliptic) [S].
-8. **Contrato con un proveedor de liquidez** (por ejemplo, Bitso Business) que fije precio, tiempos y límites [S].
-9. **Política de no custodia:** enviar siempre a la wallet del usuario y no guardar cripto de clientes, para no convertirse en custodio [S].
-10. **Aviso de riesgo y términos y condiciones** en pantalla, con lo que exige la Profeco para servicios al consumidor [S].
-11. **Acuerdo con el casino** que deje claro que el kiosco no acredita saldo de juego con cripto, y revisión de si el permiso de SEGOB lo permite [P].
-12. **Dictamen fiscal** sobre ISR e IVA de la comisión y del diferencial [P].
+1. **Contrato de comisionista con la IFPE de cada exchange** (Nvio Pagos México, Medá) o con el exchange y su IFPE, que diga que la empresa recibe y entrega **pesos** a nombre de la IFPE y que la orden de compra o venta la ejecuta el exchange en la cuenta del usuario [P].
+2. **Dictamen sobre la frontera** entre comisionista de pesos y operador de activos virtuales, sobre todo si el kiosco envía la orden de compra o venta por API en nombre del usuario [P].
+3. **Autenticación del usuario sin celular** definida con cada entidad: reconocimiento facial contra su expediente, tarjeta con NIP o código de retiro previo [P].
+4. **Límites de retiro y depósito** que fije cada IFPE y la regulación de comisionistas [P].
+5. **Efectivo para dispensar:** reciclador certificado o acuerdo con la caja del casino, con seguro de efectivo [S].
+6. **Aviso de riesgo** de cripto en pantalla antes de cada operación (las autoridades han advertido sobre su volatilidad) [H].
+7. **Acuerdo con el casino** de que el kiosco no convierte cripto en saldo de juego ni premios en cripto sin control; revisar si el permiso de SEGOB lo permite [P].
+8. **Plan B (solo si A1 y A2 no se pueden pactar):** empresa separada registrada como actividad vulnerable fr. XVI en el SPPLD, con identificación en cada operación, avisos desde 210 UMA y expedientes por 10 años [H].
 
-### V6.7 Recomendación
+### V6.8 Recomendación
 
-- **Fase 1 (con el lanzamiento):** incluir en el menú del kiosco la opción "Depositar para comprar cripto" con Mercado Pago (ya disponible) y negociar con Bitso (Nvio) y Binance (Medá) si aceptan depósitos en efectivo vía comisionista. En paralelo, **piloto con CoinFlip** en uno o dos casinos para medir la demanda real sin carga regulatoria.
-- **Fase 2 (si el piloto muestra demanda):** crear la empresa cripto separada, registrarla en el SPPLD, contratar a Bitso Business como proveedor de liquidez y habilitar la compra en el kiosco (modalidad B).
-- **No hacer por ahora:** venta de cripto con entrega de efectivo (C) ni acreditar saldo de juego con cripto.
-- **Preguntas nuevas para Lucho:** (1) ¿qué cripto quiere ofrecer (bitcoin, stablecoins como USDT y USDC, otras)?; (2) ¿solo compra o también venta?; (3) ¿los casinos aliados ya tienen interés o restricciones sobre cripto?; (4) ¿"Alpaka" es Alpaca u otra empresa?
+- **Fase 1:** depósito para comprar cripto con Mercado Pago (ya existe) y negociación con **Bitso (Nvio)** y **Binance (Medá)** para depósitos y retiros como comisionista. Retiros y ventas solo donde haya reciclador o caja del casino. Piloto opcional de cajero CoinFlip para medir demanda.
+- **Fase 2:** que el kiosco permita ejecutar la compra y la venta en pantalla por API del exchange, con la cuenta del usuario y sin celular, una vez que el dictamen confirme que la empresa sigue siendo comisionista.
+- **No hacer:** comprar o vender cripto por cuenta propia mientras exista la vía de intermediario; acreditar saldo de juego con cripto.
+- **Preguntas para Lucho:** (1) ¿qué cripto quiere ofrecer (bitcoin, stablecoins como USDT y USDC, otras)?; (2) ¿los casinos aliados aceptarían entregar efectivo de retiros desde su caja?; (3) ¿"Alpaka" es Alpaca u otra empresa?
 
 ---
 
@@ -1845,3 +2923,6 @@ Presupuesto de los 90 días: **$1.2 a $2.0 M MXN** [E].
 30. Monto de la renta que CoinFlip paga a los anfitriones en México y condiciones del contrato.
 31. Si un banco patrocinador o un comisionista bancario puede compartir kiosco con un servicio cripto de otra empresa del grupo.
 32. Qué empresa quiso decir Lucho con "Alpaka".
+33. Si Nvio y Medá permiten retiros en efectivo a través de comisionistas y con qué límites.
+34. Qué métodos de autenticación sin celular acepta cada entidad en un kiosco (reconocimiento facial contra su expediente, tarjeta con NIP, código de retiro).
+35. Si la caja del casino puede entregar el efectivo de retiros a nombre de la entidad y bajo qué figura.
