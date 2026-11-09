@@ -1,7 +1,7 @@
 # Estudio de prefactibilidad: red neutral de kioscos de depósito en efectivo (cash-in multibanco) para casinos en México
 
-**Versión:** 4.4 · **Fecha de investigación y consulta de fuentes:** 9 de noviembre de 2026
-**Cambios de la versión 4.0:** nueva sección V4 (precios reales de Mercado Pago por cadena según la app; tapi, PayCash y PESPay a detalle; revisión de los padrones del SPEI de Banxico; requisitos legales por tipo de empresa; seis diagramas del flujo del kiosco en `estudios/diagramas/`). **Versión 4.4:** comparativa producto por producto (V5.4.1) y programas de partners con liga de inscripción (V5.4.2). **Versión 4.3:** detalle de Banlink con sus documentos (V5.2.1). **Versión 4.2:** nueva sección V5 (ser partner de procesadores de pago: Klu, Mercado Pago, Cobre, 88 Pay, Banlink, Tonder y otros; tabla comparativa de productos; análisis de las tablas de precio por volumen). **Versión 4.1:** lista legal completa de arranque (sección V4.6: constitución, fiscal, laboral, marca, datos, equipo, licencias por casino y municipio, seguros y ruta crítica). **Cambios de la versión 3.0:** nueva sección 0 (comisión por depósito y precios de referencia de las cadenas; cómo operan tapi, PayCash y redes similares; flujo de efectivo con cuenta propia frente a patrocinador; KYC completo en kiosco y acceso "como cajero") y modelo financiero con comisión cobrada a las entidades. **Cambio de la versión 2.0 respecto a la 1.0:** el modelo ya no es "kiosco que emite una tarjeta de un emisor". Ahora es el que definió Lucho: **un kiosco neutral donde el usuario elige el banco, la IFPE o el procesador al que quiere abonar su efectivo, o abre una cuenta nueva**, igual que los comercios que hoy reciben depósitos "en nombre de" Mercado Pago u otras entidades. La empresa es intermediaria entre las entidades financieras y el cliente, y no queda amarrada a un solo banco o procesador. La versión 1.0 queda en el historial del repositorio.
+**Versión:** 4.5 · **Fecha de investigación y consulta de fuentes:** 9 de noviembre de 2026
+**Cambios de la versión 4.0:** nueva sección V4 (precios reales de Mercado Pago por cadena según la app; tapi, PayCash y PESPay a detalle; revisión de los padrones del SPEI de Banxico; requisitos legales por tipo de empresa; seis diagramas del flujo del kiosco en `estudios/diagramas/`). **Versión 4.5:** perfil B2B o usuario final de cada operador (V5.4.2). **Versión 4.4:** comparativa producto por producto (V5.4.1) y programas de partners con liga de inscripción (V5.4.2). **Versión 4.3:** detalle de Banlink con sus documentos (V5.2.1). **Versión 4.2:** nueva sección V5 (ser partner de procesadores de pago: Klu, Mercado Pago, Cobre, 88 Pay, Banlink, Tonder y otros; tabla comparativa de productos; análisis de las tablas de precio por volumen). **Versión 4.1:** lista legal completa de arranque (sección V4.6: constitución, fiscal, laboral, marca, datos, equipo, licencias por casino y municipio, seguros y ruta crítica). **Cambios de la versión 3.0:** nueva sección 0 (comisión por depósito y precios de referencia de las cadenas; cómo operan tapi, PayCash y redes similares; flujo de efectivo con cuenta propia frente a patrocinador; KYC completo en kiosco y acceso "como cajero") y modelo financiero con comisión cobrada a las entidades. **Cambio de la versión 2.0 respecto a la 1.0:** el modelo ya no es "kiosco que emite una tarjeta de un emisor". Ahora es el que definió Lucho: **un kiosco neutral donde el usuario elige el banco, la IFPE o el procesador al que quiere abonar su efectivo, o abre una cuenta nueva**, igual que los comercios que hoy reciben depósitos "en nombre de" Mercado Pago u otras entidades. La empresa es intermediaria entre las entidades financieras y el cliente, y no queda amarrada a un solo banco o procesador. La versión 1.0 queda en el historial del repositorio.
 **Alcance:** México, salas de juego con permiso de SEGOB como ubicación inicial; el mismo kiosco puede operar fuera de casinos.
 **Naturaleza:** prefactibilidad para decidir. No sustituye un dictamen jurídico, fiscal ni de cumplimiento.
 
@@ -15,7 +15,7 @@
 
 ---
 
-> **Tabla comparativa de procesadores de pago (Mercado Pago, Klu, Cobre, 88 Pay, Banlink, Tonder y 13 más):** está en la sección **"V5. Ser partner de procesadores de pago"**, subsección **V5.4** (productos a detalle en V5.4.1 y programas de partners con liga de inscripción en V5.4.2). También como página interactiva en `estudios/tabla-procesadores-mexico.html`.
+> **Tabla comparativa de procesadores de pago (Mercado Pago, Klu, Cobre, 88 Pay, Banlink, Tonder y 13 más):** está en la sección **"V5. Ser partner de procesadores de pago"**, subsección **V5.4** (productos a detalle en V5.4.1, perfil B2B o usuario final en V5.4.2 y programas de partners con liga de inscripción en V5.4.3). También como página interactiva en `estudios/tabla-procesadores-mexico.html`.
 
 ## Resumen ejecutivo
 
@@ -199,7 +199,35 @@ La clasificación **MCC 7995 es obligatoria y no negociable**, y cumplir los nue
 | Herramientas de IA para integrar | ✓ MCP Server, CLI | ? | ? | ? | ? | ✓ Plugin MCP | ✓ Conekta AI | ? | ? | ? | ✓ Agent skills, CLI |
 | Acepta juego y casinos | ? | ? | ? | ? | ✓ Casinos en línea, MCC 7995 | ✓ Socios iGaming (Soft2Bet, SoftSwiss) | ? | ? | ? | ✓ Industria Gaming & Gambling | (✓) Restringido |
 
-#### V5.4.2 Programas de partners: cómo inscribirse
+#### V5.4.2 B2B o usuario final: perfil de cada operador
+
+Quién es el cliente de cada uno, qué sectores atiende y qué ofrece a personas (cuentas, menores, créditos, seguros, servicios).
+
+| Característica | Mercado Pago | Klu | Cobre | 88 Pay | Banlink | Tonder | Conekta | Openpay | Clip | Kushki | Stripe |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| Modelo | ✓ B2B y B2C | ✓ B2B (pymes) | ✓ B2B | ? Probable B2B (API) | ✓ B2B | ✓ B2B | ✓ B2B | ✓ B2B | ✓ B2B y B2C (Mi Clip, jun-2026) | ✓ B2B | ✓ B2B |
+| A quién atiende | ✓ Personas, comercios de todos los tamaños, desarrolladores | ✓ Pymes y empresas en expansión (más de 4,000) | ✓ Empresas y fintechs (más de 300 en la región) | ? | ✓ Comercios físicos y en línea | ✓ Startups, operadores de alto riesgo, plataformas grandes | ✓ Comercios en línea (más de 8,000) | ✓ Comercios (grupo BBVA) | ✓ Pymes y comercios; consumidores con Mi Clip | ✓ Empresas y PSP | ✓ Negocios en internet y plataformas |
+| Sectores destacados | ✓ Comercio, comercio electrónico, servicios | ✓ Pymes, comercio exterior | ✓ Pagos B2B, tesorería, transfronterizos | ? | ✓ Por giro; casinos en línea MCC 7995 | ✓ iGaming, forex, comercio electrónico | ✓ Comercio electrónico | (✓) Comercio electrónico | ✓ Comercio minorista, restaurantes (Wansoft) | ✓ Retail, educación, PSP, Gaming & Gambling | (✓) SaaS, plataformas, comercio electrónico |
+| App para usuario final | ✓ App Mercado Pago | — | — | ? | — | — | — | — | ✓ App Mi Clip | — | — |
+| Cuenta para persona (usuario final) | ✓ Cuenta Wallet (IFPE) | (✓) Cuenta Persona Física (para personas con actividad) | — | ? | — | — | — | — | ✓ Cuenta digital Mi Clip | — | — |
+| Cuenta empresarial | ✓ Cuenta Negocio | ✓ Cuenta Empresarial | (✓) Virtual Accounts | ? | — | — | ✓ Cuentas Conekta | — | ✓ Clip Cuenta Digital | — | — |
+| Cuentas para menores de edad | — No en México (sí en Argentina, desde 10 y 13 años) | — | — | ? | — | — | — | — | ? | — | — |
+| Tarjeta de débito | ✓ Debit Mastercard | ✓ Tarjeta Corporativa | ? | ✓ Cards México (emisión) | — | — | — | — | (✓) Pagos con tarjeta Mastercard (Mi Clip) | — | — |
+| Tarjeta de crédito | ✓ Por Mercado Lending | ? | — | ? | — | — | — | — | ? | — | — |
+| Préstamos personales | ✓ Por Mercado Lending; Meses sin Tarjeta | — | — | ? | — | — | — | — | ✓ Crédito para consumidores (Mi Clip) | — | — |
+| Créditos para negocio | ✓ Mercado Crédito | ✓ Crédito productivo | — | ? | — | — | (✓) Creditea (aliado) | — | ✓ Préstamo Clip | — | (✓) Capital (otros países) |
+| Rendimientos o inversión | ✓ Rendimientos con fondo de GBM | ? | — | ? | — | — | — | — | (✓) Ahorro (Mi Clip) | — | — |
+| Seguros | ✓ Seguro de vida y accidentes (desde feb-2023) | ? | — | ? | — | — | — | — | ? | — | — |
+| Pago de servicios | ✓ Sí | ? | — | ? | — | — | — | — | ✓ Sí | — | — |
+| Recargas de tiempo aire | ✓ Sí | ? | — | ? | — | — | — | — | ✓ Sí | — | — |
+| Remesas | ✓ Sí | (✓) Klu Sin Fronteras (anunciado, marca blanca) | ✓ Cross Border | ? | — | — | — | — | (✓) Pagos internacionales (próxima fase) | — | — |
+| Depósito de efectivo en tiendas | ✓ Red de corresponsales | ? | — | ? | — | — | — | — | ? | — | — |
+| Figura en México | ✓ IFPE; licencia bancaria en trámite | ✓ IFPE; Sofipo en trámite | ✓ Transmisor de dinero (Tesored) | ? | ✓ Revendedor sobre Getnet | ? No publicada | ✓ Adquirente no bancario directo | (✓) Grupo BBVA | ✓ IFPE | (✓) Adquirente | (✓) Opera con socios locales |
+| Rol para nuestro kiosco | ✓ Destino de depósitos y partner | (✓) Destino (monederos) y partner de cobro | (✓) Riel SPEI | (✓) Tarjeta del kiosco | ✓ Reventa de cobro a casinos | ✓ Reventa de cobro a casinos | (✓) Reventa (modelo Mark Up) | (✓) Reventa | (✓) Destino (Mi Clip) y terminales | ✓ Reventa de cobro a casinos | — Restringe juego |
+
+**Lectura:** solo **Mercado Pago** y **Clip** (con Mi Clip, desde jun-2026) atienden directamente a personas; los demás venden a empresas. Para el kiosco, los que tienen usuario final son **destinos de depósito** y los B2B son **socios para revender cobro**. Ninguno ofrece cuentas para menores en México según lo consultado (Mercado Pago sí en Argentina). Fuentes: Bancario.com.mx (productos de Mercado Pago para personas), Expansión (seguro de vida de Mercado Pago, 28-feb-2023), comunicado de Clip sobre Mi Clip (9-jun-2026) y los sitios de cada procesador.
+
+#### V5.4.3 Programas de partners: cómo inscribirse
 
 | Procesador | ¿Tiene programa? | Cómo funciona y cómo se gana | Proceso para inscribirse | Liga |
 |---|---|---|---|---|
@@ -217,7 +245,7 @@ La clasificación **MCC 7995 es obligatoria y no negociable**, y cumplir los nue
 
 **Lectura:** el modelo **Mark Up de Conekta** es el más parecido a las tablas de precio de Lucho. Para casinos, los más afines son **Kushki** (atiende Gaming & Gambling), **Tonder** (socios iGaming) y **Banlink** (casinos en línea, MCC 7995); Stripe restringe el giro. Mercado Pago paga por integrar comercios, no por revender. Clip Agente sirve para revender terminales a negocios, no para casinos.
 
-#### V5.4.3 Resumen general de 19 procesadores
+#### V5.4.4 Resumen general de 19 procesadores
 
 | Procesador | Tarjetas (cobro) | SPEI (cobro) | Efectivo con referencia | Depósito a cuenta en tiendas | Pagos a terceros (SPEI) | Emisión de tarjetas | Cuentas o monedero | Terminal física | Juego y casinos | Programa de partners | Licencia en México |
 |---|---|---|---|---|---|---|---|---|---|---|---|
