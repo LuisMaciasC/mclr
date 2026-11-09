@@ -1,0 +1,19 @@
+stateDiagram-v2
+  [*] --> Iniciada: el usuario elige entidad
+  Iniciada --> Autenticada: QR de la app o código validado
+  Iniciada --> Cancelada: tiempo agotado
+  Autenticada --> RecibiendoEfectivo: reglas aprobadas
+  RecibiendoEfectivo --> EfectivoConfirmado: el usuario confirma el monto
+  RecibiendoEfectivo --> Incidente: falla del validador
+  EfectivoConfirmado --> AbonoEnviado
+  AbonoEnviado --> Acreditada: confirmación de la entidad
+  AbonoEnviado --> Pendiente: sin respuesta
+  Pendiente --> Acreditada: consulta de estado positiva
+  Pendiente --> Reembolso: sin confirmación al cierre
+  Incidente --> Acreditada: se completa el abono al reiniciar
+  Incidente --> Reembolso
+  Acreditada --> Conciliada: corte diario cuadra
+  Conciliada --> Liquidada: SPEI a la entidad, neto de comisión
+  Liquidada --> [*]
+  Reembolso --> [*]
+  Cancelada --> [*]

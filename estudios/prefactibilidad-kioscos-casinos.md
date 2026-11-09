@@ -1,7 +1,7 @@
 # Estudio de prefactibilidad: red neutral de kioscos de depósito en efectivo (cash-in multibanco) para casinos en México
 
-**Versión:** 3.0 · **Fecha de investigación y consulta de fuentes:** 9 de noviembre de 2026
-**Cambios de la versión 3.0:** nueva sección 0 (comisión por depósito y precios de referencia de las cadenas; cómo operan tapi, PayCash y redes similares; flujo de efectivo con cuenta propia frente a patrocinador; KYC completo en kiosco y acceso "como cajero") y modelo financiero con comisión cobrada a las entidades. **Cambio de la versión 2.0 respecto a la 1.0:** el modelo ya no es "kiosco que emite una tarjeta de un emisor". Ahora es el que definió Lucho: **un kiosco neutral donde el usuario elige el banco, la IFPE o el procesador al que quiere abonar su efectivo, o abre una cuenta nueva**, igual que los comercios que hoy reciben depósitos "en nombre de" Mercado Pago u otras entidades. La empresa es intermediaria entre las entidades financieras y el cliente, y no queda amarrada a un solo banco o procesador. La versión 1.0 queda en el historial del repositorio.
+**Versión:** 4.0 · **Fecha de investigación y consulta de fuentes:** 9 de noviembre de 2026
+**Cambios de la versión 4.0:** nueva sección V4 (precios reales de Mercado Pago por cadena según la app; tapi, PayCash y PESPay a detalle; revisión de los padrones del SPEI de Banxico; requisitos legales por tipo de empresa; seis diagramas del flujo del kiosco en `estudios/diagramas/`). **Cambios de la versión 3.0:** nueva sección 0 (comisión por depósito y precios de referencia de las cadenas; cómo operan tapi, PayCash y redes similares; flujo de efectivo con cuenta propia frente a patrocinador; KYC completo en kiosco y acceso "como cajero") y modelo financiero con comisión cobrada a las entidades. **Cambio de la versión 2.0 respecto a la 1.0:** el modelo ya no es "kiosco que emite una tarjeta de un emisor". Ahora es el que definió Lucho: **un kiosco neutral donde el usuario elige el banco, la IFPE o el procesador al que quiere abonar su efectivo, o abre una cuenta nueva**, igual que los comercios que hoy reciben depósitos "en nombre de" Mercado Pago u otras entidades. La empresa es intermediaria entre las entidades financieras y el cliente, y no queda amarrada a un solo banco o procesador. La versión 1.0 queda en el historial del repositorio.
 **Alcance:** México, salas de juego con permiso de SEGOB como ubicación inicial; el mismo kiosco puede operar fuera de casinos.
 **Naturaleza:** prefactibilidad para decidir. No sustituye un dictamen jurídico, fiscal ni de cumplimiento.
 
@@ -29,7 +29,8 @@
 
 - **La "nueva ley de pagos digitales"** es la *Ley de Economía Digital para Pagos Digitales y Electrónicos* (DOF 4-nov-2026, vigente desde el 5-nov-2026) [H]. Para los privados la aceptación de pagos digitales es voluntaria (art. 11) salvo en los sectores que la SHCP declare obligatorios (art. 13), cuya lista se espera para finales de noviembre de 2026; no se han mencionado los casinos [H]. Es un viento a favor, no una obligación que cree demanda.
 - **El vínculo con casinos sigue siendo el principal riesgo comercial.** Cada banco, IFPE o agregador decide si acepta puntos de depósito dentro de salas de juego. Los juegos con apuesta son actividad vulnerable con reglas nuevas desde el 30-nov-2026, y ha habido bloqueos de cuentas y sanciones a casinos [H]. **No debe suponerse que ninguna entidad acepta este giro sin confirmación escrita.**
-- **El modelo de ingresos es una comisión por depósito cobrada a las entidades** (más un pago por cuenta nueva), no al usuario, lo que además respeta la regla de que el comisionista no cobra comisiones propias al cliente [H: guía de la CNBV]. Las referencias públicas van de $4 (Mercado Pago a tienditas) a $8–$20 (lo que pagan los usuarios en Soriana, Circle K, 7-Eleven y OXXO) [H]; lo que las cadenas cobran a Mercado Pago no es público (sección 0.1).
+- **El modelo de ingresos es una comisión de $10 a $15 por depósito** (base $12) más un pago por cuenta nueva. La app de Mercado Pago muestra que en las cadenas **la paga el usuario** ($10 en Circle K y Farmacias Yza, $12 en Soriana, Neto, Waldo's y Farmacias del Ahorro, $15 en 7-Eleven) y solo en tienditas es gratis porque Mercado Pago paga $4 [H, sección V4.1]. El kiosco puede cobrarla al usuario, siempre como **comisión de la entidad** (el comisionista no puede cobrar comisiones propias [H]), o a la entidad; la economía es la misma.
+- **Las redes de depósito (tapi, PESPay, PayCash, Yastás) no aparecen en los padrones del SPEI de Banxico**: operan por cuenta de entidades que sí están. Esto confirma que la empresa no necesita licencia propia para empezar; PESPay, un administrador de comisionistas, es el antecedente más parecido (sección V4).
 - **Límites:** la guía de la CNBV menciona un tope de depósitos en efectivo vía comisionista de 4,000 UDIS diarios (≈ $35,000) [H, P: confirmar si es por cuenta]; las cuentas nivel 2 admiten 3,000 UDIS al mes y las 2 Bis, 15,000 UDIS con 3,000 en efectivo [H].
 - **Números (todos estimados, versión 3 con comisión de $12 por depósito cobrada a las entidades):** con traslado de valores propio, el escenario base deja ≈ $4,300 MXN/kiosco/mes de contribución y requiere ≈ 187 kioscos para el equilibrio. Con el casino reciclando el efectivo, la contribución sube a ≈ $11,600 MXN, el equilibrio baja a ≈ 69 kioscos, el kiosco se paga en ≈ 18 meses y el financiamiento máximo en tres años es ≈ $58 M MXN [E]. Cada peso adicional de comisión por depósito vale ≈ $1,600 al mes por kiosco; con $15 el equilibrio baja a ≈ 49 kioscos. El escenario conservador no alcanza equilibrio.
 
@@ -54,11 +55,396 @@ Mientras no haya respuesta, el estudio supone: solo depósitos (cash-in) y apert
 
 ---
 
+## V4. Ampliación de la versión 4: precios reales de Mercado Pago, agregadores a detalle, padrones de Banxico, requisitos y diagramas
+
+Responde a los comentarios de Lucho del 9-nov-2026: (1) los precios que Mercado Pago muestra en su app por cadena; (2) más detalle de tapi y PayCash, y qué es PESPay; (3) validar contra Banxico si hay más entidades que funcionen igual; (4) qué permisos, regulación y sociedades se necesitan para montar una empresa similar; (5) un diagrama detallado del flujo del punto 4 con nuestra entidad.
+
+### V4.1 Lo que Mercado Pago muestra en su app (screenshots de Lucho, 9-nov-2026)
+
+| Punto de depósito | Costo al usuario | Máximo por depósito | Cómo se identifica el usuario | Nota |
+|---|---|---|---|---|
+| Soriana | $12 | $5,000 | "Mostrar código" | |
+| Waldo's | $12 | $5,000 | "Mostrar código" | |
+| Farmacias Guadalajara | $12 | $5,000 | "Generar código" | |
+| Circle K | $10 | $10,000 | "Generar código" | 24 horas |
+| Neto | $12 | $5,000 | "Generar código" | |
+| Abarrotes y tienditas de la red SYS | $12 | $10,000 | "Generar código" | El logotipo SYS apunta a la red de puntos que era de Arcus y hoy opera tapi [S] |
+| Farmacias Yza | $10 | $3,000 | "Generar código" | |
+| Farmacias del Ahorro | $12 | $10,000 | "Mostrar código" | |
+| 7-Eleven | $15 | $10,000 | "Generar código" | 24 horas |
+| Tienditas con terminal de Mercado Pago | **Sin costo** | — | Código en la app | Mercado Pago le paga $4 al comercio [H] |
+
+**Fuente:** capturas de la app de Mercado Pago compartidas por Lucho [H: dato primario del usuario, 9-nov-2026].
+
+**Qué cambia respecto a la versión 3:**
+
+1. **Hay dos modelos de cobro en el mercado, no uno.** En las cadenas, **paga el usuario** ($10 a $15) y, según lo que Lucho sabe, Mercado Pago no le paga nada adicional a la cadena [S: dicho por Lucho, coincide con el cuadro]. En las tienditas, **paga la entidad** ($4) y el usuario no paga. La versión 3 suponía solo el segundo.
+2. **Para el kiosco, el precio de referencia es el de las cadenas: $10 a $15 por depósito pagados por el usuario.** El kiosco compite con Soriana, Neto o Circle K, no con la tiendita: tiene horario de casino (muchas veces 24 horas), no necesita personal y está donde está el efectivo.
+3. **Cobrarle al usuario tiene un punto legal a revisar.** La guía de la CNBV dice que el comisionista **no puede cobrar comisiones propias** al cliente de la entidad [H]. En la práctica, lo que paga el usuario en una cadena por depositar a un banco es **una comisión de la entidad**, registrada por ella, que se reparte con la cadena por contrato [S: así aparece en los listados de El Imparcial, por banco y por cadena]. Para las IFPE como Mercado Pago aplica otro régimen (Ley Fintech y disposiciones de la CNBV para IFPE), y no está claro si la cadena cobra a nombre propio o de la IFPE [P]. **Recomendación:** que en el contrato con cada entidad la comisión al usuario sea **de la entidad**, mostrada en el kiosco con su nombre, y que la empresa reciba su parte por contrato. Así el modelo funciona igual con cualquiera de los dos esquemas.
+4. **Efecto en el modelo financiero:** ninguno en la base. El modelo de la versión 3 ya usa $12 por depósito; lo único que cambia es quién lo paga. Si lo paga el usuario, la entidad tiene menos razones para negociar a la baja, y el riesgo pasa a ser que el usuario prefiera la tienda de enfrente; dentro de un casino ese riesgo es menor.
+5. **Los topes por depósito ($3,000 a $10,000 por operación) son de cada cadena**, no de la ley. El kiosco puede fijar los suyos dentro del límite diario por comisionista (4,000 UDIS ≈ $35,000) y del nivel de cuenta [H/P].
+
+### V4.2 tapi, PayCash y PESPay a detalle
+
+#### tapi
+
+| Tema | Lo que se sabe | Marca |
+|---|---|---|
+| Qué es | Empresa argentina de infraestructura de pagos. Una sola API conecta a bancos, fintechs y empresas con pagos de servicios, recargas, pago referenciado y cash-in/cash-out en tiendas | [H] Mexico Business News, jul-2025 |
+| Cómo funciona el cash-in | El usuario entrega efectivo en una tienda adherida y el dinero queda en su cuenta en línea. La página no publica la mecánica exacta (código, referencia o tarjeta) ni el plazo de acreditación | [H] tapi.la |
+| Red | Su página dice "más de 15,000 puntos activos" y en otra parte "más de 12,000 tiendas físicas"; cadenas: 7-Eleven, Woolworth, Tiendas Extra, Farmacias del Ahorro, Farmacia Super, Chedraui, Kiosko, Similares, Soriana, Waldos, Casa Ley y Benavides. Con la compra de las operaciones de efectivo de Arcus (2025) dice tener más de 50,000 tiendas, incluidas OXXO y Walmart | [H] tapi.la; Latam Fintech |
+| Quién tiene la figura legal | **tapi no**. Su página dice que la red la administra **PESPay**, que "tiene la figura legal habilitada" para esta vertical. Y aclara que **el banco o la fintech cliente debe obtener la autorización de la CNBV** para operar cash-in/cash-out por esa red, y que no recomienda pilotos sin esa aprobación | [H] tapi.la |
+| Integración | 4 a 6 semanas, portal de desarrolladores (tapila.dev), equipo de integración hasta la primera transacción | [H] tapi.la |
+| Clientes y alianzas | Mercado Pago (cash-in y cash-out, feb-2025); Banco Plata en OXXO (may-2026) | [H] El Cronista; Latam Fintech |
+| Capital | Serie B de US$27 M liderada por Kaszek | [H] El Cronista |
+| Precio | No publicado. El retiro no tiene costo para el usuario final | [H] |
+
+**Cómo encajaría el kiosco con tapi:** el kiosco sería un "punto adherido" más. Para el usuario de Mercado Pago o de Banco Plata, el kiosco aparecería como una tienda en la app. La empresa tendría que firmar con tapi y, muy probablemente, quedar dentro del esquema legal de PESPay (como comisionista administrado por PESPay o como punto de PESPay) [S/P].
+
+#### PayCash
+
+| Tema | Lo que se sabe | Marca |
+|---|---|---|
+| Qué es | Red latinoamericana de **pagos con referencia**. El comercio genera una referencia única, el cliente paga en efectivo o digital, y PayCash avisa al comercio en tiempo real | [H] paycashglobal.com |
+| Cobertura | "Más de 400 mil" puntos en unos 11 países; el desglose por país suma ≈ 320 mil. **México: 31,602 puntos** | [H] paycashglobal.com |
+| Clientes | "Más de 1,400" empresas: comercio electrónico, fintech y crédito, **juego en línea**, aplicaciones, educación, seguros. Varios casinos en línea en México lo ofrecen para depositar (por ejemplo, Betcris) | [H] |
+| Mecánica (documentación de un integrador) | Referencia única por pago, monto exacto, mínimo $10 y máximo $20,000; vencimiento típico de 72 horas; confirmación casi inmediata (BBVA Practicaja: 30 minutos a 2 horas) con aviso por webhook; liquidación semanal | [H] docs.cheqpay.mx |
+| Topes por punto | Walmart, 7-Eleven, Soriana y Sam's: $10,000. Kiosko: $15,000. Calimax: $5,000. Farmacias Yza: $3,000. Santander, BBVA, Banorte y Afirme: $20,000 | [H] docs.cheqpay.mx |
+| Liquidación | El comercio puede elegir dónde recibir los fondos, incluso **fuera de México o en USDT** | [H] paycashglobal.com |
+| Política | "Sin contracargos": garantiza el 100% de lo cobrado; los reembolsos los controla el comercio | [H] |
+| Integración | 5 a 10 días hábiles | [H] |
+| Figura legal | **No la publica**. Documentación antigua estaba en un dominio de Red Efectiva y hoy redirige a PayCash Global | [P] |
+| Precio | Al usuario de albo: $10 a $12 por depósito [H, Xataka]. Al comercio: no publicado | |
+
+**Diferencia clave con tapi:** PayCash es un **cobro por referencia** (el dinero va al comercio que generó la referencia), no un abono a una cuenta financiera elegida en el punto. Para el kiosco significa un **segundo producto**: cualquiera que traiga una referencia PayCash (por ejemplo, para fondear un casino en línea o pagar una compra) podría pagarla en el kiosco. **Ojo:** la liquidación fuera de México o en USDT y la fuerte presencia en juego en línea hacen que cualquier entidad bancaria pregunte por PLD antes de aceptar ese flujo en una sala de juego [S].
+
+#### PESPay
+
+| Tema | Lo que se sabe | Marca |
+|---|---|---|
+| Qué es | Plataforma que conecta los puntos de venta de las cadenas con **emisores**: carteras digitales, fintechs, Sofipos, Socaps y microfinancieras. Su gerente comercial la describe como "una carretera digital que conecta emisores financieros con comercios" | [H] CIONoticias, 12-feb-2022; POSTA, 4-feb-2023 |
+| Dueño | Grupo **Stella Tech**, de Monterrey, que reúne siete empresas de tecnología financiera. PESPay se lanzó a mediados de 2021 | [H] |
+| Productos | (1) **Cash in**: depósitos a carteras y pagos referenciados. (2) **Pagos digitales**: QR, referencias, lealtad, cupones y tarjetas de circuito cerrado. (3) **Cash out**: retiros de carteras, **dispersiones de gobierno** y retiros de microcréditos | [H] CIONoticias |
+| Red | Más de 5,300 puntos afiliados en feb-2022 (Walmart entre ellos); Farmacias del Ahorro con retiro, depósito y pago QR en 2023. Hoy es la red sobre la que opera tapi (alianza de feb-2024) | [H] |
+| Figura legal | La nota de POSTA dice que **administra comisionistas** para emisores y que está "regulada por la CNBV", sin decir con qué figura. tapi dice que PESPay "tiene la figura legal habilitada" | [H] declaraciones; [P] figura exacta |
+| Modelo de ingresos | Los comercios ganan por transacción y los emisores pagan comisiones bajas (sin cifras) | [H] CIONoticias |
+
+**Interpretación [S]:** PESPay es, con mucha probabilidad, un **administrador de comisionistas** en el sentido de la regulación (como Yastás de Gentera): firma con las entidades, contrata a las cadenas como comisionistas y responde por la operación. **Es el modelo más parecido al que busca Lucho**, con una diferencia: PESPay usa la caja de una tienda y nosotros un kiosco. Por eso PESPay es a la vez el **socio más natural** (entrar a su red y, por medio de tapi, llegar a Mercado Pago y otros) y el **competidor más directo** si la empresa quiere firmar directo con las entidades. **Pendiente:** confirmar en el padrón de la CNBV o con PESPay su figura y razón social.
+
+### V4.3 Validación con Banxico: ¿hay más entidades que funcionen igual?
+
+**Limitación:** no se contactó a Banxico. La validación se hizo con **los padrones públicos del SPEI** publicados por Banxico [H]:
+- Participantes del SPEI (lista al 23-sep-2026): 94 participantes.
+- Participantes que ofrecen participación indirecta (22-oct-2026).
+- Participantes indirectos (10-sep-2026): 97.
+
+**Hallazgo principal: las redes de puntos de depósito (tapi, PESPay, PayCash, Yastás) no aparecen en ningún padrón del SPEI.** No son entidades financieras; operan **por cuenta de** entidades que sí lo son. Esto confirma el modelo propuesto: **una empresa como la nuestra no necesita estar en el SPEI**; necesita contratos con entidades que sí estén.
+
+**Entidades del SPEI relevantes para el modelo:**
+
+| Grupo | Entidades | Por qué importan |
+|---|---|---|
+| **IFPE participantes directos (13)** | Albo, Arcus FI, Cashi Cuenta (Walmart), Clip, Cuenca, Dep y Pag Dig, Mercado Pago W, Mexpago, Nvio, Peibo, PPBalanceMX (PayPal), Spin by OXXO (Compropago), STP | **Clientes potenciales del kiosco.** Tres ya tienen redes de efectivo propias: Arcus FI (hoy parte de tapi), Spin by OXXO (OXXO) y Cashi (Walmart). Mercado Pago y Albo compran redes de terceros (tapi, PayCash) [H] |
+| **Transmisores de dinero participantes directos (4)** | Finco Pay, Fintoc, Tesored (Cobre), Transfer Direct | **Prueba de que un transmisor de dinero puede conectarse directo al SPEI** [H]. Es la ruta C1 de la sección 0.3 con acceso propio al SPEI, no solo con cuenta bancaria |
+| **Sofipos participantes directos (8)** | Entre ellas Fondeadora y Klar | Clientes potenciales; las Sofipos abren cuentas y aceptan efectivo por comisionista [S/P] |
+| **Proveedores de participación indirecta (6)** | Banco Azteca, Banorte, Banregio, Banco PagaTodo, STP, ASP Integra | **Candidatos a banco patrocinador** (etapa 2). Banco Azteca y Banorte ya trabajan con redes de comisionistas (Banco Azteca con PESPay, según POSTA; Banorte con Yastás) [H/P] |
+| **IFPE participantes indirectos (29)** | Alto Azareo, Beyapsi, BKBN, BRX Payments, Cashmind, CTA Monedero, Edenred, Efectifintech, Finalitix, FOD, Klu, Kuhnipay, Lanapay, Liftoff, Medá, Moneki, Pagando, Pagaphone, Pago Confiado, Paycaster, Pomelo, Pretech, PTM Prime, Sacbépayments, Serv OCTE Mapa, Sí Vale, Sylon, Todito Pagos, Toka Fintech | Clientes potenciales más pequeños, con más necesidad de una red de depósito barata. Ejemplo: Efectifintech (parece del grupo Efectivale [S]), Sí Vale, Edenred y Toka (vales y monederos) |
+| **Bancos participantes indirectos** | Bineo, Banco Plata, Openbank, Revolut | Bancos digitales sin sucursales; Banco Plata ya compra cash-in a tapi [H] |
+| **Sofipos y Socaps indirectas (14 y 50)** | Entre ellas Broxel y Stori | Clientes potenciales; PESPay dice atender a Sofipos y Socaps [H] |
+
+**Otras redes de puntos que no están en el SPEI** (mismo motivo que tapi o PESPay): **Yastás** (Gentera, administrador de comisionistas bancarios) [H]; **Puntored** (red colombiana de corresponsales; declaró que México necesita 150,000 corresponsales para bancarizar al 90%) [H: DPL News; presencia en México: P]; **Sonect** (red suiza de "cajero en la tienda", anunció licencia para operar en México; figura: P) [H: Cash Essentials].
+
+**Pendiente:** la CNBV publica el **padrón de comisionistas autorizados por entidad** y el de **transmisores de dinero registrados** en su portal; no fue legible por lectura automática. Es el siguiente paso para confirmar la figura de PESPay, PayCash y Yastás [P].
+
+### V4.4 Qué se necesita para montar una empresa similar
+
+Hay cinco formas de "empresa similar", de menor a mayor carga regulatoria. **La recomendación sigue siendo empezar en la 2 (con contratos de la 1) y evaluar la 4 cuando haya volumen.**
+
+| # | Tipo de empresa (ejemplo) | Qué hace | Autoridad y permiso | Requisitos principales | Capital mínimo regulatorio | Plazo [E] |
+|---|---|---|---|---|---|---|
+| 1 | **Capa de integración** (tapi) | API entre entidades y redes de puntos; no toca el dinero ni tiene la relación con el cliente | Ninguna propia; la entidad cliente obtiene la autorización de la CNBV | Contratos de servicio; seguridad (ISO 27001; PCI DSS si toca tarjetas); cumplir los requisitos de proveedor tecnológico de cada entidad (auditorías, continuidad) | No hay | 3 a 6 meses |
+| 2 | **Red de puntos y administrador de comisionistas** (PESPay, Yastás, **la propuesta para nosotros**) | Recibe efectivo por cuenta de varias entidades; puede abrir cuentas por cuenta de ellas | **CNBV autoriza a cada entidad** a contratar a la empresa como comisionista o administrador de comisionistas (LIC arts. 46 Bis 1 y 46 Bis 2; CUB arts. 318 a 334 y anexo 57); para IFPE, sus disposiciones [H] | Contrato de comisión mercantil con cada entidad; la entidad presenta a la CNBV su plan con la empresa ≈ 20 días hábiles antes [H]; manuales de operación, seguridad y capacitación que exige la entidad; PLD con las políticas de la entidad; garantías por contraparte | No hay capital regulatorio; sí garantías por contrato [S] | 3 a 12 meses (depende de cada entidad) |
+| 3 | **Agregador de pagos referenciados** (PayCash, Paynet) | Cobra referencias en efectivo por cuenta de comercios y les liquida | No hay figura específica si cobra por cuenta del comercio; si recibe y transfiere fondos a nombre propio, puede caer en transmisor de dinero [P] | Contratos con comercios y cadenas; PLD voluntario o como actividad vulnerable según el giro de los comercios [P]; cuidado con juego en línea | No hay | 6 a 12 meses |
+| 4 | **Transmisor de dinero** (Finco Pay, Fintoc, Tesored) | Recibe dinero del usuario a nombre propio y lo envía a la cuenta que indique | **Registro ante la CNBV** (LGOAAC art. 81-A Bis) con **dictamen técnico de PLD**, renovación cada 3 años; opcional, acceso directo al SPEI con autorización de Banxico [H] | Oficial de cumplimiento y comité; manual de PLD; sistema automatizado de monitoreo; reportes a la UIF por medio de la CNBV; auditoría anual de PLD; identificación por montos [H]. No puede abrir cuentas ni emitir dinero electrónico [H] | No fijado en la ley para el registro [P]; Banxico pide requisitos operativos y de seguridad para el SPEI | 9 a 18 meses |
+| 5 | **IFPE** (Arcus, Spin by OXXO, Mercado Pago W) | Abre cuentas propias, emite dinero electrónico, recibe efectivo con excepción de la CNBV, SPEI propio | **Autorización de la CNBV con acuerdo del Comité Interinstitucional** (Ley Fintech arts. 11 y 35); **Banxico**: reglas de operación de IFPE y autorización para participar en el SPEI (Circular 14/2017) [H]; excepción para efectivo (art. 45) [H] | Plan de negocio; gobierno corporativo y consejeros con honorabilidad; capital pagado; PLD; seguridad de la información; contratos de adhesión registrados ante CONDUSEF; reportes regulatorios | Fijado en las disposiciones de la CNBV para ITF, en UDIS, según las operaciones autorizadas [P: confirmar monto vigente] | 18 a 36 meses |
+
+**Requisitos comunes para el modelo 2 (el recomendado):**
+
+| Área | Qué se necesita | Fundamento |
+|---|---|---|
+| **Sociedad** | **S.A.P.I. de C.V.** (facilita entrada de inversionistas y pactos entre socios). Objeto social que incluya actuar como comisionista mercantil y administrador de comisionistas de entidades financieras, servicios tecnológicos y operación de equipos de autoservicio. RFC, firma electrónica, domicilio fiscal | Ley General de Sociedades Mercantiles [S: práctica] |
+| **Accionistas y directivos** | Las entidades revisarán honorabilidad y origen de recursos de socios y directivos (debida diligencia de PLD de la entidad); conviene que no haya socios vinculados al casino anfitrión | [S] |
+| **Contratos** | (a) Comisión con cada entidad o con el administrador de su red; (b) servicio con agregadores (tapi, PayCash); (c) hospedaje y, en su caso, reciclaje de efectivo con cada casino; (d) traslado de valores; (e) cuenta de liquidación en banco comercial; (f) proveedor de identidad; (g) fabricante y mantenimiento de kioscos | Código de Comercio (comisión mercantil, arts. 273 y siguientes) [H] |
+| **PLD** | Como comisionista, la empresa aplica la política de PLD **de cada entidad** (identificación, límites, avisos); designar un responsable interno; capacitación anual. Revisar si la empresa queda como actividad vulnerable por su relación con casinos (LFPIORPI) | LIC art. 115; LFPIORPI y reglas de 2026 [H/P] |
+| **Datos personales** | Aviso de privacidad propio (como encargada de la entidad); consentimiento expreso para biometría; borrado en el kiosco; contratos de encargo con cada entidad | LFPDPPP 2025 [H] |
+| **Seguridad** | ISO 27001 recomendado; PCI DSS solo si el kiosco lee tarjetas; pruebas de penetración anuales; plan de continuidad | Requisito habitual de las entidades [S] |
+| **Operación física** | Licencia de funcionamiento o aviso según el municipio del casino; seguro de efectivo en bóveda y en tránsito; contrato con empresa de traslado de valores autorizada (si aplica) | Reglamentos municipales [P]; Ley Federal de Seguridad Privada para el transportista [H/P] |
+| **Casino** | Que el permiso de SEGOB del casino no se oponga a servicios financieros de terceros en sala; dictamen sobre el reciclaje de efectivo | LFJS y su Reglamento [P] |
+| **Fiscal** | Facturar comisiones a entidades; IVA sobre la comisión; si el casino recicla efectivo, documentar que no es ingreso del casino | [P: dictamen fiscal] |
+| **Protección al usuario** | Mostrar en pantalla el nombre de la entidad, su comisión, límites, comprobante con folio y canal de aclaraciones de la entidad | CUB (comisionistas) y disposiciones de transparencia [H/P] |
+
+### V4.5 Diagramas del flujo del punto 4: cómo funcionaría nuestra entidad
+
+Los diagramas están en formato Mermaid (se ven como gráfico en GitHub) y como imagen en `estudios/diagramas/`.
+
+**Diagrama 1. Arquitectura y actores** (imagen: `diagramas/d1-arquitectura.png`). El kiosco solo captura y recibe efectivo; la plataforma de la empresa orquesta, aplica límites, lleva el libro mayor y concilia; **las entidades deciden el alta y acreditan el saldo**. Las líneas punteadas son dinero; las continuas, información.
+
+```mermaid
+flowchart LR
+  subgraph SALA["Sala de juego (casino anfitrión)"]
+    U(["Usuario"])
+    subgraph K["Kiosco de la empresa"]
+      K1["Pantalla táctil y app del kiosco"]
+      K2["Validador y bóveda de billetes<br/>(reciclador en etapa 2)"]
+      K3["Escáner de INE + cámara con prueba de vida"]
+      K4["Lector de QR / teclado"]
+      K5["Impresora de comprobantes"]
+      K6["Agente de seguridad:<br/>sensores, alarma, cámara de vigilancia"]
+    end
+    CJ["Caja del casino<br/>(recicla el efectivo, esquema B)"]
+  end
+
+  subgraph PLAT["Plataforma central de la empresa (nube)"]
+    P1["API de kioscos<br/>(TLS mutuo, firma por dispositivo)"]
+    P2["Orquestador de depósitos<br/>(catálogo y enrutamiento)"]
+    P3["Motor de reglas y límites<br/>(4,000 UDIS diarias, nivel de cuenta, horario)"]
+    P4["Captura KYC sin retención<br/>(envía y borra)"]
+    P5["Libro mayor transaccional<br/>(saldo por entidad y por kiosco)"]
+    P6["Conciliación y liquidación diaria"]
+    P7["Monitoreo de operaciones<br/>(alertas para la entidad)"]
+    P8["Gestión de flota y efectivo<br/>(nivel de bóveda, alertas de recolección)"]
+    P9["Portal de entidades y casinos<br/>(reportes, disputas)"]
+  end
+
+  subgraph ENT["Entidades reguladas (deciden y acreditan)"]
+    E1["Entidad directa 1..n<br/>(bancos, IFPE, Sofipos)<br/>contrato de comisión"]
+    E2["Agregadores<br/>(tapi / PESPay, PayCash)"]
+    E3["Banco patrocinador<br/>(etapa 2: SPEI a cualquier CLABE)"]
+    E4["Proveedor de identidad de la entidad<br/>(INE, RENAPO, listas)"]
+  end
+
+  subgraph DIN["Movimiento físico y bancario"]
+    T["Traslado de valores<br/>(esquema A)"]
+    CL["Cuenta de liquidación de la empresa<br/>(banco comercial)"]
+    G["Garantías por contraparte"]
+  end
+
+  U --> K1
+  K1 --- K2 & K3 & K4 & K5
+  K -->|"eventos firmados"| P1
+  P1 --> P2 --> P3
+  P1 --> P4
+  P2 --> P5 --> P6
+  P5 --> P7
+  P1 --> P8
+  P6 --> P9
+  P2 -->|"API directa"| E1
+  P2 -->|"API del agregador"| E2
+  P2 -->|"orden de SPEI"| E3
+  P4 -->|"expediente de alta"| E4
+  E4 --> E1
+  K2 -.->|"efectivo"| CJ
+  K2 -.->|"efectivo"| T
+  CJ -.->|"SPEI mismo día"| CL
+  T -.->|"depósito T+1 a T+3"| CL
+  CL -.->|"SPEI neto de comisión"| E1 & E2 & E3
+  G -.-> E1 & E2 & E3
+  P8 -->|"orden de recolección"| T
+  P8 -->|"aviso de corte"| CJ
+```
+
+**Diagrama 2. Alta y KYC de un usuario no bancarizado** (imagen: `diagramas/d2-alta-kyc.png`). El paquete de identidad viaja **cifrado con la llave de la entidad**: la empresa lo transporta pero no lo abre ni lo conserva.
+
+```mermaid
+sequenceDiagram
+  autonumber
+  actor U as Usuario no bancarizado
+  participant K as Kiosco
+  participant P as Plataforma (orquestador)
+  participant E as Entidad elegida (banco o IFPE)
+  participant ID as Proveedor de identidad de la entidad
+  participant R as INE / RENAPO / listas
+
+  U->>K: "Abrir una cuenta"
+  K->>P: Pide catálogo de entidades con apertura en kiosco
+  P-->>K: Entidades, beneficios, nivel de cuenta y límites
+  U->>K: Elige entidad
+  K->>U: Aviso de privacidad de la empresa (captura) y de la entidad
+  U->>K: Acepta (consentimiento expreso para biometría)
+  U->>K: Coloca INE (frente y reverso)
+  K->>K: OCR, lectura del QR y la zona MRZ, revisión anti-fraude del documento
+  U->>K: Selfie con prueba de vida
+  K->>U: Pide celular
+  K->>P: Envía paquete cifrado con la llave de la entidad
+  P->>ID: Reenvía sin abrir (o el kiosco usa el SDK del proveedor)
+  ID->>R: Valida CURP (RENAPO), datos y foto (INE), listas y PEP
+  R-->>ID: Resultado
+  ID->>U: SMS con código de verificación
+  U->>K: Teclea el código
+  K->>P: Código
+  P->>E: Solicitud de apertura + resultado de identidad
+  alt Aprobada
+    E-->>P: Cuenta creada, nivel 2 o 2 Bis, límites y CLABE
+    P-->>K: Contrato de la entidad para firma
+    U->>K: Firma electrónica en pantalla
+    K->>P: Firma
+    P->>E: Contrato firmado
+    E-->>U: App de la entidad: descarga y activación, tarjeta virtual
+    P->>K: Borra imágenes y datos del kiosco
+    Note over K,P: Continúa con el primer depósito (diagrama 3, desde el paso de efectivo)
+  else Revisión manual
+    E-->>P: Pendiente (minutos u horas)
+    P-->>K: Comprobante con folio y aviso por SMS cuando se apruebe
+  else Rechazada
+    E-->>P: Rechazo (sin motivo detallado por PLD)
+    P-->>K: Mensaje neutro y opción de elegir otra entidad
+  end
+  P->>E: Factura mensual del pago por cuenta nueva fondeada
+```
+
+**Diagrama 3. Depósito de un usuario bancarizado "como en un cajero"** (imagen: `diagramas/d3-deposito.png`). La app de la entidad es la llave; el kiosco no pide ni guarda contraseñas ni NIP.
+
+```mermaid
+sequenceDiagram
+  autonumber
+  actor U as Usuario bancarizado
+  participant A as App de su entidad
+  participant K as Kiosco
+  participant P as Plataforma (orquestador)
+  participant E as Entidad (directa, vía agregador o patrocinador)
+
+  U->>K: "Depositar a mi cuenta"
+  K->>U: Lista de entidades conectadas
+  U->>K: Elige entidad
+  K->>P: Inicia sesión de depósito
+  P-->>K: QR dinámico de un solo uso (vigencia 2 minutos)
+  U->>A: Abre la app y escanea el QR del kiosco
+  A->>E: Autentica al usuario (biometría o NIP de la app)
+  E->>P: Vincula la sesión: cuenta, nombre abreviado, límite disponible hoy
+  P->>P: Reglas: límite diario por comisionista, nivel de cuenta, listas
+  P-->>K: "Hola, Juan P. Puedes depositar hasta $X"
+  Note over U,K: Respaldo: celular o tarjeta + código enviado por la entidad
+  U->>K: Inserta billetes
+  loop Por billete
+    K->>K: Valida autenticidad y denominación, lo guarda en bóveda
+    K-->>U: Muestra el total acumulado
+  end
+  U->>K: Confirma el monto
+  K->>P: Depósito firmado (sesión, monto, billetes, serie del kiosco)
+  P->>P: Asienta en el libro mayor: "efectivo recibido por cuenta de E"
+  P->>E: Instrucción de abono (idempotente, con folio)
+  alt Abono confirmado (segundos)
+    E-->>P: Confirmación con folio de la entidad
+    P-->>K: Éxito
+    K-->>U: Comprobante impreso o por SMS
+    E-->>A: Notificación: saldo acreditado
+  else Sin respuesta en 30 segundos
+    P->>E: Reintento y consulta de estado con el mismo folio
+    P-->>K: Comprobante "en proceso" con folio
+    Note over P,E: Si no hay confirmación al cierre, la entidad o la empresa reembolsa al usuario según contrato
+  end
+```
+
+**Diagrama 4. Corte, liquidación y conciliación diaria** (imagen: `diagramas/d4-liquidacion.png`). Muestra los dos esquemas: casino que recicla el efectivo (B) y traslado de valores (A).
+
+```mermaid
+sequenceDiagram
+  autonumber
+  participant K as Kiosco
+  participant P as Plataforma (conciliación)
+  participant C as Caja del casino
+  participant T as Traslado de valores
+  participant CL as Cuenta de liquidación de la empresa
+  participant E as Entidad o agregador
+
+  Note over K,E: Durante el día: cada depósito ya fue acreditado al usuario por la entidad
+  P->>P: Corte diario por kiosco y por entidad
+  alt Esquema B: el casino recicla el efectivo
+    P->>C: Aviso de corte con monto esperado y sello de la bóveda
+    C->>K: Abre la bóveda con doble custodia y cuenta
+    C->>P: Confirma monto contado
+    C->>CL: SPEI por el monto contado (mismo día)
+  else Esquema A: traslado de valores
+    P->>T: Orden de recolección
+    T->>K: Retira la bóveda sellada
+    T->>CL: Deposita el efectivo (T+1 a T+3)
+  end
+  P->>P: Concilia kiosco contra libro mayor contra entidades contra banco
+  P->>E: Archivo de conciliación (folio por folio)
+  E-->>P: Conformidad o disputa
+  P->>E: SPEI por lo recibido a su nombre menos la comisión por depósito
+  Note over P,E: Si se acuerda facturar: SPEI bruto y factura mensual de comisiones
+  alt Diferencia (faltante, sobrante o depósito sin abono)
+    P->>P: Abre incidente: video, registros del validador, sello
+    P->>E: Ajuste o reembolso dentro del plazo de contrato
+  end
+  E->>P: Libera o ajusta la garantía según el saldo pendiente
+```
+
+**Diagrama 5. Enrutamiento y manejo de fallas** (imagen: `diagramas/d5-enrutamiento.png`). Cómo elige el orquestador la ruta para cada entidad y qué pasa si algo falla con el efectivo ya dentro.
+
+```mermaid
+flowchart TD
+  S(["Usuario elige destino"]) --> Q1{"¿La entidad tiene contrato<br/>de comisión directo?"}
+  Q1 -->|Sí| D["Ruta directa: API de la entidad<br/>mayor margen"]
+  Q1 -->|No| Q2{"¿Está en un agregador<br/>conectado (tapi, PayCash)?"}
+  Q2 -->|Sí| AG["Ruta agregador: la empresa es punto de su red<br/>margen menor, cobertura amplia"]
+  Q2 -->|No| Q3{"¿Hay banco patrocinador con SPEI?<br/>(etapa 2)"}
+  Q3 -->|Sí| SP["Ruta SPEI: el patrocinador recibe el efectivo<br/>y transfiere a la CLABE o tarjeta del usuario"]
+  Q3 -->|No| NO["No disponible en este kiosco<br/>(se registra la demanda para negociar)"]
+  D & AG & SP --> L{"Reglas: límite diario,<br/>nivel de cuenta, listas, horario"}
+  L -->|Excede| LX["Ofrece el monto máximo permitido"]
+  L -->|Pasa| CASH["Recepción de efectivo"]
+  CASH --> E1{"¿Falla del validador<br/>o corte de energía?"}
+  E1 -->|Sí| R1["Registra billetes ya aceptados en memoria segura;<br/>al reiniciar completa el abono o emite comprobante"]
+  E1 -->|No| AB["Instrucción de abono"]
+  AB --> E2{"¿La entidad confirma?"}
+  E2 -->|Sí| OK(["Comprobante y notificación"])
+  E2 -->|No| R2["Reintento idempotente; si falla al cierre,<br/>reembolso según contrato"]
+```
+
+**Diagrama 6. Estados de una transacción** (imagen: `diagramas/d6-estados.png`). Sirve como base para el libro mayor y para los contratos de nivel de servicio con las entidades.
+
+```mermaid
+stateDiagram-v2
+  [*] --> Iniciada: el usuario elige entidad
+  Iniciada --> Autenticada: QR de la app o código validado
+  Iniciada --> Cancelada: tiempo agotado
+  Autenticada --> RecibiendoEfectivo: reglas aprobadas
+  RecibiendoEfectivo --> EfectivoConfirmado: el usuario confirma el monto
+  RecibiendoEfectivo --> Incidente: falla del validador
+  EfectivoConfirmado --> AbonoEnviado
+  AbonoEnviado --> Acreditada: confirmación de la entidad
+  AbonoEnviado --> Pendiente: sin respuesta
+  Pendiente --> Acreditada: consulta de estado positiva
+  Pendiente --> Reembolso: sin confirmación al cierre
+  Incidente --> Acreditada: se completa el abono al reiniciar
+  Incidente --> Reembolso
+  Acreditada --> Conciliada: corte diario cuadra
+  Conciliada --> Liquidada: SPEI a la entidad, neto de comisión
+  Liquidada --> [*]
+  Reembolso --> [*]
+  Cancelada --> [*]
+```
+
+**Reglas de diseño que se desprenden de los diagramas:**
+
+1. **La empresa nunca acredita saldos.** Solo instruye a la entidad y registra "efectivo recibido por cuenta de X". Esto es lo que permite operar sin licencia propia [H/P].
+2. **Cada instrucción lleva un folio único e idempotente**, para que un reintento nunca duplique un abono.
+3. **El efectivo dentro del kiosco siempre tiene dueño identificado** en el libro mayor (por entidad), lo que facilita la conciliación y la defensa ante PLD.
+4. **El kiosco no guarda datos personales** después de enviarlos; la plataforma solo guarda folios, montos y resultados.
+5. **Si la entidad no confirma, el usuario sale con un comprobante con folio** y el contrato fija quién reembolsa y en qué plazo.
+6. **La garantía por contraparte se ajusta al saldo pendiente de liquidar**; con el casino reciclando el efectivo, ese saldo es de un día.
+
+---
+
 ## 0. Ampliación de la versión 3: respuestas a los puntos de Lucho
 
 Esta sección responde a los comentarios del 9-nov-2026: (1) la empresa cobrará una comisión por depósito a las entidades y procesadores; (2) cómo funcionan hoy tapi, PayCash, "Cashnet" y redes similares; (3) flujo completo del efectivo y si se necesita una "cuenta madre" (banco patrocinador) o puede ser propia; (4) el kiosco hace todo el alta y el KYC para no bancarizados, y los bancarizados entran a su cuenta como en un cajero.
 
 ### 0.1 Comisión por depósito: cuánto cobran Soriana, Circle K y otras cadenas
+
+> **Actualizado en la versión 4:** los precios que la app de Mercado Pago muestra por cadena están en la sección V4.1. Según Lucho, esa comisión la paga el usuario a la cadena y Mercado Pago no paga nada adicional, salvo $4 a las tienditas.
 
 **Hecho importante:** lo que Soriana, Circle K u otras cadenas le cobran a Mercado Pago (o a cualquier banco o fintech) **no es público**; es un contrato privado entre empresas. No se encontró ninguna fuente que lo revele [H: búsqueda sin resultado]. Lo que sí es público:
 
@@ -785,6 +1171,22 @@ Presupuesto de los 90 días: **$1.2 a $2.0 M MXN** [E].
 - Yastás como administrador de comisionistas (vLex): https://vlex.com.mx/vid/operara-administrador-comisionistas-bancarios-424155166
 - Kushki, pagos en efectivo: https://kushki.com/en/payments/cash
 
+**Fuentes agregadas en la versión 4**
+- Capturas de la app de Mercado Pago con el costo y el máximo por depósito en cada cadena, compartidas por Lucho (9-nov-2026); no publicadas.
+- Banxico, información del SPEI (padrones de participantes): https://www.banxico.org.mx/servicios/spei_-informacion-banco-mex.html
+  - Participantes (23-sep-2026): https://www.banxico.org.mx/servicios/d/%7BC24C7DBC-9ABF-6F41-DA38-561CEB1401B3%7D.pdf
+  - Participantes que ofrecen participación indirecta (22-oct-2026): https://www.banxico.org.mx/servicios/d/%7B4712726D-B920-4193-684A-4A36A673BF4B%7D.pdf
+  - Participantes indirectos (10-sep-2026): https://www.banxico.org.mx/servicios/d/%7BA0ED277E-02D7-B44F-A32D-23B6A23F185E%7D.pdf
+- PayCash Global: https://www.paycashglobal.com/
+- CIONoticias, PESPay (12-feb-2022): https://cionoticias.tv/2022/02/12/pespay-la-plataforma-de-pagos-con-mas-de-5300-puntos-de-venta-afiliados/
+- POSTA, "¿Conoces la red PESPay?" (4-feb-2023): https://www.posta.com.mx/nuevoleon/conoces-la-red-pespay/v-vl1459290
+- El Cronista, serie B de tapi: https://www.cronista.com/mexico/finanzas-economia/tapi-levanta-27-mdd-en-serie-b-liderada-por-kaszek-para-acelerar-su-red-de-pagos-y-reducir-la-dependencia-del-efectivo
+- Latam Fintech, tapi adquiere las operaciones de Arcus: https://www.latamfintech.co/articles/tapi-adquiere-operaciones-de-arcus-by-mastercard-y-refuerza-su-infraestructura-de-pagos-en-mexico
+- Latam Fintech, Fintoc se conecta al SPEI: https://www.latamfintech.co/articles/fintoc-se-conecta-al-sistema-de-pagos-electronicos-interbancarios-de-mexico-para-impulsar-pagos-en-el-comercio-electronico
+- DPL News, Puntored: https://dplnews.com/?p=325319
+- Cash Essentials, Sonect en México: https://cashessentials.org/sonect-secures-license-to-operate-in-mexico/
+- Banxico, Circular 14/2017 (reglas del SPEI): https://www.banxico.org.mx/marco-normativo/normativa-emitida-por-el-banco-de-mexico/circular-14-2017/%7B7D40F0A1-70F8-74D8-8F82-D96401557147%7D.pdf
+
 ## Anexo B. Pendientes de validación
 
 1. Lista de sectores de la SHCP (art. 13 de la Ley de Economía Digital) y texto oficial del DOF.
@@ -802,3 +1204,7 @@ Presupuesto de los 90 días: **$1.2 a $2.0 M MXN** [E].
 13. Figura legal de PESPay y de los puntos de PayCash, y si la licencia de IFPE de Arcus pasó a tapi.
 14. Servicios de verificación del INE y RENAPO disponibles para cada entidad, y si la apertura en kiosco cuenta como presencial o no presencial.
 15. Si las redes de cajeros en México permiten depósitos a tarjetas de otros bancos.
+16. Si la comisión que paga el usuario en una cadena por depositar a Mercado Pago la cobra la cadena a nombre propio o de la IFPE, y cómo debe documentarse en el kiosco.
+17. Figura y razón social de PESPay y de PayCash en los padrones de la CNBV (comisionistas autorizados y transmisores de dinero).
+18. Capital mínimo vigente para una IFPE y requisitos de Banxico para que un transmisor de dinero participe en el SPEI.
+19. Licencias municipales y de protección civil para un kiosco con efectivo dentro de una sala de juego.

@@ -1,0 +1,38 @@
+sequenceDiagram
+  autonumber
+  actor U as Usuario bancarizado
+  participant A as App de su entidad
+  participant K as Kiosco
+  participant P as Plataforma (orquestador)
+  participant E as Entidad (directa, vía agregador o patrocinador)
+
+  U->>K: "Depositar a mi cuenta"
+  K->>U: Lista de entidades conectadas
+  U->>K: Elige entidad
+  K->>P: Inicia sesión de depósito
+  P-->>K: QR dinámico de un solo uso (vigencia 2 minutos)
+  U->>A: Abre la app y escanea el QR del kiosco
+  A->>E: Autentica al usuario (biometría o NIP de la app)
+  E->>P: Vincula la sesión: cuenta, nombre abreviado, límite disponible hoy
+  P->>P: Reglas: límite diario por comisionista, nivel de cuenta, listas
+  P-->>K: "Hola, Juan P. Puedes depositar hasta $X"
+  Note over U,K: Respaldo: celular o tarjeta + código enviado por la entidad
+  U->>K: Inserta billetes
+  loop Por billete
+    K->>K: Valida autenticidad y denominación, lo guarda en bóveda
+    K-->>U: Muestra el total acumulado
+  end
+  U->>K: Confirma el monto
+  K->>P: Depósito firmado (sesión, monto, billetes, serie del kiosco)
+  P->>P: Asienta en el libro mayor: "efectivo recibido por cuenta de E"
+  P->>E: Instrucción de abono (idempotente, con folio)
+  alt Abono confirmado (segundos)
+    E-->>P: Confirmación con folio de la entidad
+    P-->>K: Éxito
+    K-->>U: Comprobante impreso o por SMS
+    E-->>A: Notificación: saldo acreditado
+  else Sin respuesta en 30 segundos
+    P->>E: Reintento y consulta de estado con el mismo folio
+    P-->>K: Comprobante "en proceso" con folio
+    Note over P,E: Si no hay confirmación al cierre, la entidad o la empresa reembolsa al usuario según contrato
+  end

@@ -1,0 +1,61 @@
+flowchart LR
+  subgraph SALA["Sala de juego (casino anfitrión)"]
+    U(["Usuario"])
+    subgraph K["Kiosco de la empresa"]
+      K1["Pantalla táctil y app del kiosco"]
+      K2["Validador y bóveda de billetes<br/>(reciclador en etapa 2)"]
+      K3["Escáner de INE + cámara con prueba de vida"]
+      K4["Lector de QR / teclado"]
+      K5["Impresora de comprobantes"]
+      K6["Agente de seguridad:<br/>sensores, alarma, cámara de vigilancia"]
+    end
+    CJ["Caja del casino<br/>(recicla el efectivo, esquema B)"]
+  end
+
+  subgraph PLAT["Plataforma central de la empresa (nube)"]
+    P1["API de kioscos<br/>(TLS mutuo, firma por dispositivo)"]
+    P2["Orquestador de depósitos<br/>(catálogo y enrutamiento)"]
+    P3["Motor de reglas y límites<br/>(4,000 UDIS diarias, nivel de cuenta, horario)"]
+    P4["Captura KYC sin retención<br/>(envía y borra)"]
+    P5["Libro mayor transaccional<br/>(saldo por entidad y por kiosco)"]
+    P6["Conciliación y liquidación diaria"]
+    P7["Monitoreo de operaciones<br/>(alertas para la entidad)"]
+    P8["Gestión de flota y efectivo<br/>(nivel de bóveda, alertas de recolección)"]
+    P9["Portal de entidades y casinos<br/>(reportes, disputas)"]
+  end
+
+  subgraph ENT["Entidades reguladas (deciden y acreditan)"]
+    E1["Entidad directa 1..n<br/>(bancos, IFPE, Sofipos)<br/>contrato de comisión"]
+    E2["Agregadores<br/>(tapi / PESPay, PayCash)"]
+    E3["Banco patrocinador<br/>(etapa 2: SPEI a cualquier CLABE)"]
+    E4["Proveedor de identidad de la entidad<br/>(INE, RENAPO, listas)"]
+  end
+
+  subgraph DIN["Movimiento físico y bancario"]
+    T["Traslado de valores<br/>(esquema A)"]
+    CL["Cuenta de liquidación de la empresa<br/>(banco comercial)"]
+    G["Garantías por contraparte"]
+  end
+
+  U --> K1
+  K1 --- K2 & K3 & K4 & K5
+  K -->|"eventos firmados"| P1
+  P1 --> P2 --> P3
+  P1 --> P4
+  P2 --> P5 --> P6
+  P5 --> P7
+  P1 --> P8
+  P6 --> P9
+  P2 -->|"API directa"| E1
+  P2 -->|"API del agregador"| E2
+  P2 -->|"orden de SPEI"| E3
+  P4 -->|"expediente de alta"| E4
+  E4 --> E1
+  K2 -.->|"efectivo"| CJ
+  K2 -.->|"efectivo"| T
+  CJ -.->|"SPEI mismo día"| CL
+  T -.->|"depósito T+1 a T+3"| CL
+  CL -.->|"SPEI neto de comisión"| E1 & E2 & E3
+  G -.-> E1 & E2 & E3
+  P8 -->|"orden de recolección"| T
+  P8 -->|"aviso de corte"| CJ

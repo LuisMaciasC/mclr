@@ -1,0 +1,31 @@
+sequenceDiagram
+  autonumber
+  participant K as Kiosco
+  participant P as Plataforma (conciliación)
+  participant C as Caja del casino
+  participant T as Traslado de valores
+  participant CL as Cuenta de liquidación de la empresa
+  participant E as Entidad o agregador
+
+  Note over K,E: Durante el día: cada depósito ya fue acreditado al usuario por la entidad
+  P->>P: Corte diario por kiosco y por entidad
+  alt Esquema B: el casino recicla el efectivo
+    P->>C: Aviso de corte con monto esperado y sello de la bóveda
+    C->>K: Abre la bóveda con doble custodia y cuenta
+    C->>P: Confirma monto contado
+    C->>CL: SPEI por el monto contado (mismo día)
+  else Esquema A: traslado de valores
+    P->>T: Orden de recolección
+    T->>K: Retira la bóveda sellada
+    T->>CL: Deposita el efectivo (T+1 a T+3)
+  end
+  P->>P: Concilia kiosco contra libro mayor contra entidades contra banco
+  P->>E: Archivo de conciliación (folio por folio)
+  E-->>P: Conformidad o disputa
+  P->>E: SPEI por lo recibido a su nombre menos la comisión por depósito
+  Note over P,E: Si se acuerda facturar: SPEI bruto y factura mensual de comisiones
+  alt Diferencia (faltante, sobrante o depósito sin abono)
+    P->>P: Abre incidente: video, registros del validador, sello
+    P->>E: Ajuste o reembolso dentro del plazo de contrato
+  end
+  E->>P: Libera o ajusta la garantía según el saldo pendiente

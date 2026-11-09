@@ -1,0 +1,17 @@
+flowchart TD
+  S(["Usuario elige destino"]) --> Q1{"¿La entidad tiene contrato<br/>de comisión directo?"}
+  Q1 -->|Sí| D["Ruta directa: API de la entidad<br/>mayor margen"]
+  Q1 -->|No| Q2{"¿Está en un agregador<br/>conectado (tapi, PayCash)?"}
+  Q2 -->|Sí| AG["Ruta agregador: la empresa es punto de su red<br/>margen menor, cobertura amplia"]
+  Q2 -->|No| Q3{"¿Hay banco patrocinador con SPEI?<br/>(etapa 2)"}
+  Q3 -->|Sí| SP["Ruta SPEI: el patrocinador recibe el efectivo<br/>y transfiere a la CLABE o tarjeta del usuario"]
+  Q3 -->|No| NO["No disponible en este kiosco<br/>(se registra la demanda para negociar)"]
+  D & AG & SP --> L{"Reglas: límite diario,<br/>nivel de cuenta, listas, horario"}
+  L -->|Excede| LX["Ofrece el monto máximo permitido"]
+  L -->|Pasa| CASH["Recepción de efectivo"]
+  CASH --> E1{"¿Falla del validador<br/>o corte de energía?"}
+  E1 -->|Sí| R1["Registra billetes ya aceptados en memoria segura;<br/>al reiniciar completa el abono o emite comprobante"]
+  E1 -->|No| AB["Instrucción de abono"]
+  AB --> E2{"¿La entidad confirma?"}
+  E2 -->|Sí| OK(["Comprobante y notificación"])
+  E2 -->|No| R2["Reintento idempotente; si falla al cierre,<br/>reembolso según contrato"]

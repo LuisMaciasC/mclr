@@ -1,0 +1,44 @@
+sequenceDiagram
+  autonumber
+  actor U as Usuario no bancarizado
+  participant K as Kiosco
+  participant P as Plataforma (orquestador)
+  participant E as Entidad elegida (banco o IFPE)
+  participant ID as Proveedor de identidad de la entidad
+  participant R as INE / RENAPO / listas
+
+  U->>K: "Abrir una cuenta"
+  K->>P: Pide catálogo de entidades con apertura en kiosco
+  P-->>K: Entidades, beneficios, nivel de cuenta y límites
+  U->>K: Elige entidad
+  K->>U: Aviso de privacidad de la empresa (captura) y de la entidad
+  U->>K: Acepta (consentimiento expreso para biometría)
+  U->>K: Coloca INE (frente y reverso)
+  K->>K: OCR, lectura del QR y la zona MRZ, revisión anti-fraude del documento
+  U->>K: Selfie con prueba de vida
+  K->>U: Pide celular
+  K->>P: Envía paquete cifrado con la llave de la entidad
+  P->>ID: Reenvía sin abrir (o el kiosco usa el SDK del proveedor)
+  ID->>R: Valida CURP (RENAPO), datos y foto (INE), listas y PEP
+  R-->>ID: Resultado
+  ID->>U: SMS con código de verificación
+  U->>K: Teclea el código
+  K->>P: Código
+  P->>E: Solicitud de apertura + resultado de identidad
+  alt Aprobada
+    E-->>P: Cuenta creada, nivel 2 o 2 Bis, límites y CLABE
+    P-->>K: Contrato de la entidad para firma
+    U->>K: Firma electrónica en pantalla
+    K->>P: Firma
+    P->>E: Contrato firmado
+    E-->>U: App de la entidad: descarga y activación, tarjeta virtual
+    P->>K: Borra imágenes y datos del kiosco
+    Note over K,P: Continúa con el primer depósito (diagrama 3, desde el paso de efectivo)
+  else Revisión manual
+    E-->>P: Pendiente (minutos u horas)
+    P-->>K: Comprobante con folio y aviso por SMS cuando se apruebe
+  else Rechazada
+    E-->>P: Rechazo (sin motivo detallado por PLD)
+    P-->>K: Mensaje neutro y opción de elegir otra entidad
+  end
+  P->>E: Factura mensual del pago por cuenta nueva fondeada
