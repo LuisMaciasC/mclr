@@ -1,7 +1,7 @@
 # Estudio de prefactibilidad: red neutral de kioscos de depósito en efectivo (cash-in multibanco) para casinos en México
 
-**Versión:** 4.2 · **Fecha de investigación y consulta de fuentes:** 9 de noviembre de 2026
-**Cambios de la versión 4.0:** nueva sección V4 (precios reales de Mercado Pago por cadena según la app; tapi, PayCash y PESPay a detalle; revisión de los padrones del SPEI de Banxico; requisitos legales por tipo de empresa; seis diagramas del flujo del kiosco en `estudios/diagramas/`). **Versión 4.2:** nueva sección V5 (ser partner de procesadores de pago: Klu, Mercado Pago, Cobre, 88 Pay, Banlink, Tonder y otros; tabla comparativa de productos; análisis de las tablas de precio por volumen). **Versión 4.1:** lista legal completa de arranque (sección V4.6: constitución, fiscal, laboral, marca, datos, equipo, licencias por casino y municipio, seguros y ruta crítica). **Cambios de la versión 3.0:** nueva sección 0 (comisión por depósito y precios de referencia de las cadenas; cómo operan tapi, PayCash y redes similares; flujo de efectivo con cuenta propia frente a patrocinador; KYC completo en kiosco y acceso "como cajero") y modelo financiero con comisión cobrada a las entidades. **Cambio de la versión 2.0 respecto a la 1.0:** el modelo ya no es "kiosco que emite una tarjeta de un emisor". Ahora es el que definió Lucho: **un kiosco neutral donde el usuario elige el banco, la IFPE o el procesador al que quiere abonar su efectivo, o abre una cuenta nueva**, igual que los comercios que hoy reciben depósitos "en nombre de" Mercado Pago u otras entidades. La empresa es intermediaria entre las entidades financieras y el cliente, y no queda amarrada a un solo banco o procesador. La versión 1.0 queda en el historial del repositorio.
+**Versión:** 4.3 · **Fecha de investigación y consulta de fuentes:** 9 de noviembre de 2026
+**Cambios de la versión 4.0:** nueva sección V4 (precios reales de Mercado Pago por cadena según la app; tapi, PayCash y PESPay a detalle; revisión de los padrones del SPEI de Banxico; requisitos legales por tipo de empresa; seis diagramas del flujo del kiosco en `estudios/diagramas/`). **Versión 4.3:** detalle de Banlink con sus documentos (V5.2.1). **Versión 4.2:** nueva sección V5 (ser partner de procesadores de pago: Klu, Mercado Pago, Cobre, 88 Pay, Banlink, Tonder y otros; tabla comparativa de productos; análisis de las tablas de precio por volumen). **Versión 4.1:** lista legal completa de arranque (sección V4.6: constitución, fiscal, laboral, marca, datos, equipo, licencias por casino y municipio, seguros y ruta crítica). **Cambios de la versión 3.0:** nueva sección 0 (comisión por depósito y precios de referencia de las cadenas; cómo operan tapi, PayCash y redes similares; flujo de efectivo con cuenta propia frente a patrocinador; KYC completo en kiosco y acceso "como cajero") y modelo financiero con comisión cobrada a las entidades. **Cambio de la versión 2.0 respecto a la 1.0:** el modelo ya no es "kiosco que emite una tarjeta de un emisor". Ahora es el que definió Lucho: **un kiosco neutral donde el usuario elige el banco, la IFPE o el procesador al que quiere abonar su efectivo, o abre una cuenta nueva**, igual que los comercios que hoy reciben depósitos "en nombre de" Mercado Pago u otras entidades. La empresa es intermediaria entre las entidades financieras y el cliente, y no queda amarrada a un solo banco o procesador. La versión 1.0 queda en el historial del repositorio.
 **Alcance:** México, salas de juego con permiso de SEGOB como ubicación inicial; el mismo kiosco puede operar fuera de casinos.
 **Naturaleza:** prefactibilidad para decidir. No sustituye un dictamen jurídico, fiscal ni de cumplimiento.
 
@@ -61,7 +61,7 @@ Lucho pidió, el 9-nov-2026, que la empresa también sea **partner (socio comerc
 
 **Limitaciones de esta sección:**
 - **88 Pay:** su documentación (developers.88pay.io) y su sitio (88pay.io) **no se pudieron leer** desde este entorno ni desde el equipo de Lucho: la red bloquea el dominio. Solo se usan los títulos de los enlaces que compartió Lucho ("API 88 Suite" y "Cards México"). Ojo: existe otra "88Pay" que es la función de pagos de la app sudafricana 80eight; no es la misma empresa.
-- **Banlink:** **la documentación no está en la carpeta Descargas** (se revisaron los 22 archivos; ninguno es de Banlink) y la búsqueda en internet no encontró un procesador con ese nombre en México. Hace falta que Lucho comparta el archivo o el enlace.
+- **Banlink:** se revisaron los dos documentos que compartió Lucho el 9-nov-2026 ("Propuesta Comercial" y "Requisitos de Registro de Casino MCC 7995"); son documentos comerciales confidenciales de Banlink y no se encontró información pública adicional. Ver V5.2.1.
 - "Que estén buscando partners" no es un dato público. Se marca quién tiene **programa de partners, referidos o modelo B2B publicado**; el resto queda [P].
 - Convención de la tabla: **✓** confirmado en fuente consultada hoy [H]; **(✓)** lo ofrece según información pública general, no verificada hoy [S]; **?** sin información [P]; **—** no lo ofrece según la fuente.
 
@@ -84,8 +84,39 @@ Lucho pidió, el 9-nov-2026, que la empresa también sea **partner (socio comerc
 | **Klu (Grupo Klu)** | Grupo fintech para pymes: más de 22 soluciones en crédito, tesorería, operaciones internacionales y monederos; procesa más de $25,000 M al mes y atiende más de 4,000 empresas [H] | **Adquirente no bancario y agregador de pagos** (mar-2025) [H]; plataforma cambiaria [H]; monederos electrónicos [H]; remesas de marca blanca "Klu Sin Fronteras" anunciadas (jul-2026) [H] | IFPE autorizada (nov-2023) [H]; participante indirecto del SPEI ("KLU") [H]; trámite de Sofipo y evaluación de licencia bancaria (2026) [H] | **B** (su adquirente atiende agregadores) y **A** (monederos) | Latam Fintech; Descubre.vc |
 | **Cobre** | "Fintech de fintechs": infraestructura de pagos empresariales en tiempo real; más de US$1,500 M al mes en México (ago-2026) [H] | Pagos y cobros por SPEI en tiempo real (alianza con Toku para cobranza, jun-2026) [H]; pagos internacionales y cobertura cambiaria "Rate Lock" [H]; automatización de tesorería [H] | Su entidad Tesored es **transmisor de dinero participante directo del SPEI** [H: padrón de Banxico] | **D**: riel para liquidar a entidades y para abonar a cualquier CLABE vía un tercero regulado | DPL News; Banxico |
 | **88 Pay** | Según los enlaces de Lucho, una suite de API ("88 Suite") con programa de tarjetas para México | Emisión de tarjetas en México [H: título del enlace]; lo demás [P] | [P] | **C**: tarjeta para entregar o activar en el kiosco | Enlaces de Lucho (no legibles desde aquí) |
-| **Banlink** | No se encontró | [P] | [P] | [P] | — |
+| **Banlink** (Banlink Payment Solutions) | Revendedor y pasarela que opera **sobre la adquirencia de Getnet (grupo Santander)** con Visa, Mastercard y American Express [H: documentos de Banlink] | Terminales, Tap to Phone, checkout en línea con complementos (Shopify, WooCommerce, VTEX, Magento), links de pago, cobro recurrente, botón y QR, PayPal, meses sin intereses; liquidación a la CLABE de cualquier banco [H] | No publica figura propia; el adquirente es Getnet [H] | **B, y la más avanzada para juego:** tiene un proceso de alta específico para **casinos en línea con MCC 7995** [H] | Documentos de Banlink (ver V5.2.1) |
 | **Tonder** | Infraestructura de pagos para Latinoamérica, con enfoque en operadores de alto riesgo y plataformas grandes [H] | Tarjetas, SPEI, OXXO Pay, vales de efectivo en cadenas ($5,000 a $20,000), Mercado Pago, más de 50 métodos locales, ruteo inteligente, antifraude y contracargos; liquidación quincenal, T+1 o T+2 [H] | No publica entidad ni licencia; PCI DSS [H] | **B**: su guía operativa trae límites recomendados para **juego y forex** (SPEI hasta $200,000 por operación) [H], lo que sugiere que atiende ese giro | tonder.io; guía operativa |
+
+#### V5.2.1 Banlink a detalle (documentos compartidos por Lucho)
+
+**Propuesta comercial [H: documento de Banlink, sin fecha]:**
+- Se presenta como una relación única para bajar el costo de cobro y sumar canales (tienda, en línea y a distancia), con la tecnología de Getnet/Santander "tropicalizada" por giro y volumen.
+- Precio: "tasa según volumen", revisada conforme crece el comercio; no publica tarifas. Ofrece una comparación de tasa y ahorro en 48 horas con tres datos: tasa actual, volumen mensual, giro y canales.
+- Implementación en cuatro pasos: documentación (licencia, políticas y estados financieros según el giro), validación de riesgo y cumplimiento, activación (terminales, Tap to Phone o pasarela) y primer cobro acompañado.
+- Tablero con monto transaccionado y liquidado, aprobaciones y rechazos, alertas por terminal y contracargos.
+
+**Requisitos para afiliar un casino en línea (MCC 7995) [H: documento de Banlink]:**
+
+| # | Requisito | Tipo |
+|---|---|---|
+| 1 | Licencia de la SEGOB del casino | Regulatorio |
+| 2 | Carta del SAT que acredita el registro como actividad vulnerable (LFPIORPI) | Regulatorio |
+| 3 | URL del sitio, revisada contra las reglas de Visa y Mastercard | Técnico |
+| 4 | **Contrato de administración de cuenta a favor de Banlink**, que formaliza la administración de la cuenta de liquidación y el manejo de los fondos del casino | Contractual |
+| 5 | Política de prevención de lavado de dinero | Política |
+| 6 | Política de verificación de edad e identidad (identificación oficial, biometría, bases de datos nacionales) | Política |
+| 7 | Juego responsable: autoexclusión, límites de depósito, apuesta y sesión, enlaces de apoyo | Política |
+| 8 | Estados financieros auditados de dos ejercicios (o internos firmados) | Financiero |
+| 9 | Estados financieros internos de no más de tres meses | Financiero |
+
+La clasificación **MCC 7995 es obligatoria y no negociable**, y cumplir los nueve requisitos es condición necesaria pero no suficiente: Banlink y Getnet pueden pedir más o rechazar.
+
+**Qué significa para nosotros [S]:**
+1. **Banlink es probablemente el origen de las tablas de precio por volumen** (6.35% a 6.50% más cuota fija), porque es el único de la lista con oferta explícita para casinos con MCC 7995 [S: confirmar con Lucho].
+2. **El requisito 4 indica que Banlink administra los fondos de liquidación del casino**, es decir, actúa como agregador o facilitador de pagos sobre Getnet. Si nuestra empresa revende a Banlink, conviene ser **referidor o subagente sin tocar fondos**, para no heredar las obligaciones de agregador (sección V5.6).
+3. **Es la vía más directa para la línea B** (vender cobro con tarjeta a casinos), sobre todo **casinos en línea**. Para casinos físicos, el mismo esquema aplicaría con terminales, pero el documento solo trata casinos en línea [P].
+4. **Los requisitos son una buena lista para preparar a los casinos** que nos hospeden: si un casino los cumple para Banlink, también tendrá casi todo lo que piden los bancos y fintechs para aceptar depósitos en su sala.
+5. **Puntos a negociar:** tarifa de partner, quién se queda con la cuota fija, plazo y vigencia de la comisión, responsabilidad por contracargos, reservas y que no haya exclusividad.
 
 ### V5.3 Otros procesadores en México
 
@@ -115,7 +146,7 @@ Lucho pidió, el 9-nov-2026, que la empresa también sea **partner (socio comerc
 | Klu | ✓ | (✓) | ? | ? | (✓) | ? | ✓ | ? | ? | ✓ (B2B) | IFPE |
 | Cobre | — | ✓ | — | — | ✓ | ? | ? | — | ? | ✓ (B2B) | Transmisor (Tesored) |
 | 88 Pay | ? | ? | ? | ? | ? | ✓ | ? | ? | ? | ? | ? |
-| Banlink | ? | ? | ? | ? | ? | ? | ? | ? | ? | ? | ? |
+| Banlink | ✓ (Getnet) | ? | — | — | — | — | — | ✓ (terminal y Tap to Phone) | ✓ (casinos en línea, MCC 7995) | (✓) revendedor | Sobre Getnet (Santander) |
 | Tonder | ✓ | ✓ | ✓ | — | ? | — | — | — | ✓ (indicios) | ? (menú "Partners") | No publicada |
 | Conekta | ✓ | (✓) | (✓) | — | ? | — | — | ? | ? | (✓) | Adquirente directo |
 | Openpay | (✓) | (✓) | (✓) | — | (✓) | — | — | (✓) | ? | (✓) | Grupo BBVA |
@@ -160,8 +191,8 @@ La segunda tabla repite las tasas con **$3.50 fijos** en lugar de $4 y aclara qu
 
 ### V5.7 Recomendación
 
-1. **Pedir a Lucho la documentación de Banlink** y la de 88 Pay en PDF (o habilitar el acceso), para llenar sus filas.
-2. **Primeras conversaciones:** **Tonder** y **OKTO** para cobro con tarjeta a casinos (línea B), **Mercado Pago** y **Klu** como destinos de depósito y como partners (líneas A y B), **88 Pay** o **Pomelo** para la tarjeta del kiosco (línea C) y **Cobre** o **Monato** como riel SPEI (línea D).
+1. **Pedir a Lucho la documentación de 88 Pay en PDF** (la de Banlink ya se integró), para llenar su fila.
+2. **Primeras conversaciones:** **Banlink**, **Tonder** y **OKTO** para cobro con tarjeta a casinos (línea B), **Mercado Pago** y **Klu** como destinos de depósito y como partners (líneas A y B), **88 Pay** o **Pomelo** para la tarjeta del kiosco (línea C) y **Cobre** o **Monato** como riel SPEI (línea D).
 3. **Pedir a cada uno por escrito** si acepta el giro de juego, la tarifa de partner y quién se queda con la cuota fija.
 4. **Separar en dos sociedades o dos líneas contables** la red de kioscos (comisionista) y la reventa de procesamiento (agente comercial), para que el riesgo de contracargos no contamine la relación con las entidades financieras [S].
 
@@ -1430,6 +1461,7 @@ Presupuesto de los 90 días: **$1.2 a $2.0 M MXN** [E].
 - Monato: https://monato.com/en/
 - Paymentology en México: https://www.paymentology.com/newsroom/paymentology-releases-guide-to-successfully-launch-card-programmes-in-mexico
 - Kushki, caso de partner: https://kushkipagos.com/blog/success-story-motygam-the-partner-that-brought-cerveceria-de-barrio-and
+- Banlink Payment Solutions, "Propuesta Ejecutiva de Pagos" y "Requisitos para el registro de casinos en línea (MCC 7995)": documentos confidenciales compartidos por Lucho (9-nov-2026); no públicos.
 - 88 Pay (enlaces de Lucho, no legibles desde este entorno): https://developers.88pay.io/en/getting-started/introduction · https://developers.88pay.io/en/countries/mexico
 
 ## Anexo B. Pendientes de validación
@@ -1455,6 +1487,6 @@ Presupuesto de los 90 días: **$1.2 a $2.0 M MXN** [E].
 19. Licencias municipales y de protección civil para un kiosco con efectivo dentro de una sala de juego.
 20. Normas oficiales mexicanas y homologación de telecomunicaciones aplicables al kiosco importado.
 21. Clases de Niza y descripciones exactas para el registro de marca (con despacho de propiedad intelectual).
-22. Documentación de Banlink y de 88 Pay (productos, licencia, programa de partners).
+22. Documentación de 88 Pay (productos, licencia, programa de partners) y esquema de partner de Banlink (tarifa, cuota fija, contracargos).
 23. De qué procesador son las tablas de precio por volumen, quién se queda con la cuota fija y si aceptan el giro de juego.
 24. Si revender procesamiento de tarjetas exige registro como agregador ante Banxico o como agente ante Visa y Mastercard.
