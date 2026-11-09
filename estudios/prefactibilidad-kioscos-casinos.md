@@ -15,6 +15,8 @@
 
 ---
 
+> **Tabla comparativa de procesadores de pago (Mercado Pago, Klu, Cobre, 88 Pay, Banlink, Tonder y 13 más):** está en la sección **"V5. Ser partner de procesadores de pago"**, subsección **V5.4**, justo después de este resumen. También como página interactiva en `estudios/tabla-procesadores-mexico.html`.
+
 ## Resumen ejecutivo
 
 **Recomendación: avanzar con condiciones.** El modelo de red neutral de depósito es legalmente viable en México y ya existe en la práctica: las tiendas reciben efectivo **a nombre de** bancos e IFPE como **comisionistas**, y hay **agregadores** (por ejemplo, tapi o PayCash) que conectan a muchas entidades con muchos puntos de depósito mediante una sola integración [H]. Un kiosco puede ocupar el lugar de esa tienda. Pero hay tres condiciones que deciden si el negocio funciona:
@@ -138,7 +140,9 @@ La clasificación **MCC 7995 es obligatoria y no negociable**, y cumplir los nue
 | **Pomelo** | Emisión y procesamiento de tarjetas | Tarjetas Visa y Mastercard físicas y virtuales como servicio (✓) | IFPE participante indirecta del SPEI [H] | C | pomelo.la; Banxico |
 | **Paymentology, Thredd + inswitch, Reap** | Procesadores de emisión | Plataforma para lanzar programas de tarjeta en México (albo y Undostres con Paymentology) [H] | Requieren un emisor o patrocinador | C | Paymentology; Finextra |
 
-### V5.4 Tabla comparativa de productos
+### V5.4 TABLA COMPARATIVA DE PRODUCTOS POR PROCESADOR DE PAGO
+
+> Versión interactiva (filtros por producto): `estudios/tabla-procesadores-mexico.html`. No confundir con la sección 5.4 "Comprar, adaptar o desarrollar", que trata del kiosco.
 
 | Procesador | Tarjetas (cobro) | SPEI (cobro) | Efectivo con referencia | Depósito a cuenta en tiendas | Pagos a terceros (SPEI) | Emisión de tarjetas | Cuentas o monedero | Terminal física | Juego y casinos | Programa de partners | Licencia en México |
 |---|---|---|---|---|---|---|---|---|---|---|---|
