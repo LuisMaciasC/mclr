@@ -1,7 +1,7 @@
 # Estudio de prefactibilidad: red neutral de kioscos de depósito en efectivo (cash-in multibanco) para casinos en México
 
-**Versión:** 4.3 · **Fecha de investigación y consulta de fuentes:** 9 de noviembre de 2026
-**Cambios de la versión 4.0:** nueva sección V4 (precios reales de Mercado Pago por cadena según la app; tapi, PayCash y PESPay a detalle; revisión de los padrones del SPEI de Banxico; requisitos legales por tipo de empresa; seis diagramas del flujo del kiosco en `estudios/diagramas/`). **Versión 4.3:** detalle de Banlink con sus documentos (V5.2.1). **Versión 4.2:** nueva sección V5 (ser partner de procesadores de pago: Klu, Mercado Pago, Cobre, 88 Pay, Banlink, Tonder y otros; tabla comparativa de productos; análisis de las tablas de precio por volumen). **Versión 4.1:** lista legal completa de arranque (sección V4.6: constitución, fiscal, laboral, marca, datos, equipo, licencias por casino y municipio, seguros y ruta crítica). **Cambios de la versión 3.0:** nueva sección 0 (comisión por depósito y precios de referencia de las cadenas; cómo operan tapi, PayCash y redes similares; flujo de efectivo con cuenta propia frente a patrocinador; KYC completo en kiosco y acceso "como cajero") y modelo financiero con comisión cobrada a las entidades. **Cambio de la versión 2.0 respecto a la 1.0:** el modelo ya no es "kiosco que emite una tarjeta de un emisor". Ahora es el que definió Lucho: **un kiosco neutral donde el usuario elige el banco, la IFPE o el procesador al que quiere abonar su efectivo, o abre una cuenta nueva**, igual que los comercios que hoy reciben depósitos "en nombre de" Mercado Pago u otras entidades. La empresa es intermediaria entre las entidades financieras y el cliente, y no queda amarrada a un solo banco o procesador. La versión 1.0 queda en el historial del repositorio.
+**Versión:** 4.4 · **Fecha de investigación y consulta de fuentes:** 9 de noviembre de 2026
+**Cambios de la versión 4.0:** nueva sección V4 (precios reales de Mercado Pago por cadena según la app; tapi, PayCash y PESPay a detalle; revisión de los padrones del SPEI de Banxico; requisitos legales por tipo de empresa; seis diagramas del flujo del kiosco en `estudios/diagramas/`). **Versión 4.4:** comparativa producto por producto (V5.4.1) y programas de partners con liga de inscripción (V5.4.2). **Versión 4.3:** detalle de Banlink con sus documentos (V5.2.1). **Versión 4.2:** nueva sección V5 (ser partner de procesadores de pago: Klu, Mercado Pago, Cobre, 88 Pay, Banlink, Tonder y otros; tabla comparativa de productos; análisis de las tablas de precio por volumen). **Versión 4.1:** lista legal completa de arranque (sección V4.6: constitución, fiscal, laboral, marca, datos, equipo, licencias por casino y municipio, seguros y ruta crítica). **Cambios de la versión 3.0:** nueva sección 0 (comisión por depósito y precios de referencia de las cadenas; cómo operan tapi, PayCash y redes similares; flujo de efectivo con cuenta propia frente a patrocinador; KYC completo en kiosco y acceso "como cajero") y modelo financiero con comisión cobrada a las entidades. **Cambio de la versión 2.0 respecto a la 1.0:** el modelo ya no es "kiosco que emite una tarjeta de un emisor". Ahora es el que definió Lucho: **un kiosco neutral donde el usuario elige el banco, la IFPE o el procesador al que quiere abonar su efectivo, o abre una cuenta nueva**, igual que los comercios que hoy reciben depósitos "en nombre de" Mercado Pago u otras entidades. La empresa es intermediaria entre las entidades financieras y el cliente, y no queda amarrada a un solo banco o procesador. La versión 1.0 queda en el historial del repositorio.
 **Alcance:** México, salas de juego con permiso de SEGOB como ubicación inicial; el mismo kiosco puede operar fuera de casinos.
 **Naturaleza:** prefactibilidad para decidir. No sustituye un dictamen jurídico, fiscal ni de cumplimiento.
 
@@ -15,7 +15,7 @@
 
 ---
 
-> **Tabla comparativa de procesadores de pago (Mercado Pago, Klu, Cobre, 88 Pay, Banlink, Tonder y 13 más):** está en la sección **"V5. Ser partner de procesadores de pago"**, subsección **V5.4**, justo después de este resumen. También como página interactiva en `estudios/tabla-procesadores-mexico.html`.
+> **Tabla comparativa de procesadores de pago (Mercado Pago, Klu, Cobre, 88 Pay, Banlink, Tonder y 13 más):** está en la sección **"V5. Ser partner de procesadores de pago"**, subsección **V5.4** (productos a detalle en V5.4.1 y programas de partners con liga de inscripción en V5.4.2). También como página interactiva en `estudios/tabla-procesadores-mexico.html`.
 
 ## Resumen ejecutivo
 
@@ -142,7 +142,82 @@ La clasificación **MCC 7995 es obligatoria y no negociable**, y cumplir los nue
 
 ### V5.4 TABLA COMPARATIVA DE PRODUCTOS POR PROCESADOR DE PAGO
 
-> Versión interactiva (filtros por producto): `estudios/tabla-procesadores-mexico.html`. No confundir con la sección 5.4 "Comprar, adaptar o desarrollar", que trata del kiosco.
+> Versión interactiva con filtros y pestañas: `estudios/tabla-procesadores-mexico.html`. No confundir con la sección 5.4 "Comprar, adaptar o desarrollar", que trata del kiosco.
+
+**Método:** se tomó como base el catálogo de Mercado Pago (Checkout Pro, Checkout API, Checkout Bricks, Link de pago, Suscripciones, Point, Point Tap, QR, etc.) y, producto por producto, se buscó el equivalente en el sitio o la documentación de cada procesador el 9-nov-2026. Se agregaron los productos que otros tienen y Mercado Pago no (SPEI, payouts, emisión de tarjetas, cambio de divisas, compra ahora y paga después). En cada celda va el **nombre del producto equivalente**. Convención: ✓ confirmado; (✓) mencionado sin detalle o no verificado hoy; ? sin información; — no lo ofrece.
+
+#### V5.4.1 Productos a detalle
+
+**Pagos en línea**
+
+| Producto | Mercado Pago | Klu | Cobre | 88 Pay | Banlink | Tonder | Conekta | Openpay | Clip | Kushki | Stripe |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| Checkout alojado o con redirección | ✓ Checkout Pro | (✓) Pagos en Línea | (✓) Checkout (no indica país) | ? | ✓ Get Checkout | ✓ Hosted Checkout | ✓ Checkout | ✓ Pasarela de pago | ✓ Checkout de Clip | ✓ Kajita de pagos | ✓ Checkout |
+| Checkout por API (transparente) | ✓ Checkout API (Orders API) | ? | (✓) APIs de Cobre (payins) | (✓) API 88 Suite | ? | ✓ API directa | ✓ API directa | (✓) API | (✓) APIs de pago | ✓ API | (✓) Payment Intents API |
+| Componentes de pago embebidos | ✓ Checkout Bricks (Payment, Card, Wallet, Status) | ? | ? | ? | ? | ✓ SDK web, iOS y Android | ✓ Checkout Component | ? | ? | ✓ Librería JS | ✓ Payment Element |
+| Links de pago | ✓ Link de pago | ✓ Links de Pago | (✓) Links de pago (no indica país) | ? | ✓ Get Link and Pay | ? | ✓ Links de pago | ✓ Link de Pago | ✓ Link de pago | ✓ Smartlink | ✓ Payment Links |
+| Suscripciones y cobro recurrente | ✓ Suscripciones y planes | ? | (✓) Débito a cuenta | ? | ✓ Cobro recurrente | (✓) Tarjetas guardadas | ✓ Suscripciones | ? | ? | ? | (✓) Billing |
+| Botón de pago con monedero propio | ✓ Wallet Brick | ? | ? | ? | — | — | — | — | ? | (✓) Botón de pagos | ✓ Link |
+| Plugins de comercio electrónico | ✓ Plugins | ? | ? | ? | ✓ Shopify, WooCommerce, VTEX, Magento | ✓ Plugins | ✓ Plugins | (✓) Plugins (Tiendanube, OpenCart) | ✓ Plugins | ✓ Plugins e-commerce | ✓ Plugins |
+| Marketplace y pagos divididos | ✓ Checkout en marketplace | ? | (✓) Connect | ? | ? | ? | ? | ? | ? | ? | (✓) Connect |
+
+**Métodos de pago aceptados**
+
+| Producto | Mercado Pago | Klu | Cobre | 88 Pay | Banlink | Tonder | Conekta | Openpay | Clip | Kushki | Stripe |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| Tarjetas de crédito y débito | ✓ Visa, Mastercard, Amex | ✓ Adquirente propio | — | ? | ✓ Visa, Mastercard, Amex (Getnet) | ✓ Visa, Mastercard, Amex | ✓ Visa, Mastercard, Amex | ✓ Tarjetas | (✓) Tarjetas | ✓ Tarjetas | ✓ Visa, Mastercard, Amex |
+| Meses sin intereses | ✓ Hasta 24 meses | ? | — | ? | ✓ MSI | ? | ? | ✓ MSI | (✓) MSI | ? | ✓ Meses sin intereses |
+| Apple Pay y Google Pay | ✓ Apple, Google y Samsung Pay | ? | — | ? | ? | ✓ Apple Pay | ✓ Apple Pay y Google Pay | ? | ? | ? | ✓ Apple Pay y Google Pay |
+| Efectivo con referencia en tiendas | (✓) Efectivo en tiendas | ? | — | ? | — | ✓ OXXO Pay y vales en cadenas | ✓ Conekta Efectivo | ✓ 32,000 puntos | ? | (✓) Efectivo | ✓ OXXO |
+| Transferencia SPEI (cobro) | ? | ? | ✓ SPEI | ? | ? | ✓ SPEI | ✓ SPEI | ✓ Transferencias | ? | ? | ✓ Mexico bank transfer |
+| Compra ahora, paga después | (✓) Mercado Crédito | ? | — | ? | ? | ? | ✓ Aplazo, Creditea, Coppel Pay | ? | ? | ? | — No disponible en México |
+| Otros medios | ✓ Vales (Toka, Edenred, Pluxee, Sí Vale), PayPal | ? | (✓) Stablecoins | ? | ✓ PayPal | ✓ Mercado Pago | ✓ Pago Directo BBVA | ? | ? | ? | ✓ Stablecoins |
+
+**Pagos presenciales**
+
+| Producto | Mercado Pago | Klu | Cobre | 88 Pay | Banlink | Tonder | Conekta | Openpay | Clip | Kushki | Stripe |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| Terminal física | ✓ Point (Smart 2, Mini) | ✓ Terminales Punto de Venta | — | ? | ✓ Terminales Getnet | — | ✓ Pagos en persona | ? | ✓ Total 3, Plus 2, Ultra, Pin Pad | ✓ Pagos presenciales | ? |
+| Celular como terminal (Tap to Pay) | ✓ Point Tap y Tap to Pay en iPhone | ? | — | ? | ✓ Tap to Phone | — | ? | ? | ✓ Tap to Pay | ? | ? |
+| Cobro con código QR | ✓ Código QR | ? | — | ? | ✓ Botón y QR | — | ? | ? | ✓ Pagos con Código QR | ? | ? |
+| Sistema punto de venta | ✓ Sistema de punto de venta | ? | — | ? | ? | — | ? | ? | ✓ Wansoft, Inventario Digital | ? | ? |
+
+**Dinero, cuentas y otros servicios**
+
+| Producto | Mercado Pago | Klu | Cobre | 88 Pay | Banlink | Tonder | Conekta | Openpay | Clip | Kushki | Stripe |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| Pagos a terceros (dispersión o payouts) | ? | ? | ✓ Payouts, Fast Pay | ? | — | (✓) Payouts (anunciados en Chile) | ? | ? | ? | ✓ Payouts | (✓) Connect |
+| Cuenta empresarial | ✓ Cuenta Negocio | ✓ Cuenta Empresarial | (✓) Virtual Accounts, Portal Cobre | ? | — Liquida a cualquier CLABE | — | ✓ Cuentas Conekta | ? | ✓ Clip Cuenta Digital, Clip Empresas | ? | ? |
+| Cuenta para personas o monedero | ✓ Cuenta Digital | ✓ Cuenta Persona Física | — | ? | — | — | — | — | (✓) Mi Clip | — | — |
+| Tarjeta propia | (✓) Tarjeta Mercado Pago | ✓ Tarjeta Corporativa | ? | ? | — | — | — | — | ? | — | ? |
+| Emisión de tarjetas como servicio | — | ? | ? | ✓ Cards México | — | — | — | — | — | — | ? |
+| Créditos para negocios | ✓ Créditos (Mercado Crédito) | ✓ Crédito productivo | — | ? | — | — | ? | ? | ✓ Préstamo Clip | — | ? |
+| Depósito de efectivo en tiendas a la cuenta | ✓ Red de corresponsales | ? | — | ? | — | — | — | — | ? | — | — |
+| Pagos internacionales y cambio de divisas | ? | ✓ Plataforma cambiaria | ✓ Cross Border, Rate Lock | ? | ? | ? | ? | ? | ? | ? | (✓) Multimoneda |
+| Pago de servicios y recargas | ✓ Pago de servicios y recargas | ? | — | ? | — | — | — | — | ✓ Pago de servicios, Recargas | — | — |
+| Antifraude | ✓ Antifraude y 3DS 2.0 | ? | ? | ? | ✓ Monitoreo de fraude, tokenización | ✓ Guardian AI, 3DS adaptativo | ? | ? | ? | ? | (✓) Radar |
+| Herramientas de IA para integrar | ✓ MCP Server, CLI | ? | ? | ? | ? | ✓ Plugin MCP | ✓ Conekta AI | ? | ? | ? | ✓ Agent skills, CLI |
+| Acepta juego y casinos | ? | ? | ? | ? | ✓ Casinos en línea, MCC 7995 | ✓ Socios iGaming (Soft2Bet, SoftSwiss) | ? | ? | ? | ✓ Industria Gaming & Gambling | (✓) Restringido |
+
+#### V5.4.2 Programas de partners: cómo inscribirse
+
+| Procesador | ¿Tiene programa? | Cómo funciona y cómo se gana | Proceso para inscribirse | Liga |
+|---|---|---|---|---|
+| Mercado Pago | Sí: Programa de Partners | Integradores certificados. Gratis; se entra aprobando una certificación (Checkout Pro, Bricks, etc.). Paga un porcentaje de lo que procese cada comercio integrado (mínimo $30,000 al mes por comercio), durante 12 meses, por niveles Bronce, Plata, Oro y Platino; desde Plata, tasa preferencial para clientes. | 1) Elegir una certificación y hacer la integración de prueba. 2) Recibir el ID de partner. 3) Usar ese ID en cada integración. | https://mercadopago.com.mx/partners/developers/en |
+| Klu | No publicado | Su adquirente atiende a agregadores de pago (modelo B2B), pero no publica programa de socios. | Contacto comercial en su sitio. | https://www.klu.mx/ |
+| Cobre | No publicado | Plataforma B2B ("fintech de fintechs"); no publica programa de socios. | Contacto comercial en su sitio. | https://www.cobre.com/ |
+| 88 Pay | Sin verificar | Su documentación no se pudo leer desde este entorno. | Revisar la documentación compartida por Lucho. | https://developers.88pay.io/en/getting-started/introduction |
+| Banlink | No hay programa público | Revende la adquirencia de Getnet; atiende casinos en línea con MCC 7995. El esquema de socio se negocia directo. | Contacto comercial indicado en su propuesta (documento compartido por Lucho). | https://banlink.mx |
+| Tonder | Sí: Partners | Tres tipos: Technology (plataformas como Btobet, Praxis, Soft2Bet, SoftSwiss), Referral y Channel. Revenue share mensual por cada comercio referido, sin topes ni devoluciones, con comisión por transacción. | Agendar con ventas en su calendario. | https://cal.com/tonder |
+| Conekta | Sí: Programa de Partners | Cuatro modelos: Referral (pago por empresa referida), Revenue Share (% del volumen), Comisión Preferencial (tasa preferente según volumen agregado) y Mark Up (ganas la diferencia entre tu precio y la tasa preferencial). Partner Success Manager, panel en tiempo real y materiales. | 1) Escribir a partners@conekta.com con el asunto "Me interesa!". 2) Definir el modelo. 3) Onboarding de clientes. | https://www.conekta.com/partnerships |
+| Openpay | No se encontró | No se encontró programa público en México. | Contacto por BBVA Empresas. | https://www.bbva.mx/empresas/productos/medios-de-cobro/pago-electronico-Openpay.html |
+| Clip | Sí: Clip Agente y Mi Clip | Clip Agente: compras terminales y las revendes; ganas al vender, al colocar (2 primeras ventas del cliente) y al activar ($750 en 3 transacciones), más ingreso cuando el cliente usa la terminal. Compra mínima de 10 lectores; pide INE, CLABE y domicilio. Mi Clip: $100 por cliente referido. | Registro en línea en agentes.clip.mx/register; un asesor explica el programa. | https://www.clip.mx/vender-clip |
+| Kushki | Sí: Kushki Partners | Network Partner (red de empresas de alto volumen), Distribution Partner (extensión de su fuerza de ventas) y Solution Partner (empresas que venden servicios de pago). Portal, capacitación, co-marketing e incentivos. Atiende Gaming & Gambling. | Llenar el formulario; Kushki contacta. | https://kushkipagos.com/formulario-partners |
+| Stripe | Sí: Stripe Partner Program | Servicios, Plataformas SaaS, Apps y Tecnología, con especializaciones. Restringe juego y apuestas. | Solicitar en la página de partners. | https://stripe.com/partners/become-a-partner |
+
+**Lectura:** el modelo **Mark Up de Conekta** es el más parecido a las tablas de precio de Lucho. Para casinos, los más afines son **Kushki** (atiende Gaming & Gambling), **Tonder** (socios iGaming) y **Banlink** (casinos en línea, MCC 7995); Stripe restringe el giro. Mercado Pago paga por integrar comercios, no por revender. Clip Agente sirve para revender terminales a negocios, no para casinos.
+
+#### V5.4.3 Resumen general de 19 procesadores
 
 | Procesador | Tarjetas (cobro) | SPEI (cobro) | Efectivo con referencia | Depósito a cuenta en tiendas | Pagos a terceros (SPEI) | Emisión de tarjetas | Cuentas o monedero | Terminal física | Juego y casinos | Programa de partners | Licencia en México |
 |---|---|---|---|---|---|---|---|---|---|---|---|
