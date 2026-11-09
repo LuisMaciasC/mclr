@@ -1,7 +1,7 @@
 # Estudio de prefactibilidad: red neutral de kioscos de depósito en efectivo (cash-in multibanco) para casinos en México
 
-**Versión:** 4.1 · **Fecha de investigación y consulta de fuentes:** 9 de noviembre de 2026
-**Cambios de la versión 4.0:** nueva sección V4 (precios reales de Mercado Pago por cadena según la app; tapi, PayCash y PESPay a detalle; revisión de los padrones del SPEI de Banxico; requisitos legales por tipo de empresa; seis diagramas del flujo del kiosco en `estudios/diagramas/`). **Versión 4.1:** lista legal completa de arranque (sección V4.6: constitución, fiscal, laboral, marca, datos, equipo, licencias por casino y municipio, seguros y ruta crítica). **Cambios de la versión 3.0:** nueva sección 0 (comisión por depósito y precios de referencia de las cadenas; cómo operan tapi, PayCash y redes similares; flujo de efectivo con cuenta propia frente a patrocinador; KYC completo en kiosco y acceso "como cajero") y modelo financiero con comisión cobrada a las entidades. **Cambio de la versión 2.0 respecto a la 1.0:** el modelo ya no es "kiosco que emite una tarjeta de un emisor". Ahora es el que definió Lucho: **un kiosco neutral donde el usuario elige el banco, la IFPE o el procesador al que quiere abonar su efectivo, o abre una cuenta nueva**, igual que los comercios que hoy reciben depósitos "en nombre de" Mercado Pago u otras entidades. La empresa es intermediaria entre las entidades financieras y el cliente, y no queda amarrada a un solo banco o procesador. La versión 1.0 queda en el historial del repositorio.
+**Versión:** 4.2 · **Fecha de investigación y consulta de fuentes:** 9 de noviembre de 2026
+**Cambios de la versión 4.0:** nueva sección V4 (precios reales de Mercado Pago por cadena según la app; tapi, PayCash y PESPay a detalle; revisión de los padrones del SPEI de Banxico; requisitos legales por tipo de empresa; seis diagramas del flujo del kiosco en `estudios/diagramas/`). **Versión 4.2:** nueva sección V5 (ser partner de procesadores de pago: Klu, Mercado Pago, Cobre, 88 Pay, Banlink, Tonder y otros; tabla comparativa de productos; análisis de las tablas de precio por volumen). **Versión 4.1:** lista legal completa de arranque (sección V4.6: constitución, fiscal, laboral, marca, datos, equipo, licencias por casino y municipio, seguros y ruta crítica). **Cambios de la versión 3.0:** nueva sección 0 (comisión por depósito y precios de referencia de las cadenas; cómo operan tapi, PayCash y redes similares; flujo de efectivo con cuenta propia frente a patrocinador; KYC completo en kiosco y acceso "como cajero") y modelo financiero con comisión cobrada a las entidades. **Cambio de la versión 2.0 respecto a la 1.0:** el modelo ya no es "kiosco que emite una tarjeta de un emisor". Ahora es el que definió Lucho: **un kiosco neutral donde el usuario elige el banco, la IFPE o el procesador al que quiere abonar su efectivo, o abre una cuenta nueva**, igual que los comercios que hoy reciben depósitos "en nombre de" Mercado Pago u otras entidades. La empresa es intermediaria entre las entidades financieras y el cliente, y no queda amarrada a un solo banco o procesador. La versión 1.0 queda en el historial del repositorio.
 **Alcance:** México, salas de juego con permiso de SEGOB como ubicación inicial; el mismo kiosco puede operar fuera de casinos.
 **Naturaleza:** prefactibilidad para decidir. No sustituye un dictamen jurídico, fiscal ni de cumplimiento.
 
@@ -52,6 +52,118 @@
 5. **¿Cuánto capital hay disponible y en qué horizonte?**
 
 Mientras no haya respuesta, el estudio supone: solo depósitos (cash-in) y apertura de cuentas; catálogo de entidades conectadas desde el inicio y riel SPEI como segunda etapa; casinos como ubicación con reparto de ingresos.
+
+---
+
+## V5. Ser partner de procesadores de pago digital (versión 4.2)
+
+Lucho pidió, el 9-nov-2026, que la empresa también sea **partner (socio comercial) de procesadores de pago** como Klu, Mercado Pago, Cobre, 88 Pay, Banlink y Tonder, y que se identifiquen otros procesadores en México con su oferta de productos. Compartió además dos tablas de precios por volumen.
+
+**Limitaciones de esta sección:**
+- **88 Pay:** su documentación (developers.88pay.io) y su sitio (88pay.io) **no se pudieron leer** desde este entorno ni desde el equipo de Lucho: la red bloquea el dominio. Solo se usan los títulos de los enlaces que compartió Lucho ("API 88 Suite" y "Cards México"). Ojo: existe otra "88Pay" que es la función de pagos de la app sudafricana 80eight; no es la misma empresa.
+- **Banlink:** **la documentación no está en la carpeta Descargas** (se revisaron los 22 archivos; ninguno es de Banlink) y la búsqueda en internet no encontró un procesador con ese nombre en México. Hace falta que Lucho comparta el archivo o el enlace.
+- "Que estén buscando partners" no es un dato público. Se marca quién tiene **programa de partners, referidos o modelo B2B publicado**; el resto queda [P].
+- Convención de la tabla: **✓** confirmado en fuente consultada hoy [H]; **(✓)** lo ofrece según información pública general, no verificada hoy [S]; **?** sin información [P]; **—** no lo ofrece según la fuente.
+
+### V5.1 Qué significa "ser partner" y por qué le sirve al negocio
+
+| Tipo de alianza | Qué hace la empresa | Cómo gana | Ejemplo |
+|---|---|---|---|
+| **A. Destino de depósitos en el kiosco** | El procesador o su monedero aparece en el kiosco; el usuario abona efectivo a su cuenta | Comisión por depósito y por cuenta nueva (sección 7) | Mercado Pago, Klu (monederos), Spin by OXXO |
+| **B. Revendedor o referidor de cobros** | Lleva comercios (casinos físicos, operadores en línea, negocios de la zona) a que cobren con el procesador | Margen entre el precio al comercio y el costo del procesador (las tablas de Lucho) o comisión por referido | Tonder, OKTO, Conekta, Kushki, Klu adquirente, Mercado Pago Partners |
+| **C. Emisor de tarjetas para el kiosco** | El kiosco entrega o activa una tarjeta de un programa de un procesador | Comisión por tarjeta activada e intercambio compartido | 88 Pay (Cards México), Pomelo, Paymentology |
+| **D. Riel SPEI o de pagos** | Usa al procesador para mover dinero (liquidaciones, abonos a cualquier CLABE) | Ahorro y alcance, no ingreso | Cobre, STP, Monato (Finco Pay), Fintoc |
+
+**Por qué conviene:** la red de kioscos ya trae relación con casinos y con jugadores. Las alianzas B y C suman ingreso **sin traslado de efectivo**, lo que mejora la economía que en la sección 7 dependía del reciclaje del casino.
+
+### V5.2 Los procesadores que nombró Lucho
+
+| Procesador | Qué es | Productos confirmados | Licencia en México | Para nosotros | Fuente |
+|---|---|---|---|---|---|
+| **Mercado Pago** | Cuenta digital, pagos y crédito de MercadoLibre | Cobros con tarjeta (checkout), terminal Point, cuentas, depósito en efectivo en tiendas, retiros | IFPE, participante directo del SPEI ("MERCADO PAGO W") [H]; licencia bancaria en trámite (dic-2025) [H] | **A y B.** Su programa de partners es gratuito: se entra con una certificación y paga un **porcentaje de lo que procese cada comercio integrado** (mínimo $30,000 al mes por comercio, durante 12 meses, por niveles Bronce a Platino) [H, 1-abr-2026] | Mercado Pago Developers |
+| **Klu (Grupo Klu)** | Grupo fintech para pymes: más de 22 soluciones en crédito, tesorería, operaciones internacionales y monederos; procesa más de $25,000 M al mes y atiende más de 4,000 empresas [H] | **Adquirente no bancario y agregador de pagos** (mar-2025) [H]; plataforma cambiaria [H]; monederos electrónicos [H]; remesas de marca blanca "Klu Sin Fronteras" anunciadas (jul-2026) [H] | IFPE autorizada (nov-2023) [H]; participante indirecto del SPEI ("KLU") [H]; trámite de Sofipo y evaluación de licencia bancaria (2026) [H] | **B** (su adquirente atiende agregadores) y **A** (monederos) | Latam Fintech; Descubre.vc |
+| **Cobre** | "Fintech de fintechs": infraestructura de pagos empresariales en tiempo real; más de US$1,500 M al mes en México (ago-2026) [H] | Pagos y cobros por SPEI en tiempo real (alianza con Toku para cobranza, jun-2026) [H]; pagos internacionales y cobertura cambiaria "Rate Lock" [H]; automatización de tesorería [H] | Su entidad Tesored es **transmisor de dinero participante directo del SPEI** [H: padrón de Banxico] | **D**: riel para liquidar a entidades y para abonar a cualquier CLABE vía un tercero regulado | DPL News; Banxico |
+| **88 Pay** | Según los enlaces de Lucho, una suite de API ("88 Suite") con programa de tarjetas para México | Emisión de tarjetas en México [H: título del enlace]; lo demás [P] | [P] | **C**: tarjeta para entregar o activar en el kiosco | Enlaces de Lucho (no legibles desde aquí) |
+| **Banlink** | No se encontró | [P] | [P] | [P] | — |
+| **Tonder** | Infraestructura de pagos para Latinoamérica, con enfoque en operadores de alto riesgo y plataformas grandes [H] | Tarjetas, SPEI, OXXO Pay, vales de efectivo en cadenas ($5,000 a $20,000), Mercado Pago, más de 50 métodos locales, ruteo inteligente, antifraude y contracargos; liquidación quincenal, T+1 o T+2 [H] | No publica entidad ni licencia; PCI DSS [H] | **B**: su guía operativa trae límites recomendados para **juego y forex** (SPEI hasta $200,000 por operación) [H], lo que sugiere que atiende ese giro | tonder.io; guía operativa |
+
+### V5.3 Otros procesadores en México
+
+| Procesador | Categoría | Productos destacados | Licencia o figura | Relevancia | Fuente |
+|---|---|---|---|---|---|
+| **Conekta** | Pasarela y adquirente | Cobros en línea; más de 8,000 comercios [H] | **Adquirente no bancario directo** autorizado por la CNBV (sep-2026) [H] | B | Latam Fintech |
+| **Openpay (BBVA)** | Pasarela | Tarjetas, SPEI y efectivo vía Paynet (✓) | Grupo BBVA (✓) | B | [S] |
+| **Clip** | Terminales y pagos para pymes | Terminal, links de pago, cuenta (✓) | IFPE, participante directo del SPEI [H] | A y B | Banxico |
+| **Kushki** | Pasarela y adquirente regional | Tarjetas, efectivo, transferencias (✓); programa de partners con casos publicados [H] | Adquirente no bancario en la región (✓) | B | kushkipagos.com |
+| **OKTO** | Pagos para iGaming en Latinoamérica | **Tarjeta directa en México (nov-2025)** y SPEI de entrada y salida [H] | [P] | **B**: especializado en casinos en línea | Gambling News |
+| **Paysafe (Paysafecash)** | Pago en efectivo con código de barras en tiendas | En México desde ago-2020 con Farmacias del Ahorro, Extra y Circle K; atiende iGaming en general [H] | [P] | B y referencia de competencia | Paysafe |
+| **dLocal, EBANX, Nuvei** | Procesadores transfronterizos | Tarjetas, OXXO, SPEI y pagos a terceros para comercios globales, incluido juego en línea (✓) | Operan por medio de socios locales (✓) | B | [S] |
+| **Stripe, PayPal** | Pasarelas globales | Tarjetas, OXXO, SPEI (✓); PayPal tiene IFPE propia ("PPBALANCEMX") [H] | IFPE (PayPal) [H] | B (con restricciones para juego) | Banxico; [S] |
+| **Monato (Finco Pay)** | Infraestructura financiera | SPEI con CLABE verificada, cobranza y dispersiones por SPEI, domiciliación, **red de efectivo**, pago de servicios [H] | Finco Pay: IFPE regulada por CNBV y Banxico, participante directo del SPEI [H] | D y posible A | monato.com |
+| **STP** | Infraestructura SPEI | Cuentas CLABE y dispersión (✓) | IFPE, participante directo y proveedor de participación indirecta [H] | D | Banxico |
+| **Fintoc** | Pagos de cuenta a cuenta | Cobros por SPEI para comercio electrónico [H] | Transmisor de dinero, participante directo del SPEI [H] | D | Latam Fintech |
+| **Bitso Business** | Pagos y cambio de divisas | SPEI y cuentas para cobros internacionales con stablecoins [H: página comercial] | [P] | D | business.bitso.com |
+| **tapi / PESPay, PayCash, Spin by OXXO, Arcus** | Redes de efectivo | Ver sección V4.2 | Ver V4.2 | A (somos punto de su red) | Sección V4.2 |
+| **Pomelo** | Emisión y procesamiento de tarjetas | Tarjetas Visa y Mastercard físicas y virtuales como servicio (✓) | IFPE participante indirecta del SPEI [H] | C | pomelo.la; Banxico |
+| **Paymentology, Thredd + inswitch, Reap** | Procesadores de emisión | Plataforma para lanzar programas de tarjeta en México (albo y Undostres con Paymentology) [H] | Requieren un emisor o patrocinador | C | Paymentology; Finextra |
+
+### V5.4 Tabla comparativa de productos
+
+| Procesador | Tarjetas (cobro) | SPEI (cobro) | Efectivo con referencia | Depósito a cuenta en tiendas | Pagos a terceros (SPEI) | Emisión de tarjetas | Cuentas o monedero | Terminal física | Juego y casinos | Programa de partners | Licencia en México |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| Mercado Pago | ✓ | (✓) | (✓) | ✓ | (✓) | Solo tarjeta propia | ✓ | ✓ | ? | ✓ | IFPE (banco en trámite) |
+| Klu | ✓ | (✓) | ? | ? | (✓) | ? | ✓ | ? | ? | ✓ (B2B) | IFPE |
+| Cobre | — | ✓ | — | — | ✓ | ? | ? | — | ? | ✓ (B2B) | Transmisor (Tesored) |
+| 88 Pay | ? | ? | ? | ? | ? | ✓ | ? | ? | ? | ? | ? |
+| Banlink | ? | ? | ? | ? | ? | ? | ? | ? | ? | ? | ? |
+| Tonder | ✓ | ✓ | ✓ | — | ? | — | — | — | ✓ (indicios) | ? (menú "Partners") | No publicada |
+| Conekta | ✓ | (✓) | (✓) | — | ? | — | — | ? | ? | (✓) | Adquirente directo |
+| Openpay | (✓) | (✓) | (✓) | — | (✓) | — | — | (✓) | ? | (✓) | Grupo BBVA |
+| Clip | (✓) | (✓) | ? | — | ? | (✓) | (✓) | ✓ | ? | ? | IFPE |
+| Kushki | (✓) | (✓) | (✓) | — | ? | — | — | ? | ? | ✓ | (✓) Adquirente |
+| OKTO | ✓ | ✓ | ? | — | ✓ | — | — | — | ✓ | ? | ? |
+| Paysafecash | — | — | ✓ | — | — | — | — | — | ✓ | ? | ? |
+| dLocal / EBANX / Nuvei | (✓) | (✓) | (✓) | — | (✓) | — | — | — | (✓) | (✓) | Vía socios locales |
+| Monato (Finco Pay) | — | ✓ | ✓ (red de efectivo) | ? | ✓ | — | Próximamente | — | ? | ? | IFPE |
+| STP | — | (✓) | — | — | (✓) | — | (✓) | — | ? | ? | IFPE |
+| Fintoc | — | ✓ | — | — | ? | — | — | — | ? | ? | Transmisor |
+| tapi / PESPay | — | — | ✓ | ✓ | — | — | — | — | ? | ✓ (B2B) | PESPay: [P] |
+| PayCash | — | ✓ (A2A) | ✓ | — | — | — | — | — | ✓ | ✓ (B2B) | [P] |
+| Pomelo | — | — | — | — | — | (✓) | (✓) | — | ? | (✓) | IFPE |
+
+### V5.5 Las tablas de precios de Lucho (cobro con tarjeta)
+
+Las dos imágenes que compartió Lucho (9-nov-2026) muestran una tarifa por volumen mensual del comercio, con un **costo** y una **utilidad para Antonio y Andrés**. No dicen de qué procesador son **[P: confirmar]**.
+
+| Volumen mensual del comercio | Precio al comercio | Costo | Margen | Margen con ese volumen [E] |
+|---|---|---|---|---|
+| $0 a $2,000,000 | 6.50% + $4 | 3.99% | 2.51% | Hasta ≈ $50,200 al mes (con $2 M) |
+| $2,000,000 a $4,000,000 | 6.40% + $4 | 3.99% | 2.41% | ≈ $48,200 a $96,400 al mes |
+| Más de $4,000,000 | 6.35% + $4 | 3.60% | 2.75% | ≈ $110,000 al mes por cada $4 M |
+
+La segunda tabla repite las tasas con **$3.50 fijos** en lugar de $4 y aclara que el beneficio de tasa exige **90 días consecutivos** con ese volumen.
+
+**Lectura [S]:**
+1. **Una tasa de 6.35% a 6.50% es de giro de alto riesgo** (juego y apuestas), muy por encima de la de un comercio general. Encaja con vender cobro con tarjeta a casinos y operadores en línea, pero también implica más contracargos, reservas y revisiones de las redes de tarjetas.
+2. **El escalón intermedio deja menos margen** (2.41%) que el primero, porque el precio baja y el costo no. Conviene negociar que el costo también baje en ese escalón.
+3. **Falta saber quién se queda con los $4 o $3.50 fijos.** Si esa cuota es del partner, a $500 de ticket promedio sumaría ≈ 0.8 puntos porcentuales de margen [E].
+4. **Ejemplo [E]:** un operador que procesa $3 M al mes deja ≈ $72,300 de margen mensual (2.41%) más la cuota fija que corresponda. Con tres operadores así, el margen sería ≈ $217,000 al mes **sin un solo kiosco**; esto lo vuelve una línea de negocio que puede financiar la red.
+
+### V5.6 Lo que exige ser partner de cobro (línea B)
+
+| Requisito | Detalle | Marca |
+|---|---|---|
+| **Figura** | Si la empresa solo **refiere** comercios y el procesador contrata y liquida, basta un contrato de referidos o de agente comercial. Si la empresa **recibe los fondos** de los comercios y les liquida, pasa a ser **agregador** y entra en las reglas de Banxico para participantes en redes de pago con tarjeta | [S/P: dictamen] |
+| **Registro ante las redes** | Visa y Mastercard exigen que quien busca comercios por cuenta de un adquirente esté registrado como agente o proveedor de servicios, con más requisitos para juego (código de giro 7995 y programas de riesgo de las redes) | [S/P] |
+| **PLD** | El procesador pedirá debida diligencia de la empresa y de cada comercio referido; los casinos son actividad vulnerable | [H: sección 2] |
+| **Contrato** | Exclusividad (evitarla), propiedad de la cartera de comercios, vigencia del pago de comisiones (Mercado Pago, por ejemplo, la limita a 12 meses por comercio [H]), responsabilidad por contracargos y fraude, reservas | [S] |
+
+### V5.7 Recomendación
+
+1. **Pedir a Lucho la documentación de Banlink** y la de 88 Pay en PDF (o habilitar el acceso), para llenar sus filas.
+2. **Primeras conversaciones:** **Tonder** y **OKTO** para cobro con tarjeta a casinos (línea B), **Mercado Pago** y **Klu** como destinos de depósito y como partners (líneas A y B), **88 Pay** o **Pomelo** para la tarjeta del kiosco (línea C) y **Cobre** o **Monato** como riel SPEI (línea D).
+3. **Pedir a cada uno por escrito** si acepta el giro de juego, la tarifa de partner y quién se queda con la cuota fija.
+4. **Separar en dos sociedades o dos líneas contables** la red de kioscos (comisionista) y la reventa de procesamiento (agente comercial), para que el riesgo de contracargos no contamine la relación con las entidades financieras [S].
 
 ---
 
@@ -1306,6 +1418,20 @@ Presupuesto de los 90 días: **$1.2 a $2.0 M MXN** [E].
 - Acuerdo de tarifas del IMPI (versión publicada en gob.mx): https://www.gob.mx/cms/uploads/attachment/file/130283/Acuerdo_Tarifa_IMPI.pdf
 - Ejemplo de ficha municipal de licencia tipo SARE (Corregidora, Qro.): https://corregidora.gob.mx/Documentos/2021-2024/cmmer/fichas_tramites/Secretaria_de_Desarrollo_Economico/Apertura_de_Licencia_Municipal_de_Funcionamiento_Tipo_Sare.pdf
 
+**Fuentes agregadas en la versión 4.2**
+- Tonder: https://www.tonder.io/en · guía operativa: https://intercom.help/tonder-io/en/articles/13581470-operational-guide
+- Mercado Pago, programa de partners: https://mercadopago.com.mx/partners/developers/en · incentivos (1-abr-2026): https://www.mercadopago.com.mx/developers/es/news/2026/04/01/New-incentive-structure-for-Partners-in-Mexico
+- Latam Fintech, Klu lanza adquirente y agregador (31-mar-2025): https://www.latamfintech.co/articles/paytech-mexicana-klu-lanza-un-adquirente-no-bancario-y-un-agregador-de-pagos-para-continuar-su-crecimiento-en-latam
+- Descubre.vc, Grupo Klu (27-ago-2026): https://www.descubre.vc/noticia/grupo-klu-consolida-su-ecosistema-financiero-para-pymes-en-m-xico-2026-08-27 · remesas y Sofipo (6-jul-2026): https://www.descubre.vc/noticia/klu-busca-evolucionar-a-banco-y-lanza-servicio-de-remesas-en-m-xico-2026-07-06
+- DPL News, Cobre (7-ago-2026): https://dplnews.com/cobre-rebasa-1500-mdd-mensuales-transacciones-mexico/ · Cobre y Toku: https://dplnews.com/cobre-y-toku-se-unen-procesar-pagos-200-mdd-mexico/
+- Latam Fintech, Conekta adquirente directo (25-sep-2026): https://www.latamfintech.co/articles/paytech-conekta-recibio-la-autorizacion-en-mexico-para-operar-como-adquirente-no-bancario-directo
+- Gambling News, OKTO en México (10-nov-2025): https://www.gamblingnews.com/news/okto-rolls-out-direct-cash-in-solution-in-mexico/
+- Paysafe, Paysafecash en México (25-ago-2020): https://www.paysafe.com/en/paysafegroup/news/detail/paysafecash-launches-in-mexico-enabling-online-cash-purchases/
+- Monato: https://monato.com/en/
+- Paymentology en México: https://www.paymentology.com/newsroom/paymentology-releases-guide-to-successfully-launch-card-programmes-in-mexico
+- Kushki, caso de partner: https://kushkipagos.com/blog/success-story-motygam-the-partner-that-brought-cerveceria-de-barrio-and
+- 88 Pay (enlaces de Lucho, no legibles desde este entorno): https://developers.88pay.io/en/getting-started/introduction · https://developers.88pay.io/en/countries/mexico
+
 ## Anexo B. Pendientes de validación
 
 1. Lista de sectores de la SHCP (art. 13 de la Ley de Economía Digital) y texto oficial del DOF.
@@ -1329,3 +1455,6 @@ Presupuesto de los 90 días: **$1.2 a $2.0 M MXN** [E].
 19. Licencias municipales y de protección civil para un kiosco con efectivo dentro de una sala de juego.
 20. Normas oficiales mexicanas y homologación de telecomunicaciones aplicables al kiosco importado.
 21. Clases de Niza y descripciones exactas para el registro de marca (con despacho de propiedad intelectual).
+22. Documentación de Banlink y de 88 Pay (productos, licencia, programa de partners).
+23. De qué procesador son las tablas de precio por volumen, quién se queda con la cuota fija y si aceptan el giro de juego.
+24. Si revender procesamiento de tarjetas exige registro como agregador ante Banxico o como agente ante Visa y Mastercard.
