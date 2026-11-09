@@ -1,7 +1,7 @@
 # Estudio de prefactibilidad: red neutral de kioscos de depósito en efectivo (cash-in multibanco) para casinos en México
 
-**Versión:** 4.0 · **Fecha de investigación y consulta de fuentes:** 9 de noviembre de 2026
-**Cambios de la versión 4.0:** nueva sección V4 (precios reales de Mercado Pago por cadena según la app; tapi, PayCash y PESPay a detalle; revisión de los padrones del SPEI de Banxico; requisitos legales por tipo de empresa; seis diagramas del flujo del kiosco en `estudios/diagramas/`). **Cambios de la versión 3.0:** nueva sección 0 (comisión por depósito y precios de referencia de las cadenas; cómo operan tapi, PayCash y redes similares; flujo de efectivo con cuenta propia frente a patrocinador; KYC completo en kiosco y acceso "como cajero") y modelo financiero con comisión cobrada a las entidades. **Cambio de la versión 2.0 respecto a la 1.0:** el modelo ya no es "kiosco que emite una tarjeta de un emisor". Ahora es el que definió Lucho: **un kiosco neutral donde el usuario elige el banco, la IFPE o el procesador al que quiere abonar su efectivo, o abre una cuenta nueva**, igual que los comercios que hoy reciben depósitos "en nombre de" Mercado Pago u otras entidades. La empresa es intermediaria entre las entidades financieras y el cliente, y no queda amarrada a un solo banco o procesador. La versión 1.0 queda en el historial del repositorio.
+**Versión:** 4.1 · **Fecha de investigación y consulta de fuentes:** 9 de noviembre de 2026
+**Cambios de la versión 4.0:** nueva sección V4 (precios reales de Mercado Pago por cadena según la app; tapi, PayCash y PESPay a detalle; revisión de los padrones del SPEI de Banxico; requisitos legales por tipo de empresa; seis diagramas del flujo del kiosco en `estudios/diagramas/`). **Versión 4.1:** lista legal completa de arranque (sección V4.6: constitución, fiscal, laboral, marca, datos, equipo, licencias por casino y municipio, seguros y ruta crítica). **Cambios de la versión 3.0:** nueva sección 0 (comisión por depósito y precios de referencia de las cadenas; cómo operan tapi, PayCash y redes similares; flujo de efectivo con cuenta propia frente a patrocinador; KYC completo en kiosco y acceso "como cajero") y modelo financiero con comisión cobrada a las entidades. **Cambio de la versión 2.0 respecto a la 1.0:** el modelo ya no es "kiosco que emite una tarjeta de un emisor". Ahora es el que definió Lucho: **un kiosco neutral donde el usuario elige el banco, la IFPE o el procesador al que quiere abonar su efectivo, o abre una cuenta nueva**, igual que los comercios que hoy reciben depósitos "en nombre de" Mercado Pago u otras entidades. La empresa es intermediaria entre las entidades financieras y el cliente, y no queda amarrada a un solo banco o procesador. La versión 1.0 queda en el historial del repositorio.
 **Alcance:** México, salas de juego con permiso de SEGOB como ubicación inicial; el mismo kiosco puede operar fuera de casinos.
 **Naturaleza:** prefactibilidad para decidir. No sustituye un dictamen jurídico, fiscal ni de cumplimiento.
 
@@ -182,6 +182,119 @@ Hay cinco formas de "empresa similar", de menor a mayor carga regulatoria. **La 
 | **Casino** | Que el permiso de SEGOB del casino no se oponga a servicios financieros de terceros en sala; dictamen sobre el reciclaje de efectivo | LFJS y su Reglamento [P] |
 | **Fiscal** | Facturar comisiones a entidades; IVA sobre la comisión; si el casino recicla efectivo, documentar que no es ingreso del casino | [P: dictamen fiscal] |
 | **Protección al usuario** | Mostrar en pantalla el nombre de la entidad, su comisión, límites, comprobante con folio y canal de aclaraciones de la entidad | CUB (comisionistas) y disposiciones de transparencia [H/P] |
+
+### V4.6 Lista legal completa para arrancar la empresa (de la constitución a la operación en cada casino)
+
+La sección V4.4 cubre lo financiero. Esta lista cubre **todo lo demás** que necesita la empresa para operar, en el orden en que conviene hacerlo. Responsables sugeridos: **N** notario o corredor público, **C** contador, **PI** despacho de propiedad intelectual, **F** despacho financiero y de PLD, **L** abogado laboral, **E** la propia empresa.
+
+#### Etapa 0. Antes de constituir (semanas 1 y 2)
+
+| # | Trámite | Ante quién | Qué es y por qué | Resp. | Marca |
+|---|---|---|---|---|---|
+| 0.1 | Búsqueda de marca y nombre | IMPI (Marcanet, gratis) | Confirmar que el nombre comercial no choca con marcas registradas en las clases del negocio **antes** de gastar en logotipo, dominio y acta | PI | [H] |
+| 0.2 | Dominio de internet (.mx y .com) y redes sociales | Registradores | Asegurar el nombre en línea | E | [S] |
+| 0.3 | Pacto de socios | Privado | Aportaciones, gobierno, salida, arrastre y acompañamiento, opciones para empleados; la S.A.P.I. permite pactarlos en los estatutos | N y abogado | [S] |
+| 0.4 | Debida diligencia de los socios | Interno | Las entidades financieras, los agregadores y el banco de la cuenta de liquidación revisarán a socios y directivos (listas, origen de recursos). Conviene revisarlo antes de entrar a la sociedad | F | [S] |
+
+#### Etapa 1. Creación de la empresa (semanas 2 a 6)
+
+| # | Trámite | Ante quién | Detalle | Resp. | Marca |
+|---|---|---|---|---|---|
+| 1.1 | **Autorización de uso de denominación** | Secretaría de Economía, en línea (Módulo Único de Autorizaciones) con e.firma | **Gratuita**; respuesta en un máximo de dos días hábiles; vigencia de 180 días para usarla. Conviene pedir dos o tres nombres. **No es registro de marca** | N o E | [H] Praxium (fuente comercial) |
+| 1.2 | **Acta constitutiva** de una **S.A.P.I. de C.V.** | Notario o corredor público | Objeto social amplio: comisión mercantil y administración de comisionistas por cuenta de entidades financieras; servicios tecnológicos y de procesamiento; operación, arrendamiento e importación de equipos de autoservicio; recepción de efectivo **por cuenta de terceros**. Consejo de administración, comisario y apoderados con facultades bancarias | N | [S] |
+| 1.3 | Inscripción en el **Registro Público de Comercio** | Secretaría de Economía (SIGER), por medio del notario | Da efectos frente a terceros; la piden bancos y entidades | N | [H] |
+| 1.4 | **RFC, e.firma y buzón tributario** de la sociedad | SAT | Normalmente el notario inscribe el RFC al firmar el acta | N y C | [H] |
+| 1.5 | **Beneficiario controlador** | Registro interno; se entrega al SAT cuando lo pide | Obligación de identificar y documentar a las personas físicas que controlan la sociedad (Código Fiscal de la Federación) | C | [H/P: confirmar artículos vigentes] |
+| 1.6 | Registro Nacional de Inversiones Extranjeras | Secretaría de Economía | **Solo si hay socios extranjeros** | N | [H] |
+| 1.7 | Libros corporativos | Interno | Actas de asamblea y consejo, registro de acciones y de variaciones de capital | N | [H] |
+| 1.8 | Cuenta bancaria operativa | Banco | Separada de la **cuenta de liquidación** (etapa 4), que se abre con su propio análisis de riesgo por manejar efectivo de casinos | E | [S] |
+
+**Costo de referencia (no cotizado):** una consultora reporta rangos de mercado de $25,000 a $50,000 para constituir una S.A.P.I. (notario más registro) en 2026 [H: rango de mercado de fuente comercial; **no es tarifa oficial ni cotización**].
+
+#### Etapa 2. Alta fiscal, laboral y empresarial (semanas 4 a 8)
+
+| # | Trámite | Ante quién | Detalle | Resp. | Marca |
+|---|---|---|---|---|---|
+| 2.1 | Régimen fiscal de persona moral y obligaciones (ISR, IVA, contabilidad electrónica) | SAT | Las comisiones por depósito causan IVA; el efectivo recibido por cuenta de las entidades **no es ingreso** de la empresa y debe documentarse como tal | C | [H/P: dictamen fiscal] |
+| 2.2 | Certificado de sello digital para facturar (CFDI) | SAT | Para facturar comisiones a entidades, agregadores y casinos | C | [H] |
+| 2.3 | Registro patronal | IMSS (y alta en INFONAVIT) | Al contratar al primer empleado | C | [H] |
+| 2.4 | Impuesto sobre nómina y registro estatal de contribuyentes | Gobierno de cada estado donde haya empleados | Varía por estado | C | [H] |
+| 2.5 | Registro en el Sistema de Información Empresarial Mexicano (SIEM) | Secretaría de Economía / cámaras | Obligatorio para empresas (Ley de Cámaras Empresariales) | C | [H/P] |
+| 2.6 | Contratos de trabajo, reglamento interior y política NOM-035 (riesgo psicosocial) | STPS | Obligaciones laborales básicas | L | [H] |
+| 2.7 | REPSE (registro de servicios especializados) | STPS | Solo si la empresa presta personal para servicios especializados a terceros, o para verificar que sus proveedores (mantenimiento, seguridad) estén registrados | L | [H/P] |
+
+#### Etapa 3. Marca y propiedad intelectual (solicitar en la semana 2; el registro tarda meses)
+
+| # | Trámite | Ante quién | Detalle | Resp. | Marca |
+|---|---|---|---|---|---|
+| 3.1 | **Registro de marca** (nombre y logotipo) | IMPI, en línea | Cubre **una clase por solicitud**; derechos oficiales de ≈ **$3,126 con IVA por clase** (2026); vigencia de **10 años** renovables | PI | [H] El Imparcial, 14-jul-2026 |
+| 3.2 | Clases sugeridas | IMPI (Clasificación de Niza) | **Clase 36** (servicios financieros: recepción de depósitos por cuenta de terceros, pagos); **clase 9** (software y aplicaciones del kiosco); **clase 42** (plataforma tecnológica como servicio); opcional **clase 35** (administración de redes de puntos) | PI | [S: confirmar descripciones con el despacho] |
+| 3.3 | Aviso comercial (eslogan) | IMPI | Si habrá un eslogan de campaña | PI | [H] |
+| 3.4 | Registro de derechos de autor del software | INDAUTOR | Protege el código del kiosco y de la plataforma; útil frente a inversionistas | PI | [H] |
+| 3.5 | Contratos de cesión de derechos | Privado | Con empleados y desarrolladores externos, para que el software sea de la empresa | PI y L | [S] |
+
+#### Etapa 4. Regulación financiera y contratos clave (meses 2 a 12, en paralelo)
+
+Detallado en las secciones V4.4 y 2. Resumen de lo que debe existir antes del piloto:
+
+| # | Pieza | Detalle | Resp. | Marca |
+|---|---|---|---|---|
+| 4.1 | **Dictamen jurídico** sobre la figura | Comisionista y administrador de comisionistas; kiosco desatendido; sala de juego como establecimiento; reciclaje del efectivo por el casino | F | [P] |
+| 4.2 | Contratos de comisión con cada entidad o con el administrador de su red | Y que cada entidad haya obtenido la autorización de la CNBV o presentado su plan | F | [H] |
+| 4.3 | Contratos con agregadores (tapi, PayCash) | Incluye garantías, conciliación y niveles de servicio | F | [S] |
+| 4.4 | Cuenta de liquidación en un banco comercial | El banco hará su propio análisis de PLD sobre el giro | E y F | [S] |
+| 4.5 | Programa de PLD de la empresa | Responsable interno, manual alineado con cada entidad, capacitación anual, conservación de registros; revisar si la relación con casinos convierte a la empresa en actividad vulnerable (LFPIORPI y reglas de 2026) | F | [H/P] |
+| 4.6 | Registro de transmisor de dinero | **Solo en una etapa posterior**, si se decide la ruta C1 | F | [H] |
+
+#### Etapa 5. Datos personales y protección al usuario
+
+| # | Pieza | Detalle | Resp. | Marca |
+|---|---|---|---|---|
+| 5.1 | Aviso de privacidad propio | Como encargada de las entidades y como responsable de sus propios datos (cámaras de seguridad, contacto) | Abogado | [H] LFPDPPP 2025 |
+| 5.2 | Consentimiento expreso para biometría (selfie, prueba de vida) | En pantalla, por entidad | Abogado | [H] |
+| 5.3 | Contratos de encargo de tratamiento con cada entidad | Qué datos, para qué, cuánto tiempo, borrado | Abogado | [H] |
+| 5.4 | Procedimiento para derechos ARCO y documento de seguridad | Atención a solicitudes de acceso, rectificación, cancelación y oposición | E | [H] |
+| 5.5 | Información al usuario en el kiosco | Nombre de la entidad, comisión, límites, comprobante con folio, canal de aclaraciones; la Ley Federal de Protección al Consumidor aplica a los servicios de la empresa (PROFECO), y la CONDUSEF a los de las entidades | E | [H/P] |
+
+#### Etapa 6. Equipo (antes de comprar kioscos)
+
+| # | Trámite | Ante quién | Detalle | Resp. | Marca |
+|---|---|---|---|---|---|
+| 6.1 | Padrón de importadores | SAT | Solo si la empresa importa los kioscos directamente (si no, lo hace el proveedor) | C | [H] |
+| 6.2 | Cumplimiento de normas oficiales mexicanas del equipo | Organismos de certificación | Seguridad eléctrica de equipos electrónicos e información comercial; pedir los certificados al fabricante | E | [P: confirmar NOM aplicables] |
+| 6.3 | Homologación del módem celular | Autoridad de telecomunicaciones | Si el kiosco usa conexión celular, el módulo debe estar homologado para México | E | [P] |
+
+#### Etapa 7. Por cada casino y cada municipio (antes de instalar)
+
+| # | Trámite | Ante quién | Detalle | Resp. | Marca |
+|---|---|---|---|---|---|
+| 7.1 | **Licencia de funcionamiento o aviso de apertura** | Municipio (o alcaldía en CDMX) | Depende del reglamento local: algunos municipios piden licencia propia para un módulo de servicios dentro de otro establecimiento, otros lo cubren con la licencia del local. Los programas de apertura rápida (SARE) suelen ser solo para giros de bajo riesgo, y un punto con efectivo dentro de un casino probablemente no lo sea | Abogado local | [P: confirmar por municipio] |
+| 7.2 | Uso de suelo | Municipio | Normalmente lo cubre el del casino; confirmar que admite "servicios financieros" | Abogado local | [P] |
+| 7.3 | Protección civil | Municipio o estado | Incluir el kiosco en el programa interno del casino (ubicación, salidas, instalación eléctrica) | Casino y E | [P] |
+| 7.4 | Permiso de anuncios | Municipio | Solo si hay señalización exterior | E | [P] |
+| 7.5 | Permiso del casino ante SEGOB | Casino | Confirmar que el permiso de juegos y sorteos del casino no restringe servicios de terceros en sala | Casino y abogado | [P] |
+| 7.6 | Contrato con el casino | Privado | Espacio, energía, red, vigilancia, horario, reparto de ingresos y, en su caso, reciclaje del efectivo con doble custodia | Abogado | [S] |
+
+#### Etapa 8. Seguros y seguridad física
+
+| # | Pieza | Detalle | Marca |
+|---|---|---|---|
+| 8.1 | Seguro de valores en bóveda y en tránsito | Cubre robo y daño del efectivo dentro del kiosco | [S] |
+| 8.2 | Responsabilidad civil y ciberseguridad | Daños a terceros y fallas de datos | [S] |
+| 8.3 | Contrato con empresa de traslado de valores autorizada | Solo en el esquema A; la empresa transportista debe tener autorización de seguridad privada | [H/P] |
+
+#### Ruta crítica
+
+```
+Semana 1-2   Búsqueda de marca ─► Denominación ─► Pacto de socios
+Semana 2-6   Acta S.A.P.I. ─► RPC ─► RFC y e.firma ─► Cuenta operativa
+Semana 2     Solicitud de marca (IMPI) ······························► registro en meses
+Mes 2-6      Dictamen jurídico ─► Contratos con entidades y agregadores ─► Cuenta de liquidación
+Mes 3-6      Aviso de privacidad, PLD, seguros, compra de kioscos con certificados
+Mes 6+       Por casino: licencia municipal, protección civil, contrato ─► Piloto
+```
+
+**Lo que bloquea el piloto, en orden:** (1) dictamen jurídico, (2) al menos una entidad o agregador con contrato que acepte casinos, (3) cuenta de liquidación abierta, (4) licencia municipal del primer casino. El resto puede avanzar en paralelo.
 
 ### V4.5 Diagramas del flujo del punto 4: cómo funcionaría nuestra entidad
 
@@ -1187,6 +1300,12 @@ Presupuesto de los 90 días: **$1.2 a $2.0 M MXN** [E].
 - Cash Essentials, Sonect en México: https://cashessentials.org/sonect-secures-license-to-operate-in-mexico/
 - Banxico, Circular 14/2017 (reglas del SPEI): https://www.banxico.org.mx/marco-normativo/normativa-emitida-por-el-banco-de-mexico/circular-14-2017/%7B7D40F0A1-70F8-74D8-8F82-D96401557147%7D.pdf
 
+**Fuentes agregadas en la versión 4.1**
+- El Imparcial, registro de marca ante el IMPI, costo y vigencia (14-jul-2026): https://www.elimparcial.com/mexico/2026/07/14/como-registrar-una-marca-ante-el-impi-el-caso-del-pato-merlin-explica-el-tramite-costo-y-beneficios-en-2026/
+- Praxium Consultores, autorización de uso de denominación y costos de constitución (fuente comercial): https://praxiumconsultores.com/blog/cuanto-cuesta-el-permiso-de-uso-de-denominacion-secretaria-de-economia
+- Acuerdo de tarifas del IMPI (versión publicada en gob.mx): https://www.gob.mx/cms/uploads/attachment/file/130283/Acuerdo_Tarifa_IMPI.pdf
+- Ejemplo de ficha municipal de licencia tipo SARE (Corregidora, Qro.): https://corregidora.gob.mx/Documentos/2021-2024/cmmer/fichas_tramites/Secretaria_de_Desarrollo_Economico/Apertura_de_Licencia_Municipal_de_Funcionamiento_Tipo_Sare.pdf
+
 ## Anexo B. Pendientes de validación
 
 1. Lista de sectores de la SHCP (art. 13 de la Ley de Economía Digital) y texto oficial del DOF.
@@ -1208,3 +1327,5 @@ Presupuesto de los 90 días: **$1.2 a $2.0 M MXN** [E].
 17. Figura y razón social de PESPay y de PayCash en los padrones de la CNBV (comisionistas autorizados y transmisores de dinero).
 18. Capital mínimo vigente para una IFPE y requisitos de Banxico para que un transmisor de dinero participe en el SPEI.
 19. Licencias municipales y de protección civil para un kiosco con efectivo dentro de una sala de juego.
+20. Normas oficiales mexicanas y homologación de telecomunicaciones aplicables al kiosco importado.
+21. Clases de Niza y descripciones exactas para el registro de marca (con despacho de propiedad intelectual).
