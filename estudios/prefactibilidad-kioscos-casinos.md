@@ -1,7 +1,7 @@
 # Estudio de prefactibilidad: red neutral de kioscos de depósito en efectivo (cash-in multibanco) para casinos en México
 
-**Versión:** 2.0 · **Fecha de investigación y consulta de fuentes:** 9 de noviembre de 2026
-**Cambio respecto a la versión 1.0:** el modelo ya no es "kiosco que emite una tarjeta de un emisor". Ahora es el que definió Lucho: **un kiosco neutral donde el usuario elige el banco, la IFPE o el procesador al que quiere abonar su efectivo, o abre una cuenta nueva**, igual que los comercios que hoy reciben depósitos "en nombre de" Mercado Pago u otras entidades. La empresa es intermediaria entre las entidades financieras y el cliente, y no queda amarrada a un solo banco o procesador. La versión 1.0 queda en el historial del repositorio.
+**Versión:** 3.0 · **Fecha de investigación y consulta de fuentes:** 9 de noviembre de 2026
+**Cambios de la versión 3.0:** nueva sección 0 (comisión por depósito y precios de referencia de las cadenas; cómo operan tapi, PayCash y redes similares; flujo de efectivo con cuenta propia frente a patrocinador; KYC completo en kiosco y acceso "como cajero") y modelo financiero con comisión cobrada a las entidades. **Cambio de la versión 2.0 respecto a la 1.0:** el modelo ya no es "kiosco que emite una tarjeta de un emisor". Ahora es el que definió Lucho: **un kiosco neutral donde el usuario elige el banco, la IFPE o el procesador al que quiere abonar su efectivo, o abre una cuenta nueva**, igual que los comercios que hoy reciben depósitos "en nombre de" Mercado Pago u otras entidades. La empresa es intermediaria entre las entidades financieras y el cliente, y no queda amarrada a un solo banco o procesador. La versión 1.0 queda en el historial del repositorio.
 **Alcance:** México, salas de juego con permiso de SEGOB como ubicación inicial; el mismo kiosco puede operar fuera de casinos.
 **Naturaleza:** prefactibilidad para decidir. No sustituye un dictamen jurídico, fiscal ni de cumplimiento.
 
@@ -29,9 +29,9 @@
 
 - **La "nueva ley de pagos digitales"** es la *Ley de Economía Digital para Pagos Digitales y Electrónicos* (DOF 4-nov-2026, vigente desde el 5-nov-2026) [H]. Para los privados la aceptación de pagos digitales es voluntaria (art. 11) salvo en los sectores que la SHCP declare obligatorios (art. 13), cuya lista se espera para finales de noviembre de 2026; no se han mencionado los casinos [H]. Es un viento a favor, no una obligación que cree demanda.
 - **El vínculo con casinos sigue siendo el principal riesgo comercial.** Cada banco, IFPE o agregador decide si acepta puntos de depósito dentro de salas de juego. Los juegos con apuesta son actividad vulnerable con reglas nuevas desde el 30-nov-2026, y ha habido bloqueos de cuentas y sanciones a casinos [H]. **No debe suponerse que ninguna entidad acepta este giro sin confirmación escrita.**
-- **El comisionista no puede cobrar comisiones propias al usuario** ni operar a nombre propio [H: guía de la CNBV]. Los ingresos vienen de las entidades (pago por depósito y por cuenta abierta) y, si acaso, de comisiones que la entidad registre y comparta.
+- **El modelo de ingresos es una comisión por depósito cobrada a las entidades** (más un pago por cuenta nueva), no al usuario, lo que además respeta la regla de que el comisionista no cobra comisiones propias al cliente [H: guía de la CNBV]. Las referencias públicas van de $4 (Mercado Pago a tienditas) a $8–$20 (lo que pagan los usuarios en Soriana, Circle K, 7-Eleven y OXXO) [H]; lo que las cadenas cobran a Mercado Pago no es público (sección 0.1).
 - **Límites:** la guía de la CNBV menciona un tope de depósitos en efectivo vía comisionista de 4,000 UDIS diarios (≈ $35,000) [H, P: confirmar si es por cuenta]; las cuentas nivel 2 admiten 3,000 UDIS al mes y las 2 Bis, 15,000 UDIS con 3,000 en efectivo [H].
-- **Números (todos estimados):** con traslado de valores propio, el escenario base deja una contribución de ≈ $7,300 MXN/kiosco/mes y requiere ≈ 109 kioscos para el equilibrio. Con el casino reciclando el efectivo, la contribución sube a ≈ $14,800 MXN, el equilibrio baja a ≈ 54 kioscos, el kiosco se paga en ≈ 14 meses y el financiamiento máximo en tres años es ≈ $51 M MXN [E]. El escenario conservador no alcanza equilibrio en ninguno de los dos esquemas.
+- **Números (todos estimados, versión 3 con comisión de $12 por depósito cobrada a las entidades):** con traslado de valores propio, el escenario base deja ≈ $4,300 MXN/kiosco/mes de contribución y requiere ≈ 187 kioscos para el equilibrio. Con el casino reciclando el efectivo, la contribución sube a ≈ $11,600 MXN, el equilibrio baja a ≈ 69 kioscos, el kiosco se paga en ≈ 18 meses y el financiamiento máximo en tres años es ≈ $58 M MXN [E]. Cada peso adicional de comisión por depósito vale ≈ $1,600 al mes por kiosco; con $15 el equilibrio baja a ≈ 49 kioscos. El escenario conservador no alcanza equilibrio.
 
 **Condiciones para avanzar:**
 
@@ -51,6 +51,157 @@
 5. **¿Cuánto capital hay disponible y en qué horizonte?**
 
 Mientras no haya respuesta, el estudio supone: solo depósitos (cash-in) y apertura de cuentas; catálogo de entidades conectadas desde el inicio y riel SPEI como segunda etapa; casinos como ubicación con reparto de ingresos.
+
+---
+
+## 0. Ampliación de la versión 3: respuestas a los puntos de Lucho
+
+Esta sección responde a los comentarios del 9-nov-2026: (1) la empresa cobrará una comisión por depósito a las entidades y procesadores; (2) cómo funcionan hoy tapi, PayCash, "Cashnet" y redes similares; (3) flujo completo del efectivo y si se necesita una "cuenta madre" (banco patrocinador) o puede ser propia; (4) el kiosco hace todo el alta y el KYC para no bancarizados, y los bancarizados entran a su cuenta como en un cajero.
+
+### 0.1 Comisión por depósito: cuánto cobran Soriana, Circle K y otras cadenas
+
+**Hecho importante:** lo que Soriana, Circle K u otras cadenas le cobran a Mercado Pago (o a cualquier banco o fintech) **no es público**; es un contrato privado entre empresas. No se encontró ninguna fuente que lo revele [H: búsqueda sin resultado]. Lo que sí es público:
+
+| Referencia pública | Dato | Fuente |
+|---|---|---|
+| Mercado Pago, red de corresponsales | Depositar es **gratis para el usuario**; Mercado Pago **paga $4 por depósito o retiro** a los comercios (principalmente tienditas con TPV). Soriana, Circle K, 7-Eleven, Neto y Farmacias del Ahorro están en su red (60% de los puntos son cadenas) | [H] DPL News, 7-feb-2025 |
+| Comisión al **usuario** por depósito a bancos en **Soriana** | Santander $10 · HSBC $10 · Banamex $8.62 · Banorte $8 · Banco Azteca $7.76 · Inbursa y Scotiabank sin cargo | [H] El Imparcial, 28-feb-2026 |
+| Comisión al usuario en **Circle K** | Santander $10 | [H] ídem |
+| Comisión al usuario en **7-Eleven** | Santander $12 · BBVA $15 · Banamex $12.07 · BanCoppel $13 · Banco Azteca $10.34 · Banorte $10 | [H] ídem |
+| Comisión al usuario en **OXXO** | Bancos: $15 a $20. Fintechs (Mercado Pago, Nu, Klar, albo, Fondeadora): "suelen" cobrar ≈ $15 | [H] El Imparcial; Descubre.vc (cifra general) |
+| Red PayCash (albo) | $10 a $12 por depósito al usuario | [H] Xataka, jul-2024 |
+| Corresponsales bancarios en México | 57,624 puntos (CNBV, *Panorama Anual de Inclusión Financiera 2025*) | [H] citado por El Imparcial |
+
+**Interpretación [S]:** el "precio de un depósito en efectivo" en México va de **$4** (lo que paga Mercado Pago a una tiendita) a **$20** (OXXO para algunos bancos). Cuando el usuario paga, la cadena se queda con la mayor parte; cuando el depósito es gratis para el usuario, la entidad le paga a la cadena. Las cadenas grandes probablemente cobran más que una tiendita por volumen, horario y seguridad, pero el monto exacto solo se conoce en una negociación.
+
+**Propuesta de precio para la empresa [E]:**
+
+| Concepto | Propuesta inicial | Racional |
+|---|---|---|
+| Comisión por depósito a la entidad | **$10 a $15** fijos (base del modelo: $12), con descuento por volumen mensual | Igual o menor que lo que hoy paga el usuario en una cadena, para que la entidad pueda ofrecer el depósito gratis |
+| Pago por cuenta nueva abierta y fondeada con KYC completo en kiosco | **$60 a $120** por cuenta | La tienda no da este servicio; para la entidad es costo de adquisición |
+| Mercado Pago | Esperar que ancle en $4 (su precio a tienditas). Argumentos para cobrar más: no requiere TPV ni personal, ubicación con mucho efectivo, depósitos promedio altos, cuentas nuevas. Alternativa: llegar a Mercado Pago **a través de tapi**, que ya tiene alianza de cash-in/cash-out con Mercado Pago [H] | [S] |
+
+> Las comisiones exactas de las cadenas a Mercado Pago son un dato para la RFP y la negociación (pregunta C del cuestionario 6.3); no deben suponerse.
+
+### 0.2 Cómo funcionan hoy tapi, PayCash, "Cashnet" y redes similares
+
+**Hallazgo sobre "Cashnet":** no se encontró en México un operador de pagos con ese nombre. Lo más cercano es **Mexico Cash Network**, el producto con el que el agregador internacional Rapyd revende redes locales (PayCash, OpenPay, Waldos, Circle K, 7-Eleven, bancos) [H], y **KasNet**, una red de agentes de Perú. **[P: confirmar con Lucho a cuál se refiere.]**
+
+| Red | Qué es | Cómo funciona | Cobertura | Figura legal | Precio público | Qué significa para nosotros |
+|---|---|---|---|---|---|---|
+| **tapi** | Infraestructura B2B de pagos: una sola API para bancos, fintechs y empresas de servicios [H] | Cash-in (el usuario entrega efectivo en tienda y queda en su cuenta digital), cash-out inmediato, pago referenciado, recargas y tarjetas de regalo [H] | Más de 50,000 tiendas incluidas OXXO y Walmart (jul-2025), en buena parte por la compra de los activos de efectivo de Arcus; su página de cash-in menciona 15,000 puntos activos (7-Eleven, Soriana, Chedraui, Farmacias del Ahorro, Waldos, Casa Ley, Benavides…) [H] | **tapi no está regulada directamente**; cumple los estándares de sus clientes regulados (ISO 27001). La red de tiendas la administra **PESPay**, que "tiene la figura legal habilitada". El banco o fintech cliente debe obtener la autorización de la CNBV para cash-in/cash-out [H] | No publicado; integración de 4 a 6 semanas [H] | **Socio natural**: nuestros kioscos pueden ser puntos de su red (y así llegar a Mercado Pago, Banco Plata y otros clientes de tapi). También es competidor si entramos directo con las entidades |
+| **Arcus** (ahora operaciones de efectivo de tapi) | IFPE comprada por Mastercard en 2021 [H] | Convierte efectivo en dinero digital: es **participante directo del SPEI** desde 2021 [H] | 35,000 puntos, meta de 40,000 a fin de 2025 [H] | **IFPE** autorizada [H]; tapi compró sus operaciones de efectivo en 2025 [H] (si la licencia se transfirió: [P]) | No publicado | Es el ejemplo de "cuenta madre propia con licencia" (sección 0.3, opción C2) |
+| **PayCash** | Red de pago en efectivo por referencia [H] | El integrador genera una **referencia única por pago**; el usuario paga en un punto; la confirmación llega casi de inmediato por webhook (BBVA Practicaja: 30 min a 2 h); liquidación semanal al integrador [H] | Walmart, 7-Eleven, Soriana, Sam's (hasta $10,000), Kiosko ($15,000), bancos Santander, BBVA, Banorte, Afirme ($20,000); mínimo $10 [H]; albo amplió con PayCash a más de 20,000 puntos [H] | [P] | Usuario de albo: $10 a $12 [H]; al integrador: no publicado | Podemos ser punto de cobro de PayCash: cualquier referencia de PayCash (fintechs, **casinos en línea**, comercio electrónico) se podría pagar en el kiosco |
+| **Paynet (Openpay, grupo BBVA)** | Pagos referenciados en tiendas [P] | Referencia con código de barras [P] | Cadenas de conveniencia y farmacias [P] | [P] | No verificado | Igual que PayCash; muy usado por operadores en línea [H: listados de métodos de pago] |
+| **PESPay** | Empresa de pagos en efectivo con red propia de puntos [H] | Red sobre la que tapi opera su cash-in/cash-out (alianza feb-2024) [H] | No publicada [H] | "Sólida posición regulatoria" sin detalle [H/P] | No publicado | Candidato a ser nuestra contraparte si somos puntos de la red de tapi |
+| **Yastás (Gentera)** | **Administrador de comisionistas bancarios** [H: anuncio público] | Red de tienditas que operan como comisionistas de bancos (Banorte, entre otros) | Nacional [P] | Administrador de comisionistas (CUB) [H] | No verificado | **Es el antecedente directo de la figura que proponemos**: una empresa que administra una red de puntos por cuenta de varios bancos |
+| **Mercado Pago, red propia** | Red de corresponsales de una sola entidad [H] | El usuario genera un código en la app; el comercio cobra con su TPV de Mercado Pago [H] | Más de 20,000 puntos [H] | Comercios por cuenta de la entidad [P] | Gratis al usuario; $4 al comercio [H] | Referencia de precio y competidor indirecto |
+| **Mexico Cash Network (Rapyd)** | Agregador internacional que revende redes locales [H] | Comprobante o código; pago en tienda o banco; liquidación de 2 a 3 días; sin reembolsos ni contracargos [H] | Límites por punto: bancos hasta $215,000; Walmart $30,000; 7-Eleven y Farmacias del Ahorro $15,000; Circle K y Soriana $10,000; Waldos $5,000 [H] | — | No publicado | Muestra que los agregadores internacionales compran acceso a redes mexicanas: otro canal de ingreso para nuestros puntos |
+| **Kushki (efectivo)** | Pasarela con pagos en efectivo en América Latina | Referencias | Dice tener más de 200,000 puntos en la región [P: solo su sitio] | [P] | No publicado | Otro posible cliente o canal |
+
+**Patrón del mercado:** hay **dos capas**. (1) **La red de puntos con figura legal** (cadenas, PESPay, Yastás, Arcus) recibe el efectivo por cuenta de alguien regulado. (2) **La capa de integración** (tapi, PayCash, Openpay, Rapyd) conecta a muchas entidades y comercios con esa red mediante una API. Los kioscos de la empresa son una **red de puntos**; la empresa puede **venderle su red a la capa de integración** (rápido) y, en paralelo, **ser su propia capa de integración** para las entidades con las que firme directo (mejor margen).
+
+**Dos mecánicas distintas que el kiosco debe soportar:**
+- **Cash-in a cuenta:** el usuario identifica su cuenta (código de la app, celular, tarjeta o CLABE) y el dinero queda en su saldo.
+- **Pago referenciado:** el usuario trae una referencia (por ejemplo, para fondear su cuenta en un **casino en línea** o pagar una compra) y el kiosco la cobra. Esto abre un segundo mercado dentro del mismo casino.
+
+### 0.3 Flujo de efectivo: ¿cuenta madre propia o banco patrocinador?
+
+**Punto de partida:** el efectivo físico siempre termina depositado en una cuenta bancaria, y el saldo del usuario siempre lo acredita una entidad regulada. La pregunta es **a nombre de quién** está la cuenta donde cae el efectivo y **quién manda el dinero** a la entidad final.
+
+Una restricción que define todo: **el acceso al SPEI, directo o indirecto, es solo para entidades financieras reguladas y supervisadas** [H: reglas de participación indirecta de Banxico, DOF 23-mar-2022]. Una empresa sin licencia puede tener una cuenta bancaria y ordenar transferencias como cualquier cliente, pero **no puede ser "el banco" del usuario**.
+
+#### Opción A. Sin patrocinador: cuenta de liquidación propia, como comisionista y punto de agregadores
+
+```
+1. Usuario ──efectivo──> KIOSCO (la empresa recibe por cuenta de la entidad X elegida)
+2. KIOSCO ──instrucción──> Entidad X (directa) o agregador ──> Entidad X acredita al usuario (T+0, en segundos)
+3. Efectivo ──(traslado de valores T+1 a T+3, o el casino lo toma y paga por SPEI el mismo día)──> CUENTA DE LIQUIDACIÓN de la empresa (banco comercial)
+4. Cierre diario: la empresa paga a cada entidad o agregador, por SPEI, lo recibido a su nombre MENOS la comisión por depósito
+5. Mientras tanto, cada contraparte está cubierta por una GARANTÍA (depósito en garantía o línea) de la empresa
+```
+
+| Pregunta | Respuesta |
+|---|---|
+| ¿Es "cuenta madre propia"? | **Sí, en el sentido de cuenta de liquidación.** Es lo que hacen las cadenas: depositan todo su efectivo en sus cuentas y liquidan a cada banco o fintech [S, práctica de mercado] |
+| ¿Es legal sin licencia? | **Sí, si cada peso se recibió a nombre de una entidad identificada bajo contrato de comisión** (directo o a través del agregador) y la empresa nunca acredita saldos por sí misma [H/P: dictamen]. El dinero en la cuenta de liquidación es dinero de las entidades, no ingreso |
+| ¿A qué cuentas puede abonar el usuario? | Solo a entidades conectadas (directas o vía agregadores). **No** a cualquier CLABE |
+| Capital de trabajo | Garantía por contraparte ≈ 1 a 3 días de volumen; varias contrapartes = varias garantías (negociar topes) |
+| Riesgos | Que el banco donde está la cuenta de liquidación no quiera un cliente que maneja efectivo de casinos ("de-risking"); concentración de garantías |
+
+#### Opción B. Con patrocinador ("cuenta madre" en un banco o IFPE)
+
+```
+1. Usuario ──efectivo──> KIOSCO (la empresa es comisionista del PATROCINADOR)
+2. KIOSCO ──instrucción──> PATROCINADOR
+      a) si el usuario es cliente del patrocinador: abono a su cuenta (T+0)
+      b) si no: el patrocinador ordena un SPEI a la CLABE, tarjeta de débito o celular que el usuario indique (T+0)
+3. Efectivo ──(traslado o casino)──> CUENTA CONCENTRADORA DEL PATROCINADOR (o cuenta de la empresa en el patrocinador)
+4. El patrocinador cobra su comisión y le paga a la empresa la suya (o la empresa retiene la suya)
+5. Garantía única frente al patrocinador
+```
+
+| Pregunta | Respuesta |
+|---|---|
+| ¿Qué resuelve? | **El abono a cualquier banco** (vía SPEI) con una sola relación, y la apertura de cuentas del patrocinador |
+| ¿Qué cuesta? | Dependencia de un patrocinador para ese riel (mitigable con dos); su comisión por SPEI y por manejo de efectivo; sus límites para personas que no son sus clientes [P]; su apetito por casinos [P] |
+| Legal | La guía de la CNBV incluye transferencias de fondos y órdenes de pago entre las operaciones de comisionista [H]; los límites para no clientes están pendientes [P] |
+| Capital de trabajo | Una sola garantía, normalmente más eficiente |
+
+#### Opción C. Cuenta madre propia **con licencia o registro**
+
+| Variante | Qué permite | Qué exige | Plazo [E] |
+|---|---|---|---|
+| **C1. Transmisor de dinero** | Recibir efectivo del usuario a nombre propio y enviarlo a la cuenta que indique, desde la cuenta bancaria de la empresa (como hacen las remesadoras) [H/P: confirmar abono a cuentas de terceros vía SPEI] | Registro ante la CNBV con dictamen técnico de PLD, renovación cada 3 años, oficial de cumplimiento, sistema automatizado, auditoría anual; identificación por montos (datos desde 500 USD, INE desde 3,000 USD, expediente desde 5,000 USD) [H]. No puede emitir fondos de pago electrónico ni abrir cuentas [H] | 9 a 18 meses |
+| **C2. IFPE con SPEI directo (modelo Arcus)** | Todo: cuentas propias, recepción de efectivo (con excepción de la CNBV), SPEI directo [H] | Autorización de la CNBV y del Comité Interinstitucional, capital, gobierno corporativo, PLD, participación en SPEI | 18 a 36 meses |
+
+#### Comparación y recomendación
+
+| Criterio | A. Cuenta de liquidación propia | B. Patrocinador | C1. Transmisor | C2. IFPE |
+|---|---|---|---|---|
+| ¿Abona a cualquier banco? | No (solo conectados) | **Sí** | Sí [P] | Sí |
+| ¿Abre cuentas? | Sí, de las entidades directas | Sí, del patrocinador | No | Sí, propias |
+| Licencia propia | No | No | Registro | Autorización |
+| Dependencia | Repartida entre varias entidades | Concentrada en el patrocinador | Banco donde está la cuenta | Ninguna |
+| Tiempo para operar | 3 a 12 meses | 6 a 12 meses | 9 a 18 meses | 18 a 36 meses |
+| Recomendación | **Inicio** | **Etapa 2** para "cualquier banco" | Evaluar con volumen | Largo plazo |
+
+**Respuesta directa a la pregunta:** **sí se puede operar con cuenta propia** (opción A) como cuenta de liquidación, siempre que la empresa reciba el dinero por cuenta de entidades con contrato. **No se necesita un patrocinador para empezar**, pero **sí se necesita uno (o una licencia propia) para abonar a cualquier banco** sin convenio. Lo que no es viable es la combinación "cuenta propia + sin licencia + abono a cualquier CLABE": eso sería transmisión de dinero sin registro.
+
+**Variante del casino (aplica a A y B):** el casino toma el efectivo del kiosco (lo necesita para su operación) y transfiere el mismo importe por SPEI a la cuenta de liquidación o a la del patrocinador. Elimina el traslado de valores y reduce la garantía a ≈ 1 día. Requiere dictamen sobre la figura del casino [P].
+
+### 0.4 Experiencia del usuario: no bancarizado con KYC completo, bancarizado "como en un cajero"
+
+#### Usuario no bancarizado: alta y KYC completos en el kiosco
+
+| Paso | Qué hace el kiosco | Quién decide | Fundamento o requisito |
+|---|---|---|---|
+| 1. Elección | Muestra las entidades que permiten apertura por comisionista y compara beneficios y límites | Usuario | Neutralidad del catálogo |
+| 2. Documento | Escanea la INE (frente y reverso, OCR, código QR y zona legible por máquina) | — | — |
+| 3. Validación de datos | Consulta la CURP contra RENAPO y los datos de la INE contra el servicio de verificación del INE, a través del proveedor de identidad de la entidad | Entidad | [P: confirmar servicios disponibles para cada entidad] |
+| 4. Biometría | Selfie con prueba de vida y cotejo contra la foto de la INE (o contra la base del INE si la entidad tiene acceso) | Entidad | Nivel 2 Bis remoto exige prueba de vida con tecnología autorizada por la CNBV [H] |
+| 5. Contacto | Celular con código de verificación; correo opcional | — | — |
+| 6. Listas y PLD | Envía los datos para listas de personas bloqueadas, PEP y perfil | Entidad | LIC art. 115 / Ley Fintech art. 58 |
+| 7. Contrato | Muestra el contrato y el aviso de privacidad **de la entidad**; firma electrónica en pantalla | Usuario | LFPDPPP: consentimiento expreso para biometría [H] |
+| 8. Resolución | La entidad aprueba (segundos o minutos) y asigna el nivel de cuenta (2 o 2 Bis) | Entidad | Límites: 3,000 UDIS/mes (nivel 2); 15,000 UDIS con 3,000 en efectivo (2 Bis) [H] |
+| 9. Primer depósito | Recibe el efectivo de inmediato | — | Límite diario vía comisionista de 4,000 UDIS [H/P] |
+| 10. Tarjeta | Tarjeta virtual en la app al instante; la física la envía la entidad (o, en una etapa posterior, un dispensador en el kiosco) | Entidad | — |
+
+**Base legal del alta en kiosco:** la guía de la CNBV incluye la **apertura de cuentas por comisionista, incluso remota con validación de identidad** [H]. El responsable del expediente es la entidad; el kiosco solo captura y transmite [H: LIC art. 46 Bis 2]. Pendiente: si la CNBV considera esta apertura "presencial" (por haber un dispositivo físico) o "no presencial", lo que cambia los requisitos [P].
+
+**Requisitos para que el kiosco sea una estación de KYC aceptada por varias entidades:** cámara de buena resolución con iluminación controlada y anti-suplantación; escáner de documentos; integración con **un proveedor de identidad que ya acepten varias entidades** (o con el proveedor de cada una); consentimiento separado por entidad (los datos capturados para una entidad no se reutilizan para otra sin nuevo consentimiento, LFPDPPP); conservación mínima en el kiosco (nada después del envío).
+
+#### Usuario bancarizado: entrar a su cuenta "como en un cajero"
+
+| Opción | Cómo funciona | Ventajas | Limitaciones | Recomendación |
+|---|---|---|---|---|
+| **1. Código o QR desde la app de su entidad** | El usuario abre su app, elige "depositar en kiosco" y escanea el QR del kiosco o muestra un código; la entidad lo autentica y el kiosco muestra su nombre y límite | Máxima seguridad; la entidad autentica (como exige el régimen de comisionistas de base tecnológica [H]); ningún dato sensible en el kiosco | Cada entidad debe tener la función (directa o vía agregador, como el código de Mercado Pago en tiendas [H]) | **Recomendada** |
+| **2. Número de tarjeta o celular + código de verificación** | El usuario teclea su tarjeta o celular; la entidad le envía un código o confirma en la app | Funciona como el depósito en tienda actual; no requiere desarrollo especial de la entidad | El número de tarjeta pone al kiosco en alcance de PCI DSS | Recomendada como respaldo |
+| **3. Tarjeta + NIP, como un cajero automático** | El kiosco lee la tarjeta y pide NIP a través de una red de cajeros | Experiencia idéntica a un cajero | Exige que el kiosco sea un cajero certificado (adquirente, conmutador, PCI PIN, EMV); en México los cajeros de otras redes normalmente no aceptan **depósitos** a tarjetas de otros bancos [S/P] | **No** para el inicio |
+| **4. Usuario y contraseña de la banca en línea en el kiosco** | — | — | El comisionista no puede almacenar ni manipular factores de autenticación [H]; riesgo de fraude | **No permitida** |
+
+**Conclusión de 0.4:** la experiencia "como cajero" se logra con **la app de la entidad como llave** (opciones 1 y 2), no con tarjeta y NIP. Para el no bancarizado, el kiosco hace todo el KYC y la entidad decide; esto es lo que justifica cobrar un **pago por cuenta nueva** además de la comisión por depósito.
 
 ---
 
@@ -85,7 +236,7 @@ Mientras no haya respuesta, el estudio supone: solo depósitos (cash-in) y apert
 | Apertura de cuentas nuevas | **Sí**: la guía incluye la apertura de cuentas, incluso remota con validación de identidad [H] | Normalmente no (solo depósito) [S] | Solo cuentas del banco patrocinador | No: el transmisor no puede emitir fondos de pago electrónico [H] |
 | ¿El usuario debe tener cuenta previa? | No, si la abre en el kiosco | Sí | Sí (en el banco destino) | Sí (en el destino) |
 | Tiempo estimado | 6 a 12 meses por entidad [E] | 3 a 6 meses [E] | 6 a 12 meses [E] | 9 a 18 meses [E] |
-| Ingreso para la empresa | Pago por operación y por cuenta abierta, negociado | Parte de la comisión del agregador | Pago del banco; comisión al usuario registrada por el banco [P] | Comisión propia al usuario |
+| Ingreso para la empresa | Comisión por depósito cobrada a la entidad y pago por cuenta abierta | Comisión por depósito cobrada al agregador (menor, porque el agregador también cobra) | Comisión por depósito cobrada al patrocinador | Comisión propia al usuario |
 | Riesgo principal | Negociar uno por uno; cada entidad decide sobre casinos | Margen menor; dependencia del agregador | Límites para no clientes; apetito del banco por casinos | Carga de PLD y supervisión; acceso a SPEI vía un banco |
 | Veredicto | **Sí, para 2 a 4 entidades ancla** (abren cuentas y pagan mejor) | **Sí, para el catálogo amplio desde el inicio** | **Evaluar en la etapa 2** | **Opción de mediano plazo** si el volumen lo justifica |
 
@@ -427,13 +578,14 @@ Al no emitir tarjetas, el kiosco se simplifica:
 
 ### 7.1 Ingresos y quién paga
 
+**Cambio de la versión 3:** por indicación de Lucho, el ingreso principal es una **comisión que la empresa cobra a la entidad, procesador o agregador por cada depósito** recibido en el kiosco, igual que una cadena comercial le cobra a Mercado Pago o a un banco. El usuario no paga a la empresa. Esto además es compatible con la regla de que el comisionista no cobra comisiones propias al cliente [H].
+
 | Ingreso | Quién paga | Por qué | Referencia |
 |---|---|---|---|
-| **Pago por depósito** | Entidad o agregador | Le da un punto de depósito en un lugar donde sus clientes traen efectivo | Mercado Pago paga $4 por operación a sus comercios [H] |
-| **Comisión registrada al usuario, compartida** | Usuario, cobrada por la entidad | Conveniencia | En la red PayCash/albo el usuario paga $10 a $12 [H]. El comisionista no puede cobrar comisiones propias [H] |
-| **Pago por cuenta abierta y fondeada** | Entidad | Adquisición de clientes | No hay dato público; estimación [E] |
+| **Comisión por depósito** | Entidad, procesador o agregador | Le damos un punto de depósito donde sus clientes traen efectivo | Ver sección 0.1: lo que las cadenas cobran a bancos y fintechs no es público; referencias públicas de $4 a $20 por depósito [H] |
+| **Pago por cuenta abierta y fondeada** | Entidad | Adquisición de clientes no bancarizados con KYC hecho en el kiosco | No hay dato público [E] |
 | **Pago de servicios y referencias** | Agregador | Uso adicional del kiosco | No modelado |
-| **Reparto a la ubicación** | **Costo** para la empresa (pago al casino) | El casino cede espacio y, en el esquema B, recicla el efectivo | Estimación [E] |
+| **Reparto a la ubicación** | **Costo** para la empresa (pago al casino) | El casino cede espacio y, en el esquema B, recicla el efectivo | [E] |
 
 > **El efectivo de usuarios no es ingreso.** Se registra como recursos de terceros en tránsito, y la garantía es un activo recuperable.
 
@@ -448,8 +600,7 @@ Al no emitir tarjetas, el kiosco se simplifica:
 | Kioscos al cierre de los años 1, 2 y 3 | 10 / 30 / 50 | 20 / 70 / 150 | 40 / 120 / 250 |
 | Depósitos por kiosco al día | 30 | 60 | 110 |
 | Depósito promedio | $1,000 | $1,200 | $1,400 |
-| Pago de la entidad o agregador por depósito | $7 | $9 | $11 |
-| Parte de la comisión al usuario que recibe la empresa | $0 | $5 | $8 |
+| **Comisión cobrada a la entidad por depósito** | **$8** | **$12** | **$15** |
 | Cuentas abiertas y fondeadas por kiosco al mes / pago por cuenta | 20 / $60 | 50 / $90 | 90 / $120 |
 | Reparto al casino (% del ingreso) | 20% (A) · 15% (B) | 15% (A) · 10% (B) | 12% (A) · 7% (B) |
 | Traslado de valores por kiosco al mes | 12,000 (A) · 1,000 (B) | 7,000 (A) · 1,000 (B) | 5,000 (A) · 1,000 (B) |
@@ -463,14 +614,14 @@ Al no emitir tarjetas, el kiosco se simplifica:
 |---|---|---|---|---|---|---|
 | Depósitos | 900 | 900 | 1,800 | 1,800 | 3,300 | 3,300 |
 | Efectivo recibido (**no ingreso**) | 900,000 | 900,000 | 2,160,000 | 2,160,000 | 4,620,000 | 4,620,000 |
-| Ingreso por depósitos | 6,300 | 6,300 | 25,200 | 25,200 | 62,700 | 62,700 |
+| Comisiones por depósito | 7,200 | 7,200 | 21,600 | 21,600 | 49,500 | 49,500 |
 | Ingreso por cuentas | 1,200 | 1,200 | 4,500 | 4,500 | 10,800 | 10,800 |
-| **Ingreso total** | **7,500** | **7,500** | **29,700** | **29,700** | **73,500** | **73,500** |
-| Reparto al casino | 1,500 | 1,125 | 4,455 | 2,970 | 8,820 | 5,145 |
+| **Ingreso total** | **8,400** | **8,400** | **26,100** | **26,100** | **60,300** | **60,300** |
+| Reparto al casino | 1,680 | 1,260 | 3,915 | 2,610 | 7,236 | 4,221 |
 | Otros costos variables | 22,350 | 11,350 | 17,900 | 11,900 | 17,290 | 13,290 |
-| **Contribución por kiosco** | **−16,350** | **−4,975** | **7,345** | **14,830** | **47,390** | **55,065** |
-| Margen por depósito | −$18.17 | −$5.53 | $4.08 | $8.24 | $14.36 | $16.69 |
-| Recuperación del kiosco (meses) | No se recupera | No se recupera | 29 | 14 | 4 | 3 |
+| **Contribución por kiosco** | **−15,630** | **−4,210** | **4,285** | **11,590** | **35,774** | **42,789** |
+| Margen por depósito | −$17.37 | −$4.68 | $2.38 | $6.44 | $10.84 | $12.97 |
+| Recuperación del kiosco (meses) | No se recupera | No se recupera | 49 | 18 | 5 | 4 |
 | Garantía por kiosco (recuperable) | 120,000 | 30,000 | 216,000 | 72,000 | 308,000 | 154,000 |
 
 ### 7.4 Resultados de la empresa (3 años)
@@ -478,27 +629,27 @@ Al no emitir tarjetas, el kiosco se simplifica:
 | Indicador | Conservador A | Conservador B | **Base A** | **Base B** | Optimista A | Optimista B |
 |---|---|---|---|---|---|---|
 | Inversión inicial (desarrollo + legal) | 12.5 M | 12.5 M | 9.5 M | 9.5 M | 8.0 M | 8.0 M |
-| Kioscos para el equilibrio operativo | No alcanza | No alcanza | ≈ 109 | ≈ 54 | ≈ 16 | ≈ 14 |
-| Flujo acumulado años 1 / 2 / 3 (incluye kioscos y garantía), M MXN | −28.6 / −51.5 / −78.2 | −27.0 / −45.3 / −64.8 | −26.7 / −53.7 / −87.7 | −23.0 / −38.7 / −51.2 | −25.1 / −27.5 / +5.6 | −17.1 / +0.2 / +70.3 |
-| Necesidad máxima de financiamiento | > 78 M | > 65 M | ≈ 88 M (≈ 32 M es garantía) | ≈ 51 M (≈ 11 M es garantía) | ≈ 28 M | ≈ 17 M |
-| EBITDA del año 3 | −21.2 M | −14.4 M | +3.6 M | +17.1 M | +133.2 M | +156.2 M |
+| Kioscos para el equilibrio operativo | No alcanza | No alcanza | ≈ 187 | ≈ 69 | ≈ 21 | ≈ 18 |
+| Flujo acumulado años 1 / 2 / 3 (incluye kioscos y garantía), M MXN | −28.6 / −51.2 / −77.6 | −27.0 / −45.1 / −64.2 | −27.1 / −55.7 / −93.7 | −23.3 / −40.8 / −57.7 | −27.9 / −41.4 / −34.2 | −20.0 / −14.5 / +28.3 |
+| Necesidad máxima de financiamiento | > 78 M | > 64 M | ≈ 94 M (≈ 32 M es garantía) | ≈ 58 M (≈ 11 M es garantía) | ≈ 41 M | ≈ 20 M |
+| EBITDA del año 3 | −20.8 M | −13.9 M | −1.9 M | +11.3 M | +98.3 M | +119.4 M |
 
 ### 7.5 Sensibilidad (Base B; contribución por kiosco y kioscos para el equilibrio)
 
 | Variación | Contribución | Kioscos para equilibrio |
 |---|---|---|
-| Base B | $14,830 | 54 |
-| Depósitos por día −25% | $10,510 | 76 |
-| Pago por depósito −25% | $11,185 | 72 |
-| Sin parte de la comisión al usuario | $6,730 | 119 |
-| Pago por cuenta −50% | $12,805 | 62 |
-| Reparto al casino al doble (20%) | $11,860 | 67 |
-| Traslado propio en lugar de reciclaje (Base A) | $7,345 | 109 |
+| Base B ($12 por depósito) | $11,590 | 69 |
+| Comisión por depósito $15 (+25%) | $16,450 | 49 |
+| Comisión por depósito $9 (−25%) | $6,730 | 119 |
+| Depósitos por día −25% | $8,080 | 99 |
+| Pago por cuenta −50% | $9,565 | 84 |
+| Reparto al casino al doble (20%) | $8,980 | 89 |
+| Traslado propio en lugar de reciclaje (Base A) | $4,285 | 187 |
 
 **Lectura:**
-- Para que la red funcione con traslado propio hacen falta **≈ $17 de ingreso neto por depósito** o **≈ 85 depósitos diarios por kiosco** [E]. Las redes de tiendas funcionan con $4 porque no tienen traslado ni inversión en hardware.
-- **El reciclaje del efectivo por el casino es la palanca que convierte el proyecto en viable** en el escenario base, porque elimina la mayor parte del traslado y reduce la garantía. Por eso el casino no es solo una ubicación: es la contraparte que "absorbe" el efectivo, como lo hace un OXXO.
-- La posibilidad de compartir una comisión cobrada al usuario pesa mucho. Si las entidades no la permiten, el modelo depende del volumen.
+- **La comisión por depósito es la variable más sensible.** Cada peso adicional por depósito vale ≈ $1,600 de contribución mensual por kiosco. Con traslado de valores propio, la red necesita **≈ $18 por depósito** para equilibrarse con 60 kioscos [E]; eso está en el rango alto de lo que hoy pagan los usuarios en tiendas ($8 a $20) y muy por encima de los $4 que Mercado Pago paga a tienditas [H].
+- **El reciclaje del efectivo por el casino sigue siendo la palanca principal**: con $12 por depósito, el equilibrio baja de ≈ 187 a ≈ 69 kioscos.
+- Para negociar arriba de $12 por depósito, el argumento de valor ante las entidades es lo que una tienda no da: **cuentas nuevas con KYC completo** (sección 0.4), ubicación donde hay mucho efectivo, y depósitos promedio altos.
 
 ---
 
@@ -550,7 +701,7 @@ Al no emitir tarjetas, el kiosco se simplifica:
 | Riesgo | Probabilidad / impacto | Medida |
 |---|---|---|
 | Entidades y agregadores rechazan puntos en casinos | Alta / crítico | Sondeo amplio; paquete de controles de PLD; plan B de ubicaciones fuera de casinos |
-| Ingreso por depósito insuficiente (benchmark de $4) | Alta / alto | Reciclaje con el casino; pago por cuenta abierta; comisión compartida; volumen mínimo en contrato |
+| Ingreso por depósito insuficiente (benchmark de $4) | Alta / alto | Reciclaje con el casino; pago por cuenta abierta; comisión por depósito escalonada por volumen; volumen mínimo en contrato |
 | La CNBV no acepta kioscos desatendidos como comisionistas | Media / alto | Dictamen; consulta a través de la entidad; el casino como comisionista administrado [P] |
 | Uso de la red para lavado (mulas, fraccionamiento) | Media / crítico | Validación de titular, límites, monitoreo compartido, sin retiros en el MVP |
 | Concentración en un solo agregador | Media / medio | Al menos 2 agregadores + entidades directas |
@@ -565,7 +716,7 @@ Al no emitir tarjetas, el kiosco se simplifica:
 1. Vías de inicio: agregadores + entidades directas (recomendado) o también SPEI desde el día uno.
 2. Figura legal (según el dictamen) y si se buscará el registro de transmisor de dinero.
 3. Esquema de efectivo: traslado propio o reciclaje con el casino.
-4. Política de comisiones al usuario (gratis frente a comisión registrada y compartida).
+4. Lista de precios a entidades: comisión por depósito (fija o escalonada), pago por cuenta nueva y trato especial a Mercado Pago (directo o vía tapi).
 5. Si los retiros (cash-out) entran en la hoja de ruta.
 6. Comprar frente a adaptar el kiosco.
 7. Financiamiento por etapas y quién aporta la garantía de liquidación.
@@ -620,6 +771,20 @@ Presupuesto de los 90 días: **$1.2 a $2.0 M MXN** [E].
 - UnoTV, cifras de la AIEJA: https://www.unotv.com/negocios/cuanto-generan-los-casinos-y-que-revisan-hoy-las-autoridades/
 - La Crónica, traslado de valores (ago-2026): https://www.cronica.com.mx/negocios/2026/08/04/clientes-reportan-presuntos-retrasos-en-la-entrega-de-efectivo-resguardado-por-servicio-panamericano/
 
+**Fuentes agregadas en la versión 3**
+- El Imparcial, comisiones en corresponsales bancarios (28-feb-2026): https://www.elimparcial.com/dinero/2026/02/27/comisiones-en-corresponsales-bancarios-cuanto-cobran-oxxo-farmacias-y-supermercados-por-usar-sus-servicios/
+- Descubre.vc, depósitos en OXXO para bancos y fintechs (mar-2026): https://www.descubre.vc/noticia/gu-a-de-dep-sitos-bancarios-y-para-fintechs-en-tiendas-oxxo-2026-03-16
+- Mexico Business News, entrevista a tapi (22-jul-2025): https://mexicobusiness.news/finance/news/tapi-infrastructure-behind-digital-payment-shift
+- tapi, página de cash-in/cash-out: https://tapi.la/cash-in-cash-out/
+- El Cronista, alianza Mercado Pago y tapi (13-feb-2025): https://www.cronista.com/mexico/finanzas-economia/bomba-en-el-mundo-fintech-mercado-pago-y-tapi-se-unen-para-cambiarlo-todo-en-mexico
+- Latam Fintech, alianza tapi y PESPay (12-feb-2024): https://www.latamfintech.co/articles/paytech-tapi-sella-alianza-con-pesp-para-incorporar-cash-in-y-cash-out-impulsando-los-metodos-de-pagos-en-mexico
+- DPL News, Arcus (27-may-2025): https://dplnews.com/?p=276055
+- Cheqpay, documentación de PayCash: https://docs.cheqpay.mx/features/paycash-payments
+- Rapyd, Mexico Cash Network: https://docs.rapyd.net/es/red-de-pago-en-efectivo-de-m%C3%A9xico.html
+- Mexico Business News, reglas de participación indirecta en SPEI (Banxico, DOF 23-mar-2022): https://mexicobusiness.news/professional-services/news/banxico-publishes-rules-regarding-indirect-participation-services
+- Yastás como administrador de comisionistas (vLex): https://vlex.com.mx/vid/operara-administrador-comisionistas-bancarios-424155166
+- Kushki, pagos en efectivo: https://kushki.com/en/payments/cash
+
 ## Anexo B. Pendientes de validación
 
 1. Lista de sectores de la SHCP (art. 13 de la Ley de Economía Digital) y texto oficial del DOF.
@@ -632,3 +797,8 @@ Presupuesto de los 90 días: **$1.2 a $2.0 M MXN** [E].
 8. Qué IFPE tienen excepción de la CNBV para recibir efectivo.
 9. Figura regulatoria vigente de Mercado Pago y de otros neobancos (las licencias bancarias estaban en trámite a dic-2025).
 10. Todos los precios: pagos por depósito y por cuenta, costos de agregadores, kioscos, traslado e identidad.
+11. Comisión que cobran Soriana, Circle K y otras cadenas a Mercado Pago y a otras fintechs (contratos privados, no públicos).
+12. A qué red se refiere "Cashnet" (no se encontró un operador con ese nombre en México).
+13. Figura legal de PESPay y de los puntos de PayCash, y si la licencia de IFPE de Arcus pasó a tapi.
+14. Servicios de verificación del INE y RENAPO disponibles para cada entidad, y si la apertura en kiosco cuenta como presencial o no presencial.
+15. Si las redes de cajeros en México permiten depósitos a tarjetas de otros bancos.
