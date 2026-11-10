@@ -140,7 +140,7 @@ describe("entregas", () => {
     expect(t.remitente.nombre).toBe("PRUEBAS IT");
   });
 
-  it("flujo directo: iniciar, confirmar con foto y firma; venta queda Entregado", async () => {
+  it("flujo directo: iniciar, confirmar con foto y firma; la venta no se toca (su estado lo calcula Odoo al validar almacén)", async () => {
     const r1 = await llamar("POST", "/v1/eventos", { uuid: uuid(), tipo: "iniciar_traslado", tarea: { tipo: "entrega", id: 9001 }, fecha_dispositivo: "2026-11-10T16:00:00Z" }, token);
     expect(r1.body).toMatchObject({ ok: true, estado: "en_traslado" });
     const sinFirma = await llamar("POST", "/v1/eventos", { uuid: uuid(), tipo: "entregado_cliente", tarea: { tipo: "entrega", id: 9001 }, fecha_dispositivo: "2026-11-10T17:00:00Z", datos: { recibe_nombre: "Ana" }, adjuntos: [{ rol: "foto", base64: IMG }] }, token);
@@ -156,7 +156,8 @@ describe("entregas", () => {
     expect(p.signature).toBe(IMG);
     expect(p.x_app_recibe_nombre).toBe("Ana López");
     expect(p.state).toBe("assigned"); // no se valida inventario
-    expect(o.get("sale.order", 29761)!.x_studio_estado_de_la_entrega).toBe("partial"); // la 9003 sigue pendiente
+    expect(o.get("sale.order", 29761)!.x_studio_estado_de_la_entrega).toBe("pending");
+    expect(o.llamadas.some((c) => c.model === "sale.order" && c.method === "write")).toBe(false);
     expect(o.tabla("ir.attachment").filter((a) => a.res_id === 9001)).toHaveLength(2);
     const ev = o.tabla("x_app_evento").filter((e) => e.x_res_id === 9001);
     expect(ev.map((e) => e.x_resultado)).toEqual(["aplicado", "aplicado"]);

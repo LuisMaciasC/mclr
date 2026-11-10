@@ -309,7 +309,10 @@ async function notaChatter(odoo: Odoo, modelo: string, ev: Evento, op: Operador,
   add("Guía", d.guia);
   if (typeof d.precio === "number") add("Precio pagado", `${d.precio.toFixed(2)} ${d.moneda || ""}`);
   add("Factura paquetería", d.factura);
-  if (d.fecha_entrega) add("Entregado a paquetería", horaLocal(d.fecha_entrega));
+  if (d.fecha_entrega) {
+    const etiqueta = ev.tipo === "entregado_paqueteria" ? "Entregado a paquetería" : ev.tipo === "finalizar" ? "Finalizado" : "Entregado al cliente";
+    add(etiqueta, horaLocal(d.fecha_entrega));
+  }
   add("Motivo", d.motivo);
   add("Observaciones", d.observaciones);
   add("Trabajo realizado", d.trabajo_realizado);
@@ -323,6 +326,7 @@ async function notaChatter(odoo: Odoo, modelo: string, ev: Evento, op: Operador,
     : `📱 App de campo · <b>${esc(op.nombre)}</b> intentó «${esc(ETIQUETAS[ev.tipo])}», no se aplicó: ${esc(r.mensaje)}`;
   await odoo.call(modelo, "message_post", [[ev.tarea.id]], {
     body: `<p>${titulo}</p><ul>${filas.join("")}</ul><p><small>Folio ${esc(ev.uuid)}</small></p>`,
+    body_is_html: true, // Odoo 18 escapa el texto si no se indica que es HTML (ya viene escapado con esc())
     message_type: "comment",
     subtype_xmlid: "mail.mt_note",
     attachment_ids: adjuntos,
@@ -386,20 +390,7 @@ async function aplicarEntrega(odoo: Odoo, op: Operador, ev: Evento, reanudando =
   }
   vals.x_app_estado = nuevo;
   await odoo.write("stock.picking", [p.id], vals);
-  if (nuevo === "entregado_cliente" && p.sale_id) await actualizarVenta(odoo, p.sale_id[0]);
   return { anterior, nuevo };
-}
-
-/** Pone «Estado de la entrega» de la venta en Entregado / Parcial según sus entregas (campo Studio existente). */
-async function actualizarVenta(odoo: Odoo, saleId: number): Promise<void> {
-  const hermanas = await odoo.searchRead(
-    "stock.picking",
-    [["sale_id", "=", saleId], ["picking_type_code", "=", "outgoing"], ["state", "!=", "cancel"]],
-    ["state", "x_app_estado"],
-  );
-  const listas = hermanas.filter((h: any) => h.state === "done" || h.x_app_estado === "entregado_cliente").length;
-  const valor = listas === hermanas.length ? "full" : listas > 0 ? "partial" : "pending";
-  await odoo.write("sale.order", [saleId], { x_studio_estado_de_la_entrega: valor });
 }
 
 // ---------- servicios ----------
