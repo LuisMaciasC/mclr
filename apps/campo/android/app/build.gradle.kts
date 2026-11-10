@@ -6,7 +6,7 @@ plugins {
     id("com.google.devtools.ksp")
 }
 
-val puenteUrl: String = (project.findProperty("puenteUrl") as String?) ?: "https://app-campo-puente.REEMPLAZAR.workers.dev"
+val puenteUrl: String = (project.findProperty("puenteUrl") as String?) ?: "https://app-campo-puente.bering-campo.workers.dev"
 val versionCodeCi: Int = (System.getenv("GITHUB_RUN_NUMBER") ?: "1").toInt()
 
 android {
