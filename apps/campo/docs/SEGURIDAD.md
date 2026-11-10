@@ -37,3 +37,9 @@ Solo cinco operaciones fijas del puente (iniciar sesión, cambiar su contraseña
 ## Pruebas automáticas de seguridad
 
 `npx vitest run` en `apps/campo/puente` incluye: token alterado, ficha desactivada, bloqueo por intentos, comodines en el usuario, tarea ajena sin guardar nada, archivo que no es foto, y perfil que no corresponde.
+
+## Pendientes antes de producción (no omitir)
+
+- [ ] **Cambiar la llave del puente a un usuario sin permisos de administrador.** Hoy (10-nov-2026) el puente usa la llave de un usuario administrador, aceptado por Lucho solo para las pruebas en PRUEBAS IT. Crear la llave nueva para un usuario interno existente con permisos de Inventario, Proyecto y Empleados, con vencimiento de 90 días; reemplazar `ODOO_LOGIN` y `ODOO_API_KEY` en Cloudflare y borrar la llave de administrador en Odoo.
+- [ ] Firmar el APK con una llave privada (secretos de GitHub) en lugar de `firma/pruebas.jks`.
+- [ ] Verificación en dos pasos activa en la cuenta de Cloudflare.
