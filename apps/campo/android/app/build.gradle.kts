@@ -26,11 +26,13 @@ android {
     signingConfigs {
         create("campo") {
             // En CI se usan secretos si existen; si no, la llave de pruebas del repositorio (solo para PRUEBAS IT).
-            val ks = System.getenv("CAMPO_KEYSTORE_PATH") ?: rootProject.file("firma/pruebas.jks").path
-            storeFile = file(ks)
-            storePassword = System.getenv("CAMPO_KEYSTORE_PASSWORD") ?: "pruebas-campo"
-            keyAlias = System.getenv("CAMPO_KEY_ALIAS") ?: "campo"
-            keyPassword = System.getenv("CAMPO_KEY_PASSWORD") ?: "pruebas-campo"
+            // Un secreto no configurado llega como texto vacío: se trata igual que ausente.
+            fun env(n: String): String? = System.getenv(n)?.ifBlank { null }
+            val propia = env("CAMPO_KEYSTORE_PATH")
+            storeFile = file(propia ?: rootProject.file("firma/pruebas.jks").path)
+            storePassword = if (propia != null) env("CAMPO_KEYSTORE_PASSWORD") else "pruebas-campo"
+            keyAlias = if (propia != null) env("CAMPO_KEY_ALIAS") else "campo"
+            keyPassword = if (propia != null) env("CAMPO_KEY_PASSWORD") else "pruebas-campo"
         }
     }
 
