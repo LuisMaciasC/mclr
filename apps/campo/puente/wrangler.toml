@@ -1,0 +1,13 @@
+# Cloudflare Workers (plan gratuito). Secretos: se cargan con `wrangler secret put`, nunca en este archivo.
+#   wrangler secret put ODOO_API_KEY
+#   wrangler secret put TOKEN_SECRET
+name = "app-campo-puente"
+main = "src/index.ts"
+compatibility_date = "2025-05-01"
+
+[vars]
+ODOO_URL = "https://bering.odoo.com"
+ODOO_DB = "REEMPLAZAR_NOMBRE_DE_BASE"
+ODOO_LOGIN = "REEMPLAZAR_USUARIO_INTEGRACION"
+PBKDF2_ITER = "20000"
+SESION_HORAS = "12"
