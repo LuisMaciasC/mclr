@@ -124,7 +124,9 @@ export async function login(
 ): Promise<ResultadoLogin> {
   const u = (usuario || "").trim().toLowerCase();
   if (!u || !password) throw new AuthError("Escribe usuario y contraseña", "DATOS_INCOMPLETOS");
-  const emps = await odoo.searchRead("hr.employee", [["x_app_usuario", "=ilike", u], ["x_app_activo", "=", true]], CAMPOS_EMP, {
+  // =ilike trata % y _ como comodines: se escapan para que solo coincida el usuario exacto.
+  const patron = u.replace(/[\\%_]/g, (c) => "\\" + c);
+  const emps = await odoo.searchRead("hr.employee", [["x_app_usuario", "=ilike", patron], ["x_app_activo", "=", true]], CAMPOS_EMP, {
     limit: 2,
   });
   if (emps.length !== 1) throw new AuthError("Usuario o contraseña incorrectos", "CREDENCIALES");
@@ -136,7 +138,7 @@ export async function login(
   let valido = false;
   if (e.x_app_password_hash) {
     valido = await verificarPassword(password, e.x_app_password_hash);
-  } else if (e.x_app_password_temporal && e.x_app_password_temporal === password) {
+  } else if (e.x_app_password_temporal && igualesTiempoConstante(enc.encode(e.x_app_password_temporal), enc.encode(password))) {
     valido = true;
     debeCambiar = true; // primera vez: contraseña temporal que puso la oficina
   }

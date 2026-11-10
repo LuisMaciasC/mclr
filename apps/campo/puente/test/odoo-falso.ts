@@ -40,7 +40,7 @@ export class OdooFalso {
   }
 
   private relacion(model: string, campo: string): string | null {
-    const mapa: Record<string, string> = { stage_id: "project.task.type" };
+    const mapa: Record<string, string> = { stage_id: "project.task.type", mail_message_id: "mail.message", field_id: "ir.model.fields" };
     return mapa[campo] || null;
   }
 
@@ -48,8 +48,10 @@ export class OdooFalso {
     const pila: boolean[] = [];
     for (let i = dominio.length - 1; i >= 0; i--) {
       const t = dominio[i];
-      if (t === "|") pila.push(pila.pop()! || pila.pop()!);
-      else if (t === "&") pila.push(pila.pop()! && pila.pop()!);
+      if (t === "|" || t === "&") {
+        const a = pila.pop()!, b = pila.pop()!; // sacar ambos siempre (sin cortocircuito)
+        pila.push(t === "|" ? a || b : a && b);
+      }
       else if (t === "!") pila.push(!pila.pop()!);
       else pila.push(this.hoja(model, r, t));
     }
@@ -70,10 +72,18 @@ export class OdooFalso {
       case ">=":
         return v >= val;
       case "=ilike":
-        return String(v ?? "").toLowerCase() === String(val).toLowerCase();
       case "=like": {
-        const re = new RegExp("^" + String(val).replace(/[.*+?^${}()|[\]\\]/g, "\\$&").replace(/%/g, ".*") + "$");
-        return re.test(String(v ?? ""));
+        // Como en PostgreSQL: % = cualquier texto, _ = un carácter, \ escapa el siguiente.
+        let re = "";
+        const p = String(val);
+        for (let i = 0; i < p.length; i++) {
+          const c = p[i];
+          if (c === "\\" && i + 1 < p.length) re += p[++i].replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+          else if (c === "%") re += ".*";
+          else if (c === "_") re += ".";
+          else re += c.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+        }
+        return new RegExp("^" + re + "$", op === "=ilike" ? "i" : "").test(String(v ?? ""));
       }
       default:
         throw new Error(`operador no soportado en prueba: ${op}`);

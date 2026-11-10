@@ -94,6 +94,8 @@ export function validarForma(ev: Evento): void {
   for (const a of adj) {
     req(["foto", "firma", "comprobante"].includes(a.rol), "Tipo de archivo inválido.");
     req(typeof a.base64 === "string" && a.base64.length > 100 && a.base64.length < MAX_B64, "Archivo vacío o demasiado grande.");
+    // Solo imágenes reales: JPEG (/9j/) o PNG (iVBORw0KGgo). Evita subir HTML u otros archivos disfrazados.
+    req(a.base64.startsWith("/9j/") || a.base64.startsWith("iVBORw0KGgo"), "Solo se aceptan fotos JPEG o PNG.", "ARCHIVO_INVALIDO");
   }
   const d = ev.datos || {};
   const cuenta = (rol: string) => adj.filter((a) => a.rol === rol).length;
@@ -153,6 +155,32 @@ function horaLocal(iso: string): string {
 }
 
 const MODELO = { entrega: "stock.picking", servicio: "project.task" } as const;
+const CAMPO_ASIGNADO = { entrega: "x_app_transportista_id", servicio: "x_app_tecnico_id" } as const;
+
+/**
+ * La persona solo puede registrar algo (ni siquiera fotos) en tareas que tiene o tuvo asignadas.
+ * "Tuvo" se comprueba con el historial de cambios de Odoo (mail.tracking.value), así una tarea
+ * reasignada mientras estaba sin señal conserva sus evidencias, pero nadie puede escribir en tareas ajenas.
+ */
+async function verificarVinculo(odoo: Odoo, op: Operador, ev: Evento): Promise<void> {
+  const modelo = MODELO[ev.tarea.tipo];
+  const campo = CAMPO_ASIGNADO[ev.tarea.tipo];
+  const [r] = await odoo.read(modelo, [ev.tarea.id], [campo]);
+  if (!r) throw new EventoError("La tarea no existe.", "NO_EXISTE", 404);
+  if (r[campo] && r[campo][0] === op.id) return;
+  const historial = await odoo.searchRead(
+    "mail.tracking.value",
+    [
+      ["mail_message_id.model", "=", modelo],
+      ["mail_message_id.res_id", "=", ev.tarea.id],
+      ["field_id.name", "=", campo],
+      "|", ["old_value_integer", "=", op.id], ["new_value_integer", "=", op.id],
+    ],
+    ["id"],
+    { limit: 1 },
+  );
+  if (!historial.length) throw new EventoError("Esta tarea nunca estuvo asignada a ti.", "SIN_ACCESO", 403);
+}
 
 // ---------- proceso principal ----------
 
@@ -160,6 +188,7 @@ export async function procesarEvento(odoo: Odoo, op: Operador, ev: Evento): Prom
   validarForma(ev);
   if (op.rol === "transportista") req(ev.tarea.tipo === "entrega", "Tu perfil solo maneja entregas.", "PERFIL");
   if (op.rol === "tecnico") req(ev.tarea.tipo === "servicio", "Tu perfil solo maneja servicios.", "PERFIL");
+  await verificarVinculo(odoo, op, ev);
 
   // 1) ¿Ya existe este folio?
   const previos = await odoo.searchRead("x_app_evento", [["x_uuid", "=", ev.uuid]], ["id", "x_resultado", "x_respuesta", "x_operador_id"], {

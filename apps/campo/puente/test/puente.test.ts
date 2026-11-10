@@ -80,6 +80,14 @@ describe("sesión", () => {
     expect(JSON.stringify(o.db["hr.employee"])).not.toContain("NuevaClave9");
   });
 
+  it("los comodines % y _ en el usuario no permiten entrar con otra cuenta", async () => {
+    for (const u of ["%", "chofer%", "chofer_", "_ecnico1"]) {
+      const r = await llamar("POST", "/v1/sesion", { usuario: u, password: "Segura123" });
+      expect(r.status).toBe(401);
+    }
+    expect(o.get("hr.employee", 503)!.x_app_intentos || 0).toBe(0);
+  });
+
   it("un token alterado no sirve", async () => {
     const t = await entrar("tecnico1", "Segura123");
     const r = await llamar("GET", "/v1/tareas", undefined, t.slice(0, -2) + "xx");
@@ -184,13 +192,34 @@ describe("entregas", () => {
     expect(o.get("sale.order", 29761)!.x_studio_estado_de_la_entrega).toBe("pending");
   });
 
-  it("entrega de otra persona: se rechaza pero las evidencias quedan en Odoo", async () => {
+  it("entrega reasignada a otra persona: se rechaza pero las evidencias quedan en Odoo", async () => {
+    // Historial de Odoo: la entrega 9003 era de chofer1 (501) y la oficina la pasó a 503.
+    o.agregar("mail.message", { id: 1, model: "stock.picking", res_id: 9003 });
+    o.agregar("ir.model.fields", { id: 1, name: "x_app_transportista_id" });
+    o.agregar("mail.tracking.value", { id: 1, mail_message_id: [1, "msg"], field_id: [1, "campo"], old_value_integer: 501, new_value_integer: 503 });
     const r = await llamar("POST", "/v1/eventos", { uuid: uuid(), tipo: "no_entregado", tarea: { tipo: "entrega", id: 9003 }, fecha_dispositivo: "2026-11-10T18:00:00Z", datos: { motivo: "x" }, adjuntos: [{ rol: "foto", base64: IMG }] }, token);
     expect(r.status).toBe(409);
     expect(r.body).toMatchObject({ resultado: "rechazado", codigo: "REASIGNADA" });
     expect(o.get("stock.picking", 9003)!.x_app_estado).toBe("asignado");
     expect(o.tabla("ir.attachment")).toHaveLength(1);
     expect(o.tabla("x_app_evento")[0].x_resultado).toBe("rechazado");
+  });
+
+  it("tarea que nunca fue suya: no se guarda nada, ni fotos ni bitácora", async () => {
+    const r = await llamar("POST", "/v1/eventos", { uuid: uuid(), tipo: "no_entregado", tarea: { tipo: "entrega", id: 9003 }, fecha_dispositivo: "2026-11-10T18:00:00Z", datos: { motivo: "x" }, adjuntos: [{ rol: "foto", base64: IMG }] }, token);
+    expect(r.status).toBe(403);
+    expect(r.body.codigo).toBe("SIN_ACCESO");
+    expect(o.tabla("ir.attachment")).toHaveLength(0);
+    expect(o.tabla("x_app_evento")).toHaveLength(0);
+    expect(o.mensajes).toHaveLength(0);
+  });
+
+  it("solo acepta fotos JPEG o PNG", async () => {
+    const html = btoa("<html><script>alert(1)</script></html>".repeat(10));
+    const r = await llamar("POST", "/v1/eventos", { uuid: uuid(), tipo: "no_entregado", tarea: { tipo: "entrega", id: 9001 }, fecha_dispositivo: "2026-11-10T18:00:00Z", datos: { motivo: "x" }, adjuntos: [{ rol: "foto", base64: html }] }, token);
+    expect(r.status).toBe(400);
+    expect(r.body.codigo).toBe("ARCHIVO_INVALIDO");
+    expect(o.tabla("ir.attachment")).toHaveLength(0);
   });
 
   it("un transportista no puede mover servicios", async () => {
