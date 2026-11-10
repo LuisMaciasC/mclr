@@ -1,0 +1,63 @@
+name: App de campo
+
+on:
+  push:
+    paths:
+      - "apps/campo/**"
+      - ".github/workflows/app-campo.yml"
+  workflow_dispatch:
+
+jobs:
+  puente:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: apps/campo/puente
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: npm ci || npm install
+      - run: npx tsc --noEmit
+      - run: npx vitest run
+
+  android:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: apps/campo/android
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 17
+      - uses: gradle/actions/setup-gradle@v4
+      - name: Pruebas unitarias
+        run: ./gradlew --no-daemon testDebugUnitTest
+      - name: Compilar APK
+        env:
+          CAMPO_KEYSTORE_B64: ${{ secrets.CAMPO_KEYSTORE_B64 }}
+          CAMPO_KEYSTORE_PASSWORD: ${{ secrets.CAMPO_KEYSTORE_PASSWORD }}
+          CAMPO_KEY_ALIAS: ${{ secrets.CAMPO_KEY_ALIAS }}
+          CAMPO_KEY_PASSWORD: ${{ secrets.CAMPO_KEY_PASSWORD }}
+          CAMPO_PUENTE_URL: ${{ vars.CAMPO_PUENTE_URL }}
+        run: |
+          if [ -n "$CAMPO_KEYSTORE_B64" ]; then
+            echo "$CAMPO_KEYSTORE_B64" | base64 -d > "$RUNNER_TEMP/campo.jks"
+            export CAMPO_KEYSTORE_PATH="$RUNNER_TEMP/campo.jks"
+          fi
+          ARGS=""
+          if [ -n "$CAMPO_PUENTE_URL" ]; then ARGS="-PpuenteUrl=$CAMPO_PUENTE_URL"; fi
+          ./gradlew --no-daemon assembleRelease $ARGS
+          cp app/build/outputs/apk/release/app-release.apk "$RUNNER_TEMP/campo-${{ github.run_number }}.apk"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: campo-apk-${{ github.run_number }}
+          path: ${{ runner.temp }}/campo-*.apk
+      - uses: actions/upload-artifact@v4
+        if: failure()
+        with:
+          name: reportes-pruebas
+          path: apps/campo/android/app/build/reports
