@@ -54,7 +54,7 @@ async function sesion(req: Request, env: Env, odoo: Odoo, permitirCambio = false
   return { t, op: { id: t.sub, nombre: t.nom, rol: t.rol, empresa: null } };
 }
 
-export async function manejar(req: Request, env: Env, fetchImpl: FetchLike = fetch): Promise<Response> {
+export async function manejar(req: Request, env: Env, fetchImpl: FetchLike = (i, init) => fetch(i, init)): Promise<Response> {
   const url = new URL(req.url);
   const ruta = `${req.method} ${url.pathname.replace(/\/+$/, "")}`;
   const faltan = ["ODOO_URL", "ODOO_DB", "ODOO_LOGIN", "ODOO_API_KEY", "TOKEN_SECRET"].filter((k) => !(env as any)[k]);

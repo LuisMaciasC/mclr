@@ -23,10 +23,11 @@ export class Odoo {
   private companias: number[] | null = null;
   private cola: Promise<unknown> = Promise.resolve();
 
-  constructor(private readonly env: OdooEnv, private readonly fetchImpl: FetchLike = fetch) {}
+  constructor(private readonly env: OdooEnv, private readonly fetchImpl: FetchLike = (i, init) => fetch(i, init)) {}
 
   private async rpc(service: string, method: string, args: unknown[]): Promise<any> {
-    const resp = await this.fetchImpl(`${this.env.ODOO_URL.replace(/\/$/, "")}/jsonrpc`, {
+    const f = this.fetchImpl; // en Workers, fetch no se puede invocar como método de otro objeto ("Illegal invocation")
+    const resp = await f(`${this.env.ODOO_URL.replace(/\/$/, "")}/jsonrpc`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ jsonrpc: "2.0", method: "call", id: Date.now(), params: { service, method, args } }),
