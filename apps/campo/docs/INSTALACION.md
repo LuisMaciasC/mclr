@@ -15,9 +15,10 @@ npx wrangler login
 # Datos de Odoo (no van en el código ni en el APK):
 npx wrangler secret put ODOO_API_KEY     # llave API del usuario de integración
 npx wrangler secret put TOKEN_SECRET     # texto aleatorio largo: openssl rand -base64 48
+npx wrangler secret put ODOO_LOGIN       # correo del usuario de integración
 ```
 
-Edita `wrangler.toml`: `ODOO_DB` (nombre de la base) y `ODOO_LOGIN` (correo del usuario de integración). Luego:
+La base (`ODOO_DB = "bering"`) ya está en `wrangler.toml`. Luego:
 
 ```bash
 npx wrangler deploy
