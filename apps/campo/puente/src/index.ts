@@ -13,8 +13,13 @@ import { EventoError, procesarEvento } from "./eventos";
 
 export const VERSION = "1.0.0";
 
+interface Limitador {
+  limit(o: { key: string }): Promise<{ success: boolean }>;
+}
+
 export interface Env extends OdooEnv {
   TOKEN_SECRET: string; // secreto para firmar sesiones (32+ caracteres aleatorios)
+  LIMITE_SESION?: Limitador; // limitador gratuito de Cloudflare: intentos de inicio de sesión por IP
   PBKDF2_ITER?: string;
   SESION_HORAS?: string;
 }
@@ -56,6 +61,13 @@ export async function manejar(req: Request, env: Env, fetchImpl: FetchLike = fet
   if (faltan.length) return error(500, "CONFIGURACION", `Faltan variables del puente: ${faltan.join(", ")}`);
   const odoo = new Odoo(env, fetchImpl);
 
+  // Freno a ataques de fuerza bruta: pocas peticiones de sesión por minuto desde una misma IP.
+  if (env.LIMITE_SESION && req.method === "POST" && url.pathname.startsWith("/v1/sesion")) {
+    const ip = req.headers.get("CF-Connecting-IP") || "sin-ip";
+    const { success } = await env.LIMITE_SESION.limit({ key: ip });
+    if (!success) return error(429, "DEMASIADOS_INTENTOS", "Demasiados intentos desde esta conexión. Espera un minuto.", true);
+  }
+
   try {
     switch (ruta) {
       case "GET /v1/salud":
@@ -71,8 +83,9 @@ export async function manejar(req: Request, env: Env, fetchImpl: FetchLike = fet
         const { t } = await sesion(req, env, odoo, true);
         const b = await cuerpo(req);
         await cambiarPassword(odoo, t.sub, b.password_nueva, Number(env.PBKDF2_ITER || 20000));
-        // Nueva sesión sin la marca de "debe cambiar"
-        const r = await login(odoo, env.TOKEN_SECRET, b.usuario, b.password_nueva, Number(env.SESION_HORAS || 12));
+        // Nueva sesión sin la marca de "debe cambiar", con el usuario de la sesión (nunca el que mande el teléfono).
+        const [emp] = await odoo.read("hr.employee", [t.sub], ["x_app_usuario"]);
+        const r = await login(odoo, env.TOKEN_SECRET, emp.x_app_usuario, b.password_nueva, Number(env.SESION_HORAS || 12));
         return json({ ok: true, ...r });
       }
 

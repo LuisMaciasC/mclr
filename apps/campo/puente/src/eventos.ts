@@ -276,7 +276,8 @@ async function subirAdjuntos(odoo: Odoo, modelo: string, ev: Evento): Promise<nu
   const ids: number[] = [];
   for (let i = 0; i < adj.length; i++) {
     const a = adj[i];
-    const ext = (a.mimetype || "image/jpeg").includes("png") ? "png" : "jpg";
+    // El tipo lo decide el contenido, nunca lo que diga el teléfono.
+    const ext = a.base64.startsWith("iVBORw0KGgo") ? "png" : "jpg";
     const nombre = `${prefijo}-${a.rol}-${i + 1}.${ext}`;
     const ya = porNombre.get(nombre);
     if (ya) {
@@ -289,7 +290,7 @@ async function subirAdjuntos(odoo: Odoo, modelo: string, ev: Evento): Promise<nu
         datas: a.base64,
         res_model: modelo,
         res_id: ev.tarea.id,
-        mimetype: a.mimetype || (ext === "png" ? "image/png" : "image/jpeg"),
+        mimetype: ext === "png" ? "image/png" : "image/jpeg",
         description: `${ETIQUETAS[ev.tipo]} (app de campo)`,
       }),
     );

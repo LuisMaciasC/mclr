@@ -11,3 +11,10 @@ ODOO_URL = "https://bering.odoo.com"
 ODOO_DB = "bering"
 PBKDF2_ITER = "20000"
 SESION_HORAS = "12"
+
+# Limitador de peticiones gratuito de Workers: 10 intentos de inicio de sesión por minuto por IP.
+[[unsafe.bindings]]
+name = "LIMITE_SESION"
+type = "ratelimit"
+namespace_id = "1001"
+simple = { limit = 10, period = 60 }

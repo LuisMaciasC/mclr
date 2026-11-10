@@ -23,7 +23,9 @@ Solo cinco operaciones fijas del puente (iniciar sesión, cambiar su contraseña
 - Un transportista no toca servicios y un técnico no toca entregas.
 - Solo se aceptan fotos JPEG o PNG reales.
 - Si la oficina desactiva su ficha, la sesión deja de funcionar en la siguiente petición.
-- 5 intentos fallidos bloquean el usuario 15 minutos.
+- 5 intentos fallidos bloquean el usuario 15 minutos, y el limitador gratuito de Cloudflare corta a más de 10 intentos de sesión por minuto desde una misma IP.
+- El tipo de cada archivo lo decide su contenido, no lo que diga el teléfono.
+- Cambiar la contraseña usa siempre la persona de la sesión.
 
 ## Riesgos que quedan y cómo se cubren
 

@@ -88,6 +88,22 @@ describe("sesión", () => {
     expect(o.get("hr.employee", 503)!.x_app_intentos || 0).toBe(0);
   });
 
+  it("cambiar contraseña usa el usuario de la sesión, no el que mande el teléfono", async () => {
+    const r = await llamar("POST", "/v1/sesion", { usuario: "chofer1", password: "Temporal1" });
+    const ok = await llamar("POST", "/v1/sesion/password", { usuario: "chofer2", password_nueva: "NuevaClave9" }, r.body.token);
+    expect(ok.status).toBe(200);
+    expect(ok.body.operador.id).toBe(501);
+    expect(o.get("hr.employee", 503)!.x_app_intentos || 0).toBe(0);
+  });
+
+  it("el limitador corta los intentos de inicio de sesión desde una misma IP", async () => {
+    let n = 0;
+    const conLimite = { ...env, LIMITE_SESION: { limit: async () => ({ success: ++n <= 3 }) } };
+    const pedir = () => manejar(new Request("https://puente.prueba/v1/sesion", { method: "POST", body: JSON.stringify({ usuario: "chofer1", password: "mala" }) }), conLimite, o.fetch);
+    for (let i = 0; i < 3; i++) expect((await pedir()).status).toBe(401);
+    expect((await pedir()).status).toBe(429);
+  });
+
   it("un token alterado no sirve", async () => {
     const t = await entrar("tecnico1", "Segura123");
     const r = await llamar("GET", "/v1/tareas", undefined, t.slice(0, -2) + "xx");
